@@ -1,0 +1,1581 @@
+{
+  "updated": "2026-11-03",
+  "label": "Mack Living",
+  "publication": "Public source-dated strategy research. No enquiries or bids sent.",
+  "firstAction": "Bristol’s EA register already names Mack Residential. First verify the legal entity, registration and current call-off capacity; this is not evidence of a Mack Living award.",
+  "contracts": [
+    {
+      "id": "bristol-private-renting",
+      "frameworkIndex": 25,
+      "name": "Bristol private renting leasing scheme and AST service",
+      "regions": [
+        "BRS"
+      ],
+      "entryRoute": "Contact Private Renting Team and expressly request the two-year leasing scheme, separately from tenant-introduction service.",
+      "routeType": "direct_property_supply",
+      "status": "Current council page invites landlord enquiries; asset acceptance and institutional counterparty not confirmed.",
+      "statusAsOf": "2026-11-03",
+      "termEvidence": "Council page advertises a separate leasing scheme running on 2-year contracts. AST-labelled service is described separately; its tenancy-law wording should not be treated as current legal advice.",
+      "rentEvidence": "Leasing rent not published; discuss at property visit. Room £800/1-bed £975/2-bed £1340/3-bed £1600/4-bed £2400 are estimated maximum market rents in tenant-introduction section, NOT evidenced headlease rents.",
+      "voidsEvidence": "No published leasing void guarantee found. AST rent-guarantee-insurance reimbursement is not council rent liability.",
+      "propertyRequirements": "Safety certificates and inspection of condition, furniture/fittings. Many property types, shared accommodation and areas outside Bristol considered. Page says owner or agent should manage property; establish which responsibilities apply to leasing versus introduction.",
+      "scaleEvidence": "No minimum number or portfolio commitment published.",
+      "prerequisites": [
+        "Confirm the actual bidding / rent-paying legal entity, any guarantee and the support registrations required for this route. Do not infer Mack Living rights from a Mack Residential supplier entry.",
+        "Written confirmation of lessee, rent obligation, break clauses, maintenance, licensing, permitted use and lender consent."
+      ],
+      "blockers": [
+        "No draft headlease, leasing rent or repairs/void allocation inspected."
+      ],
+      "nextAction": "Send property address/unit mix and request a leasing-scheme visit, draft lease and written confirmation of the legal rent payer. Do not substitute AST introduction for an institutional lease.",
+      "contacts": [
+        {
+          "name": "Private Renting Team (100TS)",
+          "organisation": "Bristol City Council",
+          "email": "private.renting@bristol.gov.uk",
+          "phone": null,
+          "url": "https://www.bristol.gov.uk/business/housing-for-business-and-professionals/private-landlords/get-help-with-renting-out-your-property",
+          "verification": "official page rechecked 2026-11-03"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bristol.gov.uk/business/housing-for-business-and-professionals/private-landlords/get-help-with-renting-out-your-property",
+          "title": "Get help with renting out your property",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Two free routes: AST-labelled service and leasing scheme.",
+            "Two-year leasing scheme; details discussed on visit; landlord contact email and enquiry form published.",
+            "Rent table and advance/deposit/incentive offer sit in tenant-introduction section."
+          ]
+        }
+      ],
+      "verificationLevel": "current_official_landlord_route; commercial_terms_partial",
+      "components": {
+        "access": 30,
+        "lease": 10,
+        "scale": 5,
+        "action": 15,
+        "complexity": 10
+      },
+      "actionTier": "First: direct leasing enquiry",
+      "matchRules": {
+        "regions": [
+          "BRS"
+        ],
+        "preferredCouncils": [
+          "Bristol City Council"
+        ],
+        "typologies": [
+          "self_contained_flats",
+          "self_contained_houses",
+          "self_contained_homes"
+        ]
+      },
+      "componentReasons": {
+        "access": "Current council page explicitly invites landlord enquiries into a separate leasing service.",
+        "lease": "Two-year contract stated; no verified lease rent or void indemnity. Only partial lease-protection credit.",
+        "scale": "Several types are considered, but no 5–30-unit or whole-building commitment is published.",
+        "action": "Current official enquiry route and property-visit next step verified 3 November.",
+        "complexity": "Property-supply enquiry first; no assumption that Mack is delivering a regulated support service."
+      },
+      "primaryBlocker": "No draft headlease, leasing rent or repairs/void allocation inspected.",
+      "shortName": "Bristol council leasing",
+      "accessSummary": "Direct property supply; request the two-year lease, not AST introduction.",
+      "statusLabel": "Landlord enquiry route verified",
+      "blockerSummary": "No written lease rent, void allocation or block commitment."
+    },
+    {
+      "id": "manchester-long-term-ta",
+      "frameworkIndex": 13,
+      "name": "Manchester long-term TA leasing (10 years + 1 day)",
+      "regions": [
+        "GM"
+      ],
+      "entryRoute": "Current Empty Homes Team direct-property lease enquiry; historical 10-year-plus-one-day TA provider decision is separate.",
+      "routeType": "direct_property_supply",
+      "status": "Current council page says it may lease empty property from owners. The 2024 long-term TA decision remains historical authority, not evidence of a current 10-year owner offer.",
+      "statusAsOf": "2026-11-03",
+      "termEvidence": "Decision published 15 March 2024 approves leases of 10 years plus 1 day with TA providers, effective 23 March 2024. Current empty-property page gives only a set time, with no length.",
+      "rentEvidence": "Current page describes steady revenue, no amount, indexation or minimum rent published.",
+      "voidsEvidence": "No explicit current void indemnity or payment-during-voids term found.",
+      "propertyRequirements": "Empty property in Manchester; suitability subject to council assessment.",
+      "scaleEvidence": "No whole-building or 5-30 unit commitment on current intake page.",
+      "prerequisites": [
+        "Confirm the actual bidding / rent-paying legal entity, any guarantee and the support registrations required for this route. Do not infer Mack Living rights from a Mack Residential supplier entry.",
+        "Establish direct owner/council lease versus supply through an appointed TA operator."
+      ],
+      "blockers": [
+        "Historical provider lease approval cannot be passed through to an investor lease automatically.",
+        "Commercial terms and current intake capacity unverified."
+      ],
+      "nextAction": "Email Empty Homes Team with address, vacancy, unit mix and condition; ask whether council will be tenant and whether 10-year-plus-one-day terms apply to this property.",
+      "contacts": [
+        {
+          "name": "Empty Homes Team",
+          "organisation": "Manchester City Council",
+          "email": "emptyhomesteam@manchester.gov.uk",
+          "phone": null,
+          "url": "https://www.manchester.gov.uk/homes-and-property/help-with-empty-homes/how-can-manchester-city-council-help-with-my-empty-property",
+          "verification": "official page rechecked 2026-11-03"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.manchester.gov.uk/homes-and-property/help-with-empty-homes/how-can-manchester-city-council-help-with-my-empty-property",
+          "title": "How can Manchester City Council help with my empty property?",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Council may lease property from owner for a set time; invites email enquiries."
+          ]
+        },
+        {
+          "url": "https://democracy.manchester.gov.uk/ieDecisionDetails.aspx?Id=925",
+          "title": "Long-term leasing of temporary accommodation decision",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "15 March 2024 approved council entering leases of 10 years plus 1 day with TA providers; historical decision, not present landlord offer."
+          ]
+        }
+      ],
+      "verificationLevel": "current_official_direct_enquiry_plus_historical_decision",
+      "components": {
+        "access": 30,
+        "lease": 5,
+        "scale": 5,
+        "action": 12,
+        "complexity": 10
+      },
+      "actionTier": "First: empty-property enquiry",
+      "matchRules": {
+        "regions": [
+          "GM"
+        ],
+        "councils": [
+          "Manchester City Council"
+        ],
+        "typologies": [],
+        "requiresEmpty": true
+      },
+      "componentReasons": {
+        "access": "Current Manchester empty-property page invites owners to discuss a direct lease.",
+        "lease": "Set-time lease mentioned; historical 10-year-plus-one-day provider approval is not an owner offer.",
+        "scale": "No whole-building or 5–30-home intake commitment.",
+        "action": "Current route verified, but empty-property suitability and capacity remain unconfirmed.",
+        "complexity": "Owner property-supply enquiry, not an assumed service-tender bid."
+      },
+      "primaryBlocker": "Historical provider lease approval cannot be passed through to an investor lease automatically.",
+      "shortName": "Manchester empty-property leasing",
+      "accessSummary": "Council Empty Homes Team. Historic ten-year provider approval is separate.",
+      "statusLabel": "Owner enquiry route verified",
+      "blockerSummary": "Requires empty property; owner terms and current capacity unconfirmed."
+    },
+    {
+      "id": "gm-empty-homes-leasing",
+      "frameworkIndex": 11,
+      "name": "GM Empty Homes and Leasing Programme (lease and repair, 400 homes)",
+      "regions": [
+        "GM"
+      ],
+      "entryRoute": "Borough-level empty homes / lease-and-repair delivery, not a GM-wide property tender; Manchester current route is independently verified.",
+      "routeType": "direct_property_supply",
+      "status": "2025 programme report rechecked; borough lease intake currently evidenced for Manchester, but programme funding mobilisation, remaining allocation and all-borough availability not confirmed.",
+      "statusAsOf": "2026-11-03",
+      "termEvidence": "No standard owner lease length published in inspected report.",
+      "rentEvidence": "Report proposes local incentives/grants/loans and lease costs; not a landlord rent schedule or guarantee.",
+      "voidsEvidence": "No standard void terms published.",
+      "propertyRequirements": "Report prioritises vacant off-market properties brought into temporary or settled accommodation. Refurbishment to lettable standard; retrofit/energy improvements where feasible. Local delivery models flexible and council-specific.",
+      "scaleEvidence": "28 November 2025 report proposes 400 homes: Manchester 192, Salford 48, Rochdale 32, Bolton 24, Oldham/Tameside 20 each, Bury/Stockport/Trafford/Wigan 16 each. Targets, not remaining mandates. Table totals £10,568,100: £9,656,888 lease/repair plus £911,213 officers. Funding subject to March 2026 budget approval in report.",
+      "prerequisites": [
+        "Confirm the actual bidding / rent-paying legal entity, any guarantee and the support registrations required for this route. Do not infer Mack Living rights from a Mack Residential supplier entry.",
+        "Confirm council-specific programme funding, eligibility and lease tenant."
+      ],
+      "blockers": [
+        "No current delivery dashboard or remaining allocation verified.",
+        "Original report is a proposal and is not evidence by itself that the 2026/27 money was released."
+      ],
+      "nextAction": "Ask Manchester Empty Homes Team about current programme intake and enquire through GMCA programme officer for other borough delivery leads; obtain written live mandate before sourcing.",
+      "contacts": [
+        {
+          "name": "Empty Homes Team",
+          "organisation": "Manchester City Council",
+          "email": "emptyhomesteam@manchester.gov.uk",
+          "phone": null,
+          "url": "https://www.manchester.gov.uk/homes-and-property/help-with-empty-homes/how-can-manchester-city-council-help-with-my-empty-property",
+          "verification": "official page rechecked 2026-11-03"
+        },
+        {
+          "name": "Joe Donohue",
+          "organisation": "GMCA",
+          "email": "joseph.donohue@greatermanchester-ca.gov.uk",
+          "phone": null,
+          "url": "https://democracy.greatermanchester-ca.gov.uk/mgConvert2PDF.aspx?ID=42787",
+          "verification": "retained from 2026-10-20 capture; current detail unverified"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://democracy.greatermanchester-ca.gov.uk/mgConvert2PDF.aspx?ID=42787",
+          "title": "Housing First: GM Empty Homes and Leasing Programme, report 28 November 2025",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Pages 1,8,10-12 describe 400-home targets, £10.568m allocation and flexible council delivery.",
+            "Page 11 states core-budget funding subject to final March 2026 approval.",
+            "Current officer appointment and programme rollout not confirmed."
+          ]
+        },
+        {
+          "url": "https://www.manchester.gov.uk/homes-and-property/help-with-empty-homes/how-can-manchester-city-council-help-with-my-empty-property",
+          "title": "Manchester empty-property help",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Current council lease enquiry independently verified."
+          ]
+        }
+      ],
+      "verificationLevel": "historical_official_programme_report_currently_retrieved; current_local_intake_only",
+      "components": {
+        "access": 15,
+        "lease": 0,
+        "scale": 5,
+        "action": 0,
+        "complexity": 5
+      },
+      "actionTier": "Monitor rollout / qualify council",
+      "matchRules": {
+        "regions": [
+          "GM"
+        ],
+        "typologies": [],
+        "requiresEmpty": true
+      },
+      "componentReasons": {
+        "access": "Council-specific models are proposed; do not treat regional funding paper as a live admission route.",
+        "lease": "No standard owner rent, void or lease terms published in the inspected report.",
+        "scale": "400-home proposed target is not remaining capacity for this portfolio.",
+        "action": "Rollout, budget approval and remaining allocations not verified.",
+        "complexity": "Vacant/off-market homes, repairs and council-by-council delivery conditions need verification."
+      },
+      "primaryBlocker": "No current delivery dashboard or remaining allocation verified.",
+      "shortName": "GM empty homes funding route",
+      "accessSummary": "Council-by-council delivery. Proposed 400-home target is not live capacity.",
+      "statusLabel": "Rollout / allocation unverified",
+      "blockerSummary": "Funding proposal does not establish current property intake."
+    },
+    {
+      "id": "aasc-landlord-supply",
+      "frameworkIndex": 3,
+      "name": "AASC - Asylum Accommodation and Support Contracts (Serco, Mears, Clearsprings)",
+      "regions": [
+        "GM",
+        "BRS",
+        "GLOS"
+      ],
+      "entryRoute": "Commercial property supply to regional incumbent: Serco for North West/Greater Manchester; Clearsprings Ready Homes for South including South West. Mears AASC geography is North East/Yorkshire/Humber, Scotland and Northern Ireland, not GM or SW.",
+      "routeType": "partner_supply",
+      "status": "Current Serco property enquiry and Ready Homes landlord offer verified; regional contract geography supported by official parliamentary report. No particular property acquisition or public-contract-backed landlord lease secured.",
+      "statusAsOf": "2026-11-03",
+      "termEvidence": "Ready Homes says long-term contracts, no numeric term retrieved. Mears generic property offer is 3 or 5 years but must not be assigned to Serco/Clearsprings or treated as GM/SW AASC terms.",
+      "rentEvidence": "Ready Homes markets guaranteed rent, no amount/indexation/security published. Serco intake page inspected does not state a rate.",
+      "voidsEvidence": "No Serco/Clearsprings detailed void clauses inspected; do not transfer Mears no-voids promise to other providers.",
+      "propertyRequirements": "Serco considers HMOs, family homes, former care homes, residential/student accommodation and adapted properties in its regions. Provider/local authority approval, licensing and programme standards require confirmation.",
+      "scaleEvidence": "Serco enquiry asks number of properties and property address(es); this evidences portfolio enquiries, not acceptance of a 5-30 unit block.",
+      "prerequisites": [
+        "Confirm the actual bidding / rent-paying legal entity, any guarantee and the support registrations required for this route. Do not infer Mack Living rights from a Mack Residential supplier entry.",
+        "Provider agreement identifying the actual tenant, rent liability, contract end/break linkage and works allocation."
+      ],
+      "blockers": [
+        "Current postcode-level demand and whole-building acceptance not verified.",
+        "No direct Home Office lease or government rent guarantee follows from supplier contract."
+      ],
+      "nextAction": "For GM, contact Serco property sourcing; for Bristol/Gloucestershire request Ready Homes acquisitions lead. Submit specification subject to written demand, then obtain lease and covenant review.",
+      "contacts": [
+        {
+          "name": "Property sourcing enquiry",
+          "organisation": "Serco",
+          "email": null,
+          "phone": "0330 236 9898",
+          "url": "https://www.serco.com/uk/sites/serco-aasc/landlords/get-in-touch",
+          "verification": "official page rechecked 2026-11-03"
+        },
+        {
+          "name": "Property Partnerships",
+          "organisation": "Serco",
+          "email": "aasc.properties@serco.com",
+          "phone": null,
+          "url": "https://www.serco.com/uk/sites/serco-aasc/landlords",
+          "verification": "retained from 2026-10-20 capture; current detail unverified"
+        },
+        {
+          "name": "General enquiries, request acquisitions",
+          "organisation": "Clearsprings Ready Homes",
+          "email": "info@ready-homes.com",
+          "phone": "+44 (0) 1268 740200",
+          "url": "https://www.ready-homes.co.uk/contact",
+          "verification": "official page rechecked 2026-11-03"
+        },
+        {
+          "name": "Property Partnerships web enquiry",
+          "organisation": "Mears Group",
+          "email": null,
+          "phone": null,
+          "url": "https://www.mearsgroup.co.uk/landlords/property-partnerships/",
+          "verification": "official page rechecked 2026-11-03"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.serco.com/uk/sites/serco-aasc/landlords/get-in-touch",
+          "title": "Get in touch - Serco landlord sourcing",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Browser snapshot confirms active property enquiry for landlords, investors and agents in North West, Midlands, East of England; property types and telephone confirmed.",
+            "Webfetch blocked but live browser page readable; form was not submitted."
+          ]
+        },
+        {
+          "url": "https://www.ready-homes.co.uk/let",
+          "title": "Let - Ready Homes",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Current landlord invitation: long-term contracts and guaranteed rent; no detailed commercial terms."
+          ]
+        },
+        {
+          "url": "https://www.ready-homes.co.uk/contact",
+          "title": "Contact - Ready Homes",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Corporate telephone and info@ready-homes.com published; not dedicated acquisitions desk."
+          ]
+        },
+        {
+          "url": "https://publications.parliament.uk/pa/cm5901/cmselect/cmhaff/580/report.html",
+          "title": "The Home Office management of asylum accommodation",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Official report identifies Serco NW/Midlands/East; Clearsprings South/Wales; Mears NE/Yorkshire/Humber/Scotland/NI. Report is contract evidence, not proof of current local intake."
+          ]
+        }
+      ],
+      "verificationLevel": "current_official_provider_intake; regional_contract_evidence; property_mandate_unverified",
+      "components": {
+        "access": 20,
+        "lease": 5,
+        "scale": 10,
+        "action": 12,
+        "complexity": 8
+      },
+      "actionTier": "Next: regional sourcing enquiry",
+      "matchRules": {
+        "regions": [
+          "GM",
+          "BRS",
+          "GLOS"
+        ],
+        "typologies": [
+          "self_contained_flats",
+          "self_contained_houses",
+          "self_contained_homes"
+        ]
+      },
+      "componentReasons": {
+        "access": "Serco GM / NW and Clearsprings Ready Homes SW routes verified; no direct Home Office lease.",
+        "lease": "Long-term description but no exact Serco/Clearsprings headlease clauses inspected; do not transfer Mears terms.",
+        "scale": "Serco enquiry accommodates portfolios/property addresses, not acceptance of a 5–30-unit block.",
+        "action": "Current official property-sourcing channels verified, not postcode-specific funded demand.",
+        "complexity": "Property supply via prime, with local approval and programme requirements to close."
+      },
+      "primaryBlocker": "Current postcode-level demand and whole-building acceptance not verified.",
+      "shortName": "AASC landlord supply",
+      "accessSummary": "Serco GM/NW; Clearsprings South West. Not a direct government lease.",
+      "statusLabel": "Regional property channels verified",
+      "blockerSummary": "No postcode-specific demand, block acceptance or detailed owner terms."
+    },
+    {
+      "id": "cas3-incumbent-property-supply",
+      "frameworkIndex": 1,
+      "name": "CAS3 current regional contracts (Community Accommodation Service Tier 3)",
+      "regions": [
+        "GM",
+        "BRS",
+        "GLOS"
+      ],
+      "entryRoute": "Supply property to appointed operators: Mears for North West; The Housing Network for South West. Service procurement/framework admission is distinct.",
+      "routeType": "partner_supply",
+      "status": "Current operator pages support Mears NW CAS3 and THN SW CAS3 presence and separate landlord enquiries. Current programme-specific acquisition mandate not confirmed.",
+      "statusAsOf": "2026-11-03",
+      "termEvidence": "THN SW awarded service contract 19 April 2023 to 19 April 2028, not owner lease term. Mears generic landlord terms 3 or 5 years; applicability to proposed CAS3 property unconfirmed. Mears case study gives service contract 3 years plus 2-year option, not executed owner terms.",
+      "rentEvidence": "Mears generic guaranteed rent; THN generic guaranteed-rent landlord enquiry; no programme-specific owner rent or pricing retrieved.",
+      "voidsEvidence": "Mears generic no-voids marketing verified; THN exact payment-during-void clauses not inspected. Neither government service fee nor 84-night stay is a landlord lease guarantee.",
+      "propertyRequirements": "THN describes self-contained/shared units furnished to serviceable standard with welcome packs and weekly support visits. Mears owner certification includes asbestos; extensive structural/capital owner obligations. Programme-specific location/occupancy/use approval and operator support delivery required.",
+      "scaleEvidence": "Mears current case study reports 573 bed spaces and target 745 across three regions, not current demand for an investor block. THN operates five regions including SW; does not establish postcode intake.",
+      "prerequisites": [
+        "Confirm the actual bidding / rent-paying legal entity, any guarantee and the support registrations required for this route. Do not infer Mack Living rights from a Mack Residential supplier entry.",
+        "Appointed service provider must deliver support; property-only supply must have separate agreement."
+      ],
+      "blockers": [
+        "No executed headlease or current address-specific mandate.",
+        "New CAS framework place does not itself establish a CAS3 call-off or landlord lease; no November signature inferred from earlier standstill dates."
+      ],
+      "nextAction": "Send specification to Mears property form for NW or THN landlord team for SW; request written CAS3 use confirmation, legal tenant, minimum lease, break linkage and payment/works terms.",
+      "contacts": [
+        {
+          "name": "Property Partnerships web enquiry",
+          "organisation": "Mears Group",
+          "email": null,
+          "phone": null,
+          "url": "https://www.mearsgroup.co.uk/landlords/property-partnerships/",
+          "verification": "official page rechecked 2026-11-03"
+        },
+        {
+          "name": "Landlord Partnerships",
+          "organisation": "The Housing Network",
+          "email": "landlordpartnerships@thn.co.uk",
+          "phone": "01582 320 645",
+          "url": "https://thehousingnetwork.co.uk/landlords/contact-our-landlords-partnership-team/",
+          "verification": "official page rechecked 2026-11-03"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.mearsgroup.co.uk/landlords/property-partnerships/",
+          "title": "Property Partnerships - Mears Group",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Current landlord enquiry form; guaranteed rent with no voids; 3 or 5 year terms; utilities paid.",
+            "Mears handles day-to-day internal maintenance, service user damage, furnishings and garden; owner retains extensive structural/external and capital replacement obligations.",
+            "Generic multi-cohort offer, not proof of programme allocation, regional acceptance or executed guarantee."
+          ]
+        },
+        {
+          "url": "https://www.mearsgroup.co.uk/news/articles/case-studies/ministry-of-justice",
+          "title": "Mears secures Community Accommodation Service contracts",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Current official case study lists NW, Yorkshire/Humber and NE CAS3 operations; 3-year service contract plus 2-year option; does not date current end."
+          ]
+        },
+        {
+          "url": "https://thehousingnetwork.co.uk/cas-3",
+          "title": "THN CAS3 programme",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Current page lists South West among five regions; temporary support up to 84 nights; furnished shared/self-contained accommodation."
+          ]
+        },
+        {
+          "url": "https://thehousingnetwork.co.uk/landlords/contact-our-landlords-partnership-team/",
+          "title": "THN Landlord Partnerships",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Dedicated current landlord email/telephone and guaranteed-rent enquiry."
+          ]
+        },
+        {
+          "url": "https://www.contractsfinder.service.gov.uk/Notice/0f0683c5-e184-4290-8835-f47e50156289",
+          "title": "CAS3 National Roll Out South West award",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Historical notice last edited 15 June 2023 identifies The Housing Network and service dates 19 April 2023 to 19 April 2028."
+          ]
+        }
+      ],
+      "verificationLevel": "current_official_operator_and_landlord_routes; historic_award; mandate_unverified",
+      "components": {
+        "access": 20,
+        "lease": 14,
+        "scale": 10,
+        "action": 10,
+        "complexity": 8
+      },
+      "actionTier": "Next: incumbent qualification",
+      "matchRules": {
+        "regions": [
+          "GM",
+          "BRS",
+          "GLOS"
+        ],
+        "typologies": [
+          "self_contained_flats",
+          "self_contained_houses",
+          "self_contained_homes"
+        ],
+        "requiresServiceCredentials": false
+      },
+      "componentReasons": {
+        "access": "Use the appointed operator: Mears in NW and The Housing Network in SW, not a direct MoJ lease.",
+        "lease": "Mears generic 3/5-year no-void marketing exists; programme applicability and THN clauses remain unverified.",
+        "scale": "Operator multi-region bed-space delivery is evidenced, not a current mandate for this investor block.",
+        "action": "Current operator sourcing/contact routes exist; obtain exact live postcodes and requirements.",
+        "complexity": "Supply through an operator delivering support. Mack’s contractual role and owner capital obligations must be agreed."
+      },
+      "primaryBlocker": "No executed headlease or current address-specific mandate.",
+      "shortName": "CAS3 via incumbent operators",
+      "accessSummary": "Mears North West / THN South West. Qualify programme intake and owner terms.",
+      "statusLabel": "Operator sourcing channels verified",
+      "blockerSummary": "No current address-specific mandate or executed owner lease."
+    },
+    {
+      "id": "glos-cheltenham-p3-council",
+      "frameworkIndex": 38,
+      "name": "Cheltenham Borough Council homelessness: RP (P3) emergency accommodation and landlord incentives",
+      "regions": [
+        "GLOS"
+      ],
+      "entryRoute": "Direct landlord enquiry to P3 as potential institutional tenant; council Housing Options is demand/signposting, not verified commercial lease desk.",
+      "routeType": "direct_property_supply",
+      "status": "P3 current national landlord offer verified. Gloucestershire/Cheltenham asset demand, specific council award and council-backed payment not confirmed.",
+      "statusAsOf": "2026-11-03",
+      "termEvidence": "P3 explicitly markets 6-12 month contracts during which P3 becomes the tenant. This is short-term, not a long institutional lease.",
+      "rentEvidence": "P3 advertises guaranteed rental income; amount, covenant/security and detailed payment terms unverified. Marketing risk-free language is not accepted as an investment risk conclusion.",
+      "voidsEvidence": "No detailed void exclusion/break/payment clauses inspected; marketing guaranteed income is not a substitute for lease review.",
+      "propertyRequirements": "P3 says it handles tenancy management, resident selection/support, repairs, deposits and redecoration; scope/exclusions need lease confirmation. No local property-size or minimum-unit specification retrieved.",
+      "scaleEvidence": "National intake, not proof of Cheltenham/Gloucestershire 5-30 unit demand.",
+      "prerequisites": [
+        "Confirm the actual bidding / rent-paying legal entity, any guarantee and the support registrations required for this route. Do not infer Mack Living rights from a Mack Residential supplier entry.",
+        "Identify P3 contracting entity and confirm local demand. No assumption of Mack Living or partner RP/Ofsted/CQC eligibility."
+      ],
+      "blockers": [
+        "No verified specific delegated council award or local lease mandate.",
+        "6-12 month offer does not meet a long-lease strategy without separately negotiated terms."
+      ],
+      "nextAction": "Use P3 landlord route to request local acquisition lead and written demand/lease; ask Cheltenham Housing Options to route landlord incentive or emergency accommodation supply queries, not resident referrals.",
+      "contacts": [
+        {
+          "name": "P3 Housing / Landlord Partnerships",
+          "organisation": "P3",
+          "email": "p3housing@p3charity.org",
+          "phone": null,
+          "url": "https://p3charity.org/support-us/landlords",
+          "verification": "retained from 2026-10-20 capture; current detail unverified"
+        },
+        {
+          "name": "Housing Options",
+          "organisation": "Cheltenham Borough Council",
+          "email": "Housing.options@cheltenham.gov.uk",
+          "phone": "01242 387615",
+          "url": "https://www.gloucestershire.gov.uk/your-community/refugee-support/homes-for-ukraine/housing/",
+          "verification": "official page rechecked 2026-11-03"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://p3charity.org/support-us/landlords",
+          "title": "Become a P3 landlord",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "P3 says it becomes tenant under 6-12 month contracts, advertises guaranteed income, repairs/deposits/redecoration.",
+            "Email retained from 20 October capture, not exposed by current fetch."
+          ]
+        },
+        {
+          "url": "https://www.gloucestershire.gov.uk/your-community/refugee-support/homes-for-ukraine/housing/",
+          "title": "Housing - Gloucestershire Homes for Ukraine",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Official current page publishes Cheltenham Housing Options contact; general housing advice role, not institutional lease offer."
+          ]
+        }
+      ],
+      "verificationLevel": "current_official_national_landlord_offer; local_demand_unverified",
+      "components": {
+        "access": 30,
+        "lease": 5,
+        "scale": 5,
+        "action": 5,
+        "complexity": 10
+      },
+      "actionTier": "Short-term only / qualify",
+      "matchRules": {
+        "regions": [
+          "GLOS"
+        ],
+        "typologies": []
+      },
+      "componentReasons": {
+        "access": "P3 currently invites property enquiries; exact local placement/commissioner link is not established.",
+        "lease": "Only 6–12-month tenant contracts advertised, not the intended long-income lease.",
+        "scale": "No local 5–30-home or whole-block requirement published.",
+        "action": "National route exists, but Cheltenham/Gloucestershire sourcing must be confirmed.",
+        "complexity": "Initial landlord enquiry is accessible; no assumed delegated council mandate or support qualification."
+      },
+      "primaryBlocker": "No verified specific delegated council award or local lease mandate.",
+      "shortName": "P3 landlord route: Gloucestershire",
+      "accessSummary": "National 6–12-month offer; local sourcing and council link unconfirmed.",
+      "statusLabel": "National route only",
+      "blockerSummary": "Short term, not the intended long-income lease."
+    },
+    {
+      "id": "bristol-ea-dn677298",
+      "frameworkIndex": 20,
+      "name": "Emergency Accommodation (EA) Open Framework DN677298",
+      "regions": [
+        "BRS"
+      ],
+      "entryRoute": "Apply through council procurement to accommodation service framework; alternatively supply stock under a separate commercial lease to an admitted operator such as THN. Framework membership is not a landlord lease.",
+      "routeType": "service_tender",
+      "status": "Current official register states open for tenderers throughout contract life, start 4 Dec 2023/end 3 Dec 2027, review 1 Jan 2027. Live submission pack/workflow and applicant eligibility not checked.",
+      "statusAsOf": "2026-11-03",
+      "termEvidence": "Framework dates are not guaranteed call-off or landlord lease durations. Register shows initial 48 months plus up to 24-month options (0 taken); current listed end 3 Dec 2027. Old April 2026 six-month blocks ending Sep 2026 are historical, not a continuing rent mandate.",
+      "rentEvidence": "£96m registered awarded/estimated framework value is procurement envelope, not owner rent or guaranteed spend. No current placement rate inspected.",
+      "voidsEvidence": "No current guaranteed placement/void payment found.",
+      "propertyRequirements": "Tender/specification and inspection requirements must be retrieved; old capture described safety certification, safeguarding/DBS, housing management and repairs, current pack unverified.",
+      "scaleEvidence": "Multi-supplier framework, no guaranteed placements, block contract or whole-building intake. Register names Mack Residential reg 5543323; this is not Mack Living identity or permission to use its place.",
+      "prerequisites": [
+        "Confirm the actual bidding / rent-paying legal entity, any guarantee and the support registrations required for this route. Do not infer Mack Living rights from a Mack Residential supplier entry.",
+        "Supplier application, current procurement participation conditions and ability to deliver the accommodation service. If property-only, partner with suitable admitted operator instead."
+      ],
+      "blockers": [
+        "No current tender pack reviewed or Mack Living eligibility established.",
+        "Framework place != call-off != landlord lease; no rent guarantee inferred."
+      ],
+      "nextAction": "Ask register procurement contact for current joining documents/criteria and live tender route. Property-only strategy: seek an operator headlease and separately verify its actual call-off/mandate.",
+      "contacts": [
+        {
+          "name": "Paul Sylvester, contract-register contact",
+          "organisation": "Bristol City Council",
+          "email": "Paul.Sylvester@bristol.gov.uk",
+          "phone": null,
+          "url": "https://procontract.due-north.com/ContractsRegister/ViewContractDetails?contractId=643baae0-4617-ee11-8123-005056b64545",
+          "verification": "official page rechecked 2026-11-03"
+        },
+        {
+          "name": "Landlord Partnerships",
+          "organisation": "The Housing Network",
+          "email": "landlordpartnerships@thn.co.uk",
+          "phone": "01582 320 645",
+          "url": "https://thehousingnetwork.co.uk/landlords/contact-our-landlords-partnership-team/",
+          "verification": "official page rechecked 2026-11-03"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://procontract.due-north.com/ContractsRegister/ViewContractDetails?contractId=643baae0-4617-ee11-8123-005056b64545",
+          "title": "Emergency Accommodation Framework DN677298 - official ProContract register",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Open throughout life; 4 December 2023 to 3 December 2027; 1 January 2027 review; £96m.",
+            "Supplier list includes THN, ACH and Mack Residential reg 5543323; listing does not establish executed call-off or landlord terms.",
+            "Paul Sylvester email published; current employment/remit not independently checked."
+          ]
+        },
+        {
+          "url": "https://thehousingnetwork.co.uk/landlords/contact-our-landlords-partnership-team/",
+          "title": "THN landlord enquiry",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Separate current commercial property enquiry; no assurance of EA allocation."
+          ]
+        }
+      ],
+      "verificationLevel": "current_official_contract_register; live_application_pack_unverified",
+      "components": {
+        "access": 10,
+        "lease": 0,
+        "scale": 10,
+        "action": 12,
+        "complexity": 0
+      },
+      "actionTier": "Verify existing Mack supplier link",
+      "matchRules": {
+        "regions": [
+          "BRS"
+        ],
+        "preferredCouncils": [
+          "Bristol City Council"
+        ],
+        "typologies": [],
+        "requiresServiceCredentials": true
+      },
+      "componentReasons": {
+        "access": "Official register names Mack Residential, but Mack Living identity, supplier registration and rights must be reconciled.",
+        "lease": "Framework place and service period provide no landlord headlease, rent or void guarantee.",
+        "scale": "Multi-supplier accommodation route; no committed block volume or placements.",
+        "action": "Register currently lists rolling admission to 3 Dec 2027. Check supplier identity and call-off capacity before a new application.",
+        "complexity": "Service delivery, safeguarding, inspection and tender-pack conditions not established for Mack Living."
+      },
+      "primaryBlocker": "No current tender pack reviewed or Mack Living eligibility established.",
+      "shortName": "Bristol EA framework DN677298",
+      "accessSummary": "Verify the Mack Residential supplier entry and actual call-off capacity.",
+      "statusLabel": "Register open through 3 Dec 2027",
+      "blockerSummary": "Mack Living identity / eligibility and owner payment obligations unverified."
+    },
+    {
+      "id": "gmca1769-supported-16plus",
+      "frameworkIndex": 6,
+      "name": "GMCA 1769 Regional Care Cooperative Supported Accommodation (5 lots)",
+      "regions": [
+        "GM"
+      ],
+      "entryRoute": "Service-provider bid on The Chest (GMCA1769, five lots, one lot maximum); property-only route is partnering with a suitable service bidder/appointed provider, not claiming a framework lease.",
+      "routeType": "service_tender",
+      "status": "Official latest procurement index lists UK4 092987-2026 with deadline 20 Nov 2026 12:00; no later notice listed when checked. Not evidence Mack Living is eligible or has submitted.",
+      "statusAsOf": "2026-11-03",
+      "termEvidence": "Estimated open-framework service dates 1 April 2027 to 31 March 2035 (8 years), not owner lease or guaranteed work.",
+      "rentEvidence": "£20m estimated total framework value excluding VAT; Lot1 £12.1m, other four £1.975m each. Service budgets, not asset rent.",
+      "voidsEvidence": "No owner void/rent guarantee published in notice; framework call-offs without competition do not guarantee work.",
+      "propertyRequirements": "Lot1 core 24-hour building-based supported accommodation plus transition/step-down/collaboration. Other lots are moving-on, wellbeing, life-skills/opportunities and complex safeguarding support; not simple property leasing. Cohort includes 16-17 care leavers and care-experienced young people. Tender pack needed to confirm lot-specific premises, workforce, safeguarding and registration conditions.",
+      "scaleEvidence": "Unlimited framework suppliers; 10 GM councils listed as users. No minimum landlord units or guaranteed call-offs.",
+      "prerequisites": [
+        "Confirm the actual bidding / rent-paying legal entity, any guarantee and the support registrations required for this route. Do not infer Mack Living rights from a Mack Residential supplier entry.",
+        "Selection questionnaire and minimum conditions pass/fail; written/financial assessment then interview/scenario stage.",
+        "One lot only; multi-lot delivery requires Collaboration Agreement.",
+        "Ofsted applicability and support capability must be checked in tender pack; not established by SME/VCSE suitability."
+      ],
+      "blockers": [
+        "Tender documents/conditions not inspected, no legal bidder or regulated support capability confirmed.",
+        "Public deadline availability does not establish bidder eligibility."
+      ],
+      "nextAction": "If pursuing service delivery, obtain Chest pack immediately; clarification deadline 10 Nov 2026 23:59, submission 20 Nov 2026 12:00 UK time. If property-only, identify suitable Lot1 support operator and negotiate separate property supply, contingent on genuine mandate.",
+      "contacts": [
+        {
+          "name": "Procurement Team",
+          "organisation": "GMCA",
+          "email": "procurement@manchesterfire.gov.uk",
+          "phone": null,
+          "url": "https://www.find-tender.service.gov.uk/Notice/092987-2026",
+          "verification": "official page rechecked 2026-11-03"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.find-tender.service.gov.uk/Notice/092987-2026",
+          "title": "Regional Care Cooperative Supported Accommodation, UK4 092987-2026",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Published 1 October 2026; tender deadline 20 November 2026 12:00; enquiries 10 November 2026 23:59.",
+            "Competitive flexible light-touch procedure; 55% technical, 30% interview, 15% price; one lot maximum.",
+            "Open framework estimated 2027-2035; direct-award call-offs; tender pack on The Chest."
+          ]
+        },
+        {
+          "url": "https://www.find-tender.service.gov.uk/procurement/ocds-h6vhtk-0671c7",
+          "title": "GMCA1769 procurement index",
+          "observedAt": "2026-11-03",
+          "facts": [
+            "Latest listed notice is UK4 092987-2026; no later change/award/termination displayed on current index."
+          ]
+        }
+      ],
+      "verificationLevel": "current_official_notice_and_procurement_index; eligibility_unverified",
+      "components": {
+        "access": 5,
+        "lease": 0,
+        "scale": 8,
+        "action": 10,
+        "complexity": 0
+      },
+      "actionTier": "Capability gate before any bid",
+      "matchRules": {
+        "regions": [
+          "GM"
+        ],
+        "typologies": [],
+        "requiresServiceCredentials": true
+      },
+      "componentReasons": {
+        "access": "Open service tender, not a property lease. Mack bidder identity/credentials unverified.",
+        "lease": "Eight-year framework service period is not rent security or guaranteed work.",
+        "scale": "Building-based Lot 1 exists but no landlord units or minimum call-offs are committed.",
+        "action": "Verified deadline 20 Nov 2026 noon, clarifications 10 Nov 23:59; assess capability before spending on a bid.",
+        "complexity": "24-hour support, workforce and safeguarding/registration conditions require specialist capability."
+      },
+      "primaryBlocker": "Tender documents/conditions not inspected, no legal bidder or regulated support capability confirmed.",
+      "shortName": "GMCA1769 supported 16+",
+      "accessSummary": "Service bid via The Chest; one lot maximum. Deadline 20 Nov, noon.",
+      "statusLabel": "Deadline verified; bidder not qualified",
+      "blockerSummary": "Support delivery, safeguarding and tender credentials need to be established."
+    }
+  ],
+  "sites": [
+    {
+      "id": "mack-bindloss-monton",
+      "address": "Bindloss Avenue, Monton, Eccles",
+      "city": "Salford, Greater Manchester (marketed as Manchester)",
+      "council": "Salford City Council",
+      "postcode": "M30 0DU",
+      "existingHomes": 12,
+      "bedroomMix": "Agent: a mix of 2- and 3-bedroom apartments; exact split not stated in current particulars inspected. Headline total 27 bedrooms is not 27 homes. No exact split inferred.",
+      "occupancy": "Not disclosed in current advert inspected. New-build description and virtually staged images do not establish vacancy or vacant possession.",
+      "priceGBP": 2999950,
+      "priceBasis": "Offers over, current Keenans and Rightmove adverts; not a valuation.",
+      "status": "Advertised for sale; no Sold/SSTC label observed in inspected advert",
+      "statusAsOf": "2026-11-03T11:52:44.302Z",
+      "siteScope": "Whole block of 12 existing apartments across three floors, within 5–30-home band. Marketed as whole block; title boundaries and complete ownership not reviewed.",
+      "possibleUses": [
+        "Possible self-contained family TA or residential headlease screening only, conditional on actual possession, compliance, economics and commissioner/provider requirements."
+      ],
+      "fitReasons": [
+        "Twelve existing apartment dwellings, not HMO rooms or consent-only units.",
+        "Whole-block offering rather than selected flats across unrelated buildings.",
+        "Two- and three-bedroom mix could be relevant to family-accommodation screening, without implying local demand or provider acceptance."
+      ],
+      "blockers": [
+        "Occupancy, tenancy schedule and deliverable vacant possession are unknown.",
+        "Exact bedroom split and apartment-by-apartment EPC/accessibility/fire/building-completion documents not checked.",
+        "Salford, not Manchester City Council: no Manchester commissioning route or address-level LHA rate transferred.",
+        "Premium luxury description and asking price do not establish viability for TA or a headlease.",
+        "Screening possibility only: no distress, lawful-use/change-of-use approval, vacant possession, provider acceptance or address-level LHA match is established. Technical, fire, EPC, lease/title and commissioning checks remain necessary."
+      ],
+      "sources": [
+        {
+          "url": "https://www.keenans-estateagents.co.uk/property/bindloss-avenue-monton-manchester-33349371/",
+          "title": "Bindloss Avenue, Eccles, Manchester - Keenans Estate Agents",
+          "observedAt": "2026-11-03T11:52:44.302Z",
+          "facts": [
+            "Primary agent page inspected via snapshot. £2,999,950 Offers Over; 12 two- and three-bedroom apartments; 27-bed headline; Book a viewing.",
+            "Description presents the whole block across three floors; new-build specification; virtual staging. No tenancy/possession statement found."
+          ]
+        },
+        {
+          "url": "https://www.rightmove.co.uk/properties/152063375",
+          "title": "27 bedroom block of apartments for sale in Bindloss Avenue, Eccles, Manchester, M30",
+          "observedAt": "2026-11-03T11:52:44.302Z",
+          "facts": [
+            "Snapshot and full main-description read: Offers Over £2,999,950; Reduced on 20/05/2026; Freehold; 12 apartments, not 27 units.",
+            "Council tax and accessibility: ask agent. No explicit vacant possession evidence."
+          ]
+        },
+        {
+          "url": "https://www.salford.gov.uk/media/398734/6-bindloss-ave-43473747.pdf",
+          "title": "Salford City Council agreement relating to 6 Bindloss Avenue, Eccles M30 0DU",
+          "observedAt": "2026-11-03T11:52:44.302Z",
+          "facts": [
+            "Official council document surfaced in search identifies Salford council and the Bindloss Avenue M30 0DU location. Historical permission refers to 3x3-bed and 9x2-bed; not adopted here as an as-built schedule or proof of this advert’s exact title boundary. Search metadata dated 2022-12-13."
+          ]
+        }
+      ],
+      "sourceDatasetIds": [
+        "blocks_for_sale.json:rm152063375"
+      ],
+      "verificationLevel": "Current primary-agent and portal advert verified; occupancy and exact mix unresolved; council geography supported by official council record; legal/title boundaries unverified.",
+      "region": "GM",
+      "listingURL": "https://www.keenans-estateagents.co.uk/property/bindloss-avenue-monton-manchester-33349371/",
+      "sourceDataset": "blocks_for_sale.json",
+      "profile": {
+        "homes": 12,
+        "ordinaryResidential": true,
+        "unitsVerified": true,
+        "wholeSite": true,
+        "typology": "self_contained_flats",
+        "advertised": "current",
+        "writtenProviderOffer": false,
+        "beds": [
+          2,
+          3
+        ],
+        "occupancy": "unknown"
+      },
+      "bedroomSummary": "12 apartments, mix of 2–3 beds",
+      "occupancySummary": "Occupancy / possession unknown",
+      "priceLabel": "Offers over",
+      "nextCheck": "Confirm occupancy, exact mix and Salford-specific demand.",
+      "availabilitySummary": "Advert displayed when checked; unsold status not assured."
+    },
+    {
+      "id": "mack-norwood-stretford",
+      "address": "Norwood Road, Stretford",
+      "city": "Stretford, Trafford, Greater Manchester",
+      "council": "Trafford Council",
+      "postcode": "M32 8PN",
+      "existingHomes": 6,
+      "bedroomMix": "2 x 1-bedroom apartments plus 4 studio apartments per detailed schedule. Portal headline says 6 bedrooms; not six family houses.",
+      "occupancy": "Advert states all six currently let, £4,595 pcm / £55,140 pa. Same detailed schedule says Flat 2 is currently being renovated. These statements conflict operationally; actual unit-level occupancy requires confirmation. No vacant-possession offer established.",
+      "priceGBP": 675000,
+      "priceBasis": "Advertised asking price £675,000; primary-agent page shows no guide/offers qualifier. Not a valuation.",
+      "status": "For Sale on current primary-agent page; portal advert visible",
+      "statusAsOf": "2026-11-03T11:52:44.302Z",
+      "siteScope": "Single period-conversion building marketed freehold with six existing apartments, within 5–30-home band. Street number/title boundary not established. Do not confuse with separate £495,000 three-flat leasehold Norwood listing rm94560237.",
+      "possibleUses": [
+        "Possible small-household self-contained TA/residential headlease screening only, conditional on possession, minimum-space/compliance and commissioning requirements."
+      ],
+      "fitReasons": [
+        "Six existing apartments with their own modern kitchens and bathrooms, rather than six HMO rooms.",
+        "One marketed freehold period-conversion investment.",
+        "Studio/one-bedroom mix gives a defined small-household screening angle, not evidence of current TA demand."
+      ],
+      "blockers": [
+        "Tenants in situ: not an immediately available whole-building TA lease. No onward chain is not vacant possession.",
+        "Flat 2 renovation statement conflicts with blanket all-let claim; dated tenancy schedule and works status needed.",
+        "Studios advertised at 269, 291 and 323 sq ft: usable space, suitability, access and applicable standards need checking.",
+        "Advert gross-yield figures conflict: key features 7.1%, narrative 8.1%; no underwriting reliance placed on them.",
+        "Trafford, not Manchester City Council; exact commissioner and address-level LHA geography not verified.",
+        "Screening possibility only: no distress, lawful-use/change-of-use approval, vacant possession, provider acceptance or address-level LHA match is established. Technical, fire, EPC, lease/title and commissioning checks remain necessary."
+      ],
+      "sources": [
+        {
+          "url": "https://www.philipjames.co.uk/property-for-sale/stretford/prime-residential-investment-opportunity/",
+          "title": "PRIME RESIDENTIAL INVESTMENT OPPORTUNITY - Philip James",
+          "observedAt": "2026-11-03T11:52:44.302Z",
+          "facts": [
+            "Primary-agent snapshot: For Sale, £675,000, REF DIS260207, Norwood Road Stretford M32 8PN, Six Contemporary Apartments.",
+            "Agent description identifies two one-bedroom and four studio apartments, all currently let, and Flat 2 currently being renovated. Freehold."
+          ]
+        },
+        {
+          "url": "https://www.rightmove.co.uk/properties/88719105",
+          "title": "6 bedroom house for sale in Norwood Road, Stretford, M32",
+          "observedAt": "2026-11-03T11:52:44.302Z",
+          "facts": [
+            "Snapshot and full description read: £675,000; Reduced on 06/08/2026; 2 x one-bedroom + 4 studios; £55,140 pa / £4,595 pcm; all let; Flat 2 currently being renovated.",
+            "Headline House/6 bedrooms is portal categorisation; detailed description says six apartments. Key features 7.1% gross yield vs body 8.1%.",
+            "Flat schedule: 1 studio 323 sq ft; 1A studio 323; 2 one-bed 388; 2A studio 291; 3 one-bed 344; 3A studio 269."
+          ]
+        },
+        {
+          "url": "https://democratic.trafford.gov.uk/documents/s49625/Trafford%20Local%20Heritage%20List_Stretford%20Candidates_FINAL.pdf",
+          "title": "Local Heritage Listing Project: Stretford Gazetteer - Trafford Council",
+          "observedAt": "2026-11-03T11:52:44.302Z",
+          "facts": [
+            "Official council search excerpt identifies Stretford, Trafford, and Norwood Road in its Stretford gazetteer. Geography evidence only; not evidence that this sale building is listed or subject to any specific planning restriction."
+          ]
+        }
+      ],
+      "sourceDatasetIds": [
+        "blocks_for_sale.json:rm88719105"
+      ],
+      "verificationLevel": "Current primary-agent and portal advert verified; six ordinary apartments demonstrated; unit occupancy conflict and address/title detail unresolved.",
+      "region": "GM",
+      "listingURL": "https://www.philipjames.co.uk/property-for-sale/stretford/prime-residential-investment-opportunity/",
+      "sourceDataset": "blocks_for_sale.json",
+      "profile": {
+        "homes": 6,
+        "ordinaryResidential": true,
+        "unitsVerified": true,
+        "wholeSite": true,
+        "typology": "self_contained_flats",
+        "advertised": "current",
+        "writtenProviderOffer": false,
+        "beds": [
+          0,
+          1
+        ],
+        "occupancy": "unknown"
+      },
+      "bedroomSummary": "2 one-beds + 4 studios",
+      "occupancySummary": "All-let claim conflicts with renovation",
+      "priceLabel": "Asking",
+      "nextCheck": "Reconcile the tenancy schedule and assess studio sizes.",
+      "availabilitySummary": "Advert displayed when checked; unsold status not assured."
+    },
+    {
+      "id": "mack-moorland-didsbury",
+      "address": "41–43 Moorland Road, Didsbury",
+      "city": "Manchester",
+      "council": "Manchester City Council",
+      "postcode": "M20 6BB",
+      "existingHomes": 5,
+      "bedroomMix": "Detailed current schedule: 4 x 2-bedroom flats plus 1 x 1-bedroom flat (9 bedrooms total). Current page headline/key feature says 8 bedrooms. Contradiction retained; mix requires confirmation.",
+      "occupancy": "Current agent states each flat is currently let, £5,760 pcm (£69,120 annualised from monthly stated rent). No vacant-possession offer established.",
+      "priceGBP": 1400000,
+      "priceBasis": "Current primary-agent Offers Over £1,400,000; asking basis, not valuation. Historical source record notes older official PDF at £1.6m, not current page price.",
+      "status": "For Sale on current primary-agent page",
+      "statusAsOf": "2026-11-03T11:52:44.302Z",
+      "siteScope": "Five existing self-contained flats at adjoining 41–43 marketed together; within 5–30-home band. Earlier supplied evidence describes two interlocking semis. Title boundaries not inspected. Unconverted cellars are not additional existing homes.",
+      "possibleUses": [
+        "Possible self-contained family/smaller-household TA or residential headlease screening only, after tenancy/possession, compliance and commissioning review."
+      ],
+      "fitReasons": [
+        "Five existing flats at one adjoining marketed property, not five prospective planning units.",
+        "Detailed schedule supplies individual flat descriptions and areas.",
+        "Primarily two-bedroom mix could be screened for family use, subject to resolving the bedroom discrepancy."
+      ],
+      "blockers": [
+        "All flats advertised let: no immediate whole-site possession demonstrated.",
+        "Detailed bedroom schedule totals 9, contradicting headline 8; verify floorplans and tenancy schedule.",
+        "No onward chain does not mean vacant possession.",
+        "Any cellar conversion is future potential subject to planning, not current TA capacity.",
+        "Current advert does not demonstrate provider acceptance, fire/EPC/accessibility readiness or viable lease rent.",
+        "Screening possibility only: no distress, lawful-use/change-of-use approval, vacant possession, provider acceptance or address-level LHA match is established. Technical, fire, EPC, lease/title and commissioning checks remain necessary."
+      ],
+      "sources": [
+        {
+          "url": "https://www.philipjames.co.uk/property-for-sale/didsbury/an-ideal-investment-opportunity-in-prime-didsbury-village-location/",
+          "title": "An Ideal Investment Opportunity In Prime Didsbury Village Location - Philip James",
+          "observedAt": "2026-11-03T11:52:44.302Z",
+          "facts": [
+            "Current snapshot: For Sale, Offers Over £1,400,000, REF DIS260247, Five Self-Contained Apartments, headline 8 Bedrooms.",
+            "Full description: Flat 1,41 two-bed 883 sq ft; Flat 2,41 two-bed duplex 1,109 sq ft; Flat 1,43 one-bed 495 sq ft; Flat 2,43 two-bed 797 sq ft; Flat 3,43 two-bed duplex 829 sq ft.",
+            "Each flat currently let, total £5,760 pcm; freehold; rear gardens and unconverted cellars with further development subject to planning."
+          ]
+        },
+        {
+          "url": "https://www.manchester.gov.uk/online-directories/the-council-and-democracy-directories/ward-boundaries/didsbury-east",
+          "title": "Didsbury East - Manchester City Council",
+          "observedAt": "2026-11-03T11:52:44.302Z",
+          "facts": [
+            "Official council ward-directory result establishes Didsbury East within Manchester City Council; locality geography only."
+          ]
+        },
+        {
+          "url": "https://crystalroof.co.uk/report/postcode/M206BB/overview",
+          "title": "Area Insights for Moorland Road, Manchester, M20 6BB",
+          "observedAt": "2026-11-03T11:52:44.302Z",
+          "facts": [
+            "Secondary address-level search result identifies Moorland Road M20 6BB in Manchester local authority district, Didsbury East ward. Not an LHA address match."
+          ]
+        },
+        {
+          "url": "https://www.philipjames.co.uk/property-for-sale/didsbury/an-ideal-investment-opportunity-in-prime-didsbury-village-location/",
+          "title": "Earlier official-agent observations retained in property_status.json",
+          "observedAt": "2026-10-20T08:36:03.626Z",
+          "facts": [
+            "Historical record 20 October 2026: five flats at two interlocking semis; current page then £1.4m offers over; older official PDF quoted £1.6m. Older PDF not independently reopened in this pass."
+          ]
+        }
+      ],
+      "sourceDatasetIds": [
+        "blocks_for_sale.json:rm88866648",
+        "property_status.json:philip-james:41–43 Moorland Road"
+      ],
+      "verificationLevel": "Current primary-agent advert verified; five flats demonstrated; bedroom conflict retained; tenants in situ; title/possession unverified.",
+      "region": "GM",
+      "listingURL": "https://www.philipjames.co.uk/property-for-sale/didsbury/an-ideal-investment-opportunity-in-prime-didsbury-village-location/",
+      "sourceDataset": "blocks_for_sale.json",
+      "profile": {
+        "homes": 5,
+        "ordinaryResidential": true,
+        "unitsVerified": true,
+        "wholeSite": true,
+        "typology": "self_contained_flats",
+        "advertised": "current",
+        "writtenProviderOffer": false,
+        "beds": [
+          1,
+          2
+        ],
+        "occupancy": "tenanted",
+        "bedroomConflict": true
+      },
+      "bedroomSummary": "4 two-beds + 1 one-bed; headline conflict",
+      "occupancySummary": "All flats let; no vacant possession",
+      "priceLabel": "Offers over",
+      "nextCheck": "Existing tenants: establish lawful handover and confirm mix.",
+      "availabilitySummary": "Advert displayed when checked; unsold status not assured."
+    },
+    {
+      "id": "rm93741468",
+      "address": "53 London Road, Cheltenham",
+      "city": "Cheltenham",
+      "council": "Cheltenham Borough Council",
+      "postcode": "GL52 6HF",
+      "existingHomes": 5,
+      "bedroomMix": "3 x 2-bedroom and 2 x 1-bedroom self-contained flats. Flat 1: 2 bedrooms; Flat 2: 1; Flat 3: 2; Flat 4: 2; Flat 5: 1. Headline 8 bedrooms describes total bedrooms, not homes.",
+      "occupancy": "Advertised as currently producing seller-advised £5,470 pcm / £65,640 pa. Per-flat rents: Flat 1 £975 pcm; Flat 2 £995; Flat 3 £1,200; Flat 4 £1,500; Flat 5 £800. Tenancy terms, expiry dates and vacant possession not disclosed. Income claim is not an inspected rent roll.",
+      "priceGBP": 850000,
+      "priceBasis": "Guide price for marketed freehold building, not agreed purchase price. Rightmove added date 30 September 2026.",
+      "status": "Advertised for sale on Rightmove; direct Jackson-Stops availability flag not verified because security check blocked access. No sold or under-offer marker observed on portal.",
+      "statusAsOf": "2026-11-03T11:52:24.107Z",
+      "siteScope": "Whole marketed Grade II-listed end-of-terrace building: three flats, one on each floor of main house, plus two in rear section. Garden space and two rear parking spaces advertised. Not selected flats within a separately marketed larger block; legal boundary remains unverified.",
+      "possibleUses": [
+        "Existing ordinary residential letting of five self-contained flats as advertised. Any Mack Living lease or alternative use is untested and subject to possession, suitability, title and regulatory checks."
+      ],
+      "fitReasons": [
+        "Five existing self-contained homes at one marketed site, within 5–30-home scope.",
+        "Exact flat-level bedroom mix and seller-reported rents published.",
+        "Ordinary apartment investment, not described as serviced or luxury short-stay accommodation."
+      ],
+      "blockers": [
+        "Existing rent-producing occupation means immediate vacant possession or a new whole-building lease cannot be assumed.",
+        "Grade II listing; seller states planning/listed-building consents were obtained for works but these were not checked.",
+        "Direct agent page security blocked; portal advertising is not confirmation that seller still accepts offers.",
+        "No planning or listed-building register, lawful residential use, legal title boundaries or conversion consents independently verified.",
+        "No distress, provider acceptance, institutional rent offer or address-specific LHA established."
+      ],
+      "sources": [
+        {
+          "url": "https://www.rightmove.co.uk/properties/93741468",
+          "title": "8 bedroom end of terrace house for sale in London Road, Cheltenham, Gloucestershire, GL52",
+          "observedAt": "2026-11-03T11:52:24.107Z",
+          "facts": [
+            "Guide price £850,000; freehold; added 30/09/2026; marketed by Jackson Stops, Cheltenham; reference CHL260066.",
+            "Description identifies 53 London Road, five apartments and precise 3 x 2-bedroom plus 2 x 1-bedroom mix.",
+            "Seller-advised current rents total £5,470 pcm / £65,640 pa, with five per-flat amounts published.",
+            "Local Authority and Council Tax Band: Cheltenham Borough Council; all apartments Band A.",
+            "Main house has three flats, one per floor, with two further flats in rear section. Grade II listed."
+          ]
+        },
+        {
+          "url": "https://www.jackson-stops.co.uk/properties/22151803/sales/cheltenham",
+          "title": "Jackson-Stops official listing: security verification page",
+          "observedAt": "2026-11-03T11:52:24.107Z",
+          "facts": [
+            "Browser snapshot showed Performing security verification; current direct-agent availability flag not accessible."
+          ]
+        },
+        {
+          "url": "https://pgrahamlc.github.io/ecosystem-deals/blocks_for_sale.json#rm93741468",
+          "title": "Supplied block dataset, last checked 22 October 2026",
+          "observedAt": "2026-10-22",
+          "facts": [
+            "Five homes, whole building, £850,000, postcode GL52 6HF recorded. This is historical supporting context, not live availability."
+          ]
+        },
+        {
+          "url": "https://pgrahamlc.github.io/ecosystem-deals/property_status.json#jackson_stops",
+          "title": "Supplied status dataset, 20 October 2026",
+          "observedAt": "2026-10-20T22:27:38.408Z",
+          "facts": [
+            "Earlier direct agent availability was unverified due to security blocking. Ordinary five-flat configuration and postcode recorded. This historical limitation is retained; a functioning current portal advert was inspected on 3 November."
+          ]
+        }
+      ],
+      "sourceDatasetIds": [
+        "blocks_for_sale:rm93741468",
+        "property_status:jackson_stops"
+      ],
+      "verificationLevel": "Current agent-supplied portal advert inspected; exact homes/mix/rent claims evidenced, legal and tenancy due diligence outstanding.",
+      "region": "GLOS",
+      "listingURL": "https://www.rightmove.co.uk/properties/93741468",
+      "sourceDataset": "blocks_for_sale.json",
+      "profile": {
+        "homes": 5,
+        "ordinaryResidential": true,
+        "unitsVerified": true,
+        "wholeSite": true,
+        "typology": "self_contained_flats",
+        "advertised": "current",
+        "writtenProviderOffer": false,
+        "beds": [
+          1,
+          2
+        ],
+        "occupancy": "tenanted"
+      },
+      "bedroomSummary": "3 two-beds + 2 one-beds",
+      "occupancySummary": "Rent-producing; tenancy terms unverified",
+      "priceLabel": "Guide",
+      "nextCheck": "Existing occupation and listed-building / lease checks.",
+      "availabilitySummary": "Advert displayed when checked; unsold status not assured."
+    },
+    {
+      "id": "rm173813585",
+      "address": "47 Clarence Square, Cheltenham",
+      "city": "Cheltenham",
+      "council": "Cheltenham Borough Council",
+      "postcode": "GL50 4JR",
+      "existingHomes": 5,
+      "bedroomMix": "CONFLICT: Rightmove title/headline and HMT summary show 6 bedrooms; detailed Rightmove flat schedule gives Flat 1 two double bedrooms, Flat 2 one, Flat 3 two double bedrooms, Flat 4 one double, Flat 5 one double, implying 2 x 2-bed + 3 x 1-bed (7 bedrooms total). Five homes is consistent; bedroom mix requires agent confirmation, not silently resolved.",
+      "occupancy": "Unknown. Neither inspected HMT details nor expanded Rightmove description establishes current tenancy, passing rent or vacant possession. Flat 2 described as requiring modernisation; Flat 5 recently refurbished.",
+      "priceGBP": 1250000,
+      "priceBasis": "Advertised £1,250,000 for freehold block/building. Rightmove says reduced 26 May 2026. Not an agreed sale price.",
+      "status": "Advertised for sale on official HMT sales page and Rightmove; no sold or under-offer marker observed.",
+      "statusAsOf": "2026-11-03T11:52:24.107Z",
+      "siteScope": "Whole marketed Regency building currently configured as five self-contained apartments (Flats 1–5), rather than a selected-flat package. Rightmove floorplan labels identify 47 Clarence Square. Legal title/boundaries unverified.",
+      "possibleUses": [
+        "Existing five-apartment residential investment as advertised.",
+        "Agent also markets restoration to a single residence; this is agent positioning only, not verified consent and not a counted additional-home opportunity."
+      ],
+      "fitReasons": [
+        "Five existing self-contained ordinary apartments in one marketed building.",
+        "Official agent page and portal agree on five-home configuration and £1.25m price.",
+        "No serviced/short-stay operation described in inspected listing."
+      ],
+      "blockers": [
+        "Bedroom count/mix conflicts across headline and detailed flat descriptions; confirm before underwriting.",
+        "Tenancy status and vacant possession unknown.",
+        "Modernisation specifically required for Flat 2; extent and cost unverified.",
+        "Portal displays council tax Band G but individual flat banding not independently checked; do not apply it to all five flats.",
+        "No planning or listed-building register, lawful residential use, legal title boundaries or conversion consents independently verified.",
+        "No distress, provider acceptance, institutional rent offer or address-specific LHA established."
+      ],
+      "sources": [
+        {
+          "url": "https://hmt.co.uk/properties/sale/uncategorized/cheltenham/clarence-square-cheltenham-2/",
+          "title": "Clarence Square, Cheltenham | HMT",
+          "observedAt": "2026-11-03T11:52:24.107Z",
+          "facts": [
+            "Official sales page advertises £1,250,000.",
+            "Currently configured as five self-contained apartments; marketed for multiple rental units or restoration to a single residence.",
+            "Summary numeric icons show 6, 5, 5; no detailed bedroom mix or tenancy disclosure in HMT Details panel."
+          ]
+        },
+        {
+          "url": "https://www.rightmove.co.uk/properties/173813585",
+          "title": "6 bedroom block of apartments for sale in Clarence Square, Cheltenham, GL50",
+          "observedAt": "2026-11-03T11:52:24.107Z",
+          "facts": [
+            "£1,250,000; reduced 26/05/2026; freehold; 3,133 sq ft; HMT agent reference 34565059.",
+            "Five self-contained apartments explicitly stated. Floorplan labels include 47 Clarence Square.",
+            "Flat 1: two double bedrooms; Flat 2: one bedroom, modernisation required; Flat 3: two double bedrooms over three floors; Flat 4: one double bedroom; Flat 5: one double bedroom, recently refurbished.",
+            "Detailed flat schedule implies seven bedrooms, conflicting with six-bedroom headline.",
+            "No explicit tenancy/vacant-possession or passing-rent evidence in expanded description."
+          ]
+        },
+        {
+          "url": "https://crystalroof.co.uk/report/postcode/GL504JR/overview",
+          "title": "Area Insights for Clarence Square, Cheltenham, GL50 4JR - Crystal Roof",
+          "observedAt": "2026-11-03T11:52:24.107Z",
+          "facts": [
+            "Postcode GL50 4JR is in Cheltenham local authority district, Pittville ward, Gloucestershire."
+          ]
+        },
+        {
+          "url": "http://gov.uk/find-local-council/cheltenham",
+          "title": "Find your local council: search result - GOV.UK",
+          "observedAt": "2026-11-03T11:52:24.107Z",
+          "facts": [
+            "Cheltenham Borough Council handles district services including housing and council tax; Gloucestershire County Council handles county services."
+          ]
+        },
+        {
+          "url": "https://pgrahamlc.github.io/ecosystem-deals/property_status.json#hmt",
+          "title": "Supplied status dataset, 20 October 2026",
+          "observedAt": "2026-10-20T22:27:38.408Z",
+          "facts": [
+            "Five homes and whole marketed building recorded; bedroom headline/flat-description conflict already noted. Postcode GL50 4JR recorded."
+          ]
+        }
+      ],
+      "sourceDatasetIds": [
+        "blocks_for_sale:rm173813585",
+        "property_status:hmt"
+      ],
+      "verificationLevel": "Current official agent and portal adverts inspected; five homes and price confirmed as advertised, mix conflict and occupancy unresolved.",
+      "region": "GLOS",
+      "listingURL": "https://hmt.co.uk/properties/sale/uncategorized/cheltenham/clarence-square-cheltenham-2/",
+      "sourceDataset": "blocks_for_sale.json",
+      "profile": {
+        "homes": 5,
+        "ordinaryResidential": true,
+        "unitsVerified": true,
+        "wholeSite": true,
+        "typology": "self_contained_flats",
+        "advertised": "current",
+        "writtenProviderOffer": false,
+        "beds": [
+          1,
+          2
+        ],
+        "occupancy": "unknown",
+        "bedroomConflict": true
+      },
+      "bedroomSummary": "5 flats; bedroom-count conflict",
+      "occupancySummary": "Possession unknown; some works required",
+      "priceLabel": "Asking",
+      "nextCheck": "Resolve the bedroom schedule, works and possession.",
+      "availabilitySummary": "Advert displayed when checked; unsold status not assured."
+    },
+    {
+      "id": "rm88106670",
+      "address": "Arkle House, Moorend Park Road, Cheltenham",
+      "city": "Cheltenham",
+      "council": "Cheltenham Borough Council",
+      "postcode": "GL53 0GB",
+      "existingHomes": 11,
+      "bedroomMix": "11 x 1-bedroom self-contained flats, each advertised with its own kitchen, bathroom and living space. Eleven bedrooms is not being used as a proxy for eleven homes: the expanded description explicitly states eleven flats.",
+      "occupancy": "Agent advert says fully let and professionally managed, with 11 separate tenancies producing £142,500 pa. Tenancy schedule, expiry dates and rent roll not inspected; investment pack offered. No vacant possession evidenced.",
+      "priceGBP": 2250000,
+      "priceBasis": "Revised guide price £2,250,000 for multi-unit freehold / entire block. Portal reduced 30 October 2026. Supplied 22 October dataset recorded £2,350,000; retain as earlier price, not current asking price.",
+      "status": "Advertised for sale on Rightmove; price reduction dated 30 October 2026. No sold or under-offer marker observed.",
+      "statusAsOf": "2026-11-03T11:52:24.107Z",
+      "siteScope": "Entire detached Regency villa / multi-unit freehold containing 11 apartments at one site. Agent says conversion in 2008/09, two private apartment entrances and remaining flats through common entrance; allocated parking per flat, guest parking and communal garden. Legal title and conversion lawfulness unverified.",
+      "possibleUses": [
+        "Existing residential investment with eleven ordinary tenanted one-bedroom apartments as advertised. Any future operator lease depends on existing tenancy rights and possession arrangements."
+      ],
+      "fitReasons": [
+        "Eleven expressly self-contained existing homes, within 5–30-home scope.",
+        "One whole marketed freehold building, not selected units or hotel rooms.",
+        "Agent explicitly describes separate tenancies, gas/electricity meters, boilers and council-tax bandings, consistent with ordinary flats rather than a serviced accommodation lead."
+      ],
+      "blockers": [
+        "Fully let to 11 tenancies per agent, so immediate vacant possession/new whole-building lease cannot be assumed.",
+        "Investment pack, tenancy schedule, EPCs, rent roll and operating costs not inspected.",
+        "Agent advert makes tax and individual-flat resale claims; neither legal implementation nor tax treatment assessed here.",
+        "No planning or listed-building register, lawful residential use, legal title boundaries or conversion consents independently verified.",
+        "No distress, provider acceptance, institutional rent offer or address-specific LHA established."
+      ],
+      "sources": [
+        {
+          "url": "https://www.rightmove.co.uk/properties/88106670",
+          "title": "11 bedroom detached house for sale in Moorend Park Road, Cheltenham, GL53 0GB, GL53",
+          "observedAt": "2026-11-03T11:52:24.107Z",
+          "facts": [
+            "Guide £2,250,000; reduced 30/10/2026; freehold; 5,285 sq ft; Elliot Oliver Sales, Cheltenham reference S1712186.",
+            "Description names Arkle House and explicitly says 11 self-contained one-bedroom flats, converted in 2008/09.",
+            "Fully let and professionally managed, with 11 separate tenancies, agent-claimed £142,500 annual rent.",
+            "Every flat described as having own kitchen/bathroom/living space, gas/electricity supply and meters, boiler and council-tax banding.",
+            "Whole-block acquisition advertised; investment pack offered, including tenancy schedule, occupancy, rent roll and EPCs."
+          ]
+        },
+        {
+          "url": "https://crystalroof.co.uk/report/postcode/GL530GB/overview",
+          "title": "Area Insights for Moorend Park Road, Cheltenham, GL53 0GB - Crystal Roof",
+          "observedAt": "2026-11-03T11:52:24.107Z",
+          "facts": [
+            "GL53 0GB is in Cheltenham local authority district, Park ward, Gloucestershire."
+          ]
+        },
+        {
+          "url": "http://gov.uk/find-local-council/cheltenham",
+          "title": "Find your local council: search result - GOV.UK",
+          "observedAt": "2026-11-03T11:52:24.107Z",
+          "facts": [
+            "Cheltenham Borough Council provides district services including housing and council tax; county services are Gloucestershire County Council."
+          ]
+        },
+        {
+          "url": "https://pgrahamlc.github.io/ecosystem-deals/blocks_for_sale.json#rm88106670",
+          "title": "Supplied block dataset, last checked 22 October 2026",
+          "observedAt": "2026-10-22",
+          "facts": [
+            "Historic advertised price £2,350,000, 11 homes, whole building and £142,500 pa. Current portal now expressly shows revised guide £2,250,000."
+          ]
+        }
+      ],
+      "sourceDatasetIds": [
+        "blocks_for_sale:rm88106670"
+      ],
+      "verificationLevel": "Current agent-supplied portal advert inspected; eleven ordinary homes, mix, whole-block scope and revised guide evidenced; rent/tenancy claims not independently audited.",
+      "region": "GLOS",
+      "listingURL": "https://www.rightmove.co.uk/properties/88106670",
+      "sourceDataset": "blocks_for_sale.json",
+      "profile": {
+        "homes": 11,
+        "ordinaryResidential": true,
+        "unitsVerified": true,
+        "wholeSite": true,
+        "typology": "self_contained_flats",
+        "advertised": "current",
+        "writtenProviderOffer": false,
+        "beds": [
+          1
+        ],
+        "occupancy": "tenanted"
+      },
+      "bedroomSummary": "11 one-bed flats",
+      "occupancySummary": "Fully let to 11 tenancies",
+      "priceLabel": "Revised guide",
+      "nextCheck": "Existing tenancies: no immediate provider handover shown.",
+      "availabilitySummary": "Advert displayed when checked; unsold status not assured."
+    },
+    {
+      "id": "rm92224713",
+      "address": "Estcourt Gardens, Stapleton, Bristol BS16 1EF",
+      "city": "Bristol",
+      "council": "Bristol City Council",
+      "postcode": "BS16 1EF",
+      "existingHomes": 6,
+      "bedroomMix": "6 x two-bedroom single-storey self-contained homes (12 bedrooms in total, not 12 homes or HMO rooms). Agent describes each with entrance hall, lounge/diner, kitchen, bathroom and two double bedrooms; three also have an en-suite.",
+      "occupancy": "Agent states all six currently let, sold with tenants in situ and without chain. No vacant possession offered or independently verified. Narrative rent £112,000 pa; feature text instead says £111,000+++ pa, so income requires reconciliation.",
+      "priceGBP": 1950000,
+      "priceBasis": "Advertised asking price £1,950,000 for the entire freehold complex as one job lot; not per home. No guide/offers qualifier displayed.",
+      "status": "Currently advertised on Rightmove at observation; page shows Added on 20/08/2026. No sold/STC marker observed. Listing visibility is not confirmation of availability.",
+      "statusAsOf": "2026-11-03T11:51:46.138Z",
+      "siteScope": "Whole residential site: six existing single-storey homes with private gardens/studios, balconies, communal gardens and parking. Agent says separate utilities and council-tax accounts; separate titles are an agent understanding only and not title-verified. No commercial accommodation identified in the listing.",
+      "possibleUses": [
+        "Interpretation only, not council/provider acceptance: potential Bristol temporary-accommodation family-home stock through institutional leasing, subject to lawful possession, suitability and procurement checks.",
+        "Interpretation only, not acceptance: a clustered provider-lease proposal using six existing two-bedroom homes; no operator commitment or lease terms verified."
+      ],
+      "fitReasons": [
+        "Agent-described self-contained two-bedroom homes could suit family accommodation better than a room-based HMO product.",
+        "Six homes on one site meets the 5–30-home search scale and could simplify clustered operations.",
+        "Agent explicitly names Bristol City Council for each council-tax account; this is Bristol authority rather than an assumption from the BS16 postal district."
+      ],
+      "blockers": [
+        "TENANCY HOLD: all homes advertised with tenants in situ. No assumption of ability to displace tenants, recover possession or deliver immediate provider handover.",
+        "Home count is verified as an agent advertisement claim, not independently checked against title, measured survey, building-control or lawful-use records.",
+        "Provider/council demand, acceptance, nomination or lease obligation is not verified; no LHA address/rate match has been performed.",
+        "EPCs are stated by agent to range C–D; current certificates, condition, access, fire safety and provider specifications require due diligence.",
+        "Income descriptions conflict (£112,000 narrative versus £111,000+++ feature text); require tenancy schedule.",
+        "No distress inference: agent says retirement sale. Historic photographs are expressly disclosed; present condition is unverified."
+      ],
+      "sources": [
+        {
+          "url": "https://www.rightmove.co.uk/properties/92224713",
+          "title": "12 bedroom semi-detached house for sale in Six Unique Homes in Stapleton, Bristol, BS16",
+          "observedAt": "2026-11-03T11:51:46.138Z",
+          "facts": [
+            "UI snapshot and complete visible-description text inspected. £1,950,000; Added on 20/08/2026; freehold; six single-storey two-bedroom homes offered as one job lot.",
+            "Description identifies Estcourt Gardens, kitchen/bathroom accommodation in every home, separate utilities/council tax and Bristol City Council band D.",
+            "All currently let; sold without chain with tenants in situ; £112,000 pa narrative income versus £111,000+++ pa feature text.",
+            "Agent says EPC range C–D; photographs historic; retirement is stated sale reason, not evidence of distress."
+          ]
+        }
+      ],
+      "sourceDatasetIds": [
+        "blocks_for_sale.json:rm92224713"
+      ],
+      "verificationLevel": "Live Rightmove UI snapshot plus full agent-supplied description inspected 2026-11-03. Six self-contained homes and tenure/occupancy are agent-stated, not legal or physical verification. property_status.json inspected: no matching record.",
+      "region": "BRS",
+      "listingURL": "https://www.rightmove.co.uk/properties/92224713",
+      "sourceDataset": "blocks_for_sale.json",
+      "profile": {
+        "homes": 6,
+        "ordinaryResidential": true,
+        "unitsVerified": true,
+        "wholeSite": true,
+        "typology": "self_contained_homes",
+        "advertised": "current",
+        "writtenProviderOffer": false,
+        "beds": [
+          2
+        ],
+        "occupancy": "tenanted"
+      },
+      "bedroomSummary": "6 two-bed self-contained homes",
+      "occupancySummary": "All let; tenants in situ",
+      "priceLabel": "Asking",
+      "nextCheck": "Existing tenants: no immediate provider handover shown.",
+      "availabilitySummary": "Advert displayed when checked; unsold status not assured."
+    },
+    {
+      "id": "rm94621944",
+      "address": "211–213 North Street, Southville, Bristol BS3 1JH",
+      "city": "Bristol",
+      "council": "Bristol City Council",
+      "postcode": "BS3 1JH",
+      "existingHomes": 5,
+      "bedroomMix": "Agent headline, features and itemised rent schedule support 3 x one-bedroom flats, 1 x studio and 1 x two-bedroom flat: five existing self-contained homes, not six homes or HMO rooms. One prose sentence inconsistently says six units plus a commercial unit; count needs pack reconciliation.",
+      "occupancy": "Sold subject to existing tenancies according to agent. Itemised schedule lists five residential rents and a retail rent, total £8,215 pcm / £98,580 pa. No vacant-possession offer or independently verified possession timetable.",
+      "priceGBP": 1400000,
+      "priceBasis": "Guide Price £1,400,000 for whole freehold mixed-use investment: five flats plus a large double-fronted ground-floor retail unit and rear courtyard. Not a residential-only price; no apportionment provided.",
+      "status": "Currently advertised on Rightmove at observation; no sold/STC marker observed. Primary page shows no listing-added date. Original dataset check 2026-10-22. Listing visibility is not confirmation of availability.",
+      "statusAsOf": "2026-11-03T11:51:46.138Z",
+      "siteScope": "MIXED-USE HOLD: whole freehold 211–213 North Street, comprising five residential flats plus one large ground-floor retail unit and rear courtyard/access. Residential-only acquisition or carve-out is not offered or verified. Do not count the shop as a home or add any proposed extension as an existing home.",
+      "possibleUses": [
+        "Interpretation only, not council/provider acceptance: residential component might be considered for Bristol institutional/provider leasing after lawful possession and suitability checks, but is not a clean whole-site residential product.",
+        "Interpretation only, not acceptance: only one advertised two-bedroom flat offers a direct family-sized unit; three one-bedroom flats and a studio create mainly smaller-household accommodation."
+      ],
+      "fitReasons": [
+        "Five self-contained flats are explicitly listed, with an address-by-floor bedroom and rent schedule rather than HMO room counts.",
+        "Within Bristol City Council; BS3 1JH postcode directory search evidence names Bristol City Council and Southville ward. Official GOV.UK Bristol result independently names the authority, but is not an individual-address validation.",
+        "Existing two-bedroom flat provides some potential family-home exposure, but only one of five advertised homes."
+      ],
+      "blockers": [
+        "MIXED-USE HOLD: price and advertised income include a commercial shop; no residential-only lot, title carve-out or price allocation is verified.",
+        "TENANCY HOLD: advertised subject to existing tenancies; no immediate vacancy, legal possession or provider handover inferred.",
+        "COUNT RECONCILIATION: headline/features and five residential schedule entries support five homes, but prose says six units plus commercial. Five is agent-stated and not independently title/physical-verified; do not promote to six.",
+        "Only one two-bedroom home; remaining stock comprises three one-bedroom flats and one studio, limiting direct family-home alignment.",
+        "Provider/council acceptance, lease obligation, procurement route and LHA address/rate match are unverified.",
+        "Agent EPC schedule includes an E-rated ground-floor studio, D-rated first-floor flats and C-rated second-floor flats; certificates, suitability, building safety and potential capex require review.",
+        "No planning or redevelopment reliance: agent mentions a studio extension, but consent/status has not been independently checked and it creates no extra existing home in this assessment.",
+        "Agent description gives a tenancy-law conversion assertion; this is not independently legally verified or adopted as a possession conclusion."
+      ],
+      "sources": [
+        {
+          "url": "https://www.rightmove.co.uk/properties/94621944",
+          "title": "Commercial property for sale in Freehold Mixed Use | North Street BS3",
+          "observedAt": "2026-11-03T11:51:46.138Z",
+          "facts": [
+            "UI snapshot and complete visible-description text inspected. Guide Price £1,400,000; freehold mixed-use investment.",
+            "Headline/features explicitly five self-contained flats: 3 x one-bedroom, 1 studio, 1 x two-bedroom, plus large ground-floor retail unit.",
+            "Itemised schedule: 211 first floor one-bed £1,200 pcm; 211 second floor one-bed £1,250; 213 ground-floor studio £865; 213 first-floor two-bed £1,350; 213 second-floor one-bed £1,050; retail £2,500; total £8,215 pcm / £98,580 pa.",
+            "Sold subject to existing tenancies; no vacant possession offered. Prose wording six units across three floors plus a large commercial unit conflicts with explicit five-flat schedule.",
+            "EPC schedule: 213 ground floor E; 213 first floor D; 213 second floor C; 211 first floor D; 211 second floor C."
+          ]
+        },
+        {
+          "url": "https://checkmypostcode.uk/bs31jh",
+          "title": "BS3 1JH - Check My Postcode",
+          "observedAt": "2026-11-03T11:51:46.138Z",
+          "facts": [
+            "Websearch returned postcode-specific directory evidence: BS3 1JH, North Street, Bedminster, Bristol; Bristol City Council; Southville ward. Browser opening returned blank, so this supporting council classification is search evidence only."
+          ]
+        },
+        {
+          "url": "https://www.gov.uk/find-local-council/bristol",
+          "title": "Find your local council: search result - GOV.UK",
+          "observedAt": "2026-11-03T11:51:46.138Z",
+          "facts": [
+            "Official GOV.UK UI snapshot names Bristol City Council as local authority. This result is Bristol-wide, not an individual-property, LHA or title validation."
+          ]
+        }
+      ],
+      "sourceDatasetIds": [
+        "blocks_for_sale.json:rm94621944"
+      ],
+      "verificationLevel": "Live Rightmove UI snapshot plus full agent-supplied description inspected 2026-11-03. Five-home count is agent-stated with an internal prose inconsistency, not independently legally verified. Mixed-use and tenancy holds. Council supported by postcode-specific search evidence and official Bristol result. property_status.json inspected: no matching record.",
+      "region": "BRS",
+      "listingURL": "https://www.rightmove.co.uk/properties/94621944",
+      "sourceDataset": "blocks_for_sale.json",
+      "profile": {
+        "homes": 5,
+        "ordinaryResidential": true,
+        "unitsVerified": false,
+        "wholeSite": true,
+        "typology": "self_contained_flats",
+        "advertised": "current",
+        "writtenProviderOffer": false,
+        "beds": [
+          0,
+          1,
+          2
+        ],
+        "occupancy": "tenanted",
+        "mixedCommercial": true,
+        "bedroomConflict": true
+      },
+      "bedroomSummary": "5 flats + retail; home-count conflict",
+      "occupancySummary": "Residential and retail tenancies in place",
+      "priceLabel": "Mixed-use guide",
+      "nextCheck": "Commercial price/income and tenancy/count holds.",
+      "availabilitySummary": "Advert displayed when checked; unsold status not assured."
+    }
+  ],
+  "watchlist": [
+    {
+      "id": "mack-ladybarn-package-watch",
+      "address": "81 Mauldeth Road / 115 Egerton Road, Ladybarn",
+      "city": "Manchester",
+      "council": "Manchester City Council",
+      "postcode": "M14 6SP",
+      "existingHomes": 6,
+      "bedroomMix": "Unresolved historical contradiction: detailed schedule 3 x 2-bed +3 x 1-bed flats; later summary six 1-bed flats. Additional separate seven-bedroom HMO excluded from ordinary self-contained home count.",
+      "occupancy": "Historical 20 October record states income-producing package £104,820 pa; current unit occupancy and possession not reverified.",
+      "priceGBP": 1650000,
+      "priceBasis": "Historical primary-agent Guide Price £1,650,000, observed 20 October 2026; not refreshed and not a current valuation.",
+      "status": "Watchlist: last reported advertised for sale 20 October 2026; current availability unresolved, not checked in bounded top-three verification",
+      "statusAsOf": "2026-10-20T08:36:03.626Z",
+      "siteScope": "Unverified multiple-address package: six flats at 81 Mauldeth Road plus separate seven-bedroom HMO at 115 Egerton Road. Package contains seven properties under broad dataset convention, not seven ordinary self-contained flats. Single contiguous site not established.",
+      "possibleUses": [
+        "No whole-package TA/headlease fit established; six-flat component could only be screened after configuration, ownership, possession and current availability are verified."
+      ],
+      "fitReasons": [
+        "Historical evidence identifies six existing flats, numerically in 5–30 band if verified as a single deliverable site."
+      ],
+      "blockers": [
+        "Not currently refreshed.",
+        "Single-site scope unresolved; do not display as seven ordinary homes at one verified site.",
+        "Flat-bedroom mix conflicts within historical official-agent description.",
+        "HMO rooms are not self-contained homes; no assumption made about lawful change of use or conversion.",
+        "Combined guide price covers flats plus HMO; do not divide it by six and label an ordinary-flat acquisition metric.",
+        "Screening possibility only: no distress, lawful-use/change-of-use approval, vacant possession, provider acceptance or address-level LHA match is established. Technical, fire, EPC, lease/title and commissioning checks remain necessary."
+      ],
+      "sources": [
+        {
+          "url": "https://www.philipjames.co.uk/property-for-sale/ladybarn/an-excellent-opportunity-to-acquire-a-residential-investment-in-fallowfield/",
+          "title": "An Excellent Opportunity To Acquire A Residential Investment In Fallowfield - Philip James (historical supplied observation)",
+          "observedAt": "2026-10-20T08:36:03.626Z",
+          "facts": [
+            "Source not revisited in this bounded pass. Supplied 20 October observation: For Sale, Guide Price £1,650,000, REF DIS260487; six flats plus seven-bedroom HMO; £104,820 pa.",
+            "Source description flat mix conflicted: detailed 3x2-bed +3x1-bed vs six 1-bed summary."
+          ]
+        },
+        {
+          "url": "https://www.rightmove.co.uk/properties/94130061",
+          "title": "Ladybarn listing referenced by supplied blocks_for_sale.json (not revisited)",
+          "observedAt": "2026-10-22",
+          "facts": [
+            "Dataset recorded six self-contained one-bed apartments plus seven-bed HMO; homes=6.",
+            "property_status.json instead had existing_units=7/units_n=7 counting HMO as one package property, while its narrative explicitly states only six self-contained flats. This is a definitional count conflict, not evidence of seven flats."
+          ]
+        }
+      ],
+      "sourceDatasetIds": [
+        "blocks_for_sale.json:rm94130061",
+        "property_status.json:philip-james:81 Mauldeth Road and 115 Egerton Road"
+      ],
+      "verificationLevel": "Historical dataset-backed watchlist only; not current-verified; excluded from three refreshed schemes."
+    }
+  ],
+  "assumptions": [
+    "All scores are prioritisation judgements, not probability, valuation or lease approval.",
+    "All sites require legal/title, use, licensing, building safety, tenancy and possession due diligence.",
+    "Current advert means displayed when checked; unsold status and permission to hand over are not assured.",
+    "No provider accepts any listed site on this evidence.",
+    "Current financial snapshot and observed supplier-register names are not proof of Mack Living eligibility."
+  ],
+  "identityNote": "Supplier-register number 5543323 must not be silently identified with the financial-screen number 05543523 or with Mack Living. Check the original register and Companies House before using supplier rights."
+}
