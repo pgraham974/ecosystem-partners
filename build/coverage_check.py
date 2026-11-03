@@ -9,6 +9,7 @@ import v4_records as VR
 HERE=os.path.dirname(os.path.abspath(__file__));ROOT=os.path.dirname(HERE)
 SITE=os.path.join(ROOT,'site') if os.path.isdir(os.path.join(ROOT,'site')) else ROOT
 TABS=['frameworks','mack','rp','pscreen','operators']
+PTABS={'pipeline':'PIPE','buyers':'BUYER','competitors':'COMP'}
 def main():
     R=VR.load();fail=[]
     for s in R['sheets']:
@@ -20,13 +21,24 @@ def main():
     fail+=['record has no tab: '+k for k in miss]+['record missing expected tab %s: %s'%(sorted(K[k]-P[k]),k) for k in short]
     by={}
     for k in K:by.setdefault(k.split(':')[0],0);by[k.split(':')[0]]+=1
+    MP=json.load(open(os.path.join(SITE,'mack-pipeline.json')));PK={'PIPE':[i['id'] for i in MP['items']],'BUYER':[b['name'] for b in MP['buyers']],'COMP':[c['id'] for c in MP['competitors']]}
+    for i in MP['items']:
+        for b in i['bip']:
+            if b not in J['bip']:fail.append('pipeline %s cites missing BiP %s'%(i['id'],b))
+        for f in i['facts']:
+            if f not in J['facts']:fail.append('pipeline %s cites missing fact %s'%(i['id'],f))
+        for o in i['opps']:
+            if o not in {x['id'] for x in J['opps']}:fail.append('pipeline %s cites missing record %s'%(i['id'],o))
+    print('mack pipeline: items %d buyers %d competitors %d'%tuple(len(PK[k]) for k in ('PIPE','BUYER','COMP')))
     print('workbook',os.path.basename(R['path']),'records',len(K),by)
     print('data mode: mapped %d/%d'%(len(K)-len(miss),len(K)))
     rep={'records':len(K),'byType':by,'dataUnmapped':miss}
     if '--dom' in sys.argv:
-        url=sys.argv[sys.argv.index('--dom')+1];dom=dom_scan(url,K,R);rep['dom']=dom
+        url=sys.argv[sys.argv.index('--dom')+1];dom=dom_scan(url,K,R,PK);rep['dom']=dom
         for t in TABS:print('DOM %-10s expected %4d present %4d missing %d'%(t,dom[t]['expected'],dom[t]['present'],len(dom[t]['missing'])))
         for t in TABS:fail+=['%s missing in DOM: %s'%(t,k) for k in dom[t]['missing']]
+        for t,pre in PTABS.items():
+            m=dom['p_'+t];print('DOM %-11s expected %4d present %4d'%(t,len(PK[pre]),len(PK[pre])-len(m)));fail+=['%s missing in DOM: %s'%(t,k) for k in m]
         if dom['errors']:fail.append('console errors: %s'%dom['errors'][:3])
     out=[a for a in sys.argv[1:] if a.endswith('.json')]
     if out:json.dump(rep,open(out[0],'w'),indent=1,default=list)
@@ -43,7 +55,7 @@ def needles(k,R):
     if t=='METH':
         x=next(x for x in R['meth'] if x['_k']==i);n=[x['cells'][0][:60]]
     return [s for s in n if s]
-def dom_scan(url,K,R):
+def dom_scan(url,K,R,PK=None):
     from playwright.sync_api import sync_playwright
     res={'errors':[]}
     with sync_playwright() as p:
@@ -60,6 +72,10 @@ def dom_scan(url,K,R):
                 if ok:all_.append(k)
             miss=[k for k in exp if k not in all_]
             res[t]={'expected':len(exp),'present':len(exp)-len(miss),'anyRecordPresent':len(all_),'missing':miss}
+        for t,pre in PTABS.items():
+            pg.evaluate(f"viewMode('{t}')");pg.wait_for_timeout(2500)
+            recs=set(pg.evaluate("[...document.querySelectorAll('#mp_view [data-rec]')].map(x=>x.dataset.rec)"))
+            res['p_'+t]=[k for k in (PK or {}).get(pre,[]) if pre+':'+k not in recs]
         b.close()
     return res
 if __name__=='__main__':main()

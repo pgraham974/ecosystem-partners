@@ -1,0 +1,2566 @@
+{
+ "version": "mack-pipeline-1",
+ "built": "2026-11-03T21:56:13",
+ "user": "Mack Living",
+ "checkDate": "2026-11-03",
+ "weights": {
+  "A": 25,
+  "B": 15,
+  "C": 25,
+  "D": 20,
+  "E": 15
+ },
+ "gateRules": "Any FAIL gives Excluded. Any UNKNOWN gives Qualify, capped at 65 and ranked after Eligible. Known weights under 50% of total give Research needed.",
+ "components": {
+  "A": "Service fit to Mack (supported, temporary, community accommodation)",
+  "B": "Buyer strength and spend history (BiP spend, ceilings shown separately)",
+  "C": "Access and eligibility (on the framework, open to bid, supply via prime, or closed)",
+  "D": "Timing: deadline or renewal window",
+  "E": "Evidence confidence"
+ },
+ "scale": {
+  "A": "3 core accommodation service; 2 adjacent; 1 support or care only; 0 outside scope",
+  "B": "3 central government or BiP actual spend evidenced; 2 council or large RP, ceiling only; 1 small or weak; unknown blank",
+  "C": "3 Mack appointed; 2 open to bid or direct lease route; 1 only via a prime or incumbent; 0 closed or awarded to someone else",
+  "D": "3 deadline or live call-off within 6 months; 2 expected within 18 months; 1 renewal window later; 0 ended",
+  "E": "3 BiP verified plus dated facts; 2 official dated source; 1 inferred"
+ },
+ "items": [
+  {
+   "id": "MP-01",
+   "name": "MoJ Community Accommodation Services framework: call-offs under Lots 2, 3 and 4",
+   "buyer": "Ministry of Justice",
+   "buyerType": "Central government",
+   "region": "England and Wales",
+   "service": "CAS2 / CAS3 / specialised community accommodation",
+   "route": "Call-off competitions under a framework Mack Opco already holds",
+   "kind": "Framework (Mack appointed)",
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048",
+    "F-049"
+   ],
+   "opps": [
+    "MJ-001"
+   ],
+   "ml": null,
+   "inputs": {
+    "A": 3,
+    "B": 3,
+    "C": 3,
+    "D": 2,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "PASS"
+   },
+   "why": "Mack Opco Ltd is appointed to Lots 2, 3 and 4 (2 Nov 2026 to 1 Nov 2034). Appointment only: no call-off awarded and no volume committed. \u00a32.0bn is the whole-framework CEILING.",
+   "next": "Watch for each regional call-off; prepare a standard call-off response pack (stock, support model, pricing).",
+   "incumbents": [
+    "A2Care Limited",
+    "Alpha Health & Social Care Services Ltd",
+    "Base One Holdings Ltd",
+    "Bercleys Properties Ltd",
+    "Blue Cross Healthcare Services Limited",
+    "Blueboard Care Services Ltd",
+    "Centennial Property Limited T/A The Housing Network",
+    "Claremont Living",
+    "Clearsprings Ready Homes",
+    "Connect Lettings and Management Limited",
+    "Crown Lodge Accommodation Ltd",
+    "Destiny Integrated Care Ltd",
+    "Elizabeth Fry Charity",
+    "Esteemed Life Ltd",
+    "First Choice Medical Solutions Ltd",
+    "Fortix Ltd",
+    "HK Care Consulting Ltd",
+    "Home not Hospital Ltd",
+    "Housing Action Management Ltd",
+    "Immediate Medical Solutions Ltd",
+    "Interventions Alliance Ltd",
+    "Isabellas Homes Limited",
+    "Jome Healthcare Ltd",
+    "Kind Solutions Ltd",
+    "Langley Trust",
+    "Look Ahead Care and Support",
+    "Major Commercial Property Ltd",
+    "Management & Training Corporation Limited",
+    "Mears Limited",
+    "Nacro",
+    "Nassh Healthcare Ltd",
+    "OneCare UK Ltd",
+    "Penrose Options",
+    "Reframe Support Services Ltd",
+    "Sai Aryan Properties Ltd",
+    "Serco",
+    "Servol Community Services",
+    "St Mungo Community Housing Association",
+    "The Big Life Group",
+    "The Cyrenians Ltd t/a Changing Lives",
+    "The Forward Trust",
+    "The Wallich Clifford Community",
+    "Trevi House Limited",
+    "Urban Land Management Ltd"
+   ],
+   "deadline": null,
+   "start": "2026-11-02",
+   "end": "2034-11-01",
+   "value": 2011000000,
+   "basis": "Ceiling (estimated maximum ex VAT)",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/6030619061",
+   "framework": true,
+   "mackPos": "Appointed (Lots 2, 3, 4)"
+  },
+  {
+   "id": "MP-02",
+   "name": "Manchester CAS3 accommodation and support (P-1476)",
+   "buyer": "Manchester City Council",
+   "buyerType": "Local authority",
+   "region": "Greater Manchester",
+   "service": "CAS3 probation accommodation",
+   "route": "Direct tender (contract notice not yet published)",
+   "kind": "Upcoming tender",
+   "bip": [
+    "BE-02",
+    "BE-03"
+   ],
+   "facts": [
+    "F-050"
+   ],
+   "opps": [
+    "GM-046"
+   ],
+   "ml": null,
+   "inputs": {
+    "A": 3,
+    "B": 2,
+    "C": 2,
+    "D": 2,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "Pre-market engagement closed 10 Sep 2026. Minimum 66 single-sex units in Manchester, est. 1 Apr 2027 to 23 Dec 2027. No value published. Whether bidding is open or limited to MoJ framework appointees is not published.",
+   "next": "Track the contract notice; confirm eligibility and whether Mack Opco's Lot 3 appointment applies.",
+   "incumbents": [
+    "Mears Limited (current CAS3 North West contractor, F-001)"
+   ],
+   "deadline": "2026-09-10",
+   "start": "2027-04-01",
+   "end": "2027-12-23",
+   "value": null,
+   "basis": null,
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/5983363476",
+   "framework": false,
+   "mackPos": "Not yet bid"
+  },
+  {
+   "id": "MP-03",
+   "name": "MCC Safety and Support Services for Temporary Accommodation (P-1218)",
+   "buyer": "Manchester City Council",
+   "buyerType": "Local authority",
+   "region": "Greater Manchester",
+   "service": "Support services in TA (not property)",
+   "route": "Direct tender (pipeline notice)",
+   "kind": "Upcoming tender",
+   "bip": [
+    "BE-12"
+   ],
+   "facts": [
+    "F-058"
+   ],
+   "opps": [],
+   "ml": null,
+   "inputs": {
+    "A": 1,
+    "B": 2,
+    "C": 2,
+    "D": 3,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "UNKNOWN",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "Pipeline notice, contract notice expected 19 Nov 2026; est. 1 Apr 2027 to 1 Apr 2031. Services, not property: fit depends on whether Mack bids a support service.",
+   "next": "Decide whether Mack offers on-site safety and support; read the contract notice when published.",
+   "incumbents": [],
+   "deadline": null,
+   "start": "2027-04-01",
+   "end": "2031-04-01",
+   "value": 14880000,
+   "basis": "Estimated value (ex VAT)",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6012944066",
+   "framework": false,
+   "mackPos": "Not yet bid"
+  },
+  {
+   "id": "MP-04",
+   "name": "Gloucestershire: Supported Accommodation at Trevone House",
+   "buyer": "Gloucestershire County Council",
+   "buyerType": "Local authority",
+   "region": "Gloucestershire",
+   "service": "Ofsted-regulated supported accommodation (young people)",
+   "route": "Direct tender",
+   "kind": "Open tender",
+   "bip": [
+    "BE-13"
+   ],
+   "facts": [],
+   "opps": [],
+   "ml": null,
+   "inputs": {
+    "A": 1,
+    "B": 2,
+    "C": 2,
+    "D": 3,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "UNKNOWN",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "Tender deadline 16 Nov 2026. Care service in a named building for up to 19 young people, not a leasing route. Mack's Ofsted registration is not evidenced.",
+   "next": "Only bid if Mack holds or partners for the required registration; otherwise log as watch.",
+   "incumbents": [],
+   "deadline": "2026-11-16",
+   "start": "2027-04-01",
+   "end": "2030-04-01",
+   "value": 7500000,
+   "basis": "Estimated value (ex VAT)",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6030263868",
+   "framework": false,
+   "mackPos": "Not yet bid"
+  },
+  {
+   "id": "MP-05",
+   "name": "GMCA 1769 Regional Care Cooperative supported accommodation (5 lots)",
+   "buyer": "Greater Manchester Combined Authority",
+   "buyerType": "Combined authority",
+   "region": "Greater Manchester",
+   "service": "16-17 and care leaver supported accommodation services",
+   "route": "Direct tender on The Chest (one lot per bidder)",
+   "kind": "Open tender (framework)",
+   "bip": [
+    "BE-14"
+   ],
+   "facts": [],
+   "opps": [],
+   "ml": "gmca1769-supported-16plus",
+   "inputs": {
+    "A": 1,
+    "B": 2,
+    "C": 2,
+    "D": 3,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "UNKNOWN",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "Deadline 20 Nov 2026. \u00a320m estimated framework value (CEILING). Service framework; lot registration and workforce conditions not confirmed.",
+   "next": "Check lot requirements; consider partnering with a registered support provider.",
+   "incumbents": [],
+   "deadline": "2026-11-20",
+   "start": "2027-04-01",
+   "end": "2035-03-31",
+   "value": 20000000,
+   "basis": "Estimated value (ex VAT)",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6023548684",
+   "framework": true,
+   "mackPos": "Not yet bid"
+  },
+  {
+   "id": "MP-06",
+   "name": "Bristol Emergency Accommodation Open Framework (DN677298)",
+   "buyer": "Bristol City Council",
+   "buyerType": "Local authority",
+   "region": "Bristol",
+   "service": "Emergency accommodation",
+   "route": "Open framework: apply through council procurement",
+   "kind": "Open framework",
+   "bip": [],
+   "facts": [],
+   "opps": [],
+   "ml": "bristol-ea-dn677298",
+   "inputs": {
+    "A": 2,
+    "B": 2,
+    "C": 2,
+    "D": 3,
+    "E": 2
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "Register says open for tenderers throughout contract life; ends 3 Dec 2027, review 1 Jan 2027. Register names Mack Residential: that entity is not confirmed as Mack Living or Mack Opco.",
+   "next": "Confirm which Mack entity is on the register and what call-off capacity exists.",
+   "incumbents": [],
+   "deadline": null,
+   "start": "2023-12-04",
+   "end": "2027-12-03",
+   "value": 96000000,
+   "basis": "Registered framework value (CEILING, not spend)",
+   "url": null,
+   "framework": true,
+   "mackPos": "Possibly listed (entity unconfirmed)"
+  },
+  {
+   "id": "MP-07",
+   "name": "Bristol Supported Temporary Accommodation Framework (STAF)",
+   "buyer": "Bristol City Council",
+   "buyerType": "Local authority",
+   "region": "Bristol",
+   "service": "Supported temporary accommodation (family, singles)",
+   "route": "Join if re-opened; otherwise supply an appointee",
+   "kind": "Framework (not appointed)",
+   "bip": [
+    "BE-07"
+   ],
+   "facts": [
+    "F-052"
+   ],
+   "opps": [
+    "BR-009",
+    "BR-001"
+   ],
+   "ml": null,
+   "inputs": {
+    "A": 3,
+    "B": 2,
+    "C": 0,
+    "D": 1,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "\u00a3106.9m CEILING, 1 Jul 2026 to 30 Jun 2031, 7 appointees. Mack not appointed; re-opening not published.",
+   "next": "Ask Bristol procurement whether STAF re-opens; in the meantime treat appointees as competitors or lessees.",
+   "incumbents": [
+    "Ashley Community & Housing",
+    "Dawson Housing",
+    "LiveWest Homes",
+    "Nest & Rest Property Rentals",
+    "Places for People Living+",
+    "Sanctuary Home Care",
+    "YMCA North Tyneside"
+   ],
+   "deadline": null,
+   "start": "2026-07-01",
+   "end": "2031-06-30",
+   "value": 106923724,
+   "basis": "Ceiling (award value)",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5828451523",
+   "framework": true,
+   "mackPos": "Not appointed"
+  },
+  {
+   "id": "MP-08",
+   "name": "MCC Housing Related Support: Accommodation Framework (P-0816)",
+   "buyer": "Manchester City Council",
+   "buyerType": "Local authority",
+   "region": "Greater Manchester",
+   "service": "Housing related support accommodation",
+   "route": "Join at re-opening or re-procurement",
+   "kind": "Framework (not appointed)",
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-051"
+   ],
+   "opps": [],
+   "ml": null,
+   "inputs": {
+    "A": 2,
+    "B": 2,
+    "C": 0,
+    "D": 1,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "CEILING \u00a331.6m ex VAT (award) / \u00a39.875m (contract details), 1 Feb 2026 to 31 Jan 2028, 14 appointees. Renewal window opens ahead of Jan 2028.",
+   "next": "Diary the re-procurement window for 2027.",
+   "incumbents": [
+    "Caritas",
+    "Centennial",
+    "Contact",
+    "Depaul UK",
+    "Great Places",
+    "City of Liverpool YMCA",
+    "MSV",
+    "Nacro",
+    "SAHA",
+    "SSG",
+    "Riverside Care & Support",
+    "Salvation Army Trustee Co",
+    "Stepping Stone",
+    "Sanctuary"
+   ],
+   "deadline": null,
+   "start": "2026-02-01",
+   "end": "2028-01-31",
+   "value": 9875000,
+   "basis": "Ceiling (ex VAT; \u00a311.85m inc VAT on this notice)",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5673675770",
+   "framework": true,
+   "mackPos": "Not appointed"
+  },
+  {
+   "id": "MP-09",
+   "name": "Oldham Temporary Accommodation Nightly Paid Framework",
+   "buyer": "Oldham Metropolitan Borough Council",
+   "buyerType": "Local authority",
+   "region": "Greater Manchester",
+   "service": "Nightly-paid temporary accommodation",
+   "route": "Join if re-opened",
+   "kind": "Framework (not appointed)",
+   "bip": [
+    "BE-08"
+   ],
+   "facts": [
+    "F-053"
+   ],
+   "opps": [
+    "GM-014"
+   ],
+   "ml": null,
+   "inputs": {
+    "A": 2,
+    "B": 2,
+    "C": 0,
+    "D": 1,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "\u00a339.6m CEILING, 8 Apr 2026 to 6 Apr 2029, 8 appointees including Rent Connect.",
+   "next": "Ask Oldham whether the framework re-opens.",
+   "incumbents": [
+    "Rent Connect Housing Ltd",
+    "7 other appointees (names not in BiP record)"
+   ],
+   "deadline": null,
+   "start": "2026-04-08",
+   "end": "2029-04-06",
+   "value": 39600000,
+   "basis": "Ceiling",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5661540875",
+   "framework": true,
+   "mackPos": "Not appointed"
+  },
+  {
+   "id": "MP-10",
+   "name": "Guinness Partnership Temporary Accommodation Framework",
+   "buyer": "The Guinness Partnership",
+   "buyerType": "Housing association",
+   "region": "National",
+   "service": "Temporary / decant accommodation",
+   "route": "Join at re-procurement",
+   "kind": "Framework (not appointed)",
+   "bip": [
+    "BE-09"
+   ],
+   "facts": [],
+   "opps": [],
+   "ml": null,
+   "inputs": {
+    "A": 2,
+    "B": 2,
+    "C": 0,
+    "D": 1,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "\u00a341.7m CEILING ex VAT, 14 Oct 2025 to 13 Oct 2029, 6 appointees.",
+   "next": "Diary re-procurement before Oct 2029.",
+   "incumbents": [
+    "ICAB",
+    "Jigsaw",
+    "LSH",
+    "Rent Connect",
+    "Thesqua.re",
+    "Unity Housing Support"
+   ],
+   "deadline": null,
+   "start": "2025-10-14",
+   "end": "2029-10-13",
+   "value": 41666666,
+   "basis": "Ceiling (ex VAT)",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5418365308",
+   "framework": true,
+   "mackPos": "Not appointed"
+  },
+  {
+   "id": "MP-11",
+   "name": "Manchester long-term TA leasing (Empty Homes Team)",
+   "buyer": "Manchester City Council",
+   "buyerType": "Local authority",
+   "region": "Greater Manchester",
+   "service": "Leased temporary accommodation",
+   "route": "Direct lease enquiry to the council",
+   "kind": "Direct leasing route",
+   "bip": [],
+   "facts": [
+    "F-021",
+    "F-022"
+   ],
+   "opps": [
+    "GM-035"
+   ],
+   "ml": "manchester-long-term-ta",
+   "inputs": {
+    "A": 3,
+    "B": 2,
+    "C": 2,
+    "D": null,
+    "E": 2
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "PASS"
+   },
+   "why": "Council page says it may lease empty property from owners. 10 years plus 1 day decision (Mar 2024) is historical authority, not a current offer. No rent published.",
+   "next": "Enquire with the Empty Homes Team with a specific Mack-controlled property.",
+   "incumbents": [],
+   "deadline": null,
+   "start": null,
+   "end": null,
+   "value": null,
+   "basis": null,
+   "url": null,
+   "framework": false,
+   "mackPos": "No lease yet"
+  },
+  {
+   "id": "MP-12",
+   "name": "Bristol private renting leasing scheme",
+   "buyer": "Bristol City Council",
+   "buyerType": "Local authority",
+   "region": "Bristol",
+   "service": "Leased temporary / private rented accommodation",
+   "route": "Direct lease enquiry",
+   "kind": "Direct leasing route",
+   "bip": [],
+   "facts": [],
+   "opps": [
+    "BR-001"
+   ],
+   "ml": "bristol-private-renting",
+   "inputs": {
+    "A": 2,
+    "B": 2,
+    "C": 2,
+    "D": null,
+    "E": 2
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "PASS"
+   },
+   "why": "Council page invites landlord enquiries for a 2-year leasing scheme; leasing rent not published.",
+   "next": "Request the leasing scheme terms for Mack stock in Bristol.",
+   "incumbents": [],
+   "deadline": null,
+   "start": null,
+   "end": null,
+   "value": null,
+   "basis": null,
+   "url": null,
+   "framework": false,
+   "mackPos": "No lease yet"
+  },
+  {
+   "id": "MP-13",
+   "name": "GM Empty Homes and Leasing Programme (lease and repair, 400 homes)",
+   "buyer": "Greater Manchester Combined Authority and boroughs",
+   "buyerType": "Combined authority",
+   "region": "Greater Manchester",
+   "service": "Lease and repair into temporary or settled accommodation",
+   "route": "Borough-level leasing",
+   "kind": "Programme",
+   "bip": [],
+   "facts": [],
+   "opps": [
+    "GM-036"
+   ],
+   "ml": "gm-empty-homes-leasing",
+   "inputs": {
+    "A": 2,
+    "B": 2,
+    "C": 1,
+    "D": null,
+    "E": 2
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "UNKNOWN",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "Nov 2025 report proposes 400 homes; funding mobilisation and borough availability not confirmed.",
+   "next": "Ask Manchester and Salford which borough intake is live.",
+   "incumbents": [],
+   "deadline": null,
+   "start": null,
+   "end": null,
+   "value": 10568100,
+   "basis": "Programme budget (proposed, not committed)",
+   "url": null,
+   "framework": false,
+   "mackPos": "No lease yet"
+  },
+  {
+   "id": "MP-14",
+   "name": "Home Office asylum accommodation (AASC) via regional primes",
+   "buyer": "Home Office",
+   "buyerType": "Central government",
+   "region": "GM, Bristol, Gloucestershire",
+   "service": "Asylum dispersed accommodation",
+   "route": "Subcontract supply to Serco (NW) or Clearsprings (South)",
+   "kind": "Supply to prime contractor",
+   "bip": [],
+   "facts": [
+    "F-002",
+    "F-007",
+    "F-008"
+   ],
+   "opps": [
+    "GM-038",
+    "GM-002"
+   ],
+   "ml": "aasc-landlord-supply",
+   "inputs": {
+    "A": 2,
+    "B": 3,
+    "C": 1,
+    "D": null,
+    "E": 2
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "Home Office contracts are held by primes; Mack can only supply property to them. Primes are competitors for any direct Home Office work.",
+   "next": "Use the prime property routes only where terms suit; not a direct bid.",
+   "incumbents": [
+    "Serco",
+    "Clearsprings Ready Homes",
+    "Mears"
+   ],
+   "deadline": null,
+   "start": null,
+   "end": null,
+   "value": null,
+   "basis": null,
+   "url": null,
+   "framework": false,
+   "mackPos": "No direct route"
+  },
+  {
+   "id": "MP-15",
+   "name": "CAS3 current regional contracts via incumbents (Mears NW, THN SW)",
+   "buyer": "Ministry of Justice (via primes)",
+   "buyerType": "Central government",
+   "region": "GM, Bristol, Gloucestershire",
+   "service": "CAS3 probation accommodation",
+   "route": "Subcontract supply to incumbent until re-let; then compete",
+   "kind": "Supply to prime contractor",
+   "bip": [
+    "BE-02"
+   ],
+   "facts": [
+    "F-001",
+    "F-050"
+   ],
+   "opps": [
+    "GM-001",
+    "GM-015"
+   ],
+   "ml": "cas3-incumbent-property-supply",
+   "inputs": {
+    "A": 3,
+    "B": 3,
+    "C": 1,
+    "D": 1,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "Mears CAS3 NW initial term to about Dec 2027, max Dec 2029; THN SW to Apr 2028. These incumbents are Mack's competitors at re-let.",
+   "next": "Track re-let dates; prepare to compete through the MoJ framework.",
+   "incumbents": [
+    "Mears Limited",
+    "Centennial Property Limited T/A The Housing Network"
+   ],
+   "deadline": "2026-09-10",
+   "start": "2024-06-24",
+   "end": "2029-12-12",
+   "value": null,
+   "basis": null,
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/5983363476",
+   "framework": false,
+   "mackPos": "Competitor of incumbents"
+  },
+  {
+   "id": "MP-16",
+   "name": "Cheltenham homelessness: P3 emergency accommodation",
+   "buyer": "P3 (with Cheltenham Borough Council demand)",
+   "buyerType": "Charity / provider",
+   "region": "Gloucestershire",
+   "service": "Emergency accommodation",
+   "route": "Supply property to P3",
+   "kind": "Supply to provider",
+   "bip": [],
+   "facts": [],
+   "opps": [
+    "GL-003"
+   ],
+   "ml": "glos-cheltenham-p3-council",
+   "inputs": {
+    "A": 2,
+    "B": null,
+    "C": 1,
+    "D": null,
+    "E": 1
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "UNKNOWN",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "P3 markets 6 to 12 month contracts; council award and payment not confirmed.",
+   "next": "Low priority: confirm council demand first.",
+   "incumbents": [],
+   "deadline": null,
+   "start": null,
+   "end": null,
+   "value": null,
+   "basis": null,
+   "url": null,
+   "framework": false,
+   "mackPos": "No route yet"
+  },
+  {
+   "id": "MP-17",
+   "name": "Gloucester City Council homelessness and TA",
+   "buyer": "Gloucester City Council",
+   "buyerType": "Local authority",
+   "region": "Gloucestershire",
+   "service": "Temporary accommodation",
+   "route": "Unknown (no TA leasing notice found)",
+   "kind": "Research",
+   "bip": [
+    "BE-20"
+   ],
+   "facts": [],
+   "opps": [
+    "GL-004"
+   ],
+   "ml": null,
+   "inputs": {
+    "A": 2,
+    "B": null,
+    "C": null,
+    "D": null,
+    "E": 1
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "UNKNOWN",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "BiP notice search (Jun 2025 to Nov 2026) found no Gloucester or Cheltenham TA leasing notice.",
+   "next": "Ask the housing team how it procures TA.",
+   "incumbents": [],
+   "deadline": null,
+   "start": null,
+   "end": null,
+   "value": null,
+   "basis": null,
+   "url": "BiP spend search (licensed; no per-row URL): search_notices",
+   "framework": false,
+   "mackPos": "No route yet"
+  },
+  {
+   "id": "MP-18",
+   "name": "MCC Domestic Abuse: Intersecting Needs Safe Accommodation (P-1475)",
+   "buyer": "Manchester City Council",
+   "buyerType": "Local authority",
+   "region": "Greater Manchester",
+   "service": "Domestic abuse safe accommodation",
+   "route": "Awarded to Centennial; compete at re-let",
+   "kind": "Awarded contract",
+   "bip": [
+    "BE-06"
+   ],
+   "facts": [
+    "F-017",
+    "F-056"
+   ],
+   "opps": [
+    "GM-015"
+   ],
+   "ml": null,
+   "inputs": {
+    "A": 2,
+    "B": 2,
+    "C": 0,
+    "D": 1,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "FAIL"
+   },
+   "why": "Awarded to Centennial Property Limited, 1 Oct 2026 to 31 Mar 2028 per BiP. No route for Mack until re-tender.",
+   "next": "Diary the re-tender ahead of Mar 2028.",
+   "incumbents": [
+    "Centennial Property Limited"
+   ],
+   "deadline": null,
+   "start": "2026-10-01",
+   "end": "2028-03-31",
+   "value": 1336230,
+   "basis": "Awarded value",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5975122032",
+   "framework": false,
+   "mackPos": "Not eligible until re-let"
+  },
+  {
+   "id": "MP-19",
+   "name": "Places for People: Specialist Decant Accommodation Provider",
+   "buyer": "Places For People Group Limited",
+   "buyerType": "Housing association",
+   "region": "National",
+   "service": "Decant accommodation",
+   "route": "Awarded to Jigsaw; compete at re-let",
+   "kind": "Awarded contract",
+   "bip": [
+    "BE-11"
+   ],
+   "facts": [
+    "F-055"
+   ],
+   "opps": [],
+   "ml": null,
+   "inputs": {
+    "A": 1,
+    "B": 2,
+    "C": 0,
+    "D": 1,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "UNKNOWN",
+    "G-Geo": "PASS",
+    "G-Live": "PASS",
+    "G-Elig": "FAIL"
+   },
+   "why": "\u00a313.5m awarded to Jigsaw Conferences Limited, 30 Sep 2026 to 29 Sep 2029.",
+   "next": "Watch only.",
+   "incumbents": [
+    "Jigsaw Conferences Limited"
+   ],
+   "deadline": null,
+   "start": "2026-09-30",
+   "end": "2029-09-29",
+   "value": 13500000,
+   "basis": "Awarded value",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/6022929851",
+   "framework": false,
+   "mackPos": "Not eligible until re-let"
+  },
+  {
+   "id": "MP-20",
+   "name": "Bolton At Home: Temporary Accommodation (Decant)",
+   "buyer": "Bolton At Home",
+   "buyerType": "Housing association",
+   "region": "Greater Manchester",
+   "service": "Decant temporary accommodation",
+   "route": "Ended; watch for re-tender",
+   "kind": "Awarded contract (ended)",
+   "bip": [
+    "BE-10"
+   ],
+   "facts": [],
+   "opps": [
+    "GM-023"
+   ],
+   "ml": null,
+   "inputs": {
+    "A": 2,
+    "B": 2,
+    "C": null,
+    "D": 0,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "PASS",
+    "G-Live": "FAIL",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "\u00a3400k awarded to ICAB, ended 30 Sep 2026. No re-tender found.",
+   "next": "Search BiP for a successor notice.",
+   "incumbents": [
+    "Insurance Claims Accommodation Bureau"
+   ],
+   "deadline": null,
+   "start": "2025-10-01",
+   "end": "2026-09-30",
+   "value": 400000,
+   "basis": "Awarded value",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5443121182",
+   "framework": false,
+   "mackPos": "Watch"
+  }
+ ],
+ "buyers": [
+  {
+   "name": "Ministry of Justice",
+   "type": "Central government",
+   "regions": [
+    "England and Wales"
+   ],
+   "items": [
+    "MP-01"
+   ],
+   "ceiling": 2011000000,
+   "fin": "MOJ"
+  },
+  {
+   "name": "Manchester City Council",
+   "type": "Local authority",
+   "regions": [
+    "Greater Manchester"
+   ],
+   "items": [
+    "MP-02",
+    "MP-03",
+    "MP-08",
+    "MP-11",
+    "MP-18"
+   ],
+   "ceiling": 26091230,
+   "fin": "MCC"
+  },
+  {
+   "name": "Gloucestershire County Council",
+   "type": "Local authority",
+   "regions": [
+    "Gloucestershire"
+   ],
+   "items": [
+    "MP-04"
+   ],
+   "ceiling": 7500000,
+   "fin": null
+  },
+  {
+   "name": "Greater Manchester Combined Authority",
+   "type": "Combined authority",
+   "regions": [
+    "Greater Manchester"
+   ],
+   "items": [
+    "MP-05"
+   ],
+   "ceiling": 20000000,
+   "fin": null
+  },
+  {
+   "name": "Bristol City Council",
+   "type": "Local authority",
+   "regions": [
+    "Bristol"
+   ],
+   "items": [
+    "MP-06",
+    "MP-07",
+    "MP-12"
+   ],
+   "ceiling": 202923724,
+   "fin": "BRISTOLCC"
+  },
+  {
+   "name": "Oldham Metropolitan Borough Council",
+   "type": "Local authority",
+   "regions": [
+    "Greater Manchester"
+   ],
+   "items": [
+    "MP-09"
+   ],
+   "ceiling": 39600000,
+   "fin": null
+  },
+  {
+   "name": "The Guinness Partnership",
+   "type": "Housing association",
+   "regions": [
+    "National"
+   ],
+   "items": [
+    "MP-10"
+   ],
+   "ceiling": 41666666,
+   "fin": null
+  },
+  {
+   "name": "Greater Manchester Combined Authority and boroughs",
+   "type": "Combined authority",
+   "regions": [
+    "Greater Manchester"
+   ],
+   "items": [
+    "MP-13"
+   ],
+   "ceiling": 10568100,
+   "fin": null
+  },
+  {
+   "name": "Home Office",
+   "type": "Central government",
+   "regions": [
+    "GM, Bristol, Gloucestershire"
+   ],
+   "items": [
+    "MP-14"
+   ],
+   "ceiling": 0,
+   "fin": null
+  },
+  {
+   "name": "Ministry of Justice (via primes)",
+   "type": "Central government",
+   "regions": [
+    "GM, Bristol, Gloucestershire"
+   ],
+   "items": [
+    "MP-15"
+   ],
+   "ceiling": 0,
+   "fin": null
+  },
+  {
+   "name": "P3 (with Cheltenham Borough Council demand)",
+   "type": "Charity / provider",
+   "regions": [
+    "Gloucestershire"
+   ],
+   "items": [
+    "MP-16"
+   ],
+   "ceiling": 0,
+   "fin": null
+  },
+  {
+   "name": "Gloucester City Council",
+   "type": "Local authority",
+   "regions": [
+    "Gloucestershire"
+   ],
+   "items": [
+    "MP-17"
+   ],
+   "ceiling": 0,
+   "fin": null
+  },
+  {
+   "name": "Places For People Group Limited",
+   "type": "Housing association",
+   "regions": [
+    "National"
+   ],
+   "items": [
+    "MP-19"
+   ],
+   "ceiling": 13500000,
+   "fin": null
+  },
+  {
+   "name": "Bolton At Home",
+   "type": "Housing association",
+   "regions": [
+    "Greater Manchester"
+   ],
+   "items": [
+    "MP-20"
+   ],
+   "ceiling": 400000,
+   "fin": null
+  }
+ ],
+ "competitors": [
+  {
+   "id": "GM-001",
+   "name": "Mears Group",
+   "entity": "Mears Limited",
+   "region": "Greater Manchester",
+   "type": "Direct lessee",
+   "fin": "MEARSLTD",
+   "bip": [
+    "BE-01",
+    "BE-19"
+   ],
+   "facts": [
+    "F-001",
+    "F-002",
+    "F-003",
+    "F-004",
+    "F-005",
+    "F-006",
+    "F-045",
+    "F-048",
+    "F-050"
+   ],
+   "competesOn": [
+    "MP-01",
+    "MP-02",
+    "MP-14",
+    "MP-15"
+   ],
+   "note": "CAS3 North West contract live to Dec 2029 (covers NW probation region). Mears' asylum AASC does NOT cover GM. Dec 2024 acquisition email did not name GM. Current GM intake: unknown. Mears Limited is also appointed to the new MoJ CAS framework Lots 2 and 3 (framework only, to 2034).",
+   "also": "Could also be a lessee or subcontract route for Mack property"
+  },
+  {
+   "id": "GM-002",
+   "name": "Serco",
+   "entity": "Serco Limited",
+   "region": "Greater Manchester",
+   "type": "Direct lessee",
+   "fin": "SERCOLTD",
+   "bip": [
+    "BE-01",
+    "BE-19"
+   ],
+   "facts": [
+    "F-007",
+    "F-008",
+    "F-009",
+    "F-010",
+    "F-011",
+    "F-046"
+   ],
+   "competesOn": [
+    "MP-01",
+    "MP-14"
+   ],
+   "note": "AASC North West plus Midlands & East (verified). Current GM intake not stated; landlord page is generic.",
+   "also": "Could also be a lessee or subcontract route for Mack property"
+  },
+  {
+   "id": "GM-003",
+   "name": "Nacro",
+   "entity": "Nacro",
+   "region": "Greater Manchester",
+   "type": "Direct lessee",
+   "fin": "NACRO",
+   "bip": [
+    "BE-01",
+    "BE-15"
+   ],
+   "facts": [
+    "F-012",
+    "F-013",
+    "F-014",
+    "F-015",
+    "F-016",
+    "F-020",
+    "F-048",
+    "F-057"
+   ],
+   "competesOn": [
+    "MP-01",
+    "MP-08"
+   ],
+   "note": "CAS-2: GM/NW no longer sourcing (2 Oct 2026). Supported Housing: NW limited to Salford/Wirral. Nov 2026 web: priority regions London, SW, East. BiP spend: MCC paid Nacro \u00a3141,265.25 on 10 Aug 2026 ('Third party payments relating to Voluntary Organisations'); none seen in Jul 2026. Shows a live MCC service relationship, not property intake.",
+   "also": "Could also be a lessee or subcontract route for Mack property"
+  },
+  {
+   "id": "GM-004",
+   "name": "SSG Sustainable Living",
+   "entity": "SSG Sustainable Living",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": null,
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-051"
+   ],
+   "competesOn": [],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Schemes in Cheetham Hill/Crumpsall (E30).",
+   "also": ""
+  },
+  {
+   "id": "GM-005",
+   "name": "Stepping Stone Projects",
+   "entity": "Stepping Stone Projects",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "STEPPING",
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-041",
+    "F-051"
+   ],
+   "competesOn": [],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). 700+ homes across NW (E32).",
+   "also": ""
+  },
+  {
+   "id": "GM-006",
+   "name": "Caritas Diocese of Salford",
+   "entity": "Caritas Diocese of Salford",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": null,
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-051"
+   ],
+   "competesOn": [],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Caritas House and Morning Star schemes (E31).",
+   "also": ""
+  },
+  {
+   "id": "GM-007",
+   "name": "IASPIRE Supported Living",
+   "entity": "IASPIRE Crisis / Step Down Beds Ltd",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "IASPIRE",
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-042"
+   ],
+   "competesOn": [],
+   "note": "Manchester (GMMH award \u00a3828,624, E8).",
+   "also": ""
+  },
+  {
+   "id": "GM-008",
+   "name": "Great Places Housing Association",
+   "entity": "Great Places Housing Association",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "GPHA",
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-026",
+    "F-051"
+   ],
+   "competesOn": [
+    "MP-08"
+   ],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). c.28,000 homes; owns stock.",
+   "also": ""
+  },
+  {
+   "id": "GM-009",
+   "name": "Mosscare St Vincent's Housing Group (MSV)",
+   "entity": "Mosscare St. Vincent's Housing Group Limited",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "MSV",
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-027",
+    "F-051"
+   ],
+   "competesOn": [],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Supported housing across GM.",
+   "also": ""
+  },
+  {
+   "id": "GM-010",
+   "name": "Depaul UK",
+   "entity": "Depaul UK",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "DEPAUL",
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-034",
+    "F-051"
+   ],
+   "competesOn": [
+    "MP-08"
+   ],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Nightstop / Safestop.",
+   "also": ""
+  },
+  {
+   "id": "GM-011",
+   "name": "Sanctuary Supported Living",
+   "entity": "Sanctuary Housing Association",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "SANCTUARY",
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-028",
+    "F-051"
+   ],
+   "competesOn": [],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Victoria House (36 one-bed flats).",
+   "also": ""
+  },
+  {
+   "id": "GM-012",
+   "name": "The Riverside Group Care & Support",
+   "entity": "The Riverside Group Limited",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "RIVERSIDE",
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-029",
+    "F-051"
+   ],
+   "competesOn": [],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Project 394, Stopover, The Beeches.",
+   "also": ""
+  },
+  {
+   "id": "GM-013",
+   "name": "Salvation Army Housing Association",
+   "entity": "Salvation Army Housing Association",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "SAHA",
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-030",
+    "F-051"
+   ],
+   "competesOn": [
+    "MP-08"
+   ],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Lifehouses in Manchester.",
+   "also": ""
+  },
+  {
+   "id": "GM-014",
+   "name": "Rent Connect Housing",
+   "entity": "Rent Connect Housing Limited",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "RENTCONNECT",
+   "bip": [
+    "BE-08",
+    "BE-09",
+    "BE-18"
+   ],
+   "facts": [
+    "F-023",
+    "F-025",
+    "F-053"
+   ],
+   "competesOn": [
+    "MP-09"
+   ],
+   "note": "Greater Manchester: appointee on Oldham MBC Temporary Accommodation Nightly Paid Framework (8 Apr 2026 to 6 Apr 2029; framework, not an award). Aug 2026 BiP spend sample: payments only from Bedford, none from a GM council seen.",
+   "also": ""
+  },
+  {
+   "id": "GM-015",
+   "name": "Centennial Property Limited",
+   "entity": "Centennial Property Limited (t/a The Housing Network)",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "CENTENNIAL",
+   "bip": [
+    "BE-01",
+    "BE-06",
+    "BE-17"
+   ],
+   "facts": [
+    "F-017",
+    "F-018",
+    "F-019",
+    "F-020",
+    "F-056",
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01",
+    "MP-15",
+    "MP-18"
+   ],
+   "note": "Manchester: P-1475 live 1 Oct 2026 to 31 Mar 2028. Also on MCC HRS framework and the MoJ CAS open framework (Lots 1 to 4, framework only). Aug 2026 BiP spend: TA and B&B payments from many councils (South East, East, East Midlands); none from MCC in the sample (P-1475 started Oct 2026).",
+   "also": ""
+  },
+  {
+   "id": "GM-016",
+   "name": "Unity Housing Support",
+   "entity": "Unity Housing Support",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "UNITYHS",
+   "bip": [
+    "BE-09"
+   ],
+   "facts": [
+    "F-023",
+    "F-024"
+   ],
+   "competesOn": [
+    "MP-10"
+   ],
+   "note": "National; GM activity unconfirmed.",
+   "also": ""
+  },
+  {
+   "id": "GM-017",
+   "name": "Corporate Travel Management North",
+   "entity": "Corporate Travel Management (North) Limited",
+   "region": "Greater Manchester",
+   "type": "Broker / short-stay provider",
+   "fin": "CTMN",
+   "bip": [],
+   "facts": [
+    "F-038",
+    "F-007"
+   ],
+   "competesOn": [],
+   "note": "National.",
+   "also": ""
+  },
+  {
+   "id": "GM-018",
+   "name": "Making Space",
+   "entity": "Making Space",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": null,
+   "bip": [],
+   "facts": [],
+   "competesOn": [],
+   "note": "South Manchester",
+   "also": ""
+  },
+  {
+   "id": "GM-019",
+   "name": "Contact",
+   "entity": "Contact",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": null,
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-051"
+   ],
+   "competesOn": [
+    "MP-08"
+   ],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). 8 spaces (7 rooms + move-on bungalow).",
+   "also": ""
+  },
+  {
+   "id": "GM-020",
+   "name": "Calico",
+   "entity": "Calico Homes Limited",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": "CALICO",
+   "bip": [],
+   "facts": [
+    "F-031"
+   ],
+   "competesOn": [],
+   "note": "Lancashire / GM partnership",
+   "also": ""
+  },
+  {
+   "id": "GM-021",
+   "name": "City of Liverpool YMCA",
+   "entity": "City of Liverpool YMCA",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": null,
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-020",
+    "F-051"
+   ],
+   "competesOn": [
+    "MP-08"
+   ],
+   "note": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Liverpool-based; appointee on Manchester framework (verified), correcting 'mobilisation unconfirmed' to 'membership verified, call-off unknown'.",
+   "also": ""
+  },
+  {
+   "id": "GM-023",
+   "name": "Insurance Claims Accommodation Bureau",
+   "entity": "Insurance Claims Accommodation Bureau Limited",
+   "region": "Greater Manchester",
+   "type": "Broker / short-stay provider",
+   "fin": "ICAB",
+   "bip": [
+    "BE-09",
+    "BE-10",
+    "BE-16"
+   ],
+   "facts": [
+    "F-023",
+    "F-040",
+    "F-054"
+   ],
+   "competesOn": [
+    "MP-20"
+   ],
+   "note": "Greater Manchester: Bury Council paid ICAB under 'Housing Management' in Aug 2026 (10 payments seen, \u00a3575 to \u00a32,124 each). Bolton at Home decant award Oct 2025 to Sep 2026 (ended). Wider: Orbit, Beyond Housing, Guinness framework.",
+   "also": ""
+  },
+  {
+   "id": "GM-024",
+   "name": "Thesqua.re",
+   "entity": "Thesqua.re Ltd",
+   "region": "Greater Manchester",
+   "type": "Broker / short-stay provider",
+   "fin": "THESQUARE",
+   "bip": [
+    "BE-09"
+   ],
+   "facts": [
+    "F-023",
+    "F-039"
+   ],
+   "competesOn": [
+    "MP-10"
+   ],
+   "note": "National.",
+   "also": ""
+  },
+  {
+   "id": "GM-025",
+   "name": "Elysium Healthcare",
+   "entity": "Elysium Healthcare",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": null,
+   "bip": [],
+   "facts": [],
+   "competesOn": [],
+   "note": "National (GM services)",
+   "also": ""
+  },
+  {
+   "id": "GM-028",
+   "name": "Ingeus UK",
+   "entity": "Ingeus UK",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": null,
+   "bip": [],
+   "facts": [],
+   "competesOn": [],
+   "note": "National",
+   "also": ""
+  },
+  {
+   "id": "GM-029",
+   "name": "Jigsaw Conferences",
+   "entity": "Jigsaw Conferences Ltd",
+   "region": "Greater Manchester",
+   "type": "Broker / short-stay provider",
+   "fin": "JIGSAW",
+   "bip": [
+    "BE-09",
+    "BE-11"
+   ],
+   "facts": [
+    "F-023",
+    "F-044",
+    "F-055"
+   ],
+   "competesOn": [
+    "MP-19"
+   ],
+   "note": "Markets Manchester key-worker stays.",
+   "also": ""
+  },
+  {
+   "id": "GM-030",
+   "name": "The Brick",
+   "entity": "The Brick",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "fin": null,
+   "bip": [],
+   "facts": [],
+   "competesOn": [],
+   "note": "Wigan",
+   "also": ""
+  },
+  {
+   "id": "BR-002",
+   "name": "Nacro - CAS-2 South West",
+   "entity": "Nacro",
+   "region": "Bristol",
+   "type": "Direct lessee",
+   "fin": "NACRO",
+   "bip": [],
+   "facts": [
+    "F-012",
+    "F-013",
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01",
+    "MP-08"
+   ],
+   "note": "Bristol excluded from SW CAS-2 sourcing (2 Oct 2026).",
+   "also": "Could also be a lessee or subcontract route for Mack property"
+  },
+  {
+   "id": "BR-005",
+   "name": "Mears Living - South region",
+   "entity": "Mears Limited",
+   "region": "Bristol",
+   "type": "Direct lessee",
+   "fin": "MEARSLTD",
+   "bip": [],
+   "facts": [
+    "F-003",
+    "F-004"
+   ],
+   "competesOn": [],
+   "note": "Mears Living South; website lists London boroughs as priority. Bristol intake unknown.",
+   "also": "Could also be a lessee or subcontract route for Mack property"
+  },
+  {
+   "id": "GL-001",
+   "name": "Nacro - CAS-2 South West",
+   "entity": "Nacro",
+   "region": "Gloucestershire",
+   "type": "Direct lessee",
+   "fin": "NACRO",
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-012",
+    "F-013",
+    "F-014",
+    "F-015",
+    "F-016",
+    "F-037",
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01",
+    "MP-08"
+   ],
+   "note": "South West is a highest-priority sourcing region (web, Nov 2026; email 2 Oct 2026) except Plymouth and Bristol. Gloucestershire towns not confirmed.",
+   "also": "Could also be a lessee or subcontract route for Mack property"
+  },
+  {
+   "id": "GL-002",
+   "name": "Gloucester City Homes (GCH) - Homeless Team",
+   "entity": "Gloucester City Homes Limited",
+   "region": "Gloucestershire",
+   "type": "Provider / framework appointee",
+   "fin": "GCH",
+   "bip": [],
+   "facts": [
+    "F-032"
+   ],
+   "competesOn": [],
+   "note": "Gloucester",
+   "also": ""
+  },
+  {
+   "id": "GL-005",
+   "name": "Mears Living - South region",
+   "entity": "Mears Limited",
+   "region": "Gloucestershire",
+   "type": "Direct lessee",
+   "fin": "MEARSLTD",
+   "bip": [],
+   "facts": [
+    "F-003",
+    "F-004"
+   ],
+   "competesOn": [],
+   "note": "Mears Living South incl. South West; Gloucestershire intake unknown.",
+   "also": "Could also be a lessee or subcontract route for Mack property"
+  },
+  {
+   "id": "BR-009",
+   "name": "Bristol City Council: Supported Temporary Accommodation Framework (STAF) appointees",
+   "entity": "Bristol City Council: Supported Temporary Accommodation Framework (STAF) appointees",
+   "region": "Bristol",
+   "type": "Provider / framework appointee",
+   "fin": null,
+   "bip": [
+    "BE-07"
+   ],
+   "facts": [
+    "F-052"
+   ],
+   "competesOn": [],
+   "note": "Bristol (UKK11). Council aim: more RP-delivered supported TA to cut private emergency accommodation.",
+   "also": ""
+  },
+  {
+   "id": "CAS-A2CARELIMIT",
+   "name": "A2Care Limited",
+   "entity": "A2Care Limited",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-ALPHAHEALTH",
+   "name": "Alpha Health & Social Care Services Ltd",
+   "entity": "Alpha Health & Social Care Services Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-BASEONEHOL",
+   "name": "Base One Holdings Ltd",
+   "entity": "Base One Holdings Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-BERCLEYSPRO",
+   "name": "Bercleys Properties Ltd",
+   "entity": "Bercleys Properties Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-BLUECROSSH",
+   "name": "Blue Cross Healthcare Services Limited",
+   "entity": "Blue Cross Healthcare Services Limited",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-BLUEBOARDCA",
+   "name": "Blueboard Care Services Ltd",
+   "entity": "Blueboard Care Services Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-CLAREMONTLI",
+   "name": "Claremont Living",
+   "entity": "Claremont Living",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-CLEARSPRINGS",
+   "name": "Clearsprings Ready Homes",
+   "entity": "Clearsprings Ready Homes",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-CROWNLODGE",
+   "name": "Crown Lodge Accommodation Ltd",
+   "entity": "Crown Lodge Accommodation Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-DESTINYINTE",
+   "name": "Destiny Integrated Care Ltd",
+   "entity": "Destiny Integrated Care Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-ELIZABETHFR",
+   "name": "Elizabeth Fry Charity",
+   "entity": "Elizabeth Fry Charity",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-ESTEEMEDLIF",
+   "name": "Esteemed Life Ltd",
+   "entity": "Esteemed Life Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-FIRSTCHOICE",
+   "name": "First Choice Medical Solutions Ltd",
+   "entity": "First Choice Medical Solutions Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-FORTIXLTD",
+   "name": "Fortix Ltd",
+   "entity": "Fortix Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-HKCARECONS",
+   "name": "HK Care Consulting Ltd",
+   "entity": "HK Care Consulting Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-IMMEDIATEME",
+   "name": "Immediate Medical Solutions Ltd",
+   "entity": "Immediate Medical Solutions Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-INTERVENTION",
+   "name": "Interventions Alliance Ltd",
+   "entity": "Interventions Alliance Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-ISABELLASHO",
+   "name": "Isabellas Homes Limited",
+   "entity": "Isabellas Homes Limited",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-JOMEHEALTHC",
+   "name": "Jome Healthcare Ltd",
+   "entity": "Jome Healthcare Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-KINDSOLUTIO",
+   "name": "Kind Solutions Ltd",
+   "entity": "Kind Solutions Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-LANGLEYTRUS",
+   "name": "Langley Trust",
+   "entity": "Langley Trust",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-LOOKAHEADC",
+   "name": "Look Ahead Care and Support",
+   "entity": "Look Ahead Care and Support",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-MAJORCOMMER",
+   "name": "Major Commercial Property Ltd",
+   "entity": "Major Commercial Property Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-NASSHHEALTH",
+   "name": "Nassh Healthcare Ltd",
+   "entity": "Nassh Healthcare Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-ONECAREUKL",
+   "name": "OneCare UK Ltd",
+   "entity": "OneCare UK Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-PENROSEOPTI",
+   "name": "Penrose Options",
+   "entity": "Penrose Options",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-REFRAMESUPP",
+   "name": "Reframe Support Services Ltd",
+   "entity": "Reframe Support Services Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-SAIARYANPR",
+   "name": "Sai Aryan Properties Ltd",
+   "entity": "Sai Aryan Properties Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-SERVOLCOMMU",
+   "name": "Servol Community Services",
+   "entity": "Servol Community Services",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-TREVIHOUSE",
+   "name": "Trevi House Limited",
+   "entity": "Trevi House Limited",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  },
+  {
+   "id": "CAS-URBANLANDM",
+   "name": "Urban Land Management Ltd",
+   "entity": "Urban Land Management Ltd",
+   "region": "England and Wales",
+   "type": "MoJ CAS co-appointee",
+   "fin": null,
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048"
+   ],
+   "competesOn": [
+    "MP-01"
+   ],
+   "note": "Appointed to at least one of Lots 2 to 4 alongside Mack Opco.",
+   "also": ""
+  }
+ ],
+ "spend": [
+  {
+   "id": "BE-15",
+   "type": "Spend sample",
+   "buyer": "Manchester City Council",
+   "suppliers": "Nacro Community Enterprises Limited",
+   "title": "Third party payments relating to Voluntary Organisations",
+   "value": 141265.25,
+   "basis": "Actual payment",
+   "start": "2026-08-10",
+   "end": "2026-08-10",
+   "framework": false,
+   "deadline": null,
+   "region": "North West",
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "fts": null,
+   "published": "2026-08-10",
+   "checked": "2026-11-03",
+   "status": "Verified (actual spend)",
+   "use": "Live MCC payment to Nacro; not property intake",
+   "facts": [
+    "F-057"
+   ],
+   "opps": [
+    "GM-003"
+   ]
+  },
+  {
+   "id": "BE-16",
+   "type": "Spend sample",
+   "buyer": "Bury Council",
+   "suppliers": "Insurance Claims Accommodation Bureau Limited",
+   "title": "Housing Management (10+ payments)",
+   "value": 16844.37,
+   "basis": "Actual payments: Bury Council to ICAB, 12 payments, Aug 2026 (BiP spend refresh); ICAB also paid by LB Wandsworth \u00a390,963.68 (12) and LB Haringey \u00a3446,168.30 (4) in Aug 2026",
+   "start": "2026-08-01",
+   "end": "2026-08-31",
+   "framework": false,
+   "deadline": null,
+   "region": "North West",
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "fts": null,
+   "published": "2026-08-27",
+   "checked": "2026-11-03",
+   "status": "Verified (actual spend)",
+   "use": "GM-023 G-Geo UNKNOWN to PASS; A2 blank to 2",
+   "facts": [
+    "F-054"
+   ],
+   "opps": [
+    "GM-023"
+   ],
+   "refreshed": "2026-11-03",
+   "lotSuppliers": null,
+   "mackLots": null,
+   "spendByBuyer": {
+    "Bury Council": [
+     16844.37,
+     12
+    ],
+    "London Borough of Wandsworth": [
+     90963.68,
+     12
+    ],
+    "London Borough of Haringey": [
+     446168.3,
+     4
+    ]
+   }
+  },
+  {
+   "id": "BE-17",
+   "type": "Spend sample",
+   "buyer": "Various councils (none in GM)",
+   "suppliers": "Centennial Property Limited (2 of 14 name variants)",
+   "title": "TA, B&B, Sec 17, accommodation expenses",
+   "value": null,
+   "basis": "Actual payments",
+   "start": "2026-08-01",
+   "end": "2026-08-31",
+   "framework": false,
+   "deadline": null,
+   "region": "SE, East, East Midlands, London",
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "fts": null,
+   "published": "2026-08-28",
+   "checked": "2026-11-03",
+   "status": "Verified (actual spend)",
+   "use": "No MCC payment in sample: GM intake not shown",
+   "facts": [
+    "F-056"
+   ],
+   "opps": [
+    "GM-015"
+   ]
+  },
+  {
+   "id": "BE-18",
+   "type": "Spend sample",
+   "buyer": "Bedford Borough Council",
+   "suppliers": "Rent Connect Housing Ltd T/A Rent Connect",
+   "title": "Family Assistance (13 payments)",
+   "value": 19055.56,
+   "basis": "Actual payments: Bedford Borough Council to Rent Connect, 13 payments, Aug 2026 (BiP spend refresh)",
+   "start": "2026-08-01",
+   "end": "2026-08-31",
+   "framework": false,
+   "deadline": null,
+   "region": "East of England",
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "fts": null,
+   "published": "2026-08-07",
+   "checked": "2026-11-03",
+   "status": "Verified (actual spend)",
+   "use": "No GM payment in sample",
+   "facts": [
+    "F-053"
+   ],
+   "opps": [
+    "GM-014"
+   ],
+   "refreshed": "2026-11-03",
+   "lotSuppliers": null,
+   "mackLots": null,
+   "spendByBuyer": {
+    "Bedford Borough Council": [
+     19055.56,
+     13
+    ]
+   }
+  }
+ ],
+ "mack": {
+  "appointments": [
+   {
+    "framework": "MoJ Provision of Community Accommodation Services Open Framework",
+    "entity": "Mack Opco Ltd (Mack House, 13 Bath Road, Cheltenham GL53 7HG)",
+    "lots": "Lots 2, 3 and 4 (BiP award 6030619061, re-checked 2026-11-03)",
+    "term": "2 Nov 2026 to 1 Nov 2034",
+    "status": "Appointed (framework only; no call-off awarded)",
+    "ceiling": "\u00a32.0bn whole-framework estimated maximum ex VAT: CEILING, not committed",
+    "evidence": [
+     "BE-01"
+    ],
+    "facts": [
+     "F-048",
+     "F-049"
+    ]
+   }
+  ],
+  "tenders": [
+   "NEW-CAS3-P1476",
+   "NEW-MCC-P1218",
+   "NEW-GLOS-TREVONE"
+  ],
+  "focusOpps": [
+   "MJ-001",
+   "GM-046",
+   "BR-009",
+   "GL-001",
+   "GM-002",
+   "GM-001",
+   "GL-005",
+   "BR-005",
+   "GM-015",
+   "GM-014"
+  ]
+ },
+ "mlIdentity": "Supplier-register number 5543323 must not be silently identified with the financial-screen number 05543523 or with Mack Living. Check the original register and Companies House before using supplier rights.",
+ "bipExtra": null
+}

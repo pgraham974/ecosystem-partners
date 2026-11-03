@@ -6,10 +6,11 @@ cd "$(dirname "$0")/.."
 B=build
 [ -f "$B/to_site_full.py" ] && python3 "$B/to_site_full.py"
 python3 "$B/enrich_site.py"
+python3 "$B/build_pipeline.py"       # Mack Living pipeline (reads v4-enrich.json, mack-living.json, build/bip_pipeline.json)
 python3 "$B/coverage_check.py"          # fails the sync if any workbook record is unmapped
 S=$( [ -d site ] && echo site || echo . )
-( cd "$S" && node mack-model.test.js >/dev/null && node partner-flow-model.test.js >/dev/null )
+( cd "$S" && node mack-model.test.js >/dev/null && node partner-flow-model.test.js >/dev/null && node mack-pipeline-model.test.js >/dev/null )
 if [ "${1:-}" = "--push" ]; then
-  cd "$S" && git add v4-enrich.json sheets_public.json && git diff --cached --quiet || { git -c user.name=pgraham974 -c user.email=75396411+pgraham974@users.noreply.github.com commit -qm "Daily sync: v4 data" && git push origin main; }
+  cd "$S" && git add v4-enrich.json sheets_public.json mack-pipeline.json build/bip_pipeline.json 2>/dev/null; git add v4-enrich.json sheets_public.json mack-pipeline.json && git diff --cached --quiet || { git -c user.name=pgraham974 -c user.email=75396411+pgraham974@users.noreply.github.com commit -qm "Daily sync: v4 data and Mack pipeline" && git push origin main; }
 fi
 echo "daily sync OK"
