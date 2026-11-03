@@ -1,0 +1,5945 @@
+{
+ "version": "v4-20261103",
+ "source": "Laurito_Opportunities_v4_2026-11-03.xlsx",
+ "built": "2026-11-03 16:31",
+ "licence": "Includes licensed BiP Intelligence data. Values marked CEILING are estimated maxima, not committed spend or landlord revenue.",
+ "opps": [
+  {
+   "id": "GM-001",
+   "org": "Mears Group",
+   "match": "Mears",
+   "region": "Greater Manchester",
+   "type": "Direct lessee",
+   "entity": "Mears Limited",
+   "role": "Lessee (inferred): Mears Limited is the CAS3 NW contractor and Mears' principal trading entity; lease signatory not yet confirmed in writing.",
+   "rank": 3,
+   "pi": 65,
+   "A": 62.5,
+   "Acov": 0.9,
+   "B": 93.1,
+   "Bcov": 1,
+   "E": 97.4,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     3
+    ],
+    "A2": [
+     "Current intake in geography",
+     2
+    ],
+    "A3": [
+     "Funded contract",
+     3
+    ],
+    "A4": [
+     "Committed term",
+     2
+    ],
+    "A5": [
+     "Cost transfer",
+     2
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     3
+    ],
+    "A8": [
+     "Access route",
+     3
+    ]
+   },
+   "gates": {
+    "G-Geo": "UNKNOWN",
+    "G-Route live": "PASS",
+    "G-Elig": "PASS",
+    "G-Req": "PASS",
+    "G-Role": "PASS"
+   },
+   "status": "Qualify: 1 unknown gate(s)",
+   "reason": "Strong signing-entity financials and a verified live MoJ CAS3 NW contract, but GM intake is not confirmed and rent is unpublished. Capped as 'qualify' until GM is confirmed.",
+   "blocker": "No written GM requirement or rent card; landlord retains major repair liabilities; lease signatory and breaks unconfirmed. CAS3 NW initial term runs to about Dec 2027 (3.5 yrs from Jun 2024) and MCC is market-testing its own Manchester CAS3 service from Apr 2027 (P-1476), so Mears' Manchester CAS3 intake may change.",
+   "next": "Email Mears Property Partnerships: confirm (1) GM postcodes in current CAS3 or other sourcing, (2) signing entity, (3) rent card by bed size vs LHA £775/£875/£950, (4) break clauses tied to CAS3 end (Dec 2027 initial / Dec 2029 max).",
+   "facts": [
+    "F-001",
+    "F-002",
+    "F-003",
+    "F-004",
+    "F-005",
+    "F-006",
+    "F-045",
+    "F-048",
+    "F-050"
+   ],
+   "bip": [
+    "BE-01",
+    "BE-19"
+   ],
+   "routeEnd": "2029-12-12",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-002",
+   "org": "Serco",
+   "match": "Serco",
+   "region": "Greater Manchester",
+   "type": "Direct lessee",
+   "entity": "Serco Limited",
+   "role": "Lessee (inferred): Serco Limited holds the UK immigration contract (its largest). Who signs the lease must be read from the March 2025 draft lease.",
+   "rank": 2,
+   "pi": 63,
+   "A": 60,
+   "Acov": 1,
+   "B": 70,
+   "Bcov": 0.72,
+   "E": 93.4,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     3
+    ],
+    "A2": [
+     "Current intake in geography",
+     2
+    ],
+    "A3": [
+     "Funded contract",
+     3
+    ],
+    "A4": [
+     "Committed term",
+     1
+    ],
+    "A5": [
+     "Cost transfer",
+     3
+    ],
+    "A6": [
+     "Rent vs LHA",
+     1
+    ],
+    "A7": [
+     "Scale",
+     4
+    ],
+    "A8": [
+     "Access route",
+     4
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "PASS",
+    "G-Req": "PASS",
+    "G-Role": "PASS"
+   },
+   "status": "Eligible",
+   "reason": "Verified regional prime with a large, accessible landlord team, but committed term is weak (tenant termination options, Home Office break from 2026, contract end 2029) and historic rents were well below LHA.",
+   "blocker": "Lease termination option and 2029 contract end; rent evidence below LHA; signing entity unconfirmed.",
+   "next": "Read the March 2025 draft lease (internal) for tenant name, termination option and rent review; then ask Serco for a current GM rent card by bed size.",
+   "facts": [
+    "F-007",
+    "F-008",
+    "F-009",
+    "F-010",
+    "F-011",
+    "F-046"
+   ],
+   "bip": [
+    "BE-01",
+    "BE-19"
+   ],
+   "routeEnd": "2029-08-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-003",
+   "org": "Nacro",
+   "match": "Nacro",
+   "region": "Greater Manchester",
+   "type": "Direct lessee",
+   "entity": "Nacro",
+   "role": "Verified: Nacro is the tenant and grants licences to occupy.",
+   "rank": 8,
+   "pi": 57.9,
+   "A": 62.5,
+   "Acov": 1,
+   "B": 47.2,
+   "Bcov": 1,
+   "E": 100,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     4
+    ],
+    "A2": [
+     "Current intake in geography",
+     1
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     3
+    ],
+    "A5": [
+     "Cost transfer",
+     3
+    ],
+    "A6": [
+     "Rent vs LHA",
+     2
+    ],
+    "A7": [
+     "Scale",
+     1
+    ],
+    "A8": [
+     "Access route",
+     4
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "PASS",
+    "G-Req": "UNKNOWN",
+    "G-Role": "PASS"
+   },
+   "status": "Qualify: 1 unknown gate(s)",
+   "reason": "Verified tenant with good published terms, but GM intake is limited to Salford supported housing and property type is unstated. Counterparty margin and free reserves are weak.",
+   "blocker": "Very limited GM intake; Salford property spec unknown.",
+   "next": "Ask Nacro leasing for the Salford supported housing spec (type, beds, volume, rent basis) before sourcing.",
+   "facts": [
+    "F-012",
+    "F-013",
+    "F-014",
+    "F-015",
+    "F-016",
+    "F-020",
+    "F-048",
+    "F-057"
+   ],
+   "bip": [
+    "BE-01",
+    "BE-15"
+   ],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-004",
+   "org": "SSG Sustainable Living",
+   "match": "SSG Sustainable Living",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "SSG Sustainable Living",
+   "role": "MCC HRS framework appointee SSG Sustainable Living (CE007396 per BiP award 5673675770). Whether it leases homes from investors: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 30,
+   "Bcov": 0,
+   "E": 50,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-051"
+   ],
+   "bip": [],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-005",
+   "org": "Stepping Stone Projects",
+   "match": "Stepping Stone Projects",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Stepping Stone Projects",
+   "role": "MCC HRS framework appointee (support provider). Whether it leases homes from investors: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 50,
+   "Bcov": 0.28,
+   "E": 56.8,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-041",
+    "F-051"
+   ],
+   "bip": [],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-006",
+   "org": "Caritas Diocese of Salford",
+   "match": "Caritas Diocese of Salford",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Caritas Diocese of Salford",
+   "role": "MCC HRS framework appointee (support provider). Whether it leases homes from investors: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 30,
+   "Bcov": 0,
+   "E": 50,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-051"
+   ],
+   "bip": [],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-007",
+   "org": "IASPIRE Supported Living",
+   "match": "IASPIRE Supported Living",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "IASPIRE Crisis / Step Down Beds Ltd",
+   "role": "NHS step-down provider; lease appetite unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 50,
+   "Bcov": 0.28,
+   "E": 54.3,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Small NHS-commissioned provider; no property requirement evidenced.",
+   "blocker": "No property spec.",
+   "next": "Ask whether the GMMH contract needs additional leased step-down units.",
+   "facts": [
+    "F-042"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-008",
+   "org": "Great Places Housing Association",
+   "match": "Great Places",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Great Places Housing Association",
+   "role": "MCC HRS framework appointee (support provider). Whether it leases homes from investors: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 30,
+   "Bcov": 0.2,
+   "E": 55,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-026",
+    "F-051"
+   ],
+   "bip": [],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-009",
+   "org": "Mosscare St Vincent's Housing Group (MSV)",
+   "match": "Mosscare St Vincent's Housing",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Mosscare St. Vincent's Housing Group Limited",
+   "role": "MCC HRS framework appointee (support provider). Whether it leases homes from investors: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 30,
+   "Bcov": 0.2,
+   "E": 55,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-027",
+    "F-051"
+   ],
+   "bip": [],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-010",
+   "org": "Depaul UK",
+   "match": "Depaul",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Depaul UK",
+   "role": "MCC HRS framework appointee Depaul UK (CH 02440093 per BiP award 5673675770; v3 ambiguity resolved). Whether it leases homes from investors: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 30,
+   "Bcov": 0.11,
+   "E": 52.9,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-034",
+    "F-051"
+   ],
+   "bip": [],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-011",
+   "org": "Sanctuary Supported Living",
+   "match": "Sanctuary Supported Living",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Sanctuary Housing Association",
+   "role": "MCC HRS framework appointee (support provider). Whether it leases homes from investors: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 30,
+   "Bcov": 0.2,
+   "E": 55,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-028",
+    "F-051"
+   ],
+   "bip": [],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-012",
+   "org": "The Riverside Group Care & Support",
+   "match": "Riverside  Care & Support",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "The Riverside Group Limited",
+   "role": "MCC HRS framework appointee (support provider). Whether it leases homes from investors: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 30,
+   "Bcov": 0.2,
+   "E": 55,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-029",
+    "F-051"
+   ],
+   "bip": [],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-013",
+   "org": "Salvation Army Housing Association",
+   "match": "Salvation Army",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Salvation Army Housing Association",
+   "role": "MCC HRS framework appointee (support provider). Whether it leases homes from investors: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 30,
+   "Bcov": 0.2,
+   "E": 55,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-030",
+    "F-051"
+   ],
+   "bip": [],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-014",
+   "org": "Rent Connect Housing",
+   "match": "Rent Connect Housing",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Rent Connect Housing Limited",
+   "role": "Advertises a guaranteed rent scheme (lessee inferred). Framework appointee, no call-off evidenced.",
+   "rank": 9,
+   "pi": 50,
+   "A": 50,
+   "Acov": 0.4,
+   "B": 50,
+   "Bcov": 0.28,
+   "E": 67.1,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     2
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "PASS"
+   },
+   "status": "Qualify: 2 unknown gate(s)",
+   "reason": "Verified GM framework appointment (Oldham nightly paid) and a guaranteed rent product, but the GM route is nightly paid and no GM payments were found in the sample, so lease length and intake remain unproven.",
+   "blocker": "GM route is nightly paid; no GM spend found; lease product terms unknown.",
+   "next": "Ask Rent Connect for its guaranteed rent HOTs (term, rent, repairs) and GM demand.",
+   "facts": [
+    "F-023",
+    "F-025",
+    "F-053"
+   ],
+   "bip": [
+    "BE-08",
+    "BE-09",
+    "BE-18"
+   ],
+   "routeEnd": "2029-10-13",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-015",
+   "org": "Centennial Property Limited",
+   "match": "Centennial Property",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Centennial Property Limited (t/a The Housing Network)",
+   "role": "Contract holder for MCC P-1475, confirmed by BiP as 'Domestic Abuse - Intersecting Needs Safe Accommodation' (£1,336,230 awarded value, 1 Oct 2026 to 31 Mar 2028). Operates own or leased real estate (SIC 68209). Whether it leases from third-party landlords for this contract: unknown.",
+   "rank": 4,
+   "pi": 65,
+   "A": 63.46,
+   "Acov": 0.65,
+   "B": 70,
+   "Bcov": 0.72,
+   "E": 84.2,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     2
+    ],
+    "A2": [
+     "Current intake in geography",
+     3
+    ],
+    "A3": [
+     "Funded contract",
+     3
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     2
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "PASS"
+   },
+   "status": "Qualify: 2 unknown gate(s)",
+   "reason": "Newly mobilising, verified Manchester contract and a growing, profitable operator, but no evidence yet that it takes leases from investors or what it pays.",
+   "blocker": "Unknown whether it needs leased stock for P-1475 and on what terms.",
+   "next": "Email THN tenders/property: ask whether P-1475 needs leased self-contained units in Manchester, lease length vs the Mar 2028 contract end, and rent basis.",
+   "facts": [
+    "F-017",
+    "F-018",
+    "F-019",
+    "F-020",
+    "F-056",
+    "F-048"
+   ],
+   "bip": [
+    "BE-01",
+    "BE-06",
+    "BE-17"
+   ],
+   "routeEnd": "2028-03-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-016",
+   "org": "Unity Housing Support",
+   "match": "Unity Housing Support",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Unity Housing Support",
+   "role": "Framework appointee (Leicester VCSE). Lessee role unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 50,
+   "Bcov": 0.28,
+   "E": 51.8,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "UNKNOWN",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Entity now resolved (CH 12329376, Leicester); no GM or lease evidence.",
+   "blocker": "No GM activity evidenced.",
+   "next": "Low priority: confirm any Manchester call-offs.",
+   "facts": [
+    "F-023",
+    "F-024"
+   ],
+   "bip": [
+    "BE-09"
+   ],
+   "routeEnd": "2029-10-13",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-017",
+   "org": "Corporate Travel Management North",
+   "match": "Corporate Travel Management North",
+   "region": "Greater Manchester",
+   "type": "Broker / short-stay provider",
+   "entity": "Corporate Travel Management (North) Limited",
+   "role": "Home Office contingency (hotel-type) contractor. Residential lessee role unproven.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 50,
+   "Bcov": 0.28,
+   "E": 51.8,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     1
+    ]
+   },
+   "gates": {
+    "G-Geo": "UNKNOWN",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Contract is for hotel-type contingency; government wants hotels exited, so residential lease demand is speculative.",
+   "blocker": "Product mismatch likely.",
+   "next": "Deprioritise; only ask if self-contained stock is procured.",
+   "facts": [
+    "F-038",
+    "F-007"
+   ],
+   "bip": [],
+   "routeEnd": "2029-08-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-018",
+   "org": "Making Space",
+   "match": "Making Space",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Making Space",
+   "role": "Mental health supported housing provider; tenancies via MCC Brokerage.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "No property requirement evidenced.",
+   "blocker": "No property contact.",
+   "next": "Ask MCC Brokerage whether Making Space needs more leased units.",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-019",
+   "org": "Contact",
+   "match": "Contact",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Contact",
+   "role": "MCC HRS framework appointee 'Contact' (charity 1178557 per BiP award 5673675770). Whether it leases homes from investors: unknown.",
+   "rank": 16,
+   "pi": 40.5,
+   "A": 45,
+   "Acov": 0.25,
+   "B": 30,
+   "Bcov": 0,
+   "E": 51.3,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     1
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Qualify: 3 unknown gate(s)",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum. Very small scale.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-051"
+   ],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-020",
+   "org": "Calico",
+   "match": "Calico",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Calico Homes Limited",
+   "role": "GMBOP partner; direct property authority in GM unclear.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0.2,
+   "E": 42.5,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "UNKNOWN",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Regulated RP (V2) but no GM property route evidenced.",
+   "blocker": "No GM requirement.",
+   "next": "Low priority.",
+   "facts": [
+    "F-031"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-021",
+   "org": "City of Liverpool YMCA",
+   "match": "City of Liverpool YMCA",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "City of Liverpool YMCA",
+   "role": "MCC HRS framework appointee (support provider). Whether it leases homes from investors: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 30,
+   "Bcov": 0,
+   "E": 50,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Verified framework appointee, but framework membership is not an award and there is no evidence it leases third-party homes. Coverage below the ranking minimum.",
+   "blocker": "No stated property requirement or lease appetite.",
+   "next": "Discovery call with the Capture Template: ask for current leased-property needs, volumes, lease length and rent basis.",
+   "facts": [
+    "F-020",
+    "F-051"
+   ],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "routeEnd": "2028-01-31",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-022",
+   "org": "Greater Manchester Better Outcomes Partnership (GMBOP)",
+   "match": "Greater Manchester Better Outcomes Partnership",
+   "region": "Greater Manchester",
+   "type": "Intermediary / route",
+   "entity": "Greater Manchester Better Outcomes Partnership (GMBOP)",
+   "role": "Outcomes partnership: referral / intelligence route, not a lessee.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 32.5,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "FAIL"
+   },
+   "status": "Excluded: confirmed fail (Rent-paying role)",
+   "reason": "Not a rent-paying counterparty: kept as a route-to-market, not ranked against contract opportunities.",
+   "blocker": "Not a tenant.",
+   "next": "Use as an introduction or supply channel only.",
+   "facts": [
+    "F-023"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-023",
+   "org": "Insurance Claims Accommodation Bureau",
+   "match": "Insurance Claims Accommodation Bureau",
+   "region": "Greater Manchester",
+   "type": "Broker / short-stay provider",
+   "entity": "Insurance Claims Accommodation Bureau Limited",
+   "role": "Alternative accommodation broker; framework appointee.",
+   "rank": 13,
+   "pi": 42,
+   "A": 38.64,
+   "Acov": 0.55,
+   "B": 50,
+   "Bcov": 0.28,
+   "E": 71.1,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     2
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     0
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     3
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Qualify: 3 unknown gate(s)",
+   "reason": "Live GM placements are evidenced by Bury Council spend, but the model is short-stay decant, which conflicts with long-income leases.",
+   "blocker": "Term risk.",
+   "next": "Ask only if a 3+ yr corporate lease product exists.",
+   "facts": [
+    "F-023",
+    "F-040",
+    "F-054"
+   ],
+   "bip": [
+    "BE-09",
+    "BE-10",
+    "BE-16"
+   ],
+   "routeEnd": "2029-10-13",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-024",
+   "org": "Thesqua.re",
+   "match": "Thesqua.re",
+   "region": "Greater Manchester",
+   "type": "Broker / short-stay provider",
+   "entity": "Thesqua.re Ltd",
+   "role": "Serviced apartment platform; framework appointee.",
+   "rank": null,
+   "pi": null,
+   "A": 30,
+   "Acov": 0.2,
+   "B": 50,
+   "Bcov": 0.28,
+   "E": 51.8,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "UNKNOWN",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Product is serviced apartments; fit unproven.",
+   "blocker": "Product mismatch likely.",
+   "next": "Deprioritise.",
+   "facts": [
+    "F-023",
+    "F-039"
+   ],
+   "bip": [
+    "BE-09"
+   ],
+   "routeEnd": "2029-10-13",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-025",
+   "org": "Elysium Healthcare",
+   "match": "Elysium Healthcare",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Elysium Healthcare",
+   "role": "Clinical provider; property need may be clinical.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 27.5,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "UNKNOWN",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "No evidence of residential lease need.",
+   "blocker": "Product fit unknown.",
+   "next": "Deprioritise.",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-026",
+   "org": "Lambert Smith Hampton Group",
+   "match": "Lambert Smith Hampton",
+   "region": "Greater Manchester",
+   "type": "Intermediary / route",
+   "entity": "Lambert Smith Hampton Group",
+   "role": "Property consultancy and framework appointee: procurement / supply channel, not a rent-paying tenant.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 32.5,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "FAIL"
+   },
+   "status": "Excluded: confirmed fail (Rent-paying role)",
+   "reason": "Not a rent-paying counterparty: kept as a route-to-market, not ranked against contract opportunities.",
+   "blocker": "Not a tenant.",
+   "next": "Use as an introduction or supply channel only.",
+   "facts": [
+    "F-023"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-027",
+   "org": "ProcurePublic",
+   "match": "ProcurePublic",
+   "region": "Greater Manchester",
+   "type": "Intermediary / route",
+   "entity": "ProcurePublic",
+   "role": "Framework managing agent (ProcurePublic): not a lessee.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 32.5,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "FAIL"
+   },
+   "status": "Excluded: confirmed fail (Rent-paying role)",
+   "reason": "Not a rent-paying counterparty: kept as a route-to-market, not ranked against contract opportunities.",
+   "blocker": "Not a tenant.",
+   "next": "Use as an introduction or supply channel only.",
+   "facts": [
+    "F-023",
+    "F-043"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-028",
+   "org": "Ingeus UK",
+   "match": "Ingeus",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "Ingeus UK",
+   "role": "Employment / justice pathways; no direct accommodation.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 27.5,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "UNKNOWN",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "FAIL",
+    "G-Role": "FAIL"
+   },
+   "status": "Excluded: confirmed fail (Requirement; Rent-paying role)",
+   "reason": "Excluded: no accommodation requirement (original FAIL retained).",
+   "blocker": "No accommodation.",
+   "next": "Closed - hold.",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-029",
+   "org": "Jigsaw Conferences",
+   "match": "Jigsaw Conferences",
+   "region": "Greater Manchester",
+   "type": "Broker / short-stay provider",
+   "entity": "Jigsaw Conferences Ltd",
+   "role": "Accommodation broker; framework appointee.",
+   "rank": 12,
+   "pi": 42.5,
+   "A": 39.29,
+   "Acov": 0.35,
+   "B": 50,
+   "Bcov": 0.28,
+   "E": 65.8,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     1
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Qualify: 3 unknown gate(s)",
+   "reason": "Broker with short-term products; BiP shows decant awards with Places for People (£13.5m, 2026-2029) and Notting Hill Genesis (£10m, 2026-2029), none in GM. No corporate lease evidence.",
+   "blocker": "Term risk.",
+   "next": "Ask whether 6-month+ decant lets can be on 3+ yr corporate lets.",
+   "facts": [
+    "F-023",
+    "F-044",
+    "F-055"
+   ],
+   "bip": [
+    "BE-09",
+    "BE-11"
+   ],
+   "routeEnd": "2029-10-13",
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-030",
+   "org": "The Brick",
+   "match": "Brick",
+   "region": "Greater Manchester",
+   "type": "Provider / framework appointee",
+   "entity": "The Brick",
+   "role": "Local Wigan charity.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 27.5,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "No scalable mandate evidenced.",
+   "blocker": "Scale.",
+   "next": "Deprioritise.",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-031",
+   "org": "Manchester Airports Group - MAG Property",
+   "match": "Manchester Airports",
+   "region": "Greater Manchester",
+   "type": "Windfall / market signal",
+   "entity": "Manchester Airports Group - MAG Property",
+   "role": "Airport operator / landlord / developer (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Windfall / market signal",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Establish who controls crew, contractor and relocation accommodation; radius; booking/lease model",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-032",
+   "org": "MIX Manchester (Airport City North)",
+   "match": "MIX Manchester",
+   "region": "Greater Manchester",
+   "type": "Windfall / market signal",
+   "entity": "MIX Manchester (Airport City North)",
+   "role": "Science / manufacturing campus - construction & occupier trigger (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Windfall / market signal",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Map construction start, contractor workforce and occupier relocation demand; set project expiry date",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-033",
+   "org": "Manchester University NHS FT - Wythenshawe key-worker accommodation",
+   "match": "Manchester University NHS FT",
+   "region": "Greater Manchester",
+   "type": "Windfall / market signal",
+   "entity": "Manchester University NHS FT - Wythenshawe key-worker accommodation",
+   "role": "NHS trust - key-worker housing (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Windfall / market signal",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Establish key-worker / locum accommodation gaps and estates route",
+   "facts": [
+    "F-033"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-034",
+   "org": "Greater Manchester Mental Health NHS FT (GMMH)",
+   "match": "Greater Manchester Mental Health NHS FT",
+   "region": "Greater Manchester",
+   "type": "Windfall / market signal",
+   "entity": "Greater Manchester Mental Health NHS FT (GMMH)",
+   "role": "NHS trust - commissioner of step-down / rehab (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Windfall / market signal",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Property/estates/commissioning route; step-down and discharge accommodation requirement",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-035",
+   "org": "Manchester City Council - Homelessness, Housing Solutions & Commissioning",
+   "match": "Manchester City Council",
+   "region": "Greater Manchester",
+   "type": "Commissioner - direct leasing",
+   "entity": "Manchester City Council",
+   "role": "Verified: MCC approved entering 10-year + 1 day leases with TA providers (Mar 2024) and offers owners leases on its empty homes page. Which providers are eligible: unknown.",
+   "rank": 7,
+   "pi": 62.6,
+   "A": 76.56,
+   "Acov": 0.8,
+   "B": 30,
+   "Bcov": 0.11,
+   "E": 73.7,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     3
+    ],
+    "A2": [
+     "Current intake in geography",
+     3
+    ],
+    "A3": [
+     "Funded contract",
+     3
+    ],
+    "A4": [
+     "Committed term",
+     3
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     4
+    ],
+    "A8": [
+     "Access route",
+     3
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "PASS",
+    "G-Role": "PASS"
+   },
+   "status": "Qualify: 1 unknown gate(s)",
+   "reason": "Potentially the strongest covenant and longest term (local authority, 10 yrs + 1 day), but provider eligibility, rent and repairs are unpublished, so it is capped as 'qualify'.",
+   "blocker": "No published rent, repairs or break terms; eligibility of Laurito/Mack as TA provider unconfirmed.",
+   "next": "Ask MCC (via existing Mack agreement contact) for the 10-yr + 1 day lease template and rent schedule, and whether the 12 x 2-bed block can go on that lease.",
+   "facts": [
+    "F-021",
+    "F-022",
+    "F-035",
+    "F-058"
+   ],
+   "bip": [
+    "BE-12"
+   ],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-036",
+   "org": "Greater Manchester Combined Authority - Homelessness",
+   "match": "Greater Manchester Combined Authority",
+   "region": "Greater Manchester",
+   "type": "Commissioner - programme",
+   "entity": "Greater Manchester Combined Authority - Homelessness",
+   "role": "GMCA states it has no statutory homelessness function; not a lease counterparty.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 42.5,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "FAIL"
+   },
+   "status": "Excluded: confirmed fail (Rent-paying role)",
+   "reason": "Programme lead, not a tenant.",
+   "blocker": "Not a tenant.",
+   "next": "Use for programme-level demand signals.",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-037",
+   "org": "MediaCityUK",
+   "match": "MediaCityUK",
+   "region": "Greater Manchester",
+   "type": "Windfall / market signal",
+   "entity": "MediaCityUK",
+   "role": "Media campus - production / event-led demand (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Windfall / market signal",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Block-booking route, production accommodation buyer, lead times and stay duration",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-038",
+   "org": "Home Office - Asylum accommodation",
+   "match": "Home Office",
+   "region": "Greater Manchester",
+   "type": "Commissioner - programme",
+   "entity": "Home Office - Asylum accommodation",
+   "role": "Central commissioner; landlords contract with primes (Serco in NW).",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 50,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "FAIL"
+   },
+   "status": "Excluded: confirmed fail (Rent-paying role)",
+   "reason": "Not a tenant; Home Office funds AASC but does not guarantee landlord rent.",
+   "blocker": "Not a tenant.",
+   "next": "Track break-clause decisions and the post-2029 model.",
+   "facts": [
+    "F-007"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-039",
+   "org": "TBC - Universities / research campuses",
+   "match": "",
+   "region": "Greater Manchester",
+   "type": "Placeholder",
+   "entity": "TBC - Universities / research campuses",
+   "role": "Search family placeholder (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 0,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Excluded: placeholder",
+   "reason": "Placeholder search family: no entity yet.",
+   "blocker": "No entity.",
+   "next": "Identify targets; visiting staff / campus expansion accommodation",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Patrick Graham"
+  },
+  {
+   "id": "GM-040",
+   "org": "TBC - Main contractors (airport, rail, hospital, regeneration)",
+   "match": "",
+   "region": "Greater Manchester",
+   "type": "Placeholder",
+   "entity": "TBC - Main contractors (airport, rail, hospital, regeneration)",
+   "role": "Search family placeholder (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 0,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Excluded: placeholder",
+   "reason": "Placeholder search family: no entity yet.",
+   "blocker": "No entity.",
+   "next": "Identify principal contractors, project durations and workforce accommodation policy",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Patrick Graham"
+  },
+  {
+   "id": "GM-041",
+   "org": "TBC - Major employers & corporate relocation",
+   "match": "",
+   "region": "Greater Manchester",
+   "type": "Placeholder",
+   "entity": "TBC - Major employers & corporate relocation",
+   "role": "Search family placeholder (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 0,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Excluded: placeholder",
+   "reason": "Placeholder search family: no entity yet.",
+   "blocker": "No entity.",
+   "next": "Identify expanding employers / relocation providers; HR-mobility route",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Patrick Graham"
+  },
+  {
+   "id": "GM-042",
+   "org": "TBC - Property supply partners (developers, agents, S106 holders)",
+   "match": "",
+   "region": "Greater Manchester",
+   "type": "Placeholder",
+   "entity": "TBC - Property supply partners (developers, agents, S106 holders)",
+   "role": "Search family placeholder (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 0,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Excluded: placeholder",
+   "reason": "Placeholder search family: no entity yet.",
+   "blocker": "No entity.",
+   "next": "Identify blocks/portfolios, stalled schemes and S106 units near demand nodes",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Patrick Graham"
+  },
+  {
+   "id": "BR-001",
+   "org": "Bristol City Council - Private Renting Team (Housing Options)",
+   "match": "Bristol City Council",
+   "region": "Bristol",
+   "type": "Commissioner - direct leasing",
+   "entity": "Bristol City Council",
+   "role": "Council leasing scheme (lessee = Bristol City Council) per 2022 leaflet: Historical.",
+   "rank": 10,
+   "pi": 46.5,
+   "A": 53.57,
+   "Acov": 0.7,
+   "B": 30,
+   "Bcov": 0.11,
+   "E": 41.1,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     3
+    ],
+    "A2": [
+     "Current intake in geography",
+     2
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     1
+    ],
+    "A5": [
+     "Cost transfer",
+     2
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     3
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "PASS",
+    "G-Req": "PASS",
+    "G-Role": "PASS"
+   },
+   "status": "Qualify: 1 unknown gate(s)",
+   "reason": "Council covenant but evidence is a 2022 leaflet and the lease is only 2 years.",
+   "blocker": "Current leasing offer unverified; short term. BiP shows Bristol's TA procurement focus is the RP-delivered STAF framework (BR-009); no council leasing scheme notice found (Jun 2025 to Nov 2026).",
+   "next": "Read the current Bristol page and ask the Private Renting Team whether the leasing scheme is still open and its current term.",
+   "facts": [
+    "F-047",
+    "F-036",
+    "F-052"
+   ],
+   "bip": [
+    "BE-07",
+    "BE-20"
+   ],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "BR-002",
+   "org": "Nacro - CAS-2 South West",
+   "match": "Nacro",
+   "region": "Bristol",
+   "type": "Direct lessee",
+   "entity": "Nacro",
+   "role": "Verified: Nacro is the tenant.",
+   "rank": null,
+   "pi": null,
+   "A": 59.21,
+   "Acov": 0.95,
+   "B": 47.2,
+   "Bcov": 1,
+   "E": 98.7,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     4
+    ],
+    "A2": [
+     "Current intake in geography",
+     0
+    ],
+    "A3": [
+     "Funded contract",
+     3
+    ],
+    "A4": [
+     "Committed term",
+     2
+    ],
+    "A5": [
+     "Cost transfer",
+     3
+    ],
+    "A6": [
+     "Rent vs LHA",
+     2
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     4
+    ]
+   },
+   "gates": {
+    "G-Geo": "FAIL",
+    "G-Route live": "PASS",
+    "G-Elig": "PASS",
+    "G-Req": "PASS",
+    "G-Role": "PASS"
+   },
+   "status": "Excluded: confirmed fail (Geography)",
+   "reason": "Excluded: confirmed geography fail (Bristol not sourced).",
+   "blocker": "Bristol excluded.",
+   "next": "Monitor; re-ask Nacro in Q1 2027.",
+   "facts": [
+    "F-012",
+    "F-013",
+    "F-048"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "BR-003",
+   "org": "Bristol Airport",
+   "match": "Bristol Airport",
+   "region": "Bristol",
+   "type": "Windfall / market signal",
+   "entity": "Bristol Airport",
+   "role": "Airport operator (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Windfall / market signal",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Identify crew/contractor accommodation control and development plans",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "BR-004",
+   "org": "Lambert Smith Hampton - Bristol office",
+   "match": "Lambert Smith Hampton",
+   "region": "Bristol",
+   "type": "Intermediary / route",
+   "entity": "Lambert Smith Hampton - Bristol office",
+   "role": "Property consultancy (LSH Bristol): route only.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 32.5,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "FAIL"
+   },
+   "status": "Excluded: confirmed fail (Rent-paying role)",
+   "reason": "Not a rent-paying counterparty: kept as a route-to-market, not ranked against contract opportunities.",
+   "blocker": "Not a tenant.",
+   "next": "Use as an introduction or supply channel only.",
+   "facts": [
+    "F-023"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "BR-005",
+   "org": "Mears Living - South region",
+   "match": "Mears Living",
+   "region": "Bristol",
+   "type": "Direct lessee",
+   "entity": "Mears Limited",
+   "role": "As GM-001 (inferred Mears Limited).",
+   "rank": 5,
+   "pi": 65,
+   "A": 62.5,
+   "Acov": 0.5,
+   "B": 93.1,
+   "Bcov": 1,
+   "E": 79.3,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     3
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     2
+    ],
+    "A5": [
+     "Cost transfer",
+     2
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     3
+    ]
+   },
+   "gates": {
+    "G-Geo": "UNKNOWN",
+    "G-Route live": "PASS",
+    "G-Elig": "PASS",
+    "G-Req": "PASS",
+    "G-Role": "PASS"
+   },
+   "status": "Qualify: 1 unknown gate(s)",
+   "reason": "Same Mears route as GM-001 with no Bristol evidence.",
+   "blocker": "Bristol not confirmed.",
+   "next": "Fold into the GM-001 Mears email: ask about Bristol and Gloucestershire.",
+   "facts": [
+    "F-003",
+    "F-004"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "BR-006",
+   "org": "TBC - NHS trusts / ICB (Bristol)",
+   "match": "",
+   "region": "Bristol",
+   "type": "Placeholder",
+   "entity": "TBC - NHS trusts / ICB (Bristol)",
+   "role": "Search family placeholder (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 0,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Excluded: placeholder",
+   "reason": "Placeholder search family: no entity yet.",
+   "blocker": "No entity.",
+   "next": "Identify trusts, key-worker and step-down requirements",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Patrick Graham"
+  },
+  {
+   "id": "GL-001",
+   "org": "Nacro - CAS-2 South West",
+   "match": "Nacro",
+   "region": "Gloucestershire",
+   "type": "Direct lessee",
+   "entity": "Nacro",
+   "role": "Verified: Nacro is the tenant.",
+   "rank": 1,
+   "pi": 66.7,
+   "A": 75,
+   "Acov": 0.95,
+   "B": 47.2,
+   "Bcov": 1,
+   "E": 98.7,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     4
+    ],
+    "A2": [
+     "Current intake in geography",
+     3
+    ],
+    "A3": [
+     "Funded contract",
+     3
+    ],
+    "A4": [
+     "Committed term",
+     2
+    ],
+    "A5": [
+     "Cost transfer",
+     3
+    ],
+    "A6": [
+     "Rent vs LHA",
+     2
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     4
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "PASS",
+    "G-Req": "PASS",
+    "G-Role": "PASS"
+   },
+   "status": "Eligible",
+   "reason": "Only row where tenant identity, live regional intake, published lease terms and an open route are all verified this pass. Score limited by Nacro's thin margin, negative free reserves and leases that can outlast CAS-2.",
+   "blocker": "Unit volumes and Gloucestershire towns not stated; lease term may outlast CAS-2 funding (Sep 2028/2029). Nacro is appointed to the successor MoJ CAS framework (Lots 1 to 4, to 2034), but that is a framework, not funded volume.",
+   "next": "Send Nacro leasing 2-3 Gloucester/Cheltenham candidate houses and ask for (1) target towns and volumes, (2) indicative rent vs LHA (Gloucester 2-bed £725, Cheltenham 2-bed £800), (3) whether the lease has any break linked to CAS-2.",
+   "facts": [
+    "F-012",
+    "F-013",
+    "F-014",
+    "F-015",
+    "F-016",
+    "F-037",
+    "F-048"
+   ],
+   "bip": [
+    "BE-01"
+   ],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GL-002",
+   "org": "Gloucester City Homes (GCH) - Homeless Team",
+   "match": "Gloucester City Homes",
+   "region": "Gloucestershire",
+   "type": "Provider / framework appointee",
+   "entity": "Gloucester City Homes Limited",
+   "role": "RP managing 113 homeless units for Gloucester, Stroud and Tewkesbury councils; lease appetite unknown.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0.2,
+   "E": 47.5,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "Regulated RP (G1/V2) in Gloucester with homeless stock, but no leasing evidence.",
+   "blocker": "No stated requirement.",
+   "next": "Ask GCH homeless team whether it leases additional dispersed units.",
+   "facts": [
+    "F-032"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GL-003",
+   "org": "Cheltenham Borough Council - Housing & Private Sector Housing",
+   "match": "Cheltenham Borough Council",
+   "region": "Gloucestershire",
+   "type": "Commissioner - direct leasing",
+   "entity": "Cheltenham Borough Council - Housing & Private Sector Housing",
+   "role": "Council homelessness / TA function. Whether it leases from private owners: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "No TA leasing evidence captured yet.",
+   "blocker": "No requirement captured. BiP (Jun 2025 to Nov 2026): no TA leasing or homelessness accommodation notice from this council; absence of a notice is not evidence of no need.",
+   "next": "Ask housing options whether the council leases TA from private owners, on what term and rent.",
+   "facts": [],
+   "bip": [
+    "BE-20"
+   ],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GL-004",
+   "org": "Gloucester City Council - Housing / Homelessness",
+   "match": "Gloucester City Council",
+   "region": "Gloucestershire",
+   "type": "Commissioner - direct leasing",
+   "entity": "Gloucester City Council - Housing / Homelessness",
+   "role": "Council homelessness / TA function. Whether it leases from private owners: unknown.",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Research needed: A coverage below minimum",
+   "reason": "No TA leasing evidence captured yet.",
+   "blocker": "No requirement captured. BiP (Jun 2025 to Nov 2026): no TA leasing or homelessness accommodation notice from this council; absence of a notice is not evidence of no need.",
+   "next": "Ask housing options whether the council leases TA from private owners, on what term and rent.",
+   "facts": [],
+   "bip": [
+    "BE-20"
+   ],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GL-005",
+   "org": "Mears Living - South region",
+   "match": "Mears Living",
+   "region": "Gloucestershire",
+   "type": "Direct lessee",
+   "entity": "Mears Limited",
+   "role": "As GM-001 (inferred Mears Limited).",
+   "rank": 6,
+   "pi": 65,
+   "A": 62.5,
+   "Acov": 0.5,
+   "B": 93.1,
+   "Bcov": 1,
+   "E": 79.3,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     3
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     2
+    ],
+    "A5": [
+     "Cost transfer",
+     2
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     3
+    ]
+   },
+   "gates": {
+    "G-Geo": "UNKNOWN",
+    "G-Route live": "PASS",
+    "G-Elig": "PASS",
+    "G-Req": "PASS",
+    "G-Role": "PASS"
+   },
+   "status": "Qualify: 1 unknown gate(s)",
+   "reason": "Same Mears route as GM-001 with no Gloucestershire evidence. Duplicate route of BR-005 (different region).",
+   "blocker": "Gloucestershire not confirmed.",
+   "next": "Fold into the GM-001 Mears email: ask about Bristol and Gloucestershire.",
+   "facts": [
+    "F-003",
+    "F-004"
+   ],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GL-006",
+   "org": "TBC - NHS trusts / ICB (Gloucestershire)",
+   "match": "",
+   "region": "Gloucestershire",
+   "type": "Placeholder",
+   "entity": "TBC - NHS trusts / ICB (Gloucestershire)",
+   "role": "Search family placeholder (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 0,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Excluded: placeholder",
+   "reason": "Placeholder search family: no entity yet.",
+   "blocker": "No entity.",
+   "next": "Identify trusts, key-worker and step-down requirements",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Patrick Graham"
+  },
+  {
+   "id": "GM-043",
+   "org": "North Manchester General Hospital redevelopment - MFT (construction partner Bovis)",
+   "match": "North Manchester General Hospital redevelopment",
+   "region": "Greater Manchester",
+   "type": "Windfall / market signal",
+   "entity": "North Manchester General Hospital redevelopment - MFT (construction partner Bovis)",
+   "role": "NHS capital programme - contractor workforce and NHS staff demand (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Windfall / market signal",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Establish Bovis workforce accommodation policy and peak numbers; MFT estates view on key-worker / locum demand at NMGH; set project expiry date",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-044",
+   "org": "Victoria North regeneration - FEC / Manchester City Council JV",
+   "match": "Victoria North regeneration",
+   "region": "Greater Manchester",
+   "type": "Supply",
+   "entity": "Victoria North regeneration - FEC / Manchester City Council JV",
+   "role": "Master developer - housing supply and new-community demand (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Supply",
+   "reason": "Supply-side partner; scored on overlay.",
+   "blocker": "Supply, not demand.",
+   "next": "Identify blocks or phases available for bulk purchase / lease, affordable-home re-provision route and phasing near NMGH",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GM-045",
+   "org": "Manchester Airport Transformation Programme (MAN-TP) - contractors",
+   "match": "Manchester Airport Transformation Programme",
+   "region": "Greater Manchester",
+   "type": "Windfall / market signal",
+   "entity": "Manchester Airport Transformation Programme (MAN-TP) - contractors",
+   "role": "Airport capital programme - contractor workforce demand (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Windfall / market signal",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Confirm whether construction is still on site, which contractors hold remaining packages, and their workforce accommodation route; set expiry date",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "GL-007",
+   "org": "Golden Valley - £1bn cyber and technology campus (HBD / Cheltenham Borough Council)",
+   "match": "Golden Valley",
+   "region": "Gloucestershire",
+   "type": "Windfall / market signal",
+   "entity": "Golden Valley - £1bn cyber and technology campus (HBD / Cheltenham Borough Council)",
+   "role": "Strategic development - contractor workforce now, staff relocation later (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Windfall / market signal",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Establish Bowmer + Kirkland workforce numbers and accommodation route; occupier relocation demand around IDEA opening (2028); set expiry for phase 1",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "BR-007",
+   "org": "Bristol Temple Quarter regeneration (BTQ LLP)",
+   "match": "Bristol Temple Quarter regeneration",
+   "region": "Bristol",
+   "type": "Windfall / market signal",
+   "entity": "Bristol Temple Quarter regeneration (BTQ LLP)",
+   "role": "Regeneration programme - jobs-led demand and future housing supply (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "N/A",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Not ranked: Windfall / market signal",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Map phasing, development-partner selection and staff / visiting-academic demand at TQEC",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "BR-008",
+   "org": "Hinkley Point C - contractor workforce accommodation",
+   "match": "Hinkley Point C",
+   "region": "Bristol",
+   "type": "Windfall / market signal",
+   "entity": "Hinkley Point C - contractor workforce accommodation",
+   "role": "Nuclear construction project - contractor workforce demand (original text, not re-verified)",
+   "rank": null,
+   "pi": null,
+   "A": null,
+   "Acov": 0,
+   "B": 30,
+   "Bcov": 0,
+   "E": 35,
+   "Eband": "Low",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     null
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     null
+    ]
+   },
+   "gates": {
+    "G-Geo": "FAIL",
+    "G-Route live": "N/A",
+    "G-Elig": "N/A",
+    "G-Req": "N/A",
+    "G-Role": "N/A"
+   },
+   "status": "Excluded: confirmed fail (Geography)",
+   "reason": "Market signal scored on the original 0-10 overlay; not a contract opportunity.",
+   "blocker": "No identified rent-paying counterparty.",
+   "next": "Decide whether Somerset is in scope; if so, establish contractor booking routes and duration of demand",
+   "facts": [],
+   "bip": [],
+   "routeEnd": null,
+   "owner": "Liza Loughnane"
+  },
+  {
+   "id": "MJ-001",
+   "org": "Ministry of Justice: Community Accommodation Services open framework (Mack Opco appointed)",
+   "match": "Ministry of Justice",
+   "region": "England and Wales (call-off)",
+   "type": "Commissioner - tendered contract",
+   "entity": "Ministry of Justice",
+   "role": "Verified (BiP award 6030619061): Mack Opco Ltd (Mack House, 13 Bath Road, Cheltenham) is appointed to Lots 2, 3 and 4 of the MoJ open framework. The MoJ would pay the provider for accommodation services under call-offs; it is not a lease and not a rent guarantee.",
+   "rank": 11,
+   "pi": 44,
+   "A": 50,
+   "Acov": 0.4,
+   "B": 30,
+   "Bcov": 0.11,
+   "E": 63.2,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     3
+    ],
+    "A2": [
+     "Current intake in geography",
+     null
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     4
+    ]
+   },
+   "gates": {
+    "G-Geo": "UNKNOWN",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "PASS"
+   },
+   "status": "Qualify: 3 unknown gate(s)",
+   "reason": "Mack Opco holds a verified framework appointment covering CAS2 and CAS3 work to 2034, so the access route is strong. It is a framework, not an award: no call-off, geography, volume or price is evidenced, and the £2.0bn figure is a ceiling, not revenue.",
+   "blocker": "No call-off yet; geography, units and pricing unknown; confirm Mack Opco Ltd is the Mack entity that would contract and how Laurito property would sit under it.",
+   "next": "Internal: confirm the Mack Opco appointment and lots with the Mack team; log the first call-off competitions (GM and SW) and their unit specs as they publish.",
+   "facts": [
+    "F-048",
+    "F-049"
+   ],
+   "bip": [
+    "BE-01"
+   ],
+   "routeEnd": "2034-11-01",
+   "owner": null
+  },
+  {
+   "id": "GM-046",
+   "org": "Manchester City Council: CAS3 accommodation and support (P-1476)",
+   "match": "Manchester City Council",
+   "region": "Greater Manchester",
+   "type": "Commissioner - tendered contract",
+   "entity": "Manchester City Council",
+   "role": "Verified requirement (BiP notices 5425717621, 5983363476): MCC, with MoJ funding, is designing a Manchester CAS3 service with a separate accommodation element. MCC would pay the accommodation provider; whether by lease or service fee is not stated.",
+   "rank": 15,
+   "pi": 41.1,
+   "A": 45.83,
+   "Acov": 0.9,
+   "B": 30,
+   "Bcov": 0.11,
+   "E": 76.3,
+   "Eband": "High",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     3
+    ],
+    "A2": [
+     "Current intake in geography",
+     2
+    ],
+    "A3": [
+     "Funded contract",
+     1
+    ],
+    "A4": [
+     "Committed term",
+     1
+    ],
+    "A5": [
+     "Cost transfer",
+     1
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     3
+    ],
+    "A8": [
+     "Access route",
+     2
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "UNKNOWN",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "PASS",
+    "G-Role": "PASS"
+   },
+   "status": "Qualify: 2 unknown gate(s)",
+   "reason": "A written, MCC-defined need for 66+ Manchester units with a public payer. Held back by a very short contract (under 9 months), provider-borne costs and no published tender yet.",
+   "blocker": "Tender not published; term under 1 year; landlord or provider bears utilities, council tax and damage; high-risk cohort and licensing requirements.",
+   "next": "Watch for the P-1476 tender notice; before it publishes, check internally whether Mack Opco (MoJ CAS Lot 3) or Laurito supply could meet 66 single-sex units in Manchester on these cost terms.",
+   "facts": [
+    "F-050",
+    "F-001"
+   ],
+   "bip": [
+    "BE-02",
+    "BE-03"
+   ],
+   "routeEnd": "2027-12-23",
+   "owner": null
+  },
+  {
+   "id": "BR-009",
+   "org": "Bristol City Council: Supported Temporary Accommodation Framework (STAF) appointees",
+   "match": "Bristol City Council",
+   "region": "Bristol",
+   "type": "Provider / framework appointee",
+   "entity": "Bristol City Council: Supported Temporary Accommodation Framework (STAF) appointees",
+   "role": "Framework appointees (BiP award 5828451523): Ashley Community & Housing, Dawson Housing, LiveWest Homes, Nest & Rest Property Rentals, Places for People Living+, Sanctuary Home Care, YMCA North Tyneside. Whether any lease homes from investors to deliver it: unknown.",
+   "rank": 14,
+   "pi": 41.8,
+   "A": 46.88,
+   "Acov": 0.4,
+   "B": 30,
+   "Bcov": 0,
+   "E": 60,
+   "Eband": "Medium",
+   "comp": {
+    "A1": [
+     "Rent-paying role",
+     null
+    ],
+    "A2": [
+     "Current intake in geography",
+     2
+    ],
+    "A3": [
+     "Funded contract",
+     2
+    ],
+    "A4": [
+     "Committed term",
+     null
+    ],
+    "A5": [
+     "Cost transfer",
+     null
+    ],
+    "A6": [
+     "Rent vs LHA",
+     null
+    ],
+    "A7": [
+     "Scale",
+     null
+    ],
+    "A8": [
+     "Access route",
+     1
+    ]
+   },
+   "gates": {
+    "G-Geo": "PASS",
+    "G-Route live": "PASS",
+    "G-Elig": "UNKNOWN",
+    "G-Req": "UNKNOWN",
+    "G-Role": "UNKNOWN"
+   },
+   "status": "Qualify: 3 unknown gate(s)",
+   "reason": "A live Bristol framework explicitly to grow supported TA supply, so appointees may need more homes. Framework membership is not an award and no appointee has been shown to lease from investors.",
+   "blocker": "Unknown whether appointees take leases; no route; Bristol excluded by Nacro so Bristol demand evidence is thin.",
+   "next": "Ask LiveWest and Places for People Living+ (largest appointees) whether STAF delivery uses leased dispersed family units, and on what term.",
+   "facts": [
+    "F-052"
+   ],
+   "bip": [
+    "BE-07"
+   ],
+   "routeEnd": "2031-06-30",
+   "owner": null
+  }
+ ],
+ "bip": {
+  "BE-01": {
+   "id": "BE-01",
+   "type": "Framework award",
+   "buyer": "Ministry of Justice",
+   "suppliers": "Nacro, Mears Limited, Centennial, Serco, Mack Opco Ltd and others",
+   "title": "Provision of Community Accommodation Services Open Framework",
+   "value": 2011000000,
+   "basis": "Ceiling (estimated maximum ex VAT)",
+   "start": "2026-11-02",
+   "end": "2034-11-01",
+   "framework": true,
+   "deadline": null,
+   "region": "England and Wales",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/6030619061",
+   "fts": "097997-2026",
+   "published": "2026-10-16",
+   "checked": "2026-11-03",
+   "status": "Verified (live)",
+   "use": "New row MJ-001; notes on Mears, Nacro, Centennial, Serco",
+   "facts": [
+    "F-048",
+    "F-049"
+   ],
+   "opps": [
+    "MJ-001",
+    "GM-001",
+    "GM-003",
+    "GL-001",
+    "GM-015",
+    "GM-002"
+   ]
+  },
+  "BE-02": {
+   "id": "BE-02",
+   "type": "Notice: preliminary market engagement",
+   "buyer": "Manchester City Council",
+   "suppliers": null,
+   "title": "Pre Market Engagement: CAS3 (P-1476)",
+   "value": null,
+   "basis": "No value published",
+   "start": "2027-04-01",
+   "end": "2027-12-23",
+   "framework": false,
+   "deadline": "2026-09-10",
+   "region": "UKD3",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/5983363476",
+   "fts": "083244-2026",
+   "published": "2026-09-02",
+   "checked": "2026-11-03",
+   "status": "Verified (live, engagement closed)",
+   "use": "New row GM-046",
+   "facts": [
+    "F-050"
+   ],
+   "opps": [
+    "GM-046"
+   ]
+  },
+  "BE-03": {
+   "id": "BE-03",
+   "type": "Notice: preliminary market engagement",
+   "buyer": "Manchester City Council",
+   "suppliers": null,
+   "title": "Community Accommodation Service Tier 3 (CAS3)",
+   "value": null,
+   "basis": "No value published",
+   "start": "2026-07-01",
+   "end": "2027-12-31",
+   "framework": false,
+   "deadline": "2025-12-12",
+   "region": "UKD33",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/5425717621",
+   "fts": "077872-2025",
+   "published": "2025-11-27",
+   "checked": "2026-11-03",
+   "status": "Historical (superseded by BE-02)",
+   "use": "Unit and cost requirements for GM-046",
+   "facts": [
+    "F-050"
+   ],
+   "opps": [
+    "GM-046"
+   ]
+  },
+  "BE-04": {
+   "id": "BE-04",
+   "type": "Framework contract details",
+   "buyer": "Manchester City Council",
+   "suppliers": "14 suppliers",
+   "title": "Housing Related Support - Accommodation Framework (P-0816)",
+   "value": 9875000,
+   "basis": "Ceiling (ex VAT; £11.85m inc VAT on this notice)",
+   "start": "2026-02-01",
+   "end": "2028-01-31",
+   "framework": true,
+   "deadline": null,
+   "region": "UKD33",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5673675770",
+   "fts": "029379-2026",
+   "published": "2026-03-31",
+   "checked": "2026-11-03",
+   "status": "Verified (live)",
+   "use": "Dates confirmed; entity IDs for Depaul, Contact, SSG",
+   "facts": [
+    "F-051"
+   ],
+   "opps": [
+    "GM-004..GM-013",
+    "GM-019",
+    "GM-021"
+   ]
+  },
+  "BE-05": {
+   "id": "BE-05",
+   "type": "Framework award",
+   "buyer": "Manchester City Council",
+   "suppliers": "14 suppliers",
+   "title": "Housing Related Support - Accommodation Framework",
+   "value": 31600000,
+   "basis": "Ceiling (ex VAT; £37.92m inc VAT)",
+   "start": "2026-02-01",
+   "end": "2028-01-31",
+   "framework": true,
+   "deadline": null,
+   "region": "UKD33",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5510256709",
+   "fts": "005320-2026",
+   "published": "2026-01-21",
+   "checked": "2026-11-03",
+   "status": "Verified (live)",
+   "use": "Confirms F-020",
+   "facts": [
+    "F-020",
+    "F-051"
+   ],
+   "opps": [
+    "GM-004..GM-013",
+    "GM-019",
+    "GM-021"
+   ]
+  },
+  "BE-06": {
+   "id": "BE-06",
+   "type": "Contract award",
+   "buyer": "Manchester City Council",
+   "suppliers": "Centennial Property Limited",
+   "title": "Domestic Abuse - Intersecting Needs Safe Accommodation (P-1475)",
+   "value": 1336230,
+   "basis": "Awarded value",
+   "start": "2026-10-01",
+   "end": "2028-03-31",
+   "framework": false,
+   "deadline": null,
+   "region": "UKD33",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5975122032",
+   "fts": null,
+   "published": "2026-10-01",
+   "checked": "2026-11-03",
+   "status": "Verified (live)",
+   "use": "Confirms GM-015 contract and type",
+   "facts": [
+    "F-056",
+    "F-017"
+   ],
+   "opps": [
+    "GM-015"
+   ]
+  },
+  "BE-07": {
+   "id": "BE-07",
+   "type": "Framework award",
+   "buyer": "Bristol City Council",
+   "suppliers": "Ashley Community & Housing; Dawson Housing; LiveWest Homes; Nest & Rest Property Rentals; Places for People Living+; Sanctuary Home Care; YMCA North Tyneside",
+   "title": "Supported Temporary Accommodation Framework (STAF)",
+   "value": 106923724,
+   "basis": "Ceiling (award value)",
+   "start": "2026-07-01",
+   "end": "2031-06-30",
+   "framework": true,
+   "deadline": null,
+   "region": "UKK11",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5828451523",
+   "fts": "030770-2026",
+   "published": "2026-06-14",
+   "checked": "2026-11-03",
+   "status": "Verified (live)",
+   "use": "New row BR-009",
+   "facts": [
+    "F-052"
+   ],
+   "opps": [
+    "BR-009",
+    "BR-001"
+   ]
+  },
+  "BE-08": {
+   "id": "BE-08",
+   "type": "Framework award",
+   "buyer": "Oldham Metropolitan Borough Council",
+   "suppliers": "8 incl. Rent Connect Housing Ltd",
+   "title": "Temporary Accommodation Nightly Paid Framework",
+   "value": 39600000,
+   "basis": "Ceiling",
+   "start": "2026-04-08",
+   "end": "2029-04-06",
+   "framework": true,
+   "deadline": null,
+   "region": "UKD",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5661540875",
+   "fts": null,
+   "published": "2026-03-26",
+   "checked": "2026-11-03",
+   "status": "Verified (live)",
+   "use": "GM-014 G-Geo UNKNOWN to PASS",
+   "facts": [
+    "F-053"
+   ],
+   "opps": [
+    "GM-014"
+   ]
+  },
+  "BE-09": {
+   "id": "BE-09",
+   "type": "Framework award",
+   "buyer": "The Guinness Partnership",
+   "suppliers": "ICAB; Jigsaw; LSH; Rent Connect; Thesqua.re; Unity Housing Support",
+   "title": "Temporary Accommodation Framework",
+   "value": 41666666,
+   "basis": "Ceiling (ex VAT)",
+   "start": "2025-10-14",
+   "end": "2029-10-13",
+   "framework": true,
+   "deadline": null,
+   "region": "National",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5418365308",
+   "fts": "061765-2025",
+   "published": "2025-11-24",
+   "checked": "2026-11-03",
+   "status": "Verified (live)",
+   "use": "Confirms F-023 dates",
+   "facts": [
+    "F-023"
+   ],
+   "opps": [
+    "GM-014",
+    "GM-016",
+    "GM-023",
+    "GM-024",
+    "GM-029"
+   ]
+  },
+  "BE-10": {
+   "id": "BE-10",
+   "type": "Contract award",
+   "buyer": "Bolton At Home",
+   "suppliers": "Insurance Claims Accommodation Bureau Limited",
+   "title": "Temporary Accommodation (Decant)",
+   "value": 400000,
+   "basis": "Awarded value",
+   "start": "2025-10-01",
+   "end": "2026-09-30",
+   "framework": false,
+   "deadline": null,
+   "region": "UKD",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5443121182",
+   "fts": null,
+   "published": "2025-12-08",
+   "checked": "2026-11-03",
+   "status": "Historical (ended 30 Sep 2026)",
+   "use": "GM activity context",
+   "facts": [
+    "F-054"
+   ],
+   "opps": [
+    "GM-023"
+   ]
+  },
+  "BE-11": {
+   "id": "BE-11",
+   "type": "Contract award",
+   "buyer": "Places For People Group Limited",
+   "suppliers": "Jigsaw Conferences Limited",
+   "title": "Specialist Decant Accommodation Provider",
+   "value": 13500000,
+   "basis": "Awarded value",
+   "start": "2026-09-30",
+   "end": "2029-09-29",
+   "framework": false,
+   "deadline": null,
+   "region": null,
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/6022929851",
+   "fts": null,
+   "published": "2026-10-01",
+   "checked": "2026-11-03",
+   "status": "Verified (live)",
+   "use": "Jigsaw context",
+   "facts": [
+    "F-055"
+   ],
+   "opps": [
+    "GM-029"
+   ]
+  },
+  "BE-12": {
+   "id": "BE-12",
+   "type": "Notice: pipeline",
+   "buyer": "Manchester City Council",
+   "suppliers": null,
+   "title": "Safety and Support Services for Temporary Accommodation, Emergency Response and Site Stabilisation (P-1218)",
+   "value": 14880000,
+   "basis": "Estimated value (ex VAT)",
+   "start": "2027-04-01",
+   "end": "2031-04-01",
+   "framework": false,
+   "deadline": null,
+   "region": "UKD33",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6012944066",
+   "fts": "089199-2026",
+   "published": "2026-09-21",
+   "checked": "2026-11-03",
+   "status": "Verified (live)",
+   "use": "Context: MCC TA estate (services, not property)",
+   "facts": [
+    "F-058"
+   ],
+   "opps": [
+    "GM-035"
+   ]
+  },
+  "BE-13": {
+   "id": "BE-13",
+   "type": "Notice: tender",
+   "buyer": "Gloucestershire County Council",
+   "suppliers": null,
+   "title": "Supported Accommodation at Trevone House",
+   "value": 7500000,
+   "basis": "Estimated value (ex VAT)",
+   "start": "2027-04-01",
+   "end": "2030-04-01",
+   "framework": false,
+   "deadline": "2026-11-16",
+   "region": "UKK13",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6030263868",
+   "fts": "097950-2026",
+   "published": "2026-10-16",
+   "checked": "2026-11-03",
+   "status": "Verified (live) - reviewed, not added",
+   "use": "Ofsted-regulated care service in a named building for up to 19 young people: not a leasing route",
+   "facts": [],
+   "opps": []
+  },
+  "BE-14": {
+   "id": "BE-14",
+   "type": "Notice: tender",
+   "buyer": "Greater Manchester Combined Authority",
+   "suppliers": null,
+   "title": "Regional Care Cooperative - Supported Accommodation (GMCA 1769)",
+   "value": 20000000,
+   "basis": "Estimated value (ex VAT)",
+   "start": "2027-04-01",
+   "end": "2035-03-31",
+   "framework": true,
+   "deadline": "2026-11-20",
+   "region": "UKD and others",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6023548684",
+   "fts": "092987-2026",
+   "published": "2026-10-01",
+   "checked": "2026-11-03",
+   "status": "Verified (live) - reviewed, not added",
+   "use": "Children 16-17 and care leavers support services framework (one lot per bidder): service contract, not a leasing route",
+   "facts": [],
+   "opps": []
+  },
+  "BE-15": {
+   "id": "BE-15",
+   "type": "Spend sample",
+   "buyer": "Manchester City Council",
+   "suppliers": "Nacro Community Enterprises Limited",
+   "title": "Third party payments relating to Voluntary Organisations",
+   "value": 141265.25,
+   "basis": "Actual payment",
+   "start": "2026-08-10",
+   "end": "2026-08-10",
+   "framework": false,
+   "deadline": null,
+   "region": "North West",
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "fts": null,
+   "published": "2026-08-10",
+   "checked": "2026-11-03",
+   "status": "Verified (actual spend)",
+   "use": "Live MCC payment to Nacro; not property intake",
+   "facts": [
+    "F-057"
+   ],
+   "opps": [
+    "GM-003"
+   ]
+  },
+  "BE-16": {
+   "id": "BE-16",
+   "type": "Spend sample",
+   "buyer": "Bury Council",
+   "suppliers": "Insurance Claims Accommodation Bureau Limited",
+   "title": "Housing Management (10+ payments)",
+   "value": null,
+   "basis": "Actual payments (each £575 to £2,124)",
+   "start": "2026-08-01",
+   "end": "2026-08-31",
+   "framework": false,
+   "deadline": null,
+   "region": "North West",
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "fts": null,
+   "published": "2026-08-27",
+   "checked": "2026-11-03",
+   "status": "Verified (actual spend)",
+   "use": "GM-023 G-Geo UNKNOWN to PASS; A2 blank to 2",
+   "facts": [
+    "F-054"
+   ],
+   "opps": [
+    "GM-023"
+   ]
+  },
+  "BE-17": {
+   "id": "BE-17",
+   "type": "Spend sample",
+   "buyer": "Various councils (none in GM)",
+   "suppliers": "Centennial Property Limited (2 of 14 name variants)",
+   "title": "TA, B&B, Sec 17, accommodation expenses",
+   "value": null,
+   "basis": "Actual payments",
+   "start": "2026-08-01",
+   "end": "2026-08-31",
+   "framework": false,
+   "deadline": null,
+   "region": "SE, East, East Midlands, London",
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "fts": null,
+   "published": "2026-08-28",
+   "checked": "2026-11-03",
+   "status": "Verified (actual spend)",
+   "use": "No MCC payment in sample: GM intake not shown",
+   "facts": [
+    "F-056"
+   ],
+   "opps": [
+    "GM-015"
+   ]
+  },
+  "BE-18": {
+   "id": "BE-18",
+   "type": "Spend sample",
+   "buyer": "Bedford Borough Council",
+   "suppliers": "Rent Connect Housing Ltd T/A Rent Connect",
+   "title": "Family Assistance (13 payments)",
+   "value": null,
+   "basis": "Actual payments",
+   "start": "2026-08-01",
+   "end": "2026-08-31",
+   "framework": false,
+   "deadline": null,
+   "region": "East of England",
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "fts": null,
+   "published": "2026-08-07",
+   "checked": "2026-11-03",
+   "status": "Verified (actual spend)",
+   "use": "No GM payment in sample",
+   "facts": [
+    "F-053"
+   ],
+   "opps": [
+    "GM-014"
+   ]
+  },
+  "BE-19": {
+   "id": "BE-19",
+   "type": "Spend sample",
+   "buyer": "None found",
+   "suppliers": "Serco Limited - Aasc; Mears Limited",
+   "title": "AASC and Mears supplier spend",
+   "value": null,
+   "basis": "Actual payments",
+   "start": "2026-08-01",
+   "end": "2026-08-31",
+   "framework": false,
+   "deadline": null,
+   "region": null,
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "fts": null,
+   "published": null,
+   "checked": "2026-11-03",
+   "status": "Verified (no rows for Serco AASC; Mears 552 rows not paged)",
+   "use": "No change; Mears GM spend not checked (volume)",
+   "facts": [],
+   "opps": [
+    "GM-002",
+    "GM-001"
+   ]
+  },
+  "BE-20": {
+   "id": "BE-20",
+   "type": "Notice search",
+   "buyer": "Bristol, Gloucester, Cheltenham, Gloucestershire County",
+   "suppliers": null,
+   "title": "Housing and homelessness notices Jun 2025 to Nov 2026 (32 found, 20 read)",
+   "value": null,
+   "basis": "n/a",
+   "start": null,
+   "end": null,
+   "framework": false,
+   "deadline": null,
+   "region": "UKK",
+   "url": "BiP spend search (licensed; no per-row URL): search_notices",
+   "fts": null,
+   "published": null,
+   "checked": "2026-11-03",
+   "status": "Verified (search result)",
+   "use": "No TA leasing notice from Gloucester City or Cheltenham; Bristol focus is STAF",
+   "facts": [],
+   "opps": [
+    "GL-003",
+    "GL-004",
+    "BR-001"
+   ]
+  }
+ },
+ "facts": {
+  "F-001": {
+   "opps": [
+    "GM-001"
+   ],
+   "field": "Awarded contract (CAS3 North West)",
+   "finding": "MoJ CAS3 Lot 3 North West awarded to Mears Ltd (CH 02519234). Start 24 Jun 2024, end 12 Dec 2029 incl. extensions; total value £25,837,420; 3.5-yr initial term + up to 2 x 12 months; up to 84 nights per person.",
+   "url": "https://www.contractsfinder.service.gov.uk/Notice/d1ab4ecb-c03e-4922-83a9-557b7dd95988",
+   "published": "2024-06-21",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-002": {
+   "opps": [
+    "GM-001"
+   ],
+   "field": "Home Office AASC regions",
+   "finding": "Mears holds AASC for North East, Yorkshire & Humber, Scotland and Northern Ireland. Serco holds North West and Midlands & East. Mears' asylum contract does not cover Greater Manchester.",
+   "url": "https://publications.parliament.uk/pa/cm5901/cmselect/cmhaff/580/report.html",
+   "published": "2025",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-003": {
+   "opps": [
+    "GM-001",
+    "BR-005",
+    "GL-005"
+   ],
+   "field": "Published landlord terms and repair split",
+   "finding": "Guaranteed rent, no voids, contract term 3 or 5 years, utilities paid, tenant damage covered, day-to-day internal maintenance by Mears. Landlord keeps roof, external fabric, drains, damp, boilers/heating replacement, kitchens/bathrooms replacement, electrical upgrades, structure, windows/doors, boundaries and all certification incl. asbestos survey. Gas safety and boiler service charged at £50+VAT.",
+   "url": "https://www.mearsgroup.co.uk/landlords/property-partnerships/",
+   "published": "Undated web page",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-004": {
+   "opps": [
+    "GM-001"
+   ],
+   "field": "Signing entity financials FY2025",
+   "finding": "Mears Limited FY2025 (company-only): revenue £1,028,935k; profit before tax £67,915k; net assets £175,668k. Principal trading entity of Mears Group plc. Full accounts filed 18 May 2026.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/02519234/filing-history",
+   "published": "2026-05-18",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-005": {
+   "opps": [
+    "GM-001"
+   ],
+   "field": "Group H1 2026 results",
+   "finding": "H1 2026: total revenue £560.0m; statutory PBT £38.0m; adjusted PBT £28.9m; average daily net cash £29.7m (H1 2025 £67.7m); AASC revenue £180m, expected to normalise to c.£200m p.a.",
+   "url": "https://newswire.tickerapp.net/rns/2026-08-06/4706P/FQC8nYSD.content.pdf",
+   "published": "2026-08-06",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-006": {
+   "opps": [
+    "GM-001"
+   ],
+   "field": "Registered office",
+   "finding": "Registered office is 2nd Floor Unit 5220 Valiant Court, Gloucester Business Park, Brockworth GL3 4FE (workbook showed 1390 Montpellier Court GL3 4AH, an older address).",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/03232863",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-007": {
+   "opps": [
+    "GM-002"
+   ],
+   "field": "Home Office AASC break clause",
+   "finding": "AASC contracts run 2019 to 2029. The Home Office can change or end each contract without penalty from March 2026 (break exercisable 2026 to 2029), subject to sufficient alternative supply.",
+   "url": "https://publications.parliament.uk/pa/cm5901/cmselect/cmhaff/1642/report.html",
+   "published": "2026",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-008": {
+   "opps": [
+    "GM-002"
+   ],
+   "field": "Lease termination options in AASC leases",
+   "finding": "Serco states that, principally because of AASC, the Group has entered into a significant number of leases which contain a termination option.",
+   "url": "https://www.investegate.co.uk/announcement/rns/serco-group--srp/2026-half-year-results/9707272",
+   "published": "2026-08",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-009": {
+   "opps": [
+    "GM-002"
+   ],
+   "field": "Group H1 2026 results",
+   "finding": "H1 2026: revenue £2.5bn; underlying operating profit £157m (6.2% margin); reported operating profit £145m; adjusted net debt £228m.",
+   "url": "https://www.investegate.co.uk/announcement/rns/serco-group--srp/2026-half-year-results/9707272",
+   "published": "2026-08",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-010": {
+   "opps": [
+    "GM-002"
+   ],
+   "field": "Signing entity financials FY2025",
+   "finding": "Serco Limited FY2025: revenue £2,102.3m (2024 £1,985.0m); operating profit £58.6m (2024 £77.8m); UK immigration contract is the Company's largest contract. Immediate parent Serco Holdings Ltd; ultimate parent Serco Group plc. 10 outstanding charges on register.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/00242246/filing-history",
+   "published": "2026-08-17",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-011": {
+   "opps": [
+    "GM-002"
+   ],
+   "field": "Current landlord route",
+   "finding": "Page now seeks HMOs, houses, flats, blocks and portfolios to provide accommodation on behalf of the Home Office. No lease length, rent, void or repair terms are published. Contact: Property Partnerships 0330 236 9898, aasc.properties@serco.com.",
+   "url": "https://www.serco.com/uk/sites/serco-aasc/landlords",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-012": {
+   "opps": [
+    "GM-003",
+    "GL-001",
+    "BR-002"
+   ],
+   "field": "Who signs the lease and owes rent",
+   "finding": "Nacro states it will be the tenant and uses the property under licences to occupy. Offers 3 to 5 year leases, rent monthly in arrears, no voids, CPI increases capped at 5%, pays utilities and council tax, covers tenant damage and day-to-day repairs; landlord retains structural repairs and certification. Rents on a sliding scale between LHA and market, set after viewing.",
+   "url": "https://www.nacro.org.uk/nacro-services/our-work-in-housing/information-for-landlords/",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-013": {
+   "opps": [
+    "GL-001",
+    "GM-003",
+    "BR-002"
+   ],
+   "field": "Current sourcing geography",
+   "finding": "Nacro web page: sourcing across England and Wales; highest priority regions currently London, the South West and the East of England. Seeks 1-bed self-contained flats (max 4 per block) and 2-4 bed houses for shared living; EPC minimum D; HMO fire standards for shared houses.",
+   "url": "https://www.nacro.org.uk/nacro-services/our-work-in-housing/information-for-landlords/",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-014": {
+   "opps": [
+    "GL-001",
+    "GM-003"
+   ],
+   "field": "CAS-2 contract term",
+   "finding": "Nacro annual report 2025/26: largest contract is CAS-2, mid-term, due to end September 2028 with potential extension to September 2029. Original MoJ award (Feb 2022) valued £34.5m against a £100m tender estimate.",
+   "url": "https://www.nacro.org.uk/wp-content/uploads/2026/08/Nacro-annual-report-2026.pdf",
+   "published": "2026-08-06",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-015": {
+   "opps": [
+    "GL-001",
+    "GM-003",
+    "BR-002"
+   ],
+   "field": "Financial results FY to 31 Mar 2026",
+   "finding": "Turnover £98.8m (2025 £90.3m); operating surplus £0.42m; deficit before tax £0.17m; reserves £12.3m of which £11.4m cash; free reserves deficit £9.1m (2025 deficit £9.6m). Contract income over 75% of income.",
+   "url": "https://www.nacro.org.uk/wp-content/uploads/2026/08/Nacro-annual-report-2026.pdf",
+   "published": "2026-08-06",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-016": {
+   "opps": [
+    "GM-003",
+    "GL-001"
+   ],
+   "field": "RSH registration and grading",
+   "finding": "NACRO is on the RSH register (reg. 4781, non-profit charitable company, registered 3 Oct 2013). No regulatory judgement listed in RSH 28 Oct 2026 judgements file (not graded).",
+   "url": "https://www.gov.uk/government/publications/registered-providers-of-social-housing",
+   "published": "2026-10-20",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-017": {
+   "opps": [
+    "GM-015",
+    "DR-017"
+   ],
+   "field": "Awarded contract MCC P-1475",
+   "finding": "Award under MCC HRS Accommodation Framework: £1,113,525 ex VAT (£1,336,230 inc VAT); award decision 28 Aug 2026; estimated 1 Oct 2026 to 31 Mar 2028, possible extension to 31 Mar 2030. Supplier email domain thehousingnetwork.co.uk; not SME.",
+   "url": "https://www.find-tender.service.gov.uk/Notice/082174-2026",
+   "published": "2026-08-28",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-018": {
+   "opps": [
+    "GM-015"
+   ],
+   "field": "Entity, ownership and parent",
+   "finding": "Active; trades as 'The Housing Network'. Two individual PSCs each 25-50%; no corporate parent. 'The Housing Network' is not a separate parent company (The Housing Network Two Ltd, 13784939, was dissolved 15 Oct 2024). Files group accounts; 2 outstanding charges. FY to 31 Mar 2026 accounts due 31 Dec 2026.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/08861768/persons-with-significant-control",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-019": {
+   "opps": [
+    "GM-015"
+   ],
+   "field": "Financials FY to 31 Mar 2025",
+   "finding": "Strategic report: revenue £51.9m (2023/24 £28.4m, +83%); operating profit £3.3m (+87%); four new MoJ CAS3 contracts won FY2023/24, five CAS3 contracts extended; acquired Imperial Portfolio Ltd (family TA units). Auditor HaysMac LLP.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/08861768/filing-history",
+   "published": "2025-07-08",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-020": {
+   "opps": [
+    "GM-004..GM-013",
+    "GM-015",
+    "GM-019",
+    "GM-021",
+    "GM-003",
+    "GM-035",
+    "DR-011"
+   ],
+   "field": "HRS Accommodation Framework P-0816",
+   "finding": "Open framework awarded 21 Jan 2026 to 14 suppliers: Caritas Diocese of Salford, Centennial Property Ltd, City of Liverpool YMCA, Contact, Depaul UK, Great Places Housing Association, Mosscare St Vincent's, Nacro, Salvation Army Housing Association, Salvation Army Trustee Company, Sanctuary Housing Association, SSG Sustainable Living, Stepping Stone Projects, The Riverside Group Ltd (Care & Support). £37.92m inc VAT; 1 Feb 2026 to 31 Jan 2028, extension to 31 Jan 2029; open framework up to 8 years.",
+   "url": "https://www.find-tender.service.gov.uk/Notice/005320-2026",
+   "published": "2026-01-21",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-021": {
+   "opps": [
+    "GM-035",
+    "DR-016"
+   ],
+   "field": "10 year + 1 day TA leasing",
+   "finding": "Key decision 14 Mar 2024 (published 15 Mar 2024, effective 23 Mar 2024): MCC to enter leases of 10 years plus 1 day with Temporary Accommodation providers, to reduce out-of-city placements and B&B use.",
+   "url": "https://democracy.manchester.gov.uk/ieDecisionDetails.aspx?Id=925",
+   "published": "2024-03-15",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-022": {
+   "opps": [
+    "GM-035"
+   ],
+   "field": "Current owner-facing leasing offer",
+   "finding": "MCC empty-homes page (2026): 'If you prefer not to sell, we may be able to lease it from you for a set time' - steady revenue, no tenant management. Contact emptyhomesteam@manchester.gov.uk.",
+   "url": "https://www.manchester.gov.uk/homes-and-property/help-with-empty-homes/how-can-manchester-city-council-help-with-my-empty-property",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-023": {
+   "opps": [
+    "GM-014",
+    "GM-016",
+    "GM-023",
+    "GM-024",
+    "GM-026",
+    "GM-027",
+    "GM-029"
+   ],
+   "field": "Temporary Accommodation Framework",
+   "finding": "Six appointees (ICAB 04570960, Jigsaw Conferences 04788489, Lambert Smith Hampton Group 02521225, Rent Connect Housing 07588779, Thesqua.re 06687220, Unity Housing Support 12329376). £41,666,666 ex VAT / £50m inc VAT; 14 Oct 2025 to 13 Oct 2029 (FTS) vs 16 Oct 2025 to 15 Oct 2029 (ProcurePublic page). Scope: emergency, decant, hotels, B&B, serviced and self-contained units; call-offs by direct selection or mini-competition; 'short-term lease models'.",
+   "url": "https://www.find-tender.service.gov.uk/Notice/061765-2025",
+   "published": "2025-10-02",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-024": {
+   "opps": [
+    "GM-016"
+   ],
+   "field": "Entity resolution",
+   "finding": "Framework appointee is UNITY HOUSING SUPPORT, Companies House 12329376, 30 Nelson Street, Leicester LE1 7BA, VCSE, website unityhousing.co.uk. Total exemption accounts to 30 Nov 2025; no charges.",
+   "url": "https://www.find-tender.service.gov.uk/Notice/061765-2025",
+   "published": "2025-10-02",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-025": {
+   "opps": [
+    "GM-014"
+   ],
+   "field": "Entity and accounts",
+   "finding": "Active; small company accounts to 31 Mar 2025 (filed 6 Jan 2026); 1 outstanding charge; two individual PSCs. Held 25-50% of Centennial Property Ltd for 5 days in July 2018 (ceased): historic link only.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/07588779",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-026": {
+   "opps": [
+    "GM-008"
+   ],
+   "field": "RSH grading",
+   "finding": "Regulatory judgement 17 Dec 2025: C1, G1, V2. Covers Great Places Housing Association (the HRS framework appointee) and Plumlife Homes.",
+   "url": "https://www.gov.uk/government/collections/individual-social-housing-providers-and-regulatory-judgements",
+   "published": "2025-12-17",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-027": {
+   "opps": [
+    "GM-009"
+   ],
+   "field": "RSH grading",
+   "finding": "C1 (28 May 2025), G1 and V2 (26 Nov 2025).",
+   "url": "https://www.gov.uk/government/collections/individual-social-housing-providers-and-regulatory-judgements",
+   "published": "2025-11-26",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-028": {
+   "opps": [
+    "GM-011"
+   ],
+   "field": "RSH grading",
+   "finding": "C1 (27 May 2026), G1 and V2 (26 Nov 2025).",
+   "url": "https://www.gov.uk/government/collections/individual-social-housing-providers-and-regulatory-judgements",
+   "published": "2026-05-27",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-029": {
+   "opps": [
+    "GM-012"
+   ],
+   "field": "RSH grading",
+   "finding": "G1 and V2 (17 Dec 2025); consumer grade not shown.",
+   "url": "https://www.gov.uk/government/collections/individual-social-housing-providers-and-regulatory-judgements",
+   "published": "2025-12-17",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-030": {
+   "opps": [
+    "GM-013"
+   ],
+   "field": "RSH grading",
+   "finding": "C2 (18 Dec 2024), G1 and V2 (26 Nov 2025).",
+   "url": "https://www.gov.uk/government/collections/individual-social-housing-providers-and-regulatory-judgements",
+   "published": "2025-11-26",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-031": {
+   "opps": [
+    "GM-020"
+   ],
+   "field": "RSH grading",
+   "finding": "C2 (25 Sep 2024), G2 and V2 (26 Nov 2025).",
+   "url": "https://www.gov.uk/government/collections/individual-social-housing-providers-and-regulatory-judgements",
+   "published": "2025-11-26",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-032": {
+   "opps": [
+    "GL-002"
+   ],
+   "field": "RSH grading",
+   "finding": "G1 and V2 (28 Jan 2026).",
+   "url": "https://www.gov.uk/government/collections/individual-social-housing-providers-and-regulatory-judgements",
+   "published": "2026-01-28",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-033": {
+   "opps": [
+    "GM-033"
+   ],
+   "field": "RSH grading",
+   "finding": "C2, G1, V2 (25 Mar 2026). Operates the Wythenshawe key-worker scheme.",
+   "url": "https://www.gov.uk/government/collections/individual-social-housing-providers-and-regulatory-judgements",
+   "published": "2026-03-25",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-034": {
+   "opps": [
+    "GM-010"
+   ],
+   "field": "Entity matching",
+   "finding": "HRS framework appointee is 'DEPAUL UK'. A separate entity, Depaul Housing Services (charitable company), is the RSH-registered provider (reg. 4792); no RSH grade published.",
+   "url": "https://www.gov.uk/government/publications/registered-providers-of-social-housing",
+   "published": "2026-10-20",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-035": {
+   "opps": [
+    "All GM"
+   ],
+   "field": "LHA Central Greater Manchester 2026/27 (UC monthly)",
+   "finding": "SAR £411.58; 1-bed £775.00; 2-bed £875.00; 3-bed £950.00; 4-bed £1,350.00. HB weekly 1-bed £178.36 (rates frozen at April 2024 levels).",
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "published": "2026-04",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-036": {
+   "opps": [
+    "All Bristol"
+   ],
+   "field": "LHA Bristol 2026/27 (UC monthly)",
+   "finding": "SAR £511.33; 1-bed £900; 2-bed £1,095; 3-bed £1,300; 4-bed £1,850.",
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "published": "2026-04",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-037": {
+   "opps": [
+    "GL rows"
+   ],
+   "field": "LHA Gloucester and Cheltenham 2026/27 (UC monthly)",
+   "finding": "Gloucester: SAR £406.33; 1-bed £550.00; 2-bed £725.00; 3-bed £850.00; 4-bed £1,200.00. Cheltenham: SAR £436.50; 1-bed £625; 2-bed £800; 3-bed £1,000; 4-bed £1,470.",
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "published": "2026-04",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-038": {
+   "opps": [
+    "GM-017"
+   ],
+   "field": "Entity",
+   "finding": "Active; parent Corporate Travel Management (UK) Ltd; full accounts to 30 Jun 2025; 1 outstanding charge.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/00488182",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-039": {
+   "opps": [
+    "GM-024"
+   ],
+   "field": "Entity",
+   "finding": "Active; corporate PSC Narang Capital Management & Advisors Ltd; unaudited abridged accounts to 31 Dec 2024; 2 outstanding charges.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/06687220",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-040": {
+   "opps": [
+    "GM-023"
+   ],
+   "field": "Entity",
+   "finding": "Active; full accounts to 30 Apr 2025 (filed 7 Feb 2026); registered office now Galley House, Moon Lane, Barnet (workbook shows Bushey).",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/04570960",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-041": {
+   "opps": [
+    "GM-005"
+   ],
+   "field": "Entity",
+   "finding": "Active company limited by guarantee; total exemption full accounts to 31 Mar 2025; no charges; registered office 2 The Quadrant, Green Lane, Heywood.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/02647645",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-042": {
+   "opps": [
+    "GM-007"
+   ],
+   "field": "Entity",
+   "finding": "Active; total exemption full accounts to 31 Aug 2025; one individual PSC; no charges.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/13559397",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-043": {
+   "opps": [
+    "GM-027"
+   ],
+   "field": "Entity and role",
+   "finding": "Active; total exemption accounts to 31 Mar 2026; managing agent for The Guinness Partnership framework (not a lessee).",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/09714989",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-044": {
+   "opps": [
+    "GM-029"
+   ],
+   "field": "Entity",
+   "finding": "Active; total exemption full accounts to 30 Jun 2025.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/04788489",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-045": {
+   "opps": [
+    "GM-001"
+   ],
+   "field": "Ownership",
+   "finding": "Single corporate PSC Mears Group plc (03232863). Full accounts FY2025 filed; 0 outstanding charges.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/02519234/persons-with-significant-control",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-046": {
+   "opps": [
+    "GM-002"
+   ],
+   "field": "Ownership and charges",
+   "finding": "Single corporate PSC Serco Holdings Ltd; ultimate parent Serco Group plc. 17 charges registered, 10 outstanding.",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/00242246/charges",
+   "published": "2026-11-03",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-047": {
+   "opps": [
+    "BR-001"
+   ],
+   "field": "Leasing offer status",
+   "finding": "Not re-verified this pass beyond link check (page returns 200). Workbook offer (12 months' rent in advance, void cover, 2-yr renewable lease) is from a 2022 leaflet: Historical.",
+   "url": "https://www.bristol.gov.uk/business/housing-for-business-and-professionals/private-landlords/get-help-with-renting-out-your-property",
+   "published": "2022",
+   "checked": "2026-11-03",
+   "status": "Historical"
+  },
+  "F-048": {
+   "opps": [
+    "MJ-001",
+    "GM-001",
+    "GM-002",
+    "GM-003",
+    "GL-001",
+    "BR-002",
+    "GM-015"
+   ],
+   "field": "Framework award: Provision of Community Accommodation Services Open Framework",
+   "finding": "Light-touch open framework, 2 Nov 2026 to 1 Nov 2034 (first agreement 2 yrs + 1). Lot 1 Approved Premises (£347m), Lot 2 CAS Tier 2 accommodation and support (£307m), Lot 3 CAS Tier 3 TA and floating support (£1,244m), Lot 4 specialised (£113m); estimated maximum £2.0bn ex VAT. Appointees include Nacro (Lots 1-4), Mears Limited (2, 3), Centennial (1-4), Serco (1, 3), Clearsprings, Crown Lodge, The Big Life Group (Lot 3) and Mack Opco Ltd (Lots 2, 3, 4). Call-offs by competition; geography per call-off.",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/6030619061",
+   "published": "2026-10-16",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-049": {
+   "opps": [
+    "MJ-001"
+   ],
+   "field": "Framework appointment",
+   "finding": "Mack Opco Ltd, Mack House, 13 Bath Road, Cheltenham GL53 7HG, is listed as a supplier on MoJ CAS framework Lots 2, 3 and 4. BiP find_organisation shows 1 contract document for this name.",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/6030619061",
+   "published": "2026-10-16",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-050": {
+   "opps": [
+    "GM-046",
+    "GM-001"
+   ],
+   "field": "Pre-market engagement: CAS3 (P-1476)",
+   "finding": "MoJ-funded CAS3 in Manchester (up to 84 nights per placement). Nov 2025 notice: minimum 63 units in Manchester exclusively for CAS3; provider covers repairs incl. all damage, utilities, council tax, cleaning, inspections; Decent Homes; MCC licensing; furnished list; fixed-term pricing explored. Sep 2026 notice: minimum 66 single-sex SC or compliant shared units; separate accommodation and floating support elements; est. 1 Apr 2027 to 23 Dec 2027; engagement deadline 10 Sep 2026.",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/5983363476",
+   "published": "2026-09-02",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-051": {
+   "opps": [
+    "GM-004..GM-013",
+    "GM-019",
+    "GM-021",
+    "GM-003",
+    "GM-015"
+   ],
+   "field": "HRS framework contract details (P-0816)",
+   "finding": "Contract details notice (published 31 Mar 2026): 14 suppliers incl. Caritas 06594417, Centennial, Contact (charity 1178557), Depaul UK 02440093, Great Places 30045R, City of Liverpool YMCA 00560870, MSV RS007609, Nacro 00203583, SAHA, SSG CE007396, Riverside Care & Support 10047762, Salvation Army Trustee Co 00259322, Stepping Stone 02647645, Sanctuary. 1 Feb 2026 to 31 Jan 2028; open framework up to 8 years. Value on this notice £11,850,000 inc VAT, vs £37.92m inc VAT on the Jan 2026 award notice.",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5673675770",
+   "published": "2026-03-31",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-052": {
+   "opps": [
+    "BR-009",
+    "BR-001"
+   ],
+   "field": "Framework award: Supported Temporary Accommodation Framework (STAF)",
+   "finding": "Awarded to 7 suppliers (Ashley Community & Housing, Dawson Housing, LiveWest Homes, Nest & Rest Property Rentals, Places for People Living+, Sanctuary Home Care, YMCA North Tyneside). Value £106,923,724 (BiP award value). 1 Jul 2026 to 30 Jun 2031, extensions to 2034. Aim: more RP-delivered supported TA to reduce private emergency accommodation. Lots: family low support (dispersed SC units), family medium, singles.",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5828451523",
+   "published": "2026-06-14",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-053": {
+   "opps": [
+    "GM-014"
+   ],
+   "field": "GM framework appointment",
+   "finding": "Oldham MBC Temporary Accommodation Nightly Paid Framework: 8 suppliers incl. Rent Connect Housing Ltd; £39.6m; 8 Apr 2026 to 6 Apr 2029. Other 2026 TA frameworks: Wolverhampton (£25m), Southampton (£12m), Peterborough (£6m), Nottingham (£32.7m). Aug 2026 spend sample: 13 payments, all Bedford Borough Council.",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5661540875",
+   "published": "2026-03-26",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-054": {
+   "opps": [
+    "GM-023"
+   ],
+   "field": "Current GM spend",
+   "finding": "BiP spend Aug 2026: 28 payments to ICAB; Bury Council (GM) 'Housing Management' payments (at least 10, £575 to £2,124); LB Wandsworth decant costs; LB Haringey. Awards: Bolton at Home decant (£400k, Oct 2025 to Sep 2026, ended), Orbit (£2.6m to May 2029), Beyond Housing (£300k to Jun 2028).",
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "published": "2026-08-27",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-055": {
+   "opps": [
+    "GM-029"
+   ],
+   "field": "Recent awards",
+   "finding": "Places for People Group: Specialist Decant Accommodation Provider £13.5m, 30 Sep 2026 to 29 Sep 2029. Notting Hill Genesis: £10m, 12 Oct 2026 to 11 Oct 2029. Rooftop: £270k to Feb 2027. Aug 2026 spend: LB Camden 'Rents Payable' £156,000.77; Moat 'Landlord obligations'.",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/6022929851",
+   "published": "2026-10-01",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-056": {
+   "opps": [
+    "GM-015"
+   ],
+   "field": "P-1475 award detail and spend",
+   "finding": "MCC 'Domestic Abuse - Intersecting Needs Safe Accommodation' £1,336,230, 1 Oct 2026 to 31 Mar 2028 (consistent with F-017 £1,113,525 ex VAT). Aug 2026 spend: 26 payments to 'Centennial Property Limited' and 17 to 'Centennial Property Ltd T/A The Housing Network', from councils incl. Buckinghamshire, Windsor and Maidenhead, Canterbury, Watford, Hertfordshire, Huntingdonshire, Leicester, Oxford, Horsham; no MCC payment in the sample.",
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/5975122032",
+   "published": "2026-10-01",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-057": {
+   "opps": [
+    "GM-003"
+   ],
+   "field": "MCC spend",
+   "finding": "MCC paid Nacro £141,265.25 on 10 Aug 2026 ('Third party payments relating to Voluntary Organisations'). No MCC payment seen in Jul 2026. Sep 2026 data incomplete (38 rows vs 96 to 102 in Jul and Aug).",
+   "url": "BiP spend search (licensed; no per-row URL): search_spend_transactions",
+   "published": "2026-08-10",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  },
+  "F-058": {
+   "opps": [
+    "GM-035"
+   ],
+   "field": "Pipeline notice: Safety and Support Services for TA",
+   "finding": "Pipeline notice P-1218: safety and support services across MCC's TA portfolio; £14,880,000 ex VAT; est. 1 Apr 2027 to 1 Apr 2031; contract notice expected 19 Nov 2026; open procedure.",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6012944066",
+   "published": "2026-09-21",
+   "checked": "2026-11-03",
+   "status": "Verified"
+  }
+ },
+ "fwLinks": [
+  {
+   "match": "Community Accommodation Service \\(CAS\\) Open Framework",
+   "bip": [
+    "BE-01"
+   ],
+   "facts": [
+    "F-048",
+    "F-049"
+   ],
+   "kind": "Framework (appointees only; work via call-off competitions)",
+   "lots": "Lot 1 Approved Premises (£347m); Lot 2 CAS2 accommodation and support (£307m); Lot 3 CAS3 TA and floating support (£1,244m); Lot 4 specialised (£113m)",
+   "members": "Nacro (Lots 1-4), Centennial (1-4), Mears Limited (2, 3), Serco (1, 3), Clearsprings, Crown Lodge, The Big Life Group (3), Mack Opco Ltd (2, 3, 4)",
+   "mack": "Mack Opco Ltd appointed to Lots 2, 3 and 4, 2 Nov 2026 to 1 Nov 2034. Appointment only: no call-off awarded yet, no volume committed.",
+   "upcoming": [
+    "NEW-CAS3-P1476"
+   ]
+  },
+  {
+   "match": "CAS3 current regional contracts",
+   "bip": [
+    "BE-02",
+    "BE-03"
+   ],
+   "facts": [
+    "F-001",
+    "F-050"
+   ],
+   "kind": "Awarded regional contracts",
+   "mack": "Not a CAS3 regional contractor; supply homes to the prime (e.g. Mears NW) or bid MCC P-1476 via the MoJ framework.",
+   "upcoming": [
+    "NEW-CAS3-P1476"
+   ]
+  },
+  {
+   "match": "Housing Related Support - Accommodation Framework",
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
+   "facts": [
+    "F-051"
+   ],
+   "kind": "Open framework (14 appointees; may re-open)",
+   "members": "Caritas, Centennial, Contact, Depaul UK, Great Places, City of Liverpool YMCA, MSV, Nacro, SAHA, SSG, Riverside Care & Support, Salvation Army Trustee Co, Stepping Stone, Sanctuary",
+   "mack": "Not appointed. Route is to lease homes to an appointee or join at a re-opening.",
+   "upcoming": [
+    "NEW-MCC-P1218"
+   ]
+  },
+  {
+   "match": "Oldham nightly-paid",
+   "bip": [
+    "BE-08"
+   ],
+   "facts": [
+    "F-053"
+   ],
+   "kind": "Framework (8 appointees)",
+   "members": "8 suppliers incl. Rent Connect Housing Ltd",
+   "mack": "Not appointed. Rent Connect is the ranked appointee route (GM-014)."
+  },
+  {
+   "match": "Supported Temporary Accommodation Framework \\(STAF\\)",
+   "bip": [
+    "BE-07"
+   ],
+   "facts": [
+    "F-052"
+   ],
+   "kind": "Framework (7 appointees)",
+   "lots": "Family low support (dispersed self-contained); family medium support; singles",
+   "members": "Ashley Community & Housing, Dawson Housing, LiveWest Homes, Nest & Rest Property Rentals, Places for People Living+, Sanctuary Home Care, YMCA North Tyneside",
+   "mack": "Not appointed. Route is to lease homes to an appointee (BR-009)."
+  },
+  {
+   "match": "Guinness Partnership / ProcurePublic",
+   "bip": [
+    "BE-09"
+   ],
+   "kind": "Framework",
+   "members": "ICAB, Jigsaw, LSH, Rent Connect, Thesqua.re, Unity Housing Support",
+   "mack": "Not appointed."
+  },
+  {
+   "match": "GMCA 1769",
+   "bip": [
+    "BE-14"
+   ],
+   "kind": "Framework (service contract)",
+   "mack": "Reviewed: support services framework, not a leasing route."
+  },
+  {
+   "match": "^AASC",
+   "bip": [
+    "BE-19"
+   ],
+   "kind": "Awarded contracts",
+   "mack": "Supply homes to Serco (GM) via its property team; no AASC spend rows seen in the BiP sample."
+  }
+ ],
+ "newItems": [
+  {
+   "id": "NEW-CAS3-P1476",
+   "name": "Manchester CAS3 accommodation and support (P-1476)",
+   "buyer": "Manchester City Council",
+   "accom_type": "CAS3 probation accommodation",
+   "regions": [
+    "GM"
+   ],
+   "geography": "UKD3",
+   "route": "Upcoming tender (notice)",
+   "status": "Forthcoming (pre-market engagement closed 10 Sep 2026)",
+   "start": "2027-04-01",
+   "end": "2027-12-23",
+   "value_gbp": null,
+   "value_text": "CEILING / estimate, not committed (No value published)",
+   "suppliers": [],
+   "investor_route": "Direct bid",
+   "notes": "Minimum 66 single-sex self-contained or compliant shared units in Manchester; separate accommodation and floating support elements; est. 1 Apr 2027 to 23 Dec 2027. Provider covers repairs, utilities, council tax.",
+   "confidence": "Verified (live, engagement closed)",
+   "sources": [
+    {
+     "title": "BiP Intelligence BE-02 / FTS 083244-2026",
+     "url": "https://app.bipintelligence.com/ui/opportunities/notice/5983363476",
+     "date": "checked 2026-11-03"
+    }
+   ],
+   "contacts": [],
+   "v4": {
+    "bip": [
+     "BE-02"
+    ],
+    "kind": "Upcoming tender (notice)",
+    "mack": "Upcoming opportunity for Mack Opco via MoJ CAS framework appointment (Lot 3) or direct MCC tender. Track the contract notice.",
+    "upcoming": [],
+    "new": true,
+    "id": "NEW-CAS3-P1476"
+   }
+  },
+  {
+   "id": "NEW-MCC-P1475",
+   "name": "MCC Domestic Abuse: Intersecting Needs Safe Accommodation (P-1475)",
+   "buyer": "Manchester City Council",
+   "accom_type": "Domestic abuse safe accommodation",
+   "regions": [
+    "GM"
+   ],
+   "geography": "UKD33",
+   "route": "Awarded contract (call-off)",
+   "status": "Live (awarded call-off contract)",
+   "start": "2026-10-01",
+   "end": "2028-03-31",
+   "value_gbp": 1336230,
+   "value_text": "£1,336,230 CEILING / estimate, not committed (Awarded value)",
+   "suppliers": [
+    "Centennial Property Limited"
+   ],
+   "investor_route": "Supply to provider",
+   "notes": "Awarded to Centennial Property Limited. Contract award, not a framework.",
+   "confidence": "Verified (live)",
+   "sources": [
+    {
+     "title": "BiP Intelligence BE-06",
+     "url": "https://app.bipintelligence.com/ui/opportunities/award/5975122032",
+     "date": "checked 2026-11-03"
+    }
+   ],
+   "contacts": [],
+   "v4": {
+    "bip": [
+     "BE-06"
+    ],
+    "kind": "Awarded contract (call-off)",
+    "mack": "Not Mack. Centennial (GM-015) is the provider route.",
+    "upcoming": [],
+    "new": true,
+    "id": "NEW-MCC-P1475"
+   }
+  },
+  {
+   "id": "NEW-MCC-P1218",
+   "name": "MCC Safety and Support Services for Temporary Accommodation (P-1218)",
+   "buyer": "Manchester City Council",
+   "accom_type": "Temporary accommodation support services",
+   "regions": [
+    "GM"
+   ],
+   "geography": "UKD33",
+   "route": "Pipeline notice",
+   "status": "Forthcoming (pipeline; contract notice expected 19 Nov 2026)",
+   "start": "2027-04-01",
+   "end": "2031-04-01",
+   "value_gbp": 14880000,
+   "value_text": "£14,880,000 CEILING / estimate, not committed (Estimated value (ex VAT))",
+   "suppliers": [],
+   "investor_route": "Monitor",
+   "notes": "Services across the MCC TA estate, not property. Open procedure; est. 1 Apr 2027 to 1 Apr 2031.",
+   "confidence": "Verified (live)",
+   "sources": [
+    {
+     "title": "BiP Intelligence BE-12 / FTS 089199-2026",
+     "url": "https://app.bipintelligence.com/ui/opportunities/notice/6012944066",
+     "date": "checked 2026-11-03"
+    }
+   ],
+   "contacts": [],
+   "v4": {
+    "bip": [
+     "BE-12"
+    ],
+    "kind": "Pipeline notice",
+    "mack": "Context only: services, not a property route.",
+    "upcoming": [],
+    "new": true,
+    "id": "NEW-MCC-P1218"
+   }
+  },
+  {
+   "id": "NEW-PFP-DECANT",
+   "name": "Places for People: Specialist Decant Accommodation Provider",
+   "buyer": "Places For People Group Limited",
+   "accom_type": "Temporary / decant accommodation",
+   "regions": [
+    "National"
+   ],
+   "geography": null,
+   "route": "Awarded contract",
+   "status": "Live (awarded contract)",
+   "start": "2026-09-30",
+   "end": "2029-09-29",
+   "value_gbp": 13500000,
+   "value_text": "£13,500,000 CEILING / estimate, not committed (Awarded value)",
+   "suppliers": [
+    "Jigsaw Conferences Limited"
+   ],
+   "investor_route": "Supply to provider",
+   "notes": "Awarded to Jigsaw Conferences Limited, 30 Sep 2026 to 29 Sep 2029.",
+   "confidence": "Verified (live)",
+   "sources": [
+    {
+     "title": "BiP Intelligence BE-11",
+     "url": "https://app.bipintelligence.com/ui/opportunities/award/6022929851",
+     "date": "checked 2026-11-03"
+    }
+   ],
+   "contacts": [],
+   "v4": {
+    "bip": [
+     "BE-11"
+    ],
+    "kind": "Awarded contract",
+    "mack": "Not Mack. Jigsaw (GM-029) context.",
+    "upcoming": [],
+    "new": true,
+    "id": "NEW-PFP-DECANT"
+   }
+  },
+  {
+   "id": "NEW-BAH-DECANT",
+   "name": "Bolton At Home: Temporary Accommodation (Decant)",
+   "buyer": "Bolton At Home",
+   "accom_type": "Temporary / decant accommodation",
+   "regions": [
+    "GM"
+   ],
+   "geography": "UKD",
+   "route": "Awarded contract",
+   "status": "Closed (ended 30 Sep 2026)",
+   "start": "2025-10-01",
+   "end": "2026-09-30",
+   "value_gbp": 400000,
+   "value_text": "£400,000 CEILING / estimate, not committed (Awarded value)",
+   "suppliers": [
+    "Insurance Claims Accommodation Bureau Limited"
+   ],
+   "investor_route": "Monitor",
+   "notes": "Awarded to ICAB; ended 30 Sep 2026.",
+   "confidence": "Historical (ended 30 Sep 2026)",
+   "sources": [
+    {
+     "title": "BiP Intelligence BE-10",
+     "url": "https://app.bipintelligence.com/ui/opportunities/award/5443121182",
+     "date": "checked 2026-11-03"
+    }
+   ],
+   "contacts": [],
+   "v4": {
+    "bip": [
+     "BE-10"
+    ],
+    "kind": "Awarded contract",
+    "mack": "Not Mack.",
+    "upcoming": [],
+    "new": true,
+    "id": "NEW-BAH-DECANT"
+   }
+  },
+  {
+   "id": "NEW-GLOS-TREVONE",
+   "name": "Gloucestershire: Supported Accommodation at Trevone House",
+   "buyer": "Gloucestershire County Council",
+   "accom_type": "Supported accommodation 16+ young people",
+   "regions": [
+    "GLOS"
+   ],
+   "geography": "UKK13",
+   "route": "Tender notice",
+   "status": "Forthcoming (tender, deadline 16 Nov 2026)",
+   "start": "2027-04-01",
+   "end": "2030-04-01",
+   "value_gbp": 7500000,
+   "value_text": "£7,500,000 CEILING / estimate, not committed (Estimated value (ex VAT))",
+   "suppliers": [],
+   "investor_route": "Monitor",
+   "notes": "Ofsted-regulated care service in a named building for up to 19 young people: not a leasing route.",
+   "confidence": "Verified (live) - reviewed, not added",
+   "sources": [
+    {
+     "title": "BiP Intelligence BE-13 / FTS 097950-2026",
+     "url": "https://app.bipintelligence.com/ui/opportunities/notice/6030263868",
+     "date": "checked 2026-11-03"
+    }
+   ],
+   "contacts": [],
+   "v4": {
+    "bip": [
+     "BE-13"
+    ],
+    "kind": "Tender notice",
+    "mack": "Reviewed, not pursued.",
+    "upcoming": [],
+    "new": true,
+    "id": "NEW-GLOS-TREVONE"
+   }
+  }
+ ],
+ "mack": {
+  "appointments": [
+   {
+    "framework": "MoJ Provision of Community Accommodation Services Open Framework",
+    "entity": "Mack Opco Ltd (Mack House, 13 Bath Road, Cheltenham GL53 7HG)",
+    "lots": "Lots 2, 3 and 4",
+    "term": "2 Nov 2026 to 1 Nov 2034",
+    "status": "Appointed (framework only; no call-off awarded)",
+    "ceiling": "£2.0bn whole-framework estimated maximum ex VAT: CEILING, not committed",
+    "evidence": [
+     "BE-01"
+    ],
+    "facts": [
+     "F-048",
+     "F-049"
+    ]
+   }
+  ],
+  "tenders": [
+   "NEW-CAS3-P1476",
+   "NEW-MCC-P1218",
+   "NEW-GLOS-TREVONE"
+  ],
+  "focusOpps": [
+   "MJ-001",
+   "GM-046",
+   "BR-009",
+   "GL-001",
+   "GM-002",
+   "GM-001",
+   "GL-005",
+   "BR-005",
+   "GM-015",
+   "GM-014"
+  ]
+ }
+}
