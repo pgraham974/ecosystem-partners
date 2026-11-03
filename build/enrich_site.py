@@ -6,29 +6,18 @@ award/notice/spend evidence and the Fact_Register into the site's own tabs
 Usage: python3 build/enrich_site.py [workbook.xlsx]   (default: newest Laurito_Opportunities_v*.xlsx)
 Rerunnable by the daily sync; curated links live in FW_LINKS / NEW_ITEMS below."""
 import sys,json,glob,os,re,datetime as dt
-import openpyxl
-ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE=os.path.join(ROOT,'site') if os.path.isdir(os.path.join(ROOT,'site')) else ROOT  # works from workspace/build or repo/build
-wbp=sys.argv[1] if len(sys.argv)>1 else sorted(glob.glob(os.path.join(ROOT,'Laurito_Opportunities_v*.xlsx'))+glob.glob(os.path.join(ROOT,'..','Laurito_Opportunities_v*.xlsx')))[-1]
-wb=openpyxl.load_workbook(wbp,data_only=True)
-def clean(v):
-    if isinstance(v,(dt.datetime,dt.date)):return v.strftime('%Y-%m-%d')
-    if isinstance(v,float):return round(v,2)
-    if isinstance(v,str):return re.sub(r'\s*[\u2013\u2014]\s*',' - ',v).strip()
-    return v
-def table(name,hrow=1):
-    rows=list(wb[name].iter_rows(values_only=True));h=[str(x).strip() if x else '' for x in rows[hrow-1]]
-    out=[]
-    for r in rows[hrow:]:
-        if not r or not r[0] or not re.match(r'^[A-Z]{1,3}-\d',str(r[0])):continue
-        out.append({h[i]:clean(v) for i,v in enumerate(r) if h[i] and v is not None})
-    return out
-bip={r['Evidence ID']:r for r in table('BiP_Evidence')}
-facts={r['Fact ID']:r for r in table('Fact_Register')}
-S=table('Opportunity_Scoring')
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+import v4_records as VR
+from v4_records import clean,ids
+ROOT=VR.ROOT
+SITE=os.path.join(ROOT,'site') if os.path.isdir(os.path.join(ROOT,'site')) else ROOT
+RW=VR.load(sys.argv[1] if len(sys.argv)>1 else None);wbp=RW['path']
+bip={r['Evidence ID']:r for r in RW['bip']}
+facts={r['Fact ID']:r for r in RW['facts']}
+S=RW['opps']
+REF=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'bip_refresh.json')))
 A_KEYS=['A1 Rent-paying role','A2 Current intake in geography','A3 Funded contract','A4 Committed term','A5 Cost transfer','A6 Rent vs LHA','A7 Scale','A8 Access route']
 GATES=['G-Geo','G-Route live','G-Elig','G-Req','G-Role']
-def ids(s):return [x.strip() for x in re.split(r'[,;]',str(s or '')) if x.strip()]
 opps=[]
 for r in S:
     oid=r['Opp ID']
@@ -43,17 +32,25 @@ for r in S:
       'comp':{k.split(' ',1)[0]:[k.split(' ',1)[1],r.get(k)] for k in A_KEYS},
       'gates':{g:r.get(g) for g in GATES},'status':r.get('Eligibility status'),'reason':r.get('Plain-English reason'),
       'blocker':r.get('Main blocker'),'next':r.get('Next action'),'facts':ids(r.get('Fact refs (Fact_Register)')),'bip':ev,
-      'routeEnd':r.get('Route / contract end date'),'owner':r.get('Engagement owner')})
+      'routeEnd':r.get('Route / contract end date'),'owner':r.get('Engagement owner'),'cpk':r.get('Counterparty key'),
+      'parent':r.get('Parent and guarantee position'),'geo':r.get('Geography and current intake'),'ptype':r.get('Property type, bed mix, volume'),
+      'access':r.get('Access route'),'leaseTerms':r.get('Lease, breaks, repairs, rent terms'),'ranked':r.get('Ranked?')})
 def ev(k):
-    b=bip[k];return {'id':k,'type':b.get('Record type'),'buyer':b.get('Buyer'),'suppliers':b.get('Supplier(s)'),'title':b.get('Title'),
+    b=bip[k];o_={'id':k,'type':b.get('Record type'),'buyer':b.get('Buyer'),'suppliers':b.get('Supplier(s)'),'title':b.get('Title'),
       'value':b.get('Value £'),'basis':b.get('Value basis'),'start':b.get('Start'),'end':b.get('End'),'framework':b.get('Framework? (Y/N)')=='Y',
       'deadline':b.get('Deadline'),'region':b.get('Region / NUTS'),'url':b.get('Source (BiP URL)'),'fts':b.get('FTS ref'),
       'published':b.get('Publication date'),'checked':b.get('Date checked'),'status':b.get('Status'),'use':b.get('Decision use'),'facts':ids(b.get('Fact refs')),'opps':ids(b.get('Opp IDs'))}
+    ref=REF['records'].get(k)
+    if ref:
+        for f in ('value','basis','url','fts','start','end','published'):
+            if ref.get(f) is not None:o_[f]=ref[f]
+        o_['refreshed']=REF['checked'];o_['lotSuppliers']=ref.get('lotSuppliers');o_['mackLots']=ref.get('mackLots');o_['spendByBuyer']=ref.get('spendByBuyer')
+    return o_
 # Curated links from existing frameworks.json items (matched by name regex) to BiP evidence.
 FW_LINKS=[
  {'match':r'Community Accommodation Service \(CAS\) Open Framework','bip':['BE-01'],'facts':['F-048','F-049'],'kind':'Framework (appointees only; work via call-off competitions)',
   'lots':'Lot 1 Approved Premises (£347m); Lot 2 CAS2 accommodation and support (£307m); Lot 3 CAS3 TA and floating support (£1,244m); Lot 4 specialised (£113m)',
-  'members':'Nacro (Lots 1-4), Centennial (1-4), Mears Limited (2, 3), Serco (1, 3), Clearsprings, Crown Lodge, The Big Life Group (3), Mack Opco Ltd (2, 3, 4)',
+  'members':'; '.join(k+' ('+str(len(v))+'): '+', '.join(v) for k,v in REF['records']['BE-01']['lotSuppliers'].items()),
   'mack':'Mack Opco Ltd appointed to Lots 2, 3 and 4, 2 Nov 2026 to 1 Nov 2034. Appointment only: no call-off awarded yet, no volume committed.','upcoming':['NEW-CAS3-P1476']},
  {'match':r'CAS3 current regional contracts','bip':['BE-02','BE-03'],'facts':['F-001','F-050'],'kind':'Awarded regional contracts',
   'mack':'Not a CAS3 regional contractor; supply homes to the prime (e.g. Mears NW) or bid MCC P-1476 via the MoJ framework.','upcoming':['NEW-CAS3-P1476']},
@@ -93,15 +90,51 @@ NEW_ITEMS=[
 for n in NEW_ITEMS: n['v4']['id']=n['id']
 # Mack Living panel
 mack={'appointments':[{'framework':'MoJ Provision of Community Accommodation Services Open Framework','entity':'Mack Opco Ltd (Mack House, 13 Bath Road, Cheltenham GL53 7HG)',
-  'lots':'Lots 2, 3 and 4','term':'2 Nov 2026 to 1 Nov 2034','status':'Appointed (framework only; no call-off awarded)','ceiling':'£2.0bn whole-framework estimated maximum ex VAT: CEILING, not committed',
+  'lots':'Lots '+', '.join(x.split()[-1] for x in REF['records']['BE-01']['mackLots'][:-1])+' and '+REF['records']['BE-01']['mackLots'][-1].split()[-1]+' (BiP award 6030619061, re-checked '+REF['checked']+')','term':'2 Nov 2026 to 1 Nov 2034','status':'Appointed (framework only; no call-off awarded)','ceiling':'£2.0bn whole-framework estimated maximum ex VAT: CEILING, not committed',
   'evidence':['BE-01'],'facts':['F-048','F-049']}],
  'tenders':['NEW-CAS3-P1476','NEW-MCC-P1218','NEW-GLOS-TREVONE'],
  'focusOpps':['MJ-001','GM-046','BR-009','GL-001','GM-002','GM-001','GL-005','BR-005','GM-015','GM-014']}
+FIN={f['Key']:f for f in RW['fin']}
+fin={k:{'entity':f.get('Signing / counterparty entity'),'reg':f.get('Registry ID'),'period':f.get('Accounts period end'),'atype':f.get('Accounts type'),'rev':f.get('Revenue £m'),
+  'pmeasure':f.get('Profit measure'),'profit':f.get('Profit £m'),'margin':f.get('Margin'),'assets':f.get('Net assets / reserves note'),
+  'B':{x:f.get(c) for x,c in [('B1','B1 Entity matched'),('B2','B2 Accounts recency/type'),('B3','B3 Scale'),('B4','B4 Profitability'),('B5','B5 Liquidity/reserves'),('B6','B6 RSH viability')]},
+  'parent':f.get('Parent / guarantee position'),'notes':f.get('Notes'),'facts':ids(f.get('Fact refs'))} for k,f in FIN.items()}
+DK=['Req ID','Opp ID','Partner','Region','Area / local authority','Programme / cohort','Property type','Beds min','Beds max','Units required','Priority','Required by / mobilisation','Lease term (yrs)','Rent basis','Indicative rent min £ pcm','Indicative rent max £ pcm','BRMA (v3)','LHA benchmark £ pcm (formula)','Rent max vs LHA (formula)','Void cover','Repairs / damage','Utilities & council tax','Furnished','Compliance requirements','Requirement status (v3)','Evidence status (v3)','Fact refs']
+demand=[{k:d.get(k) for k in DK if d.get(k) is not None} for d in RW['demand']]
+lha=[{'key':l['Lookup key (BRMA|beds)'],'brma':l.get('BRMA'),'region':l.get('Region'),'beds':l.get('Bedrooms (0 = shared room)'),'pcm':l.get('LHA £ pcm (UC monthly)'),'url':l.get('Source'),'eff':l.get('Rates effective'),'status':l.get('Status')} for l in RW['lha']]
+terms=[{'k':t['_k'],'partner':t.get('Partner'),'opps':ids(t.get('Opp ID')),**{c:t.get(c) for c in ['Programme','Lease term','Rent basis','Voids','Repairs / damage','Utilities & council tax','Indexation','Property standards / compliance','Submission route','Evidence','As at','v3 status']},'facts':ids(t.get('Fact refs'))} for t in RW['terms']]
+meth=RW['meth']
+for o in opps:
+    o['fin']=o['cpk'] if o.get('cpk') in fin else None
+    o['demand']=[d['Req ID'] for d in demand if d.get('Opp ID')==o['id']]
+    o['terms']=[t['k'] for t in terms if o['id'] in t['opps']]
+for k,b in bip.items():
+    for oid in ids(b.get('Opp IDs')):
+        oo=next((o for o in opps if o['id']==oid),None)
+        if oo is not None and k not in oo['bip']:oo['bip'].append(k)
+# placements: which tab renders each record (mirrors v4-enrich.js); coverage_check.py compares with the workbook.
+FWB=set(x for L in FW_LINKS for x in L['bip'])|set(x for n in NEW_ITEMS for x in n['v4']['bip'])
+PL={}
+def put(k,*t):PL.setdefault(k,set()).update(t)
+focus=set(mack['focusOpps'])
+for o in opps:
+    put('OPP:'+o['id'],'pscreen')
+    if re.search(VR.RP_T,o['type'] or ''):put('OPP:'+o['id'],'rp')
+    if re.search(VR.OP_T,o['type'] or ''):put('OPP:'+o['id'],'operators')
+    if o['id'] in focus or o['demand'] or o['terms']:put('OPP:'+o['id'],'mack')
+for k in facts:put('FACT:'+k,'pscreen')
+for k in bip:put('BIP:'+k,'frameworks')
+for k in fin:put('FIN:'+k,'pscreen')
+for d in demand:put('DR:'+d['Req ID'],'mack')
+for l in lha:put('LHA:'+l['key'],'mack')
+for t in terms:put('TERMS:'+t['k'],'mack')
+for m in meth:put('METH:'+m['_k'],'pscreen')
 out={'version':'v4-'+dt.date.today().strftime('%Y%m%d'),'source':os.path.basename(wbp),'built':dt.datetime.now().strftime('%Y-%m-%d %H:%M'),
  'licence':'Includes licensed BiP Intelligence data. Values marked CEILING are estimated maxima, not committed spend or landlord revenue.',
  'opps':opps,'bip':{k:ev(k) for k in bip},'facts':{k:{'opps':ids(f.get('Opp IDs')),'field':f.get('Field'),'finding':f.get('Finding'),'url':f.get('Source URL'),'published':f.get('Publication date'),'checked':f.get('Date checked'),'status':f.get('Status')} for k,f in facts.items()},
- 'fwLinks':FW_LINKS,'newItems':NEW_ITEMS,'mack':mack}
+ 'fwLinks':FW_LINKS,'newItems':NEW_ITEMS,'mack':mack,'fin':fin,'demand':demand,'lha':lha,'terms':terms,'meth':meth,
+ 'fwBip':sorted(FWB),'refresh':{'checked':REF['checked'],'note':REF['note']},'placements':{k:sorted(v) for k,v in PL.items()},'sheetsOnly':VR.SHEETS_ONLY}
 s=json.dumps(out,ensure_ascii=False,indent=1,default=str)
 assert '\u2013' not in s and '\u2014' not in s
 open(os.path.join(SITE,'v4-enrich.json'),'w').write(s)
-print('wrote site/v4-enrich.json',len(opps),'opps',len(bip),'bip',len(facts),'facts',len(NEW_ITEMS),'new frameworks')
+print('wrote site/v4-enrich.json',len(opps),'opps',len(bip),'bip',len(facts),'facts',len(NEW_ITEMS),'new frameworks',len(fin),'fin',len(demand),'demand',len(lha),'lha',len(terms),'terms',len(meth),'meth',len(PL),'placed')

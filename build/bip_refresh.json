@@ -1,0 +1,133 @@
+{
+ "checked": "2026-11-03",
+ "note": "Live BiP re-fetch 3 Nov 2026 (get_award / search_spend_transactions). Overlays BiP_Evidence values in the site build; workbook cells unchanged.",
+ "records": {
+  "BE-01": {
+   "awardId": 6030619061,
+   "url": "https://app.bipintelligence.com/ui/opportunities/award/6030619061",
+   "fts": "097997-2026",
+   "value": 2011000000,
+   "start": "2026-11-02",
+   "end": "2034-11-01",
+   "published": "2026-10-16",
+   "lotSuppliers": {
+    "Lot 1": [
+     "Interventions Alliance Ltd",
+     "Elizabeth Fry Charity",
+     "Langley Trust",
+     "Penrose Options",
+     "The Cyrenians Ltd t/a Changing Lives",
+     "Management & Training Corporation Limited",
+     "Nacro",
+     "OneCare UK Ltd",
+     "Centennial Property Limited T/A The Housing Network",
+     "Clearsprings Ready Homes",
+     "Serco",
+     "Servol Community Services",
+     "Immediate Medical Solutions Ltd",
+     "Hestia Housing & Support"
+    ],
+    "Lot 2": [
+     "Nacro",
+     "Mears Limited",
+     "Centennial Property Limited T/A The Housing Network",
+     "Sai Aryan Properties Ltd",
+     "Crown Lodge Accommodation Ltd",
+     "Immediate Medical Solutions Ltd",
+     "Connect Lettings and Management Limited",
+     "Mack Opco Ltd"
+    ],
+    "Lot 3": [
+     "Housing Action Management Ltd",
+     "Nacro",
+     "Centennial Property Limited T/A The Housing Network",
+     "Serco",
+     "Mears Limited",
+     "Penrose Options",
+     "Major Commercial Property Ltd",
+     "Crown Lodge Accommodation Ltd",
+     "The Big Life Group",
+     "Sai Aryan Properties Ltd",
+     "Clearsprings Ready Homes",
+     "The Wallich Clifford Community",
+     "Mack Opco Ltd"
+    ],
+    "Lot 4": [
+     "Destiny Integrated Care Ltd",
+     "Interventions Alliance Ltd",
+     "Langley Trust",
+     "HK Care Consulting Ltd",
+     "Housing Action Management Ltd",
+     "Isabellas Homes Limited",
+     "Trevi House Limited",
+     "Elizabeth Fry Charity",
+     "Alpha Health & Social Care Services Ltd",
+     "Blue Cross Healthcare Services Limited",
+     "Esteemed Life Ltd",
+     "First Choice Medical Solutions Ltd",
+     "Blueboard Care Services Ltd",
+     "The Cyrenians Ltd t/a Changing Lives",
+     "Nassh Healthcare Ltd",
+     "Fortix Ltd",
+     "Kind Solutions Ltd",
+     "Jome Healthcare Ltd",
+     "Management & Training Corporation Limited",
+     "OneCare UK Ltd",
+     "St Mungo Community Housing Association",
+     "Centennial Property Limited T/A The Housing Network",
+     "Nacro",
+     "Claremont Living",
+     "The Wallich Clifford Community",
+     "Crown Lodge Accommodation Ltd",
+     "Home not Hospital Ltd",
+     "Immediate Medical Solutions Ltd",
+     "Reframe Support Services Ltd",
+     "Sai Aryan Properties Ltd",
+     "The Forward Trust",
+     "Bercleys Properties Ltd",
+     "Penrose Options",
+     "Servol Community Services",
+     "Base One Holdings Ltd",
+     "Clearsprings Ready Homes",
+     "Urban Land Management Ltd",
+     "A2Care Limited",
+     "Look Ahead Care and Support",
+     "Mack Opco Ltd"
+    ]
+   },
+   "mackLots": [
+    "Lot 2",
+    "Lot 3",
+    "Lot 4"
+   ]
+  },
+  "BE-16": {
+   "value": 16844.37,
+   "basis": "Actual payments: Bury Council to ICAB, 12 payments, Aug 2026 (BiP spend refresh); ICAB also paid by LB Wandsworth \u00a390,963.68 (12) and LB Haringey \u00a3446,168.30 (4) in Aug 2026",
+   "spendByBuyer": {
+    "Bury Council": [
+     16844.37,
+     12
+    ],
+    "London Borough of Wandsworth": [
+     90963.68,
+     12
+    ],
+    "London Borough of Haringey": [
+     446168.3,
+     4
+    ]
+   }
+  },
+  "BE-18": {
+   "value": 19055.56,
+   "basis": "Actual payments: Bedford Borough Council to Rent Connect, 13 payments, Aug 2026 (BiP spend refresh)",
+   "spendByBuyer": {
+    "Bedford Borough Council": [
+     19055.56,
+     13
+    ]
+   }
+  }
+ }
+}

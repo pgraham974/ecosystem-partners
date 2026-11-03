@@ -1,7 +1,7 @@
 {
  "version": "v4-20261103",
  "source": "Laurito_Opportunities_v4_2026-11-03.xlsx",
- "built": "2026-11-03 16:31",
+ "built": "2026-11-03 16:47",
  "licence": "Includes licensed BiP Intelligence data. Values marked CEILING are estimated maxima, not committed spend or landlord revenue.",
  "opps": [
   {
@@ -81,7 +81,21 @@
     "BE-19"
    ],
    "routeEnd": "2029-12-12",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "MEARSLTD",
+   "parent": "Mears Group plc owns 100% (PSC). No parent guarantee evidenced.",
+   "geo": "CAS3 North West contract live to Dec 2029 (covers NW probation region). Mears' asylum AASC does NOT cover GM. Dec 2024 acquisition email did not name GM. Current GM intake: unknown. Mears Limited is also appointed to the new MoJ CAS framework Lots 2 and 3 (framework only, to 2034).",
+   "ptype": "Property Partnerships: portfolios; CAS3 transitional (up to 84 nights per person). 2024: 1-3 bed ready-to-occupy, furnished 2+ bed, fire doors and FRA. Volume for GM not stated.",
+   "access": "Property Partnerships web form (open, no deadline); Acquisition Officer contact is historic (Dec 2024).",
+   "leaseTerms": "3 or 5 yr contract term; no voids; utilities; tenant damage; internal day-to-day repairs. Landlord keeps roof, structure, boilers, kitchens/bathrooms, certification. Rent not published. Breaks not published.",
+   "ranked": "Y",
+   "fin": "MEARSLTD",
+   "demand": [
+    "DR-006"
+   ],
+   "terms": [
+    "T03"
+   ]
   },
   {
    "id": "GM-002",
@@ -157,7 +171,24 @@
     "BE-19"
    ],
    "routeEnd": "2029-08-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "SERCOLTD",
+   "parent": "Serco Holdings Ltd (PSC); ultimate parent Serco Group plc. No parent guarantee evidenced.",
+   "geo": "AASC North West plus Midlands & East (verified). Current GM intake not stated; landlord page is generic.",
+   "ptype": "HMOs, houses, flats, blocks, portfolios (Nov 2026 page). 2024 email: 1-4 bed and HMO matrix.",
+   "access": "Property Partnerships 0330 236 9898 / aasc.properties@serco.com; EOI form. Contract ends 2029; Home Office break exercisable from Mar 2026.",
+   "leaseTerms": "Historical (May 2024 email): 6 yr 11 m lease, no voids, CT and utilities, day-to-day maintenance. Feb 2025: 5-yr renewals at £925-£1,150 pcm. Serco discloses AASC leases contain termination options. 2024 matrix 1-bed £400-£500 = 52-65% of LHA.",
+   "ranked": "Y",
+   "fin": "SERCOLTD",
+   "demand": [
+    "DR-007",
+    "DR-008",
+    "DR-009",
+    "DR-010"
+   ],
+   "terms": [
+    "T04"
+   ]
   },
   {
    "id": "GM-003",
@@ -235,7 +266,23 @@
     "BE-15"
    ],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "NACRO",
+   "parent": "No parent (charity).",
+   "geo": "CAS-2: GM/NW no longer sourcing (2 Oct 2026). Supported Housing: NW limited to Salford/Wirral. Nov 2026 web: priority regions London, SW, East. BiP spend: MCC paid Nacro £141,265.25 on 10 Aug 2026 ('Third party payments relating to Voluntary Organisations'); none seen in Jul 2026. Shows a live MCC service relationship, not property intake.",
+   "ptype": "Salford supported housing type not stated; NW listed need is an 11/12-bed HMO in Liverpool (outside target).",
+   "access": "leasingenquiries@nacro.org.uk / 0300 013 2177 (open).",
+   "leaseTerms": "3-5 yrs (supported housing usually 3); no voids; CPI cap 5%; utilities, CT, damage and day-to-day repairs covered; landlord keeps structure and certification.",
+   "ranked": "Y",
+   "fin": "NACRO",
+   "demand": [
+    "DR-003",
+    "DR-004"
+   ],
+   "terms": [
+    "T01",
+    "T02"
+   ]
   },
   {
    "id": "GM-004",
@@ -302,9 +349,24 @@
     "F-020",
     "F-051"
    ],
-   "bip": [],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Stop Start Go (charity 1167457)",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Schemes in Cheetham Hill/Crumpsall (E30).",
+   "ptype": "Self-contained studios/flats in staffed schemes; accessible units; semi-independent 2-bed flats",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": null,
+   "demand": [
+    "DR-019"
+   ],
+   "terms": []
   },
   {
    "id": "GM-005",
@@ -372,9 +434,24 @@
     "F-041",
     "F-051"
    ],
-   "bip": [],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "STEPPING",
+   "parent": "None identified - independent organisation",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). 700+ homes across NW (E32).",
+   "ptype": "Self-contained furnished flats in grouped schemes plus dispersed community properties",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": "STEPPING",
+   "demand": [
+    "DR-020"
+   ],
+   "terms": []
   },
   {
    "id": "GM-006",
@@ -441,9 +518,24 @@
     "F-020",
     "F-051"
    ],
-   "bip": [],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Catholic Diocese of Salford (charity 1125808)",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Caritas House and Morning Star schemes (E31).",
+   "ptype": "Supported accommodation for single homeless men; young parents units",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": null,
+   "demand": [
+    "DR-021"
+   ],
+   "terms": []
   },
   {
    "id": "GM-007",
@@ -509,9 +601,24 @@
    "facts": [
     "F-042"
    ],
-   "bip": [],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "IASPIRE",
+   "parent": "IASPIRE Crisis / Step Down Beds Ltd",
+   "geo": "Manchester (GMMH award £828,624, E8).",
+   "ptype": "Step-down / crisis beds (configuration not published)",
+   "access": "info@ inbox.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": "IASPIRE",
+   "demand": [
+    "DR-022"
+   ],
+   "terms": []
   },
   {
    "id": "GM-008",
@@ -579,9 +686,24 @@
     "F-026",
     "F-051"
    ],
-   "bip": [],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "GPHA",
+   "parent": "Great Places Housing Group",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). c.28,000 homes; owns stock.",
+   "ptype": "Purpose-built supported schemes; over-55s; general needs",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": "GPHA",
+   "demand": [
+    "DR-023"
+   ],
+   "terms": []
   },
   {
    "id": "GM-009",
@@ -649,9 +771,24 @@
     "F-027",
     "F-051"
    ],
-   "bip": [],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "MSV",
+   "parent": "MSV Housing Group (group parent - no higher parent identified)",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Supported housing across GM.",
+   "ptype": "1-bed self-contained flats to adapted shared bungalows",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": "MSV",
+   "demand": [
+    "DR-024"
+   ],
+   "terms": []
   },
   {
    "id": "GM-010",
@@ -719,9 +856,24 @@
     "F-034",
     "F-051"
    ],
-   "bip": [],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "DEPAUL",
+   "parent": "Depaul UK (charity)",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Nightstop / Safestop.",
+   "ptype": "En-suite rooms in staffed scheme (Safestop); host rooms (Nightstop)",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": "DEPAUL",
+   "demand": [
+    "DR-025"
+   ],
+   "terms": []
   },
   {
    "id": "GM-011",
@@ -789,9 +941,22 @@
     "F-028",
     "F-051"
    ],
-   "bip": [],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "SANCTUARY",
+   "parent": "Sanctuary Group",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Victoria House (36 one-bed flats).",
+   "ptype": "1-bed flats; shared 2-bed flats; emergency rooms",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": "SANCTUARY",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-012",
@@ -859,9 +1024,22 @@
     "F-029",
     "F-051"
    ],
-   "bip": [],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "RIVERSIDE",
+   "parent": "The Riverside Group",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Project 394, Stopover, The Beeches.",
+   "ptype": "Shared houses with single bedrooms; self-contained units; 24-hr staffed projects",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": "RIVERSIDE",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-013",
@@ -929,9 +1107,22 @@
     "F-030",
     "F-051"
    ],
-   "bip": [],
+   "bip": [
+    "BE-04",
+    "BE-05"
+   ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "SAHA",
+   "parent": "The Salvation Army",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Lifehouses in Manchester.",
+   "ptype": "Scheme-based supported accommodation (single rooms)",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": "SAHA",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-014",
@@ -1005,7 +1196,17 @@
     "BE-18"
    ],
    "routeEnd": "2029-10-13",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "RENTCONNECT",
+   "parent": "Rent Connect Housing Ltd (07588779)",
+   "geo": "Greater Manchester: appointee on Oldham MBC Temporary Accommodation Nightly Paid Framework (8 Apr 2026 to 6 Apr 2029; framework, not an award). Aug 2026 BiP spend sample: payments only from Bedford, none from a GM council seen.",
+   "ptype": "Self-contained nightly-let TA.",
+   "access": "info@rentconnect.co.uk.",
+   "leaseTerms": "Not published; framework is short-stay / decant.",
+   "ranked": "Y",
+   "fin": "RENTCONNECT",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-015",
@@ -1082,7 +1283,19 @@
     "BE-17"
    ],
    "routeEnd": "2028-03-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "CENTENNIAL",
+   "parent": "No corporate parent: two individual PSCs. 'The Housing Network' is a trading name.",
+   "geo": "Manchester: P-1475 live 1 Oct 2026 to 31 Mar 2028. Also on MCC HRS framework and the MoJ CAS open framework (Lots 1 to 4, framework only). Aug 2026 BiP spend: TA and B&B payments from many councils (South East, East, East Midlands); none from MCC in the sample (P-1475 started Oct 2026).",
+   "ptype": "Safe accommodation with support (unit types not published). Group also supplies TA family units (Imperial Portfolio).",
+   "access": "tenders@thehousingnetwork.co.uk only.",
+   "leaseTerms": "Not published.",
+   "ranked": "Y",
+   "fin": "CENTENNIAL",
+   "demand": [
+    "DR-017"
+   ],
+   "terms": []
   },
   {
    "id": "GM-016",
@@ -1153,7 +1366,17 @@
     "BE-09"
    ],
    "routeEnd": "2029-10-13",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "UNITYHS",
+   "parent": "Not identified - confirm entity (see name-clash note)",
+   "geo": "National; GM activity unconfirmed.",
+   "ptype": "Supported accommodation for vulnerable adults",
+   "access": "Website contact.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": "UNITYHS",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-017",
@@ -1222,7 +1445,17 @@
    ],
    "bip": [],
    "routeEnd": "2029-08-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "CTMN",
+   "parent": "Corporate Travel Management (ASX: CTD)",
+   "geo": "National.",
+   "ptype": "Contingency (hotel-type) accommodation - residential relevance unverified",
+   "access": "Phone route only.",
+   "leaseTerms": "Not applicable / unknown.",
+   "ranked": "N",
+   "fin": "CTMN",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-018",
@@ -1288,7 +1521,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Making Space (charity)",
+   "geo": "South Manchester",
+   "ptype": "Supported housing tenancies (unit types not itemised)",
+   "access": "enquiries@makingspace.co.uk; brokeragementalhealth@manchester.gov.uk (MCC Brokerage)",
+   "leaseTerms": "Not published",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-019",
@@ -1360,7 +1603,17 @@
     "BE-05"
    ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Contact Hostel (charity 1178557)",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). 8 spaces (7 rooms + move-on bungalow).",
+   "ptype": "Single rooms in staffed house; move-on unit",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "Y",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-020",
@@ -1428,7 +1681,17 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "CALICO",
+   "parent": "The Calico Group",
+   "geo": "Lancashire / GM partnership",
+   "ptype": "Not published",
+   "access": "hello@calico.org.uk",
+   "leaseTerms": "Not published",
+   "ranked": "N",
+   "fin": "CALICO",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-021",
@@ -1500,7 +1763,17 @@
     "BE-05"
    ],
    "routeEnd": "2028-01-31",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "YMCA Liverpool & Sefton / 'You Matter'",
+   "geo": "Delivers in Manchester; on MCC HRS framework (Feb 2026). Liverpool-based; appointee on Manchester framework (verified), correcting 'mobilisation unconfirmed' to 'membership verified, call-off unknown'.",
+   "ptype": "Supported accommodation (homelessness, DA, mental health)",
+   "access": "Via provider; HRS framework call-offs by MCC.",
+   "leaseTerms": "Not published.",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-022",
@@ -1568,7 +1841,17 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Bridges Outcomes Partnerships",
+   "geo": "Greater Manchester",
+   "ptype": "N/A",
+   "access": "enquiries@gmbop.org",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-023",
@@ -1642,7 +1925,17 @@
     "BE-16"
    ],
    "routeEnd": "2029-10-13",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "ICAB",
+   "parent": "ICAB Ltd (04570960)",
+   "geo": "Greater Manchester: Bury Council paid ICAB under 'Housing Management' in Aug 2026 (10 payments seen, £575 to £2,124 each). Bolton at Home decant award Oct 2025 to Sep 2026 (ended). Wider: Orbit, Beyond Housing, Guinness framework.",
+   "ptype": "Serviced / self-contained alternative accommodation",
+   "access": "Partner-with-us form.",
+   "leaseTerms": "Short-stay / decant.",
+   "ranked": "Y",
+   "fin": "ICAB",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-024",
@@ -1713,7 +2006,17 @@
     "BE-09"
    ],
    "routeEnd": "2029-10-13",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "THESQUARE",
+   "parent": "TheSqua.re Ltd",
+   "geo": "National.",
+   "ptype": "Furnished serviced apartments",
+   "access": "stay@ inbox.",
+   "leaseTerms": "Serviced / furnished; term not published.",
+   "ranked": "N",
+   "fin": "THESQUARE",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-025",
@@ -1779,7 +2082,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Not identified in reviewed evidence - verify",
+   "geo": "National (GM services)",
+   "ptype": "Clinical / specialist",
+   "access": "info@elysiumhealthcare.co.uk",
+   "leaseTerms": "Not published",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-026",
@@ -1847,7 +2160,17 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "LSH",
+   "geo": "Manchester",
+   "ptype": "N/A",
+   "access": "Not published - use office phone",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-027",
@@ -1916,7 +2239,17 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "ProcurePublic Ltd",
+   "geo": "National",
+   "ptype": "N/A",
+   "access": "Not published - live chat / phone",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-028",
@@ -1982,7 +2315,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "APM Group",
+   "geo": "National",
+   "ptype": "N/A",
+   "access": "Not published - use switchboard",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-029",
@@ -2055,7 +2398,17 @@
     "BE-11"
    ],
    "routeEnd": "2029-10-13",
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "JIGSAW",
+   "parent": "Jigsaw Conferences Ltd",
+   "geo": "Markets Manchester key-worker stays.",
+   "ptype": "Hotels, serviced apartments; 6-month+ private rentals for decants",
+   "access": "accommodation@ inbox.",
+   "leaseTerms": "Hotels, serviced; 6-month+ private rentals for decants.",
+   "ranked": "Y",
+   "fin": "JIGSAW",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-030",
@@ -2121,7 +2474,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Queens Hall Action on Poverty",
+   "geo": "Wigan",
+   "ptype": "Emergency / supported accommodation",
+   "access": "enquiries@thebrick.org.uk",
+   "leaseTerms": "Not published",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-031",
@@ -2187,7 +2550,19 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Manchester Airports Group",
+   "geo": "Manchester Airport (M90)",
+   "ptype": "Location-led - proximity to airport",
+   "access": "enquiries@magproperty.co.uk",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [
+    "DR-026"
+   ],
+   "terms": []
   },
   {
    "id": "GM-032",
@@ -2253,7 +2628,19 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "JV: Manchester City Council, GM Pension Fund, MAG, BCEG",
+   "geo": "Manchester Airport (Wythenshawe)",
+   "ptype": "Contractor / relocation accommodation near M90 / M22",
+   "access": "feedback@mix-manchester.com",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [
+    "DR-027"
+   ],
+   "terms": []
   },
   {
    "id": "GM-033",
@@ -2321,7 +2708,19 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "MFT; scheme operated by Your Housing Group",
+   "geo": "Wythenshawe (M23)",
+   "ptype": "Shared / 2-3 bed self-contained flats near hospital",
+   "access": "Not published - switchboard / YHG Accommodation Officer",
+   "leaseTerms": "Inclusive rents incl. council tax and utilities (existing scheme)",
+   "ranked": "N",
+   "fin": null,
+   "demand": [
+    "DR-028"
+   ],
+   "terms": []
   },
   {
    "id": "GM-034",
@@ -2387,7 +2786,19 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "NHS",
+   "geo": "Greater Manchester (Prestwich HQ)",
+   "ptype": "Step-down / discharge / move-on",
+   "access": "Not published - switchboard",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [
+    "DR-029"
+   ],
+   "terms": []
   },
   {
    "id": "GM-035",
@@ -2460,7 +2871,26 @@
     "BE-12"
    ],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "MCC",
+   "parent": "N/A",
+   "geo": "Manchester. Internal briefing: 235 properties under management, 12 x 2-bed block negotiation; c.250 PSL properties (internal RFI). BiP: MCC pipeline notice for Safety and Support Services across its TA portfolio (£14.88m ex VAT, est. 1 Apr 2027 to 1 Apr 2031, tender expected 19 Nov 2026) confirms an ongoing council-run TA estate.",
+   "ptype": "1-2 bed flats, HMOs, family homes; 12 x 2-bed block in negotiation (internal).",
+   "access": "MAS Gateway / Empty Homes team (emptyhomesteam@manchester.gov.uk); Mack holds an existing MCC agreement (internal E38).",
+   "leaseTerms": "10 yr + 1 day (decision). Rent, repairs and breaks not published.",
+   "ranked": "Y",
+   "fin": "MCC",
+   "demand": [
+    "DR-011",
+    "DR-012",
+    "DR-013",
+    "DR-014",
+    "DR-015",
+    "DR-016"
+   ],
+   "terms": [
+    "T05"
+   ]
   },
   {
    "id": "GM-036",
@@ -2526,7 +2956,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "GMCA",
+   "geo": "Greater Manchester",
+   "ptype": "N/A",
+   "access": "Web enquiry form: greatermanchester-ca.gov.uk/contact/enquiries",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-037",
@@ -2592,7 +3032,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Media City Salford Ltd",
+   "geo": "Salford Quays (M50)",
+   "ptype": "Short-duration premium block demand",
+   "access": "hello@mediacityuk.co.uk",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-038",
@@ -2660,7 +3110,17 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Home Office",
+   "geo": "National (GM placements)",
+   "ptype": "N/A",
+   "access": "asraprocurementteam@homeoffice.gov.uk",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-039",
@@ -2726,7 +3186,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Patrick Graham"
+   "owner": "Patrick Graham",
+   "cpk": null,
+   "parent": null,
+   "geo": "Greater Manchester",
+   "ptype": null,
+   "access": null,
+   "leaseTerms": null,
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-040",
@@ -2792,7 +3262,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Patrick Graham"
+   "owner": "Patrick Graham",
+   "cpk": null,
+   "parent": null,
+   "geo": "Greater Manchester",
+   "ptype": null,
+   "access": null,
+   "leaseTerms": null,
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-041",
@@ -2858,7 +3338,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Patrick Graham"
+   "owner": "Patrick Graham",
+   "cpk": null,
+   "parent": null,
+   "geo": "Greater Manchester",
+   "ptype": null,
+   "access": null,
+   "leaseTerms": null,
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-042",
@@ -2924,7 +3414,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Patrick Graham"
+   "owner": "Patrick Graham",
+   "cpk": null,
+   "parent": null,
+   "geo": "Greater Manchester",
+   "ptype": null,
+   "access": null,
+   "leaseTerms": null,
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "BR-001",
@@ -2997,7 +3497,21 @@
     "BE-20"
    ],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "BRISTOLCC",
+   "parent": "N/A",
+   "geo": "Bristol.",
+   "ptype": "Family homes, shared; furnished or unfurnished.",
+   "access": "private.renting@bristol.gov.uk.",
+   "leaseTerms": "2022: 2-yr renewable lease, 12 months' rent in advance, void cover. Current web offer emphasises AST incentives.",
+   "ranked": "Y",
+   "fin": "BRISTOLCC",
+   "demand": [
+    "DR-018"
+   ],
+   "terms": [
+    "T06"
+   ]
   },
   {
    "id": "BR-002",
@@ -3067,7 +3581,21 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "NACRO",
+   "parent": "No parent (charity).",
+   "geo": "Bristol excluded from SW CAS-2 sourcing (2 Oct 2026).",
+   "ptype": "As GL-001.",
+   "access": "As GL-001.",
+   "leaseTerms": "As GL-001.",
+   "ranked": "N",
+   "fin": "NACRO",
+   "demand": [
+    "DR-005"
+   ],
+   "terms": [
+    "T01"
+   ]
   },
   {
    "id": "BR-003",
@@ -3133,7 +3661,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Bristol Airport Ltd",
+   "geo": "North Somerset (BS48)",
+   "ptype": "Not published - establish on first contact",
+   "access": "Online enquiry form (bristolairport.co.uk/contact-and-help)",
+   "leaseTerms": null,
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "BR-004",
@@ -3201,7 +3739,17 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "LSH",
+   "geo": "Bristol",
+   "ptype": "N/A",
+   "access": "Not published - use office phone",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "BR-005",
@@ -3270,7 +3818,19 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "MEARSLTD",
+   "parent": "As GM-001.",
+   "geo": "Mears Living South; website lists London boroughs as priority. Bristol intake unknown.",
+   "ptype": "Bedsits to family homes, blocks, HMOs.",
+   "access": "Mears Living / Property Partnerships form.",
+   "leaseTerms": "As F-003.",
+   "ranked": "Y",
+   "fin": "MEARSLTD",
+   "demand": [
+    "DR-030"
+   ],
+   "terms": []
   },
   {
    "id": "BR-006",
@@ -3336,7 +3896,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Patrick Graham"
+   "owner": "Patrick Graham",
+   "cpk": null,
+   "parent": null,
+   "geo": "Bristol",
+   "ptype": null,
+   "access": null,
+   "leaseTerms": null,
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GL-001",
@@ -3412,7 +3982,22 @@
     "BE-01"
    ],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "NACRO",
+   "parent": "No parent (charity).",
+   "geo": "South West is a highest-priority sourcing region (web, Nov 2026; email 2 Oct 2026) except Plymouth and Bristol. Gloucestershire towns not confirmed.",
+   "ptype": "2-4 bed houses for shared living; 1-bed SC flats (max 4 per block); EPC D minimum; HMO fire standards for shared houses; unfurnished.",
+   "access": "leasingenquiries@nacro.org.uk / 0300 013 2177; viewing then rent offer. No deadline.",
+   "leaseTerms": "3-5 yr lease; rent monthly in arrears; no voids; CPI cap 5%; utilities, CT, tenant damage, day-to-day repairs; landlord keeps structure and certification. Rent LHA (+ up to 20%) to market. CAS-2 contract ends Sep 2028 (+1 yr option).",
+   "ranked": "Y",
+   "fin": "NACRO",
+   "demand": [
+    "DR-001",
+    "DR-002"
+   ],
+   "terms": [
+    "T01"
+   ]
   },
   {
    "id": "GL-002",
@@ -3480,7 +4065,19 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "GCH",
+   "parent": "GCH (Registered Provider)",
+   "geo": "Gloucester",
+   "ptype": "Operates 113 homeless units: 7 schemes (shared and 1-2 bed self-contained; 8 en-suite rooms at Hewmar House) plus 45 dispersed properties",
+   "access": "homeless@gch.co.uk",
+   "leaseTerms": "Not published",
+   "ranked": "N",
+   "fin": "GCH",
+   "demand": [
+    "DR-031"
+   ],
+   "terms": []
   },
   {
    "id": "GL-003",
@@ -3548,7 +4145,19 @@
     "BE-20"
    ],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Cheltenham Borough Council",
+   "geo": "Cheltenham",
+   "ptype": "Not published - establish on first contact",
+   "access": "PrivateSectorHousing@cheltenham.gov.uk; housing@cheltenham.gov.uk",
+   "leaseTerms": "Not published",
+   "ranked": "N",
+   "fin": null,
+   "demand": [
+    "DR-032"
+   ],
+   "terms": []
   },
   {
    "id": "GL-004",
@@ -3616,7 +4225,19 @@
     "BE-20"
    ],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Gloucester City Council",
+   "geo": "Gloucester",
+   "ptype": "Not published - establish on first contact",
+   "access": "heretohelp@gloucester.gov.uk; homeless.team@gloucester.gov.uk",
+   "leaseTerms": "Not published",
+   "ranked": "N",
+   "fin": null,
+   "demand": [
+    "DR-033"
+   ],
+   "terms": []
   },
   {
    "id": "GL-005",
@@ -3685,7 +4306,19 @@
    ],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": "MEARSLTD",
+   "parent": "As GM-001.",
+   "geo": "Mears Living South incl. South West; Gloucestershire intake unknown.",
+   "ptype": "Bedsits to family homes, blocks, HMOs.",
+   "access": "Mears Living / Property Partnerships form.",
+   "leaseTerms": "As F-003.",
+   "ranked": "Y",
+   "fin": "MEARSLTD",
+   "demand": [
+    "DR-034"
+   ],
+   "terms": []
   },
   {
    "id": "GL-006",
@@ -3751,7 +4384,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Patrick Graham"
+   "owner": "Patrick Graham",
+   "cpk": null,
+   "parent": null,
+   "geo": "Gloucestershire",
+   "ptype": null,
+   "access": null,
+   "leaseTerms": null,
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-043",
@@ -3817,7 +4460,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Manchester University NHS FT; NHS New Hospital Programme (Wave 1)",
+   "geo": "Crumpsall, North Manchester (M8)",
+   "ptype": "Contractor housing (shared houses / 2-4 bed) and key-worker flats near Crumpsall / Cheetham Hill",
+   "access": "nmredevelopment@mft.nhs.uk",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-044",
@@ -3883,7 +4536,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Far East Consortium (FEC) and Manchester City Council",
+   "geo": "North-east Manchester city centre fringe (Collyhurst, Red Bank, Cheetham)",
+   "ptype": "New-build apartments and houses (supply, not demand)",
+   "access": "info@victorianorth.co.uk; enquiries@fecil.uk",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-045",
@@ -3949,7 +4612,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Manchester Airports Group (see GM-031)",
+   "geo": "Manchester Airport (M90)",
+   "ptype": "Contractor housing near M90 / Wythenshawe",
+   "access": "enquiries@magproperty.co.uk",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GL-007",
@@ -4015,7 +4688,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "HBD (Henry Boot) with Cheltenham Borough Council; main contractor phase 1 Bowmer + Kirkland",
+   "geo": "West Cheltenham (adjacent to GCHQ)",
+   "ptype": "Contractor housing now; 1-2 bed rentals for relocating tech / cyber staff from 2028 (Cheltenham BRMA)",
+   "access": "Golden Valley web contact form (goldenvalleyuk.com/contact)",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "BR-007",
@@ -4081,7 +4764,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "Bristol City Council, Homes England, West of England Combined Authority; Network Rail partner",
+   "geo": "Bristol Temple Meads / St Philip's Marsh",
+   "ptype": "Rentals near Temple Meads for staff and visiting academics; future new-build supply",
+   "access": "hello@bristoltemplequarter.com; temple-quarter@bristol.ac.uk",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "BR-008",
@@ -4147,7 +4840,17 @@
    "facts": [],
    "bip": [],
    "routeEnd": null,
-   "owner": "Liza Loughnane"
+   "owner": "Liza Loughnane",
+   "cpk": null,
+   "parent": "EDF Energy; campus accommodation run by HOST Somerset",
+   "geo": "Bridgwater / West Somerset - OUTSIDE target area",
+   "ptype": "3-4 bed houses and HMOs for contractor crews (Bridgwater, Burnham-on-Sea, Cannington, Taunton)",
+   "access": "reception.hc@host-somerset.co.uk; reception.sc@host-somerset.co.uk",
+   "leaseTerms": "N/A",
+   "ranked": "N",
+   "fin": null,
+   "demand": [],
+   "terms": []
   },
   {
    "id": "MJ-001",
@@ -4218,7 +4921,17 @@
     "BE-01"
    ],
    "routeEnd": "2034-11-01",
-   "owner": null
+   "owner": null,
+   "cpk": "MOJ",
+   "parent": "Central government. No guarantee of volumes: notice states the framework does not constitute a commitment to spend.",
+   "geo": "Call-offs may cover England and Wales; geography is set per call-off. No GM or SW call-off evidenced yet.",
+   "ptype": "Lot 2 CAS Tier 2 (accommodation and support), Lot 3 CAS Tier 3 (temporary accommodation and floating support), Lot 4 specialised. Unit specs per call-off.",
+   "access": "Appointed supplier: call-offs by further competition among appointees. Earliest signing 2 Nov 2026.",
+   "leaseTerms": "Framework 2 Nov 2026 to 1 Nov 2034 (8 yr max; first agreement 2 yrs + 1). Call-off terms, pricing and cost split not published.",
+   "ranked": "Y",
+   "fin": "MOJ",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "GM-046",
@@ -4290,7 +5003,17 @@
     "BE-03"
    ],
    "routeEnd": "2027-12-23",
-   "owner": null
+   "owner": null,
+   "cpk": "MCC",
+   "parent": "Local authority; funding from MoJ.",
+   "geo": "Manchester (UKD33 / UKD3). Accommodation must be within Manchester and licensed by MCC Regulatory Services.",
+   "ptype": "Minimum 63 (Nov 2025) rising to 66 (Sep 2026) lettable single-sex units, self-contained or HMO-compliant, Decent Homes, furnished to a set list, up to 84 nights per placement; must take low to high risk incl. sex offender and arson histories.",
+   "access": "Pre-market engagement only (deadline 10 Sep 2026, passed). Tender not yet published. procurement@manchester.gov.uk.",
+   "leaseTerms": "Estimated contract 1 Apr 2027 to 23 Dec 2027 (8 months 23 days). Provider bears repairs incl. all damage, out-of-hours, utilities, council tax, weekly inspections, cleaning. Fixed-term pricing model being explored.",
+   "ranked": "Y",
+   "fin": "MCC",
+   "demand": [],
+   "terms": []
   },
   {
    "id": "BR-009",
@@ -4360,7 +5083,17 @@
     "BE-07"
    ],
    "routeEnd": "2031-06-30",
-   "owner": null
+   "owner": null,
+   "cpk": null,
+   "parent": "Mixed RPs and providers; no guarantee.",
+   "geo": "Bristol (UKK11). Council aim: more RP-delivered supported TA to cut private emergency accommodation.",
+   "ptype": "Lot 1 dispersed self-contained family units (1-5 bedrooms, max 4 per shared entrance); Lot 2 family medium support; Lot 3 singles shared (approx 80%) and couples self-contained (approx 20%), HMOs max 6 units.",
+   "access": "No landlord route to appointees identified yet.",
+   "leaseTerms": "Framework 1 Jul 2026 to 30 Jun 2031 (+3 x 12 months to 2034). £106.9m is the framework ceiling, not spend. Lease terms not published.",
+   "ranked": "Y",
+   "fin": null,
+   "demand": [],
+   "terms": []
   }
  ],
  "bip": {
@@ -4394,7 +5127,99 @@
     "GL-001",
     "GM-015",
     "GM-002"
-   ]
+   ],
+   "refreshed": "2026-11-03",
+   "lotSuppliers": {
+    "Lot 1": [
+     "Interventions Alliance Ltd",
+     "Elizabeth Fry Charity",
+     "Langley Trust",
+     "Penrose Options",
+     "The Cyrenians Ltd t/a Changing Lives",
+     "Management & Training Corporation Limited",
+     "Nacro",
+     "OneCare UK Ltd",
+     "Centennial Property Limited T/A The Housing Network",
+     "Clearsprings Ready Homes",
+     "Serco",
+     "Servol Community Services",
+     "Immediate Medical Solutions Ltd",
+     "Hestia Housing & Support"
+    ],
+    "Lot 2": [
+     "Nacro",
+     "Mears Limited",
+     "Centennial Property Limited T/A The Housing Network",
+     "Sai Aryan Properties Ltd",
+     "Crown Lodge Accommodation Ltd",
+     "Immediate Medical Solutions Ltd",
+     "Connect Lettings and Management Limited",
+     "Mack Opco Ltd"
+    ],
+    "Lot 3": [
+     "Housing Action Management Ltd",
+     "Nacro",
+     "Centennial Property Limited T/A The Housing Network",
+     "Serco",
+     "Mears Limited",
+     "Penrose Options",
+     "Major Commercial Property Ltd",
+     "Crown Lodge Accommodation Ltd",
+     "The Big Life Group",
+     "Sai Aryan Properties Ltd",
+     "Clearsprings Ready Homes",
+     "The Wallich Clifford Community",
+     "Mack Opco Ltd"
+    ],
+    "Lot 4": [
+     "Destiny Integrated Care Ltd",
+     "Interventions Alliance Ltd",
+     "Langley Trust",
+     "HK Care Consulting Ltd",
+     "Housing Action Management Ltd",
+     "Isabellas Homes Limited",
+     "Trevi House Limited",
+     "Elizabeth Fry Charity",
+     "Alpha Health & Social Care Services Ltd",
+     "Blue Cross Healthcare Services Limited",
+     "Esteemed Life Ltd",
+     "First Choice Medical Solutions Ltd",
+     "Blueboard Care Services Ltd",
+     "The Cyrenians Ltd t/a Changing Lives",
+     "Nassh Healthcare Ltd",
+     "Fortix Ltd",
+     "Kind Solutions Ltd",
+     "Jome Healthcare Ltd",
+     "Management & Training Corporation Limited",
+     "OneCare UK Ltd",
+     "St Mungo Community Housing Association",
+     "Centennial Property Limited T/A The Housing Network",
+     "Nacro",
+     "Claremont Living",
+     "The Wallich Clifford Community",
+     "Crown Lodge Accommodation Ltd",
+     "Home not Hospital Ltd",
+     "Immediate Medical Solutions Ltd",
+     "Reframe Support Services Ltd",
+     "Sai Aryan Properties Ltd",
+     "The Forward Trust",
+     "Bercleys Properties Ltd",
+     "Penrose Options",
+     "Servol Community Services",
+     "Base One Holdings Ltd",
+     "Clearsprings Ready Homes",
+     "Urban Land Management Ltd",
+     "A2Care Limited",
+     "Look Ahead Care and Support",
+     "Mack Opco Ltd"
+    ]
+   },
+   "mackLots": [
+    "Lot 2",
+    "Lot 3",
+    "Lot 4"
+   ],
+   "spendByBuyer": null
   },
   "BE-02": {
    "id": "BE-02",
@@ -4471,7 +5296,16 @@
     "F-051"
    ],
    "opps": [
-    "GM-004..GM-013",
+    "GM-004",
+    "GM-005",
+    "GM-006",
+    "GM-007",
+    "GM-008",
+    "GM-009",
+    "GM-010",
+    "GM-011",
+    "GM-012",
+    "GM-013",
     "GM-019",
     "GM-021"
    ]
@@ -4500,7 +5334,16 @@
     "F-051"
    ],
    "opps": [
-    "GM-004..GM-013",
+    "GM-004",
+    "GM-005",
+    "GM-006",
+    "GM-007",
+    "GM-008",
+    "GM-009",
+    "GM-010",
+    "GM-011",
+    "GM-012",
+    "GM-013",
     "GM-019",
     "GM-021"
    ]
@@ -4769,8 +5612,8 @@
    "buyer": "Bury Council",
    "suppliers": "Insurance Claims Accommodation Bureau Limited",
    "title": "Housing Management (10+ payments)",
-   "value": null,
-   "basis": "Actual payments (each £575 to £2,124)",
+   "value": 16844.37,
+   "basis": "Actual payments: Bury Council to ICAB, 12 payments, Aug 2026 (BiP spend refresh); ICAB also paid by LB Wandsworth £90,963.68 (12) and LB Haringey £446,168.30 (4) in Aug 2026",
    "start": "2026-08-01",
    "end": "2026-08-31",
    "framework": false,
@@ -4787,7 +5630,24 @@
    ],
    "opps": [
     "GM-023"
-   ]
+   ],
+   "refreshed": "2026-11-03",
+   "lotSuppliers": null,
+   "mackLots": null,
+   "spendByBuyer": {
+    "Bury Council": [
+     16844.37,
+     12
+    ],
+    "London Borough of Wandsworth": [
+     90963.68,
+     12
+    ],
+    "London Borough of Haringey": [
+     446168.3,
+     4
+    ]
+   }
   },
   "BE-17": {
    "id": "BE-17",
@@ -4821,8 +5681,8 @@
    "buyer": "Bedford Borough Council",
    "suppliers": "Rent Connect Housing Ltd T/A Rent Connect",
    "title": "Family Assistance (13 payments)",
-   "value": null,
-   "basis": "Actual payments",
+   "value": 19055.56,
+   "basis": "Actual payments: Bedford Borough Council to Rent Connect, 13 payments, Aug 2026 (BiP spend refresh)",
    "start": "2026-08-01",
    "end": "2026-08-31",
    "framework": false,
@@ -4839,7 +5699,16 @@
    ],
    "opps": [
     "GM-014"
-   ]
+   ],
+   "refreshed": "2026-11-03",
+   "lotSuppliers": null,
+   "mackLots": null,
+   "spendByBuyer": {
+    "Bedford Borough Council": [
+     19055.56,
+     13
+    ]
+   }
   },
   "BE-19": {
    "id": "BE-19",
@@ -5116,7 +5985,16 @@
   },
   "F-020": {
    "opps": [
-    "GM-004..GM-013",
+    "GM-004",
+    "GM-005",
+    "GM-006",
+    "GM-007",
+    "GM-008",
+    "GM-009",
+    "GM-010",
+    "GM-011",
+    "GM-012",
+    "GM-013",
     "GM-015",
     "GM-019",
     "GM-021",
@@ -5293,9 +6171,7 @@
    "status": "Verified"
   },
   "F-035": {
-   "opps": [
-    "All GM"
-   ],
+   "opps": [],
    "field": "LHA Central Greater Manchester 2026/27 (UC monthly)",
    "finding": "SAR £411.58; 1-bed £775.00; 2-bed £875.00; 3-bed £950.00; 4-bed £1,350.00. HB weekly 1-bed £178.36 (rates frozen at April 2024 levels).",
    "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
@@ -5304,9 +6180,7 @@
    "status": "Verified"
   },
   "F-036": {
-   "opps": [
-    "All Bristol"
-   ],
+   "opps": [],
    "field": "LHA Bristol 2026/27 (UC monthly)",
    "finding": "SAR £511.33; 1-bed £900; 2-bed £1,095; 3-bed £1,300; 4-bed £1,850.",
    "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
@@ -5315,9 +6189,7 @@
    "status": "Verified"
   },
   "F-037": {
-   "opps": [
-    "GL rows"
-   ],
+   "opps": [],
    "field": "LHA Gloucester and Cheltenham 2026/27 (UC monthly)",
    "finding": "Gloucester: SAR £406.33; 1-bed £550.00; 2-bed £725.00; 3-bed £850.00; 4-bed £1,200.00. Cheltenham: SAR £436.50; 1-bed £625; 2-bed £800; 3-bed £1,000; 4-bed £1,470.",
    "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
@@ -5477,7 +6349,16 @@
   },
   "F-051": {
    "opps": [
-    "GM-004..GM-013",
+    "GM-004",
+    "GM-005",
+    "GM-006",
+    "GM-007",
+    "GM-008",
+    "GM-009",
+    "GM-010",
+    "GM-011",
+    "GM-012",
+    "GM-013",
     "GM-019",
     "GM-021",
     "GM-003",
@@ -5581,7 +6462,7 @@
    ],
    "kind": "Framework (appointees only; work via call-off competitions)",
    "lots": "Lot 1 Approved Premises (£347m); Lot 2 CAS2 accommodation and support (£307m); Lot 3 CAS3 TA and floating support (£1,244m); Lot 4 specialised (£113m)",
-   "members": "Nacro (Lots 1-4), Centennial (1-4), Mears Limited (2, 3), Serco (1, 3), Clearsprings, Crown Lodge, The Big Life Group (3), Mack Opco Ltd (2, 3, 4)",
+   "members": "Lot 1 (14): Interventions Alliance Ltd, Elizabeth Fry Charity, Langley Trust, Penrose Options, The Cyrenians Ltd t/a Changing Lives, Management & Training Corporation Limited, Nacro, OneCare UK Ltd, Centennial Property Limited T/A The Housing Network, Clearsprings Ready Homes, Serco, Servol Community Services, Immediate Medical Solutions Ltd, Hestia Housing & Support; Lot 2 (8): Nacro, Mears Limited, Centennial Property Limited T/A The Housing Network, Sai Aryan Properties Ltd, Crown Lodge Accommodation Ltd, Immediate Medical Solutions Ltd, Connect Lettings and Management Limited, Mack Opco Ltd; Lot 3 (13): Housing Action Management Ltd, Nacro, Centennial Property Limited T/A The Housing Network, Serco, Mears Limited, Penrose Options, Major Commercial Property Ltd, Crown Lodge Accommodation Ltd, The Big Life Group, Sai Aryan Properties Ltd, Clearsprings Ready Homes, The Wallich Clifford Community, Mack Opco Ltd; Lot 4 (40): Destiny Integrated Care Ltd, Interventions Alliance Ltd, Langley Trust, HK Care Consulting Ltd, Housing Action Management Ltd, Isabellas Homes Limited, Trevi House Limited, Elizabeth Fry Charity, Alpha Health & Social Care Services Ltd, Blue Cross Healthcare Services Limited, Esteemed Life Ltd, First Choice Medical Solutions Ltd, Blueboard Care Services Ltd, The Cyrenians Ltd t/a Changing Lives, Nassh Healthcare Ltd, Fortix Ltd, Kind Solutions Ltd, Jome Healthcare Ltd, Management & Training Corporation Limited, OneCare UK Ltd, St Mungo Community Housing Association, Centennial Property Limited T/A The Housing Network, Nacro, Claremont Living, The Wallich Clifford Community, Crown Lodge Accommodation Ltd, Home not Hospital Ltd, Immediate Medical Solutions Ltd, Reframe Support Services Ltd, Sai Aryan Properties Ltd, The Forward Trust, Bercleys Properties Ltd, Penrose Options, Servol Community Services, Base One Holdings Ltd, Clearsprings Ready Homes, Urban Land Management Ltd, A2Care Limited, Look Ahead Care and Support, Mack Opco Ltd",
    "mack": "Mack Opco Ltd appointed to Lots 2, 3 and 4, 2 Nov 2026 to 1 Nov 2034. Appointment only: no call-off awarded yet, no volume committed.",
    "upcoming": [
     "NEW-CAS3-P1476"
@@ -5911,7 +6792,7 @@
    {
     "framework": "MoJ Provision of Community Accommodation Services Open Framework",
     "entity": "Mack Opco Ltd (Mack House, 13 Bath Road, Cheltenham GL53 7HG)",
-    "lots": "Lots 2, 3 and 4",
+    "lots": "Lots 2, 3 and 4 (BiP award 6030619061, re-checked 2026-11-03)",
     "term": "2 Nov 2026 to 1 Nov 2034",
     "status": "Appointed (framework only; no call-off awarded)",
     "ceiling": "£2.0bn whole-framework estimated maximum ex VAT: CEILING, not committed",
@@ -5941,5 +6822,3525 @@
    "GM-015",
    "GM-014"
   ]
+ },
+ "fin": {
+  "MEARSLTD": {
+   "entity": "Mears Limited",
+   "reg": "CH 02519234",
+   "period": "2025-12-31",
+   "atype": "Full audited",
+   "rev": 1028.9,
+   "pmeasure": "Profit before tax",
+   "profit": 67.9,
+   "margin": 0.07,
+   "assets": "Net assets £175.7m",
+   "B": {
+    "B1": 4,
+    "B2": 4,
+    "B3": 4,
+    "B4": 4,
+    "B5": 3,
+    "B6": "NA"
+   },
+   "parent": "Unknown - not evidenced",
+   "notes": "FY2025 revenue £1,028.9m; PBT £67.9m (6.6%); net assets £175.7m. Liquidity not extracted.",
+   "facts": [
+    "F-004",
+    "F-045"
+   ]
+  },
+  "SERCOLTD": {
+   "entity": "Serco Limited",
+   "reg": "CH 00242246",
+   "period": "2025-12-31",
+   "atype": "Full audited",
+   "rev": 2102.3,
+   "pmeasure": "Operating profit",
+   "profit": 58.6,
+   "margin": 0.03,
+   "assets": "Not extracted (scanned PDF, low resolution)",
+   "B": {
+    "B1": 4,
+    "B2": 4,
+    "B3": 4,
+    "B4": 2,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "Unknown - not evidenced",
+   "notes": "FY2025 revenue £2,102.3m; operating profit £58.6m (2.8%); 10 outstanding charges; net assets not extracted.",
+   "facts": [
+    "F-010",
+    "F-046"
+   ]
+  },
+  "NACRO": {
+   "entity": "Nacro",
+   "reg": "CH 00203583; charity 226171; RSH 4781",
+   "period": "2026-03-31",
+   "atype": "Full audited (charity)",
+   "rev": 98.8,
+   "pmeasure": "Result before tax",
+   "profit": -0.17,
+   "margin": -0.0,
+   "assets": "Free reserves deficit £9.1m; cash £11.4m",
+   "B": {
+    "B1": 4,
+    "B2": 4,
+    "B3": 3,
+    "B4": 0,
+    "B5": 1,
+    "B6": "NA"
+   },
+   "parent": "N/A - no parent",
+   "notes": "FY2026 turnover £98.8m; operating surplus £0.42m (0.4%); deficit before tax £0.17m; free reserves deficit £9.1m; cash £11.4m. RSH registered, not graded.",
+   "facts": [
+    "F-012",
+    "F-015",
+    "F-016"
+   ]
+  },
+  "CENTENNIAL": {
+   "entity": "Centennial Property Limited (t/a The Housing Network)",
+   "reg": "CH 08861768",
+   "period": "2025-12-31",
+   "atype": "Full (group)",
+   "rev": 51.9,
+   "pmeasure": "Operating profit",
+   "profit": 3.3,
+   "margin": 0.06,
+   "assets": "Not extracted",
+   "B": {
+    "B1": 4,
+    "B2": 3,
+    "B3": 3,
+    "B4": 4,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "N/A - no corporate parent",
+   "notes": "FY2025 revenue £51.9m; operating profit £3.3m (6.4%, strategic report). Net result and liquidity not extracted. 2 outstanding charges.",
+   "facts": [
+    "F-018",
+    "F-019"
+   ]
+  },
+  "MCC": {
+   "entity": "Manchester City Council",
+   "reg": "Local authority",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "N/A",
+   "notes": "Local authority covenant. Statement of accounts and s114 status not checked this pass.",
+   "facts": [
+    "F-021"
+   ]
+  },
+  "BRISTOLCC": {
+   "entity": "Bristol City Council",
+   "reg": "Local authority",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "N/A",
+   "notes": "Not checked this pass.",
+   "facts": []
+  },
+  "RENTCONNECT": {
+   "entity": "Rent Connect Housing Limited",
+   "reg": "CH 07588779",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": 2,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "Unknown",
+   "notes": "Small company accounts to Mar 2025: no P&L. 1 outstanding charge.",
+   "facts": [
+    "F-025"
+   ]
+  },
+  "UNITYHS": {
+   "entity": "Unity Housing Support",
+   "reg": "CH 12329376",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": 2,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "Unknown",
+   "notes": "Total exemption accounts to Nov 2025.",
+   "facts": [
+    "F-024"
+   ]
+  },
+  "ICAB": {
+   "entity": "Insurance Claims Accommodation Bureau Limited",
+   "reg": "CH 04570960",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": 3,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "Unknown",
+   "notes": "Full accounts to Apr 2025; figures not extracted.",
+   "facts": [
+    "F-040"
+   ]
+  },
+  "THESQUARE": {
+   "entity": "Thesqua.re Ltd",
+   "reg": "CH 06687220",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": 1,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "Unknown",
+   "notes": "Unaudited abridged accounts to Dec 2024; 2 outstanding charges.",
+   "facts": [
+    "F-039"
+   ]
+  },
+  "JIGSAW": {
+   "entity": "Jigsaw Conferences Ltd",
+   "reg": "CH 04788489",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": 2,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "Unknown",
+   "notes": "Total exemption accounts to Jun 2025.",
+   "facts": [
+    "F-044"
+   ]
+  },
+  "CTMN": {
+   "entity": "Corporate Travel Management (North) Limited",
+   "reg": "CH 00488182",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": 4,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "Unknown",
+   "notes": "Full accounts to Jun 2025; figures not extracted.",
+   "facts": [
+    "F-038"
+   ]
+  },
+  "STEPPING": {
+   "entity": "Stepping Stone Projects",
+   "reg": "CH 02647645",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": 2,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "N/A",
+   "notes": "Total exemption accounts to Mar 2025.",
+   "facts": [
+    "F-041"
+   ]
+  },
+  "IASPIRE": {
+   "entity": "IASPIRE Crisis / Step Down Beds Ltd",
+   "reg": "CH 13559397",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": 2,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "Unknown",
+   "notes": "Total exemption accounts to Aug 2025.",
+   "facts": [
+    "F-042"
+   ]
+  },
+  "GPHA": {
+   "entity": "Great Places Housing Association",
+   "reg": "RSH L1230 (group L4465)",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": 3
+   },
+   "parent": "Unknown",
+   "notes": "RSH group judgement C1/G1/V2 (Dec 2025). Accounts not read.",
+   "facts": [
+    "F-026"
+   ]
+  },
+  "MSV": {
+   "entity": "Mosscare St. Vincent's Housing Group Limited",
+   "reg": "RSH 4857",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": 3
+   },
+   "parent": "N/A",
+   "notes": "RSH C1/G1/V2.",
+   "facts": [
+    "F-027"
+   ]
+  },
+  "SANCTUARY": {
+   "entity": "Sanctuary Housing Association",
+   "reg": "RSH L0247",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": 3
+   },
+   "parent": "N/A",
+   "notes": "RSH C1/G1/V2.",
+   "facts": [
+    "F-028"
+   ]
+  },
+  "RIVERSIDE": {
+   "entity": "The Riverside Group Limited",
+   "reg": "RSH L4552",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": 3
+   },
+   "parent": "N/A",
+   "notes": "RSH G1/V2.",
+   "facts": [
+    "F-029"
+   ]
+  },
+  "SAHA": {
+   "entity": "Salvation Army Housing Association",
+   "reg": "RSH LH2429",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": 3
+   },
+   "parent": "N/A",
+   "notes": "RSH C2/G1/V2.",
+   "facts": [
+    "F-030"
+   ]
+  },
+  "CALICO": {
+   "entity": "Calico Homes Limited",
+   "reg": "RSH L4254",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": 3
+   },
+   "parent": "Unknown",
+   "notes": "RSH C2/G2/V2.",
+   "facts": [
+    "F-031"
+   ]
+  },
+  "GCH": {
+   "entity": "Gloucester City Homes Limited",
+   "reg": "RSH 4584",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": 3
+   },
+   "parent": "N/A",
+   "notes": "RSH G1/V2.",
+   "facts": [
+    "F-032"
+   ]
+  },
+  "DEPAUL": {
+   "entity": "Depaul UK",
+   "reg": "CH 02440093 (per MCC HRS contract details notice)",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "Unknown",
+   "notes": "Entity resolved v4 from BiP award 5673675770 (Depaul UK 02440093). Accounts not read.",
+   "facts": [
+    "F-034",
+    "F-051"
+   ]
+  },
+  "YHG": {
+   "entity": "Your Housing Group Limited",
+   "reg": "RSH L4203",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": 3
+   },
+   "parent": "N/A",
+   "notes": "RSH C2/G1/V2.",
+   "facts": [
+    "F-033"
+   ]
+  },
+  "MOJ": {
+   "entity": "Ministry of Justice",
+   "reg": "Central government department",
+   "period": null,
+   "atype": null,
+   "rev": null,
+   "pmeasure": null,
+   "profit": null,
+   "margin": null,
+   "assets": null,
+   "B": {
+    "B1": 4,
+    "B2": null,
+    "B3": null,
+    "B4": null,
+    "B5": null,
+    "B6": "NA"
+   },
+   "parent": "N/A",
+   "notes": "Central government payer for call-offs. Accounts not assessed; B left mostly unknown by design.",
+   "facts": [
+    "F-048"
+   ]
+  }
+ },
+ "demand": [
+  {
+   "Req ID": "DR-001",
+   "Opp ID": "GL-001",
+   "Partner": "Nacro - CAS-2",
+   "Region": "Gloucestershire",
+   "Area / local authority": "South West - Gloucestershire towns TBC (SW excl. Plymouth & Bristol)",
+   "Programme / cohort": "CAS-2 (MOJ) - people on bail / final 6-12 weeks of sentence, on tag",
+   "Property type": "House",
+   "Beds min": 2,
+   "Beds max": 4,
+   "Priority": "High",
+   "Required by / mobilisation": "Now - SW 'high priority'",
+   "Lease term (yrs)": "3-5",
+   "Rent basis": "Set at inspection: LHA (+ up to 20%) to market rate for comparable property",
+   "BRMA (v3)": "Gloucester",
+   "LHA benchmark £ pcm (formula)": 725,
+   "Void cover": "Guaranteed rent - no voids",
+   "Repairs / damage": "Day-to-day repairs and full tenant damage covered",
+   "Utilities & council tax": "Paid by Nacro",
+   "Furnished": "Not stated",
+   "Requirement status (v3)": "Live - sourcing",
+   "Evidence status (v3)": "Stakeholder email 2 Oct 2026 + Nacro web page checked 3 Nov 2026",
+   "Fact refs": "F-012, F-013, F-037"
+  },
+  {
+   "Req ID": "DR-002",
+   "Opp ID": "GL-001",
+   "Partner": "Nacro - CAS-2",
+   "Region": "Gloucestershire",
+   "Area / local authority": "South West - Gloucestershire towns TBC (SW excl. Plymouth & Bristol)",
+   "Programme / cohort": "CAS-2 (MOJ)",
+   "Property type": "Self-contained flat",
+   "Beds min": 1,
+   "Beds max": 1,
+   "Priority": "High",
+   "Required by / mobilisation": "Now - SW 'high priority'",
+   "Lease term (yrs)": "3-5",
+   "Rent basis": "Set at inspection: LHA (+ up to 20%) to market rate",
+   "BRMA (v3)": "Gloucester",
+   "LHA benchmark £ pcm (formula)": 550,
+   "Void cover": "Guaranteed rent - no voids",
+   "Repairs / damage": "Day-to-day repairs and full tenant damage covered",
+   "Utilities & council tax": "Paid by Nacro",
+   "Furnished": "Not stated",
+   "Requirement status (v3)": "Live - sourcing",
+   "Evidence status (v3)": "Stakeholder email 2 Oct 2026 + Nacro web page checked 3 Nov 2026",
+   "Fact refs": "F-012, F-013, F-037"
+  },
+  {
+   "Req ID": "DR-003",
+   "Opp ID": "GM-003",
+   "Partner": "Nacro - CAS-2",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Greater Manchester / North West",
+   "Programme / cohort": "CAS-2 (MOJ)",
+   "Property type": "Mixed",
+   "Beds min": 1,
+   "Beds max": 4,
+   "Priority": "Low",
+   "Required by / mobilisation": "-",
+   "Lease term (yrs)": "3-5",
+   "Rent basis": "LHA (+ up to 20%) to market",
+   "BRMA (v3)": "Central Greater Manchester",
+   "LHA benchmark £ pcm (formula)": 775,
+   "Requirement status (v3)": "Paused / not sourcing",
+   "Evidence status (v3)": "Stakeholder email 2 Oct 2026 + Nacro web page checked 3 Nov 2026",
+   "Fact refs": "F-013"
+  },
+  {
+   "Req ID": "DR-004",
+   "Opp ID": "GM-003",
+   "Partner": "Nacro - Supported Housing",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Salford",
+   "Programme / cohort": "Supported housing - ex-offenders, young care leavers, others at risk of homelessness (stays up to 2 years)",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "Required by / mobilisation": "Now - limited sourcing",
+   "Lease term (yrs)": "3 (usual)",
+   "Rent basis": "Generally between LHA and market value",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Void cover": "Guaranteed rent - no voids",
+   "Repairs / damage": "Day-to-day repairs and tenant damage covered",
+   "Utilities & council tax": "Paid by Nacro",
+   "Requirement status (v3)": "Live - limited sourcing",
+   "Evidence status (v3)": "Stakeholder (email / call)"
+  },
+  {
+   "Req ID": "DR-005",
+   "Opp ID": "BR-002",
+   "Partner": "Nacro - CAS-2",
+   "Region": "Bristol",
+   "Area / local authority": "Bristol",
+   "Programme / cohort": "CAS-2 (MOJ)",
+   "Property type": "Mixed",
+   "Beds min": 1,
+   "Beds max": 4,
+   "Priority": "Low",
+   "Required by / mobilisation": "-",
+   "BRMA (v3)": "Bristol",
+   "LHA benchmark £ pcm (formula)": 900,
+   "Requirement status (v3)": "Paused / not sourcing (Bristol excluded)",
+   "Evidence status (v3)": "Stakeholder (email / call)",
+   "Fact refs": "F-013"
+  },
+  {
+   "Req ID": "DR-006",
+   "Opp ID": "GM-001",
+   "Partner": "Mears Limited",
+   "Region": "Greater Manchester",
+   "Area / local authority": "North West England (incl. Liverpool, Warrington & Halton, Cheshire East, Lancashire) - GM not named",
+   "Programme / cohort": "Acquisition for Mears contract (Dec 2024 request)",
+   "Property type": "Mixed",
+   "Beds min": 1,
+   "Beds max": 3,
+   "Priority": "Medium",
+   "Required by / mobilisation": "Ready to occupy",
+   "BRMA (v3)": "Central Greater Manchester",
+   "LHA benchmark £ pcm (formula)": 775,
+   "Furnished": "Yes - fully furnished for 2+ bed",
+   "Compliance requirements": "All compliance certificates in place; 2+ bed: fire doors and Fire Risk Assessment before handover",
+   "Requirement status (v3)": "Historical (Dec 2024 email; GM not named)",
+   "Evidence status (v3)": "Stakeholder (email / call)",
+   "Fact refs": "F-001, F-002"
+  },
+  {
+   "Req ID": "DR-007",
+   "Opp ID": "GM-002",
+   "Partner": "Serco - AASC",
+   "Region": "Greater Manchester",
+   "Area / local authority": "North West (AASC region)",
+   "Programme / cohort": "Home Office asylum accommodation (AASC)",
+   "Property type": "Self-contained flat",
+   "Beds min": 1,
+   "Beds max": 1,
+   "Priority": "Medium",
+   "Required by / mobilisation": "-",
+   "Lease term (yrs)": "6 yr 11 m (2024); 5-yr renewals (2025)",
+   "Rent basis": "2024 NW rental matrix (since revised)",
+   "Indicative rent min £ pcm": 400,
+   "Indicative rent max £ pcm": 500,
+   "BRMA (v3)": "Central Greater Manchester",
+   "LHA benchmark £ pcm (formula)": 775,
+   "Rent max vs LHA (formula)": 0.65,
+   "Void cover": "No voids",
+   "Repairs / damage": "Day-to-day maintenance",
+   "Utilities & council tax": "Council tax and utilities paid",
+   "Requirement status (v3)": "Historical (2024 matrix, superseded)",
+   "Evidence status (v3)": "Stakeholder (email / call)",
+   "Fact refs": "F-011"
+  },
+  {
+   "Req ID": "DR-008",
+   "Opp ID": "GM-002",
+   "Partner": "Serco - AASC",
+   "Region": "Greater Manchester",
+   "Area / local authority": "North West (AASC region)",
+   "Programme / cohort": "Home Office asylum accommodation (AASC)",
+   "Property type": "Mixed",
+   "Beds min": 2,
+   "Beds max": 2,
+   "Priority": "Medium",
+   "Required by / mobilisation": "-",
+   "Lease term (yrs)": "6 yr 11 m (2024); 5-yr renewals (2025)",
+   "Rent basis": "2024 NW rental matrix (since revised)",
+   "Indicative rent min £ pcm": 500,
+   "Indicative rent max £ pcm": 600,
+   "BRMA (v3)": "Central Greater Manchester",
+   "LHA benchmark £ pcm (formula)": 875,
+   "Rent max vs LHA (formula)": 0.69,
+   "Void cover": "No voids",
+   "Repairs / damage": "Day-to-day maintenance",
+   "Utilities & council tax": "Council tax and utilities paid",
+   "Requirement status (v3)": "Historical (2024 matrix, superseded)",
+   "Evidence status (v3)": "Stakeholder (email / call)",
+   "Fact refs": "F-011"
+  },
+  {
+   "Req ID": "DR-009",
+   "Opp ID": "GM-002",
+   "Partner": "Serco - AASC",
+   "Region": "Greater Manchester",
+   "Area / local authority": "North West (AASC region)",
+   "Programme / cohort": "Home Office asylum accommodation (AASC)",
+   "Property type": "House",
+   "Beds min": 3,
+   "Beds max": 3,
+   "Priority": "Medium",
+   "Required by / mobilisation": "-",
+   "Lease term (yrs)": "6 yr 11 m (2024); 5-yr renewals (2025)",
+   "Rent basis": "2024 NW rental matrix (since revised)",
+   "Indicative rent min £ pcm": 625,
+   "Indicative rent max £ pcm": 750,
+   "BRMA (v3)": "Central Greater Manchester",
+   "LHA benchmark £ pcm (formula)": 950,
+   "Rent max vs LHA (formula)": 0.79,
+   "Void cover": "No voids",
+   "Repairs / damage": "Day-to-day maintenance",
+   "Utilities & council tax": "Council tax and utilities paid",
+   "Requirement status (v3)": "Historical (2024 matrix, superseded)",
+   "Evidence status (v3)": "Stakeholder (email / call)",
+   "Fact refs": "F-011"
+  },
+  {
+   "Req ID": "DR-010",
+   "Opp ID": "GM-002",
+   "Partner": "Serco - AASC",
+   "Region": "Greater Manchester",
+   "Area / local authority": "North West (AASC region)",
+   "Programme / cohort": "Home Office asylum accommodation (AASC)",
+   "Property type": "Shared house / HMO",
+   "Beds min": 3,
+   "Priority": "Medium",
+   "Required by / mobilisation": "-",
+   "Lease term (yrs)": "6 yr 11 m (2024)",
+   "Rent basis": "£60-68 per room per week (2024 matrix)",
+   "Indicative rent min £ pcm": 260,
+   "Indicative rent max £ pcm": 295,
+   "BRMA (v3)": "Central Greater Manchester",
+   "LHA benchmark £ pcm (formula)": 411.58,
+   "Rent max vs LHA (formula)": 0.72,
+   "Void cover": "No voids",
+   "Repairs / damage": "Day-to-day maintenance",
+   "Utilities & council tax": "Council tax and utilities paid",
+   "Requirement status (v3)": "Historical (2024 matrix, superseded)",
+   "Evidence status (v3)": "Stakeholder (email / call)",
+   "Fact refs": "F-011"
+  },
+  {
+   "Req ID": "DR-011",
+   "Opp ID": "GM-035",
+   "Partner": "Manchester City Council - HRS Accommodation Framework (P-0816)",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Within Manchester city boundaries",
+   "Programme / cohort": "Housing Related Support: short-term adults, young people 16-25, emergency (rough sleepers), step-down",
+   "Property type": "Individual rooms / bed spaces",
+   "Units required": 338,
+   "Priority": "High",
+   "Required by / mobilisation": "Available at contract start",
+   "BRMA (v3)": "Central Greater Manchester",
+   "LHA benchmark £ pcm (formula)": 411.58,
+   "Requirement status (v3)": "Live - framework / call-off",
+   "Evidence status (v3)": "Published",
+   "Fact refs": "F-020"
+  },
+  {
+   "Req ID": "DR-012",
+   "Opp ID": "GM-035",
+   "Partner": "Manchester City Council - Young Parents (P-0818)",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester",
+   "Programme / cohort": "Young parents (females 16-25, pregnant or with children under 5)",
+   "Property type": "Not specified",
+   "Units required": 28,
+   "Priority": "Medium",
+   "Required by / mobilisation": "Contract start 1 Apr 2026 (3+2 yrs)",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "Historic - verify",
+   "Evidence status (v3)": "Published"
+  },
+  {
+   "Req ID": "DR-013",
+   "Opp ID": "GM-035",
+   "Partner": "Manchester City Council - DV&A Safe Accommodation (P-0896)",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Multiple sites within Manchester boundaries",
+   "Programme / cohort": "Domestic violence and abuse survivors",
+   "Property type": "Mixed",
+   "Priority": "Medium",
+   "Required by / mobilisation": "-",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "Historic - verify",
+   "Evidence status (v3)": "Published"
+  },
+  {
+   "Req ID": "DR-014",
+   "Opp ID": "GM-035",
+   "Partner": "Manchester City Council - Temporary Accommodation / PSL",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester",
+   "Programme / cohort": "Statutory temporary accommodation (homeless households)",
+   "Property type": "Mixed",
+   "Beds min": 1,
+   "Beds max": 2,
+   "Units required": 250,
+   "Priority": "High",
+   "Required by / mobilisation": "-",
+   "BRMA (v3)": "Central Greater Manchester",
+   "LHA benchmark £ pcm (formula)": 775,
+   "Requirement status (v3)": "Live - sourcing",
+   "Evidence status (v3)": "Internal",
+   "Fact refs": "F-021, F-022"
+  },
+  {
+   "Req ID": "DR-015",
+   "Opp ID": "GM-035",
+   "Partner": "Manchester City Council - TA block (internal)",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester",
+   "Programme / cohort": "Temporary accommodation",
+   "Property type": "Block / scheme",
+   "Beds min": 2,
+   "Beds max": 2,
+   "Units required": 12,
+   "Priority": "High",
+   "Required by / mobilisation": "In negotiation",
+   "BRMA (v3)": "Central Greater Manchester",
+   "LHA benchmark £ pcm (formula)": 875,
+   "Requirement status (v3)": "In negotiation",
+   "Evidence status (v3)": "Internal",
+   "Fact refs": "F-021"
+  },
+  {
+   "Req ID": "DR-016",
+   "Opp ID": "GM-035",
+   "Partner": "Manchester City Council - 10-Year Leasing Scheme",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester",
+   "Programme / cohort": "Long-term supply of properties for temporary accommodation",
+   "Property type": "Not specified",
+   "Priority": "High",
+   "Required by / mobilisation": "-",
+   "Lease term (yrs)": "10",
+   "Rent basis": "Direct property leasing",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Internal"
+  },
+  {
+   "Req ID": "DR-017",
+   "Opp ID": "GM-015",
+   "Partner": "Centennial Property Ltd - DA Intersecting Needs (P-1475)",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester",
+   "Programme / cohort": "Safe accommodation with support - DA survivors with intersecting needs",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "Required by / mobilisation": "Contract 1 Oct 2026 - 31 Mar 2028 (+2 yrs)",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Published",
+   "Fact refs": "F-017"
+  },
+  {
+   "Req ID": "DR-018",
+   "Opp ID": "BR-001",
+   "Partner": "Bristol City Council - Private Renting Team",
+   "Region": "Bristol",
+   "Area / local authority": "Bristol",
+   "Programme / cohort": "Leasing scheme for homeless families",
+   "Property type": "Mixed",
+   "Priority": "Medium",
+   "Required by / mobilisation": "-",
+   "Lease term (yrs)": "2 (renewable) - 2022 leaflet",
+   "Rent basis": "12 months' rent in advance (2022 leaflet); current web offer up to 6 months in advance (AST route)",
+   "BRMA (v3)": "Bristol",
+   "Void cover": "Void cover (2022 leaflet)",
+   "Furnished": "Furnished or unfurnished",
+   "Requirement status (v3)": "Historical (2022 leaflet; not re-verified)",
+   "Evidence status (v3)": "Published",
+   "Fact refs": "F-047"
+  },
+  {
+   "Req ID": "DR-019",
+   "Opp ID": "GM-004",
+   "Partner": "SSG Sustainable Living",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester",
+   "Programme / cohort": "Homelessness supported accommodation",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-020",
+   "Opp ID": "GM-005",
+   "Partner": "Stepping Stone Projects",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Rochdale / North West",
+   "Programme / cohort": "Complex needs, ABEN, NRPF, dispersed housing",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-021",
+   "Opp ID": "GM-006",
+   "Partner": "Caritas Diocese of Salford",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester / Salford",
+   "Programme / cohort": "Single homeless men; young parents",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-022",
+   "Opp ID": "GM-007",
+   "Partner": "IASPIRE Supported Living",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester",
+   "Programme / cohort": "NHS crisis / step-down beds",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-023",
+   "Opp ID": "GM-008",
+   "Partner": "Great Places Housing Association",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Greater Manchester",
+   "Programme / cohort": "Supported accommodation",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-024",
+   "Opp ID": "GM-009",
+   "Partner": "Mosscare St Vincent's (MSV)",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Greater Manchester",
+   "Programme / cohort": "Move-on / supported housing",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-025",
+   "Opp ID": "GM-010",
+   "Partner": "Depaul UK",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester",
+   "Programme / cohort": "Youth homelessness",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-026",
+   "Opp ID": "GM-031",
+   "Partner": "Manchester Airports Group",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester Airport (M90)",
+   "Programme / cohort": "Crew, contractor and relocation accommodation",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-027",
+   "Opp ID": "GM-032",
+   "Partner": "MIX Manchester",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Manchester Airport / Wythenshawe",
+   "Programme / cohort": "Contractor workforce and occupier relocation",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-028",
+   "Opp ID": "GM-033",
+   "Partner": "MFT - Wythenshawe key-worker",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Wythenshawe (M23)",
+   "Programme / cohort": "NHS key-worker / locum accommodation",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-029",
+   "Opp ID": "GM-034",
+   "Partner": "GMMH",
+   "Region": "Greater Manchester",
+   "Area / local authority": "Greater Manchester",
+   "Programme / cohort": "Step-down / discharge / move-on",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Central Greater Manchester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-030",
+   "Opp ID": "BR-005",
+   "Partner": "Mears Living - South",
+   "Region": "Bristol",
+   "Area / local authority": "Bristol / South West",
+   "Programme / cohort": "Guaranteed rent leasing",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Bristol",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-031",
+   "Opp ID": "GL-002",
+   "Partner": "Gloucester City Homes",
+   "Region": "Gloucestershire",
+   "Area / local authority": "Gloucester",
+   "Programme / cohort": "Homeless temporary accommodation",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Gloucester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-032",
+   "Opp ID": "GL-003",
+   "Partner": "Cheltenham Borough Council",
+   "Region": "Gloucestershire",
+   "Area / local authority": "Cheltenham",
+   "Programme / cohort": "Temporary accommodation",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Gloucester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-033",
+   "Opp ID": "GL-004",
+   "Partner": "Gloucester City Council",
+   "Region": "Gloucestershire",
+   "Area / local authority": "Gloucester",
+   "Programme / cohort": "Temporary accommodation",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Gloucester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  },
+  {
+   "Req ID": "DR-034",
+   "Opp ID": "GL-005",
+   "Partner": "Mears Living - South",
+   "Region": "Gloucestershire",
+   "Area / local authority": "Gloucestershire / South West",
+   "Programme / cohort": "Guaranteed rent leasing",
+   "Property type": "Not specified",
+   "Priority": "Medium",
+   "BRMA (v3)": "Gloucester",
+   "Requirement status (v3)": "To capture",
+   "Evidence status (v3)": "Not demonstrated"
+  }
+ ],
+ "lha": [
+  {
+   "key": "Central Greater Manchester|0",
+   "brma": "Central Greater Manchester",
+   "region": "Greater Manchester",
+   "beds": 0,
+   "pcm": 411.58,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Central Greater Manchester|1",
+   "brma": "Central Greater Manchester",
+   "region": "Greater Manchester",
+   "beds": 1,
+   "pcm": 775,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Central Greater Manchester|2",
+   "brma": "Central Greater Manchester",
+   "region": "Greater Manchester",
+   "beds": 2,
+   "pcm": 875,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Central Greater Manchester|3",
+   "brma": "Central Greater Manchester",
+   "region": "Greater Manchester",
+   "beds": 3,
+   "pcm": 950,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Central Greater Manchester|4",
+   "brma": "Central Greater Manchester",
+   "region": "Greater Manchester",
+   "beds": 4,
+   "pcm": 1350,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Bristol|0",
+   "brma": "Bristol",
+   "region": "Bristol",
+   "beds": 0,
+   "pcm": 511.33,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Bristol|1",
+   "brma": "Bristol",
+   "region": "Bristol",
+   "beds": 1,
+   "pcm": 900,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Bristol|2",
+   "brma": "Bristol",
+   "region": "Bristol",
+   "beds": 2,
+   "pcm": 1095,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Bristol|3",
+   "brma": "Bristol",
+   "region": "Bristol",
+   "beds": 3,
+   "pcm": 1300,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Bristol|4",
+   "brma": "Bristol",
+   "region": "Bristol",
+   "beds": 4,
+   "pcm": 1850,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Gloucester|0",
+   "brma": "Gloucester",
+   "region": "Gloucestershire",
+   "beds": 0,
+   "pcm": 406.33,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Gloucester|1",
+   "brma": "Gloucester",
+   "region": "Gloucestershire",
+   "beds": 1,
+   "pcm": 550,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Gloucester|2",
+   "brma": "Gloucester",
+   "region": "Gloucestershire",
+   "beds": 2,
+   "pcm": 725,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Gloucester|3",
+   "brma": "Gloucester",
+   "region": "Gloucestershire",
+   "beds": 3,
+   "pcm": 850,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Gloucester|4",
+   "brma": "Gloucester",
+   "region": "Gloucestershire",
+   "beds": 4,
+   "pcm": 1200,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Cheltenham|0",
+   "brma": "Cheltenham",
+   "region": "Gloucestershire - Cheltenham",
+   "beds": 0,
+   "pcm": 436.5,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Cheltenham|1",
+   "brma": "Cheltenham",
+   "region": "Gloucestershire - Cheltenham",
+   "beds": 1,
+   "pcm": 625,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Cheltenham|2",
+   "brma": "Cheltenham",
+   "region": "Gloucestershire - Cheltenham",
+   "beds": 2,
+   "pcm": 800,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Cheltenham|3",
+   "brma": "Cheltenham",
+   "region": "Gloucestershire - Cheltenham",
+   "beds": 3,
+   "pcm": 1000,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  },
+  {
+   "key": "Cheltenham|4",
+   "brma": "Cheltenham",
+   "region": "Gloucestershire - Cheltenham",
+   "beds": 4,
+   "pcm": 1470,
+   "url": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+   "eff": "Apr 2026 - Mar 2027",
+   "status": "Verified (DWP UC LHA 2026/27 CSV, checked 2026-11-03)"
+  }
+ ],
+ "terms": [
+  {
+   "k": "T01",
+   "partner": "Nacro",
+   "opps": [
+    "GM-003",
+    "GL-001",
+    "BR-002"
+   ],
+   "Programme": "CAS-2 (MOJ)",
+   "Lease term": "3-5 years",
+   "Rent basis": "Set at inspection: LHA (+ up to 20%) to market",
+   "Voids": "No voids - guaranteed",
+   "Repairs / damage": "Day-to-day repairs; full tenant damage cover",
+   "Utilities & council tax": "Paid by Nacro",
+   "Indexation": "CPI, capped at 5% p.a.",
+   "Property standards / compliance": "Shared houses 2-4 bed; 1-bed SC flats, max 4 per block",
+   "Submission route": "LeasingEnquiries@nacro.org.uk / 03000 132177",
+   "Evidence": "E19, E36",
+   "As at": "2026-10-02",
+   "v3 status": "Verified (Nacro web page, 3 Nov 2026)",
+   "facts": [
+    "F-012",
+    "F-013",
+    "F-014"
+   ]
+  },
+  {
+   "k": "T02",
+   "partner": "Nacro",
+   "opps": [
+    "GM-003"
+   ],
+   "Programme": "Supported Housing",
+   "Lease term": "Usually 3 years",
+   "Rent basis": "Generally between LHA and market value",
+   "Voids": "No voids - guaranteed",
+   "Repairs / damage": "Day-to-day repairs; tenant damage",
+   "Utilities & council tax": "Paid by Nacro",
+   "Indexation": "CPI, capped at 5% p.a.",
+   "Property standards / compliance": "No specific requirements",
+   "Submission route": "LeasingEnquiries@nacro.org.uk",
+   "Evidence": "E19",
+   "As at": "2026-10-02",
+   "v3 status": "Verified (Nacro web page, 3 Nov 2026)",
+   "facts": [
+    "F-012",
+    "F-013",
+    "F-014"
+   ]
+  },
+  {
+   "k": "T03",
+   "partner": "Mears",
+   "opps": [
+    "GM-001"
+   ],
+   "Programme": "Property Partnerships / Mears Living",
+   "Lease term": "3 or 5 years (Mears Living 1-5)",
+   "Rent basis": "Not published",
+   "Voids": "No voids",
+   "Repairs / damage": "Internal maintenance and occupant damage; landlord keeps structural/external",
+   "Utilities & council tax": "Utilities paid",
+   "Indexation": "Not stated",
+   "Property standards / compliance": "Ready to occupy; certificates in place; 2+ bed: fire doors, FRA, furnished (Dec 2024)",
+   "Submission route": "Property Partnerships web form; Rakesh Popat (Acquisition Officer)",
+   "Evidence": "E3, E4, E37",
+   "As at": "2024-12-11",
+   "v3 status": "Published terms verified; rent and signatory unknown",
+   "facts": [
+    "F-001",
+    "F-002",
+    "F-003"
+   ]
+  },
+  {
+   "k": "T04",
+   "partner": "Serco",
+   "opps": [
+    "GM-002"
+   ],
+   "Programme": "AASC (Home Office)",
+   "Lease term": "6 yr 11 m (2024); 5-yr renewals (2025)",
+   "Rent basis": "2024 NW matrix (since revised); Feb 2025 renewals £925-£1,150 pcm",
+   "Voids": "No voids",
+   "Repairs / damage": "Day-to-day maintenance",
+   "Utilities & council tax": "Council tax and utilities paid",
+   "Indexation": "Not stated",
+   "Property standards / compliance": "1-3 bed family property, 3+ bed HMOs, former care homes, blocks, adapted",
+   "Submission route": "Property Partnerships 0330 236 9898",
+   "Evidence": "E20, E21, E26",
+   "As at": "2025-02-06",
+   "v3 status": "Historical terms (2024-25 emails); landlord page has no terms",
+   "facts": [
+    "F-007",
+    "F-008",
+    "F-011"
+   ]
+  },
+  {
+   "k": "T05",
+   "partner": "Manchester City Council",
+   "opps": [
+    "GM-035"
+   ],
+   "Programme": "HRS framework / TA / 10-Year Leasing",
+   "Lease term": "10 years (leasing scheme); framework 3+2",
+   "Rent basis": "Not captured",
+   "Voids": "Not captured",
+   "Repairs / damage": "Not captured",
+   "Utilities & council tax": "Not captured",
+   "Indexation": "Not captured",
+   "Property standards / compliance": "P-0816: individual rooms, accessible, pet-friendly, 24-hr support",
+   "Submission route": "MCC Procurement / MAS Gateway",
+   "Evidence": "E6, E32, E38",
+   "As at": "2026-10-06",
+   "v3 status": "Verified decision (Mar 2024)",
+   "facts": [
+    "F-020",
+    "F-021",
+    "F-022"
+   ]
+  },
+  {
+   "k": "T06",
+   "partner": "Bristol City Council",
+   "opps": [
+    "BR-001"
+   ],
+   "Programme": "PRT leasing scheme",
+   "Lease term": "2 years renewable (2022)",
+   "Rent basis": "Rent in advance (12 months 2022; up to 6 months current AST offer)",
+   "Voids": "Void cover (2022)",
+   "Repairs / damage": "Not captured",
+   "Utilities & council tax": "Not captured",
+   "Indexation": "Not captured",
+   "Property standards / compliance": "Family homes and shared accommodation; furnished or unfurnished",
+   "Submission route": "private.renting@bristol.gov.uk",
+   "Evidence": "E29",
+   "As at": "2026-10-19",
+   "v3 status": "Historical (2022 leaflet)",
+   "facts": [
+    "F-047"
+   ]
+  }
+ ],
+ "meth": [
+  {
+   "_k": "M001",
+   "cells": [
+    "Methodology: criteria, weights, thresholds and calculations (v4, 2026-11-03; v3 rules unchanged except the new rankable type)"
+   ]
+  },
+  {
+   "_k": "M002",
+   "cells": [
+    "Yellow cells are editable inputs. Score formulas reference them by defined name. Rule status: ORIGINAL = carried from v2; PROPOSED = new in v3; REPLACED = v2 rule retired."
+   ]
+  },
+  {
+   "_k": "M004",
+   "cells": [
+    "Parameter",
+    "Defined name",
+    "Value",
+    "Rule status",
+    "Explanation"
+   ]
+  },
+  {
+   "_k": "M005",
+   "cells": [
+    "Check date (all freshness and deadline tests)",
+    "CheckDate",
+    "2026-11-03",
+    "PROPOSED",
+    "Date used for the route-live gate, evidence freshness and overdue actions. Change it to re-run as of another date."
+   ]
+  },
+  {
+   "_k": "M006",
+   "cells": [
+    "A: Contract / access opportunity weights (sum 100)"
+   ]
+  },
+  {
+   "_k": "M007",
+   "cells": [
+    "A1 Rent-paying role",
+    "wA1",
+    "20",
+    "PROPOSED",
+    "4 = verified tenant/lessee; 3 = inferred lessee from contract or landlord scheme; 2 = guaranteed-rent product advertised, entity role unconfirmed; 1 = managing agent or referral; 0 = not a rent payer."
+   ]
+  },
+  {
+   "_k": "M008",
+   "cells": [
+    "A2 Current intake in target geography",
+    "wA2",
+    "20",
+    "PROPOSED",
+    "4 = written current sourcing in the target towns; 3 = current sourcing at region level; 2 = live contract covers region but intake unconfirmed; 1 = limited or one sub-area; 0 = paused or excluded."
+   ]
+  },
+  {
+   "_k": "M009",
+   "cells": [
+    "A3 Funded contract behind route",
+    "wA3",
+    "15",
+    "PROPOSED",
+    "4 = awarded contract verified and route funded by it with volumes; 3 = awarded contract verified; 2 = framework membership only (not an award); 1 = programme or policy signal; 0 = none."
+   ]
+  },
+  {
+   "_k": "M010",
+   "cells": [
+    "A4 Committed term net of breaks and contract linkage",
+    "wA4",
+    "15",
+    "PROPOSED",
+    "4 = 10+ yrs without tenant break; 3 = 5-10 yrs, or 3-5 yrs aligned to funding; 2 = 3-5 yrs that may outlast funding or break unknown; 1 = documented tenant break or under 3 yrs; 0 = nightly or short stay. Moved here from covenant to avoid double counting."
+   ]
+  },
+  {
+   "_k": "M011",
+   "cells": [
+    "A5 Cost transfer (voids, repairs, utilities)",
+    "wA5",
+    "10",
+    "PROPOSED",
+    "4 = full repairing, no voids, utilities and CT paid; 3 = no voids, day-to-day repairs and damage covered; 2 = as 3 but landlord keeps major items (roof, boilers, kitchens); 1 = partial; 0 = landlord bears voids."
+   ]
+  },
+  {
+   "_k": "M012",
+   "cells": [
+    "A6 Rent vs LHA benchmark",
+    "wA6",
+    "10",
+    "PROPOSED",
+    "4 = evidenced rent at or above 110% of LHA; 3 = 100-110%; 2 = 90-100% or stated as LHA-to-market; 1 = 60-90%; 0 = below 60%. LHA is a proxy, not open-market rent."
+   ]
+  },
+  {
+   "_k": "M013",
+   "cells": [
+    "A7 Scale (units sought or contract scale)",
+    "wA7",
+    "5",
+    "PROPOSED",
+    "4 = 100+ units; 3 = 25-99; 2 = 10-24; 1 = under 10; blank = unknown."
+   ]
+  },
+  {
+   "_k": "M014",
+   "cells": [
+    "A8 Access route",
+    "wA8",
+    "5",
+    "PROPOSED",
+    "4 = published landlord route with named team; 3 = form or existing relationship; 2 = generic inbox; 1 = phone or general only; 0 = none."
+   ]
+  },
+  {
+   "_k": "M015",
+   "cells": [
+    "B: Counterparty financial strength of the SIGNING entity (sum 100)"
+   ]
+  },
+  {
+   "_k": "M016",
+   "cells": [
+    "B1 Entity matched to registry",
+    "wB1",
+    "10",
+    "PROPOSED",
+    "4 = company, charity or RSH number confirmed; 2 = ambiguous between entities; 0 = not identifiable."
+   ]
+  },
+  {
+   "_k": "M017",
+   "cells": [
+    "B2 Accounts recency and type",
+    "wB2",
+    "15",
+    "PROPOSED",
+    "4 = full audited, period end within 18 months; 3 = full, 18-24 months; 2 = small or total exemption; 1 = unaudited abridged or older than 24 months; 0 = overdue."
+   ]
+  },
+  {
+   "_k": "M018",
+   "cells": [
+    "B3 Scale (revenue, £m)",
+    "wB3",
+    "15",
+    "PROPOSED",
+    "Computed from revenue where entered: at or above B3_t4 = 4, B3_t3 = 3, B3_t2 = 2, B3_t1 = 1, else 0."
+   ]
+  },
+  {
+   "_k": "M019",
+   "cells": [
+    "B4 Profitability (margin on stated measure)",
+    "wB4",
+    "25",
+    "PROPOSED",
+    "Computed where figures entered: margin at or above B4_m4 = 4; 0 to B4_m4 = 2; loss = 0. Measure (PBT or operating) is shown in Counterparty_Financials."
+   ]
+  },
+  {
+   "_k": "M020",
+   "cells": [
+    "B5 Liquidity and reserves",
+    "wB5",
+    "25",
+    "PROPOSED",
+    "Analyst rating: 4 = net cash and strong net assets; 3 = positive net assets, adequate liquidity; 1 = negative free reserves or tight liquidity; 0 = net liabilities."
+   ]
+  },
+  {
+   "_k": "M021",
+   "cells": [
+    "B6 Regulatory viability (RSH)",
+    "wB6",
+    "10",
+    "PROPOSED",
+    "V1 = 4, V2 = 3, V3 = 1, V4 = 0. NA where the entity is not graded (removed from denominator)."
+   ]
+  },
+  {
+   "_k": "M022",
+   "cells": [
+    "B3 threshold for 4 (£m)",
+    "B3_t4",
+    "250",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M023",
+   "cells": [
+    "B3 threshold for 3 (£m)",
+    "B3_t3",
+    "50",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M024",
+   "cells": [
+    "B3 threshold for 2 (£m)",
+    "B3_t2",
+    "10",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M025",
+   "cells": [
+    "B3 threshold for 1 (£m)",
+    "B3_t1",
+    "1",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M026",
+   "cells": [
+    "B4 margin for 4",
+    "B4_m4",
+    "0.03",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M027",
+   "cells": [
+    "Coverage caps (applied to A, B, C and D)"
+   ]
+  },
+  {
+   "_k": "M028",
+   "cells": [
+    "Coverage at or above which no cap applies",
+    "Cov1",
+    "0.75",
+    "PROPOSED",
+    "Coverage = known weight / applicable weight. Unknown criteria are excluded from the mean, not scored as zero."
+   ]
+  },
+  {
+   "_k": "M029",
+   "cells": [
+    "Coverage threshold 2",
+    "Cov2",
+    "0.5",
+    "PROPOSED",
+    "Coverage at or above Cov2 and below Cov1: score capped at Cap2."
+   ]
+  },
+  {
+   "_k": "M030",
+   "cells": [
+    "Cap 2",
+    "Cap2",
+    "70",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M031",
+   "cells": [
+    "Coverage threshold 3",
+    "Cov3",
+    "0.25",
+    "PROPOSED",
+    "Coverage at or above Cov3 and below Cov2: capped at Cap3."
+   ]
+  },
+  {
+   "_k": "M032",
+   "cells": [
+    "Cap 3",
+    "Cap3",
+    "50",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M033",
+   "cells": [
+    "Cap below Cov3",
+    "Cap4",
+    "30",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M034",
+   "cells": [
+    "Minimum A coverage to be ranked",
+    "MinCovA",
+    "0.25",
+    "PROPOSED",
+    "Rows below this are shown as Research needed, not ranked."
+   ]
+  },
+  {
+   "_k": "M035",
+   "cells": [
+    "Pursuit index"
+   ]
+  },
+  {
+   "_k": "M036",
+   "cells": [
+    "Weight on A (capped)",
+    "wPA",
+    "0.7",
+    "PROPOSED",
+    "Pursuit index = wPA x A_capped + wPB x B_used."
+   ]
+  },
+  {
+   "_k": "M037",
+   "cells": [
+    "Weight on B",
+    "wPB",
+    "0.3",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M038",
+   "cells": [
+    "B default when no B coverage",
+    "Bdefault",
+    "30",
+    "PROPOSED",
+    "Neutral-low placeholder so an unresearched counterparty cannot outrank a researched one on B. Not a rating."
+   ]
+  },
+  {
+   "_k": "M039",
+   "cells": [
+    "Cap when any gate is UNKNOWN",
+    "QualCap",
+    "65",
+    "PROPOSED",
+    "Rows with an unresolved gate are capped and labelled Qualify."
+   ]
+  },
+  {
+   "_k": "M040",
+   "cells": [
+    "Rank Eligible rows before Qualify rows (1 = yes, 0 = pure index)",
+    "TierRank",
+    "1",
+    "PROPOSED",
+    "Gate-first ordering: a row with an unresolved gate cannot outrank a row whose gates all pass. Set 0 to rank on the pursuit index alone."
+   ]
+  },
+  {
+   "_k": "M041",
+   "cells": [
+    "E: Evidence confidence (weights sum 1)"
+   ]
+  },
+  {
+   "_k": "M042",
+   "cells": [
+    "E weight: combined A+B coverage",
+    "wE1",
+    "0.5",
+    "PROPOSED",
+    "E = 100 x (wE1 x coverage + wE2 x source tier / 4 + wE3 x freshness / 4)."
+   ]
+  },
+  {
+   "_k": "M043",
+   "cells": [
+    "E weight: source tier",
+    "wE2",
+    "0.3",
+    "PROPOSED",
+    "Tier: 4 = primary source checked this pass; 3 = older primary; 2 = stakeholder email or call; 1 = secondary or internal; 0 = none."
+   ]
+  },
+  {
+   "_k": "M044",
+   "cells": [
+    "E weight: freshness",
+    "wE3",
+    "0.2",
+    "PROPOSED",
+    "Newest material evidence: up to 6 months = 4; up to 12 = 3; up to 24 = 2; older = 1; none = 0."
+   ]
+  },
+  {
+   "_k": "M045",
+   "cells": [
+    "E band High at or above",
+    "E_hi",
+    "70",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M046",
+   "cells": [
+    "E band Medium at or above",
+    "E_med",
+    "45",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M047",
+   "cells": [
+    "Stale evidence threshold (months)",
+    "StaleMonths",
+    "12",
+    "PROPOSED",
+    "Used in Checks."
+   ]
+  },
+  {
+   "_k": "M048",
+   "cells": [
+    "C: Property-to-requirement fit weights (sum 100)"
+   ]
+  },
+  {
+   "_k": "M049",
+   "cells": [
+    "C1 Type match",
+    "wC1",
+    "25",
+    "PROPOSED",
+    "4 = property type equals requirement type or requirement is Mixed; 0 = different; blank if requirement type not specified."
+   ]
+  },
+  {
+   "_k": "M050",
+   "cells": [
+    "C2 Beds within range",
+    "wC2",
+    "25",
+    "PROPOSED",
+    "4 within [min, max]; 0 outside."
+   ]
+  },
+  {
+   "_k": "M051",
+   "cells": [
+    "C3 Region match",
+    "wC3",
+    "20",
+    "PROPOSED",
+    "4 same region; 0 different."
+   ]
+  },
+  {
+   "_k": "M052",
+   "cells": [
+    "C4 EPC",
+    "wC4",
+    "15",
+    "PROPOSED",
+    "A-C = 4; D = 3; E-G = 0."
+   ]
+  },
+  {
+   "_k": "M053",
+   "cells": [
+    "C5 Ready to occupy",
+    "wC5",
+    "15",
+    "PROPOSED",
+    "Y = 4; N = 1."
+   ]
+  },
+  {
+   "_k": "M054",
+   "cells": [
+    "D: Property investment economics (sum 100)"
+   ]
+  },
+  {
+   "_k": "M055",
+   "cells": [
+    "D1 GIY (gross, not NIY) rating weight",
+    "wD1",
+    "40",
+    "PROPOSED",
+    "GIY = annual rent / price. Never labelled NIY."
+   ]
+  },
+  {
+   "_k": "M056",
+   "cells": [
+    "D2 Capex intensity weight",
+    "wD2",
+    "20",
+    "PROPOSED",
+    "Capex / price."
+   ]
+  },
+  {
+   "_k": "M057",
+   "cells": [
+    "D3 Estimated NIY weight",
+    "wD3",
+    "40",
+    "PROPOSED",
+    "Only computed if annual costs and capex are entered; else unknown."
+   ]
+  },
+  {
+   "_k": "M058",
+   "cells": [
+    "GIY for 4",
+    "GIY4",
+    "0.08",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M059",
+   "cells": [
+    "GIY for 3",
+    "GIY3",
+    "0.07",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M060",
+   "cells": [
+    "GIY for 2",
+    "GIY2",
+    "0.06",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M061",
+   "cells": [
+    "GIY for 1",
+    "GIY1",
+    "0.05",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M062",
+   "cells": [
+    "Capex intensity for 4 (at or below)",
+    "CX4",
+    "0.05",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M063",
+   "cells": [
+    "Capex for 3",
+    "CX3",
+    "0.1",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M064",
+   "cells": [
+    "Capex for 2",
+    "CX2",
+    "0.2",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M065",
+   "cells": [
+    "Capex for 1",
+    "CX1",
+    "0.3",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M066",
+   "cells": [
+    "NIY for 4",
+    "NIY4",
+    "0.06",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M067",
+   "cells": [
+    "NIY for 3",
+    "NIY3",
+    "0.05",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M068",
+   "cells": [
+    "NIY for 2",
+    "NIY2",
+    "0.04",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M069",
+   "cells": [
+    "NIY for 1",
+    "NIY1",
+    "0.03",
+    "PROPOSED"
+   ]
+  },
+  {
+   "_k": "M070",
+   "cells": [
+    "Purchase costs as % of price (assumption)",
+    "PurchCost",
+    "0.07",
+    "PROPOSED",
+    "Assumed SDLT, legal and survey costs for estimated NIY. Edit per deal."
+   ]
+  },
+  {
+   "_k": "M072",
+   "cells": [
+    "Linked weight vectors (do not edit; they reference the cells above)"
+   ]
+  },
+  {
+   "_k": "M073",
+   "cells": [
+    "wA_vec",
+    "20",
+    "20",
+    "15",
+    "15",
+    "10",
+    "10",
+    "5",
+    "5"
+   ]
+  },
+  {
+   "_k": "M074",
+   "cells": [
+    "wB_vec",
+    "10",
+    "15",
+    "15",
+    "25",
+    "25",
+    "10"
+   ]
+  },
+  {
+   "_k": "M075",
+   "cells": [
+    "wC_vec",
+    "25",
+    "25",
+    "20",
+    "15",
+    "15"
+   ]
+  },
+  {
+   "_k": "M076",
+   "cells": [
+    "wD_vec",
+    "40",
+    "20",
+    "40"
+   ]
+  },
+  {
+   "_k": "M077",
+   "cells": [
+    "Sum of A weights",
+    "100"
+   ]
+  },
+  {
+   "_k": "M078",
+   "cells": [
+    "Sum of B weights",
+    "100"
+   ]
+  },
+  {
+   "_k": "M080",
+   "cells": [
+    "Rankable row types (only these enter the contract ranking)"
+   ]
+  },
+  {
+   "_k": "M081",
+   "cells": [
+    "Direct lessee"
+   ]
+  },
+  {
+   "_k": "M082",
+   "cells": [
+    "Commissioner - direct leasing"
+   ]
+  },
+  {
+   "_k": "M083",
+   "cells": [
+    "Provider / framework appointee"
+   ]
+  },
+  {
+   "_k": "M084",
+   "cells": [
+    "Broker / short-stay provider"
+   ]
+  },
+  {
+   "_k": "M085",
+   "cells": [
+    "Commissioner - tendered contract"
+   ]
+  },
+  {
+   "_k": "M086",
+   "cells": [
+    "Other row types: Intermediary / route; Commissioner - programme; Windfall / market signal; Supply; Placeholder. Windfall and Supply rows keep the original 0-10 overlay and get a separate overlay rank."
+   ]
+  },
+  {
+   "_k": "M088",
+   "cells": [
+    "CALCULATIONS"
+   ]
+  },
+  {
+   "_k": "M089",
+   "cells": [
+    "Rating scale",
+    "Every criterion is rated 0-4 (integer). Blank = unknown. \"NA\" = not applicable (removed from numerator and denominator)."
+   ]
+  },
+  {
+   "_k": "M090",
+   "cells": [
+    "Known-weighted score",
+    "Score = 100 x SUMPRODUCT(weights, ratings) / (4 x known weight). Unknowns are excluded, not scored 0 and not scored as a pass."
+   ]
+  },
+  {
+   "_k": "M091",
+   "cells": [
+    "Coverage",
+    "Coverage = known weight / applicable weight (applicable excludes NA). Shown in its own column."
+   ]
+  },
+  {
+   "_k": "M092",
+   "cells": [
+    "Low / high bounds",
+    "Low bound treats unknowns as 0; high bound treats unknowns as 4. Shows how far the score could move once gaps are filled."
+   ]
+  },
+  {
+   "_k": "M093",
+   "cells": [
+    "Coverage cap",
+    "Score is capped by coverage band (Cov1/Cov2/Cov3 and Cap2/Cap3/Cap4) so sparse rows cannot top the ranking."
+   ]
+  },
+  {
+   "_k": "M094",
+   "cells": [
+    "B used",
+    "B is looked up from Counterparty_Financials by counterparty key (the SIGNING entity). Parent figures are context only unless a parent guarantee is evidenced (none is). If B has no coverage, Bdefault is used."
+   ]
+  },
+  {
+   "_k": "M095",
+   "cells": [
+    "Pursuit index",
+    "wPA x A_capped + wPB x B_used, then capped at QualCap if any gate is UNKNOWN. A prioritisation index for research and outreach; not a probability, credit approval or investment recommendation."
+   ]
+  },
+  {
+   "_k": "M096",
+   "cells": [
+    "Gates (applied before ranking)",
+    "G-Geo: target geography served. G-Route: computed from route end date vs CheckDate (expired = FAIL; no date = UNKNOWN) unless the override column is filled. G-Elig: Laurito/Mack can access the route. G-Req: requirement compatible with the Laurito/Mack product (residential stock on leases). G-Role: counterparty pays rent. Any FAIL = Excluded (confirmed fail). Any UNKNOWN = Qualify (capped). N/A ignored."
+   ]
+  },
+  {
+   "_k": "M097",
+   "cells": [
+    "Status logic",
+    "Placeholder: Excluded: placeholder. Any FAIL: Excluded: confirmed fail (lists the gates). Non-rankable type: Not ranked. A coverage below MinCovA: Research needed. Any UNKNOWN: Qualify: n unknown gate(s). Otherwise Eligible."
+   ]
+  },
+  {
+   "_k": "M098",
+   "cells": [
+    "Rank and tie-break",
+    "Ranked rows only (rankable type, no FAIL, A coverage at or above MinCovA). Order: rank tier (Eligible before Qualify when TierRank = 1), then pursuit index (rounded to 0.1) desc, then E (0.1) desc, then B used (0.1) desc, then Opp ID ascending. COUNTIFS gives every row a unique rank. Tested in Test_Cases (T-06/T-07 tie broken on ID; T-08 wins on E)."
+   ]
+  },
+  {
+   "_k": "M099",
+   "cells": [
+    "E score",
+    "E = 100 x (wE1 x combined A+B coverage + wE2 x source tier / 4 + wE3 x freshness / 4). Bands: High at or above E_hi, Medium at or above E_med, else Low."
+   ]
+  },
+  {
+   "_k": "M100",
+   "cells": [
+    "Double counting avoided",
+    "Contract term and break risk sits only in A4 (v2 counted it under both covenant and term). Counterparty strength sits only in B. Relationship is not scored except as access (A8). Framework ceiling values are not scored as revenue; A3 separates award from membership."
+   ]
+  },
+  {
+   "_k": "M101",
+   "cells": [
+    "Property C and D",
+    "C = known-weighted fit vs the matched Demand_Register requirement. D uses GIY (gross, not NIY), capex intensity and an estimated NIY only where costs are entered. Property E uses price basis (Achieved 4, Offer agreed 3, Asking or Guide 1), rent basis (Verified 4, Rent card 3, LHA proxy 2, Assumed 0) and units basis (Existing 4, Proposed 1). Property gate: type or beds incompatible, or matched requirement paused = FAIL."
+   ]
+  },
+  {
+   "_k": "M103",
+   "cells": [
+    "AUDIT OF THE ORIGINAL (v2) SCORING"
+   ]
+  },
+  {
+   "_k": "M104",
+   "cells": [
+    "v2 rule (REPLACED)",
+    "Core score /100 values were hard-coded seed totals. Score Breakdown dimension columns, dimension total and variance were blank, so no score could be reproduced from its parts."
+   ]
+  },
+  {
+   "_k": "M105",
+   "cells": [
+    "v2 rule (REPLACED)",
+    "One 100-point score mixed route/demand, economics, covenant and engagement, so contract access, partner credit and property attractiveness shared an unexplained number."
+   ]
+  },
+  {
+   "_k": "M106",
+   "cells": [
+    "v2 rule (REPLACED)",
+    "Evidence completeness = (PASS + CONDITIONAL) / 10 gates, so CONDITIONAL counted as evidence; rows with 0% completeness (e.g. GM-004 SSG at 64) were in the Top 10."
+   ]
+  },
+  {
+   "_k": "M107",
+   "cells": [
+    "v2 rule (REPLACED)",
+    "\"Conditional, gates to close\" was applied to any score of 75+ with zero PASS gates; GM-001 Mears ranked #1 (88) although Greater Manchester was not in its acquisition area list and its asylum contract does not cover the North West."
+   ]
+  },
+  {
+   "_k": "M108",
+   "cells": [
+    "v2 rule (REPLACED)",
+    "The Top 10 excluded only FAIL rows: no geography gate, no expired-route gate, and framework membership was treated as demand."
+   ]
+  },
+  {
+   "_k": "M109",
+   "cells": [
+    "v2 rule (ORIGINAL, kept)",
+    "Windfall overlay OV1-OV5 (0-10) kept unchanged for windfall and supply rows and ranked separately in Priority_Ranking."
+   ]
+  },
+  {
+   "_k": "M110",
+   "cells": [
+    "v2 rule (ORIGINAL, kept)",
+    "Original seed rank, core score and classification are kept in Opportunity_Scoring for comparison."
+   ]
+  }
+ ],
+ "fwBip": [
+  "BE-01",
+  "BE-02",
+  "BE-03",
+  "BE-04",
+  "BE-05",
+  "BE-06",
+  "BE-07",
+  "BE-08",
+  "BE-09",
+  "BE-10",
+  "BE-11",
+  "BE-12",
+  "BE-13",
+  "BE-14",
+  "BE-19"
+ ],
+ "refresh": {
+  "checked": "2026-11-03",
+  "note": "Live BiP re-fetch 3 Nov 2026 (get_award / search_spend_transactions). Overlays BiP_Evidence values in the site build; workbook cells unchanged."
+ },
+ "placements": {
+  "OPP:GM-001": [
+   "mack",
+   "operators",
+   "pscreen"
+  ],
+  "OPP:GM-002": [
+   "mack",
+   "operators",
+   "pscreen"
+  ],
+  "OPP:GM-003": [
+   "mack",
+   "operators",
+   "pscreen"
+  ],
+  "OPP:GM-004": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-005": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-006": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-007": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-008": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-009": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-010": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-011": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-012": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-013": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-014": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-015": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-016": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-017": [
+   "operators",
+   "pscreen"
+  ],
+  "OPP:GM-018": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-019": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-020": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-021": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-022": [
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-023": [
+   "operators",
+   "pscreen"
+  ],
+  "OPP:GM-024": [
+   "operators",
+   "pscreen"
+  ],
+  "OPP:GM-025": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-026": [
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-027": [
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-028": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-029": [
+   "operators",
+   "pscreen"
+  ],
+  "OPP:GM-030": [
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-031": [
+   "mack",
+   "pscreen"
+  ],
+  "OPP:GM-032": [
+   "mack",
+   "pscreen"
+  ],
+  "OPP:GM-033": [
+   "mack",
+   "pscreen"
+  ],
+  "OPP:GM-034": [
+   "mack",
+   "pscreen"
+  ],
+  "OPP:GM-035": [
+   "mack",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-036": [
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-037": [
+   "pscreen"
+  ],
+  "OPP:GM-038": [
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-039": [
+   "pscreen"
+  ],
+  "OPP:GM-040": [
+   "pscreen"
+  ],
+  "OPP:GM-041": [
+   "pscreen"
+  ],
+  "OPP:GM-042": [
+   "pscreen"
+  ],
+  "OPP:BR-001": [
+   "mack",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:BR-002": [
+   "mack",
+   "operators",
+   "pscreen"
+  ],
+  "OPP:BR-003": [
+   "pscreen"
+  ],
+  "OPP:BR-004": [
+   "pscreen",
+   "rp"
+  ],
+  "OPP:BR-005": [
+   "mack",
+   "operators",
+   "pscreen"
+  ],
+  "OPP:BR-006": [
+   "pscreen"
+  ],
+  "OPP:GL-001": [
+   "mack",
+   "operators",
+   "pscreen"
+  ],
+  "OPP:GL-002": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GL-003": [
+   "mack",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GL-004": [
+   "mack",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GL-005": [
+   "mack",
+   "operators",
+   "pscreen"
+  ],
+  "OPP:GL-006": [
+   "pscreen"
+  ],
+  "OPP:GM-043": [
+   "pscreen"
+  ],
+  "OPP:GM-044": [
+   "pscreen"
+  ],
+  "OPP:GM-045": [
+   "pscreen"
+  ],
+  "OPP:GL-007": [
+   "pscreen"
+  ],
+  "OPP:BR-007": [
+   "pscreen"
+  ],
+  "OPP:BR-008": [
+   "pscreen"
+  ],
+  "OPP:MJ-001": [
+   "mack",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:GM-046": [
+   "mack",
+   "pscreen",
+   "rp"
+  ],
+  "OPP:BR-009": [
+   "mack",
+   "operators",
+   "pscreen",
+   "rp"
+  ],
+  "FACT:F-001": [
+   "pscreen"
+  ],
+  "FACT:F-002": [
+   "pscreen"
+  ],
+  "FACT:F-003": [
+   "pscreen"
+  ],
+  "FACT:F-004": [
+   "pscreen"
+  ],
+  "FACT:F-005": [
+   "pscreen"
+  ],
+  "FACT:F-006": [
+   "pscreen"
+  ],
+  "FACT:F-007": [
+   "pscreen"
+  ],
+  "FACT:F-008": [
+   "pscreen"
+  ],
+  "FACT:F-009": [
+   "pscreen"
+  ],
+  "FACT:F-010": [
+   "pscreen"
+  ],
+  "FACT:F-011": [
+   "pscreen"
+  ],
+  "FACT:F-012": [
+   "pscreen"
+  ],
+  "FACT:F-013": [
+   "pscreen"
+  ],
+  "FACT:F-014": [
+   "pscreen"
+  ],
+  "FACT:F-015": [
+   "pscreen"
+  ],
+  "FACT:F-016": [
+   "pscreen"
+  ],
+  "FACT:F-017": [
+   "pscreen"
+  ],
+  "FACT:F-018": [
+   "pscreen"
+  ],
+  "FACT:F-019": [
+   "pscreen"
+  ],
+  "FACT:F-020": [
+   "pscreen"
+  ],
+  "FACT:F-021": [
+   "pscreen"
+  ],
+  "FACT:F-022": [
+   "pscreen"
+  ],
+  "FACT:F-023": [
+   "pscreen"
+  ],
+  "FACT:F-024": [
+   "pscreen"
+  ],
+  "FACT:F-025": [
+   "pscreen"
+  ],
+  "FACT:F-026": [
+   "pscreen"
+  ],
+  "FACT:F-027": [
+   "pscreen"
+  ],
+  "FACT:F-028": [
+   "pscreen"
+  ],
+  "FACT:F-029": [
+   "pscreen"
+  ],
+  "FACT:F-030": [
+   "pscreen"
+  ],
+  "FACT:F-031": [
+   "pscreen"
+  ],
+  "FACT:F-032": [
+   "pscreen"
+  ],
+  "FACT:F-033": [
+   "pscreen"
+  ],
+  "FACT:F-034": [
+   "pscreen"
+  ],
+  "FACT:F-035": [
+   "pscreen"
+  ],
+  "FACT:F-036": [
+   "pscreen"
+  ],
+  "FACT:F-037": [
+   "pscreen"
+  ],
+  "FACT:F-038": [
+   "pscreen"
+  ],
+  "FACT:F-039": [
+   "pscreen"
+  ],
+  "FACT:F-040": [
+   "pscreen"
+  ],
+  "FACT:F-041": [
+   "pscreen"
+  ],
+  "FACT:F-042": [
+   "pscreen"
+  ],
+  "FACT:F-043": [
+   "pscreen"
+  ],
+  "FACT:F-044": [
+   "pscreen"
+  ],
+  "FACT:F-045": [
+   "pscreen"
+  ],
+  "FACT:F-046": [
+   "pscreen"
+  ],
+  "FACT:F-047": [
+   "pscreen"
+  ],
+  "FACT:F-048": [
+   "pscreen"
+  ],
+  "FACT:F-049": [
+   "pscreen"
+  ],
+  "FACT:F-050": [
+   "pscreen"
+  ],
+  "FACT:F-051": [
+   "pscreen"
+  ],
+  "FACT:F-052": [
+   "pscreen"
+  ],
+  "FACT:F-053": [
+   "pscreen"
+  ],
+  "FACT:F-054": [
+   "pscreen"
+  ],
+  "FACT:F-055": [
+   "pscreen"
+  ],
+  "FACT:F-056": [
+   "pscreen"
+  ],
+  "FACT:F-057": [
+   "pscreen"
+  ],
+  "FACT:F-058": [
+   "pscreen"
+  ],
+  "BIP:BE-01": [
+   "frameworks"
+  ],
+  "BIP:BE-02": [
+   "frameworks"
+  ],
+  "BIP:BE-03": [
+   "frameworks"
+  ],
+  "BIP:BE-04": [
+   "frameworks"
+  ],
+  "BIP:BE-05": [
+   "frameworks"
+  ],
+  "BIP:BE-06": [
+   "frameworks"
+  ],
+  "BIP:BE-07": [
+   "frameworks"
+  ],
+  "BIP:BE-08": [
+   "frameworks"
+  ],
+  "BIP:BE-09": [
+   "frameworks"
+  ],
+  "BIP:BE-10": [
+   "frameworks"
+  ],
+  "BIP:BE-11": [
+   "frameworks"
+  ],
+  "BIP:BE-12": [
+   "frameworks"
+  ],
+  "BIP:BE-13": [
+   "frameworks"
+  ],
+  "BIP:BE-14": [
+   "frameworks"
+  ],
+  "BIP:BE-15": [
+   "frameworks"
+  ],
+  "BIP:BE-16": [
+   "frameworks"
+  ],
+  "BIP:BE-17": [
+   "frameworks"
+  ],
+  "BIP:BE-18": [
+   "frameworks"
+  ],
+  "BIP:BE-19": [
+   "frameworks"
+  ],
+  "BIP:BE-20": [
+   "frameworks"
+  ],
+  "FIN:MEARSLTD": [
+   "pscreen"
+  ],
+  "FIN:SERCOLTD": [
+   "pscreen"
+  ],
+  "FIN:NACRO": [
+   "pscreen"
+  ],
+  "FIN:CENTENNIAL": [
+   "pscreen"
+  ],
+  "FIN:MCC": [
+   "pscreen"
+  ],
+  "FIN:BRISTOLCC": [
+   "pscreen"
+  ],
+  "FIN:RENTCONNECT": [
+   "pscreen"
+  ],
+  "FIN:UNITYHS": [
+   "pscreen"
+  ],
+  "FIN:ICAB": [
+   "pscreen"
+  ],
+  "FIN:THESQUARE": [
+   "pscreen"
+  ],
+  "FIN:JIGSAW": [
+   "pscreen"
+  ],
+  "FIN:CTMN": [
+   "pscreen"
+  ],
+  "FIN:STEPPING": [
+   "pscreen"
+  ],
+  "FIN:IASPIRE": [
+   "pscreen"
+  ],
+  "FIN:GPHA": [
+   "pscreen"
+  ],
+  "FIN:MSV": [
+   "pscreen"
+  ],
+  "FIN:SANCTUARY": [
+   "pscreen"
+  ],
+  "FIN:RIVERSIDE": [
+   "pscreen"
+  ],
+  "FIN:SAHA": [
+   "pscreen"
+  ],
+  "FIN:CALICO": [
+   "pscreen"
+  ],
+  "FIN:GCH": [
+   "pscreen"
+  ],
+  "FIN:DEPAUL": [
+   "pscreen"
+  ],
+  "FIN:YHG": [
+   "pscreen"
+  ],
+  "FIN:MOJ": [
+   "pscreen"
+  ],
+  "DR:DR-001": [
+   "mack"
+  ],
+  "DR:DR-002": [
+   "mack"
+  ],
+  "DR:DR-003": [
+   "mack"
+  ],
+  "DR:DR-004": [
+   "mack"
+  ],
+  "DR:DR-005": [
+   "mack"
+  ],
+  "DR:DR-006": [
+   "mack"
+  ],
+  "DR:DR-007": [
+   "mack"
+  ],
+  "DR:DR-008": [
+   "mack"
+  ],
+  "DR:DR-009": [
+   "mack"
+  ],
+  "DR:DR-010": [
+   "mack"
+  ],
+  "DR:DR-011": [
+   "mack"
+  ],
+  "DR:DR-012": [
+   "mack"
+  ],
+  "DR:DR-013": [
+   "mack"
+  ],
+  "DR:DR-014": [
+   "mack"
+  ],
+  "DR:DR-015": [
+   "mack"
+  ],
+  "DR:DR-016": [
+   "mack"
+  ],
+  "DR:DR-017": [
+   "mack"
+  ],
+  "DR:DR-018": [
+   "mack"
+  ],
+  "DR:DR-019": [
+   "mack"
+  ],
+  "DR:DR-020": [
+   "mack"
+  ],
+  "DR:DR-021": [
+   "mack"
+  ],
+  "DR:DR-022": [
+   "mack"
+  ],
+  "DR:DR-023": [
+   "mack"
+  ],
+  "DR:DR-024": [
+   "mack"
+  ],
+  "DR:DR-025": [
+   "mack"
+  ],
+  "DR:DR-026": [
+   "mack"
+  ],
+  "DR:DR-027": [
+   "mack"
+  ],
+  "DR:DR-028": [
+   "mack"
+  ],
+  "DR:DR-029": [
+   "mack"
+  ],
+  "DR:DR-030": [
+   "mack"
+  ],
+  "DR:DR-031": [
+   "mack"
+  ],
+  "DR:DR-032": [
+   "mack"
+  ],
+  "DR:DR-033": [
+   "mack"
+  ],
+  "DR:DR-034": [
+   "mack"
+  ],
+  "LHA:Central Greater Manchester|0": [
+   "mack"
+  ],
+  "LHA:Central Greater Manchester|1": [
+   "mack"
+  ],
+  "LHA:Central Greater Manchester|2": [
+   "mack"
+  ],
+  "LHA:Central Greater Manchester|3": [
+   "mack"
+  ],
+  "LHA:Central Greater Manchester|4": [
+   "mack"
+  ],
+  "LHA:Bristol|0": [
+   "mack"
+  ],
+  "LHA:Bristol|1": [
+   "mack"
+  ],
+  "LHA:Bristol|2": [
+   "mack"
+  ],
+  "LHA:Bristol|3": [
+   "mack"
+  ],
+  "LHA:Bristol|4": [
+   "mack"
+  ],
+  "LHA:Gloucester|0": [
+   "mack"
+  ],
+  "LHA:Gloucester|1": [
+   "mack"
+  ],
+  "LHA:Gloucester|2": [
+   "mack"
+  ],
+  "LHA:Gloucester|3": [
+   "mack"
+  ],
+  "LHA:Gloucester|4": [
+   "mack"
+  ],
+  "LHA:Cheltenham|0": [
+   "mack"
+  ],
+  "LHA:Cheltenham|1": [
+   "mack"
+  ],
+  "LHA:Cheltenham|2": [
+   "mack"
+  ],
+  "LHA:Cheltenham|3": [
+   "mack"
+  ],
+  "LHA:Cheltenham|4": [
+   "mack"
+  ],
+  "TERMS:T01": [
+   "mack"
+  ],
+  "TERMS:T02": [
+   "mack"
+  ],
+  "TERMS:T03": [
+   "mack"
+  ],
+  "TERMS:T04": [
+   "mack"
+  ],
+  "TERMS:T05": [
+   "mack"
+  ],
+  "TERMS:T06": [
+   "mack"
+  ],
+  "METH:M001": [
+   "pscreen"
+  ],
+  "METH:M002": [
+   "pscreen"
+  ],
+  "METH:M004": [
+   "pscreen"
+  ],
+  "METH:M005": [
+   "pscreen"
+  ],
+  "METH:M006": [
+   "pscreen"
+  ],
+  "METH:M007": [
+   "pscreen"
+  ],
+  "METH:M008": [
+   "pscreen"
+  ],
+  "METH:M009": [
+   "pscreen"
+  ],
+  "METH:M010": [
+   "pscreen"
+  ],
+  "METH:M011": [
+   "pscreen"
+  ],
+  "METH:M012": [
+   "pscreen"
+  ],
+  "METH:M013": [
+   "pscreen"
+  ],
+  "METH:M014": [
+   "pscreen"
+  ],
+  "METH:M015": [
+   "pscreen"
+  ],
+  "METH:M016": [
+   "pscreen"
+  ],
+  "METH:M017": [
+   "pscreen"
+  ],
+  "METH:M018": [
+   "pscreen"
+  ],
+  "METH:M019": [
+   "pscreen"
+  ],
+  "METH:M020": [
+   "pscreen"
+  ],
+  "METH:M021": [
+   "pscreen"
+  ],
+  "METH:M022": [
+   "pscreen"
+  ],
+  "METH:M023": [
+   "pscreen"
+  ],
+  "METH:M024": [
+   "pscreen"
+  ],
+  "METH:M025": [
+   "pscreen"
+  ],
+  "METH:M026": [
+   "pscreen"
+  ],
+  "METH:M027": [
+   "pscreen"
+  ],
+  "METH:M028": [
+   "pscreen"
+  ],
+  "METH:M029": [
+   "pscreen"
+  ],
+  "METH:M030": [
+   "pscreen"
+  ],
+  "METH:M031": [
+   "pscreen"
+  ],
+  "METH:M032": [
+   "pscreen"
+  ],
+  "METH:M033": [
+   "pscreen"
+  ],
+  "METH:M034": [
+   "pscreen"
+  ],
+  "METH:M035": [
+   "pscreen"
+  ],
+  "METH:M036": [
+   "pscreen"
+  ],
+  "METH:M037": [
+   "pscreen"
+  ],
+  "METH:M038": [
+   "pscreen"
+  ],
+  "METH:M039": [
+   "pscreen"
+  ],
+  "METH:M040": [
+   "pscreen"
+  ],
+  "METH:M041": [
+   "pscreen"
+  ],
+  "METH:M042": [
+   "pscreen"
+  ],
+  "METH:M043": [
+   "pscreen"
+  ],
+  "METH:M044": [
+   "pscreen"
+  ],
+  "METH:M045": [
+   "pscreen"
+  ],
+  "METH:M046": [
+   "pscreen"
+  ],
+  "METH:M047": [
+   "pscreen"
+  ],
+  "METH:M048": [
+   "pscreen"
+  ],
+  "METH:M049": [
+   "pscreen"
+  ],
+  "METH:M050": [
+   "pscreen"
+  ],
+  "METH:M051": [
+   "pscreen"
+  ],
+  "METH:M052": [
+   "pscreen"
+  ],
+  "METH:M053": [
+   "pscreen"
+  ],
+  "METH:M054": [
+   "pscreen"
+  ],
+  "METH:M055": [
+   "pscreen"
+  ],
+  "METH:M056": [
+   "pscreen"
+  ],
+  "METH:M057": [
+   "pscreen"
+  ],
+  "METH:M058": [
+   "pscreen"
+  ],
+  "METH:M059": [
+   "pscreen"
+  ],
+  "METH:M060": [
+   "pscreen"
+  ],
+  "METH:M061": [
+   "pscreen"
+  ],
+  "METH:M062": [
+   "pscreen"
+  ],
+  "METH:M063": [
+   "pscreen"
+  ],
+  "METH:M064": [
+   "pscreen"
+  ],
+  "METH:M065": [
+   "pscreen"
+  ],
+  "METH:M066": [
+   "pscreen"
+  ],
+  "METH:M067": [
+   "pscreen"
+  ],
+  "METH:M068": [
+   "pscreen"
+  ],
+  "METH:M069": [
+   "pscreen"
+  ],
+  "METH:M070": [
+   "pscreen"
+  ],
+  "METH:M072": [
+   "pscreen"
+  ],
+  "METH:M073": [
+   "pscreen"
+  ],
+  "METH:M074": [
+   "pscreen"
+  ],
+  "METH:M075": [
+   "pscreen"
+  ],
+  "METH:M076": [
+   "pscreen"
+  ],
+  "METH:M077": [
+   "pscreen"
+  ],
+  "METH:M078": [
+   "pscreen"
+  ],
+  "METH:M080": [
+   "pscreen"
+  ],
+  "METH:M081": [
+   "pscreen"
+  ],
+  "METH:M082": [
+   "pscreen"
+  ],
+  "METH:M083": [
+   "pscreen"
+  ],
+  "METH:M084": [
+   "pscreen"
+  ],
+  "METH:M085": [
+   "pscreen"
+  ],
+  "METH:M086": [
+   "pscreen"
+  ],
+  "METH:M088": [
+   "pscreen"
+  ],
+  "METH:M089": [
+   "pscreen"
+  ],
+  "METH:M090": [
+   "pscreen"
+  ],
+  "METH:M091": [
+   "pscreen"
+  ],
+  "METH:M092": [
+   "pscreen"
+  ],
+  "METH:M093": [
+   "pscreen"
+  ],
+  "METH:M094": [
+   "pscreen"
+  ],
+  "METH:M095": [
+   "pscreen"
+  ],
+  "METH:M096": [
+   "pscreen"
+  ],
+  "METH:M097": [
+   "pscreen"
+  ],
+  "METH:M098": [
+   "pscreen"
+  ],
+  "METH:M099": [
+   "pscreen"
+  ],
+  "METH:M100": [
+   "pscreen"
+  ],
+  "METH:M101": [
+   "pscreen"
+  ],
+  "METH:M103": [
+   "pscreen"
+  ],
+  "METH:M104": [
+   "pscreen"
+  ],
+  "METH:M105": [
+   "pscreen"
+  ],
+  "METH:M106": [
+   "pscreen"
+  ],
+  "METH:M107": [
+   "pscreen"
+  ],
+  "METH:M108": [
+   "pscreen"
+  ],
+  "METH:M109": [
+   "pscreen"
+  ],
+  "METH:M110": [
+   "pscreen"
+  ]
+ },
+ "sheetsOnly": {
+  "README": "Workbook cover note; its caveats are restated in each tab panel footer.",
+  "Priority_Ranking": "Derived view of Opportunity_Scoring; every ranked row is shown on the tabs as an OPP card with its rank.",
+  "Sources": "URL health-check log (HTTP status per URL); the URLs themselves appear as linked fact and BiP chips.",
+  "Property_Pipeline": "Empty input template (0 property rows). The coverage check fails if rows are added, so they get mapped.",
+  "Test_Cases": "Synthetic test rows that check the scoring formulas; not real partners.",
+  "Checks": "Workbook self-checks (formula results vs expected); not partner data.",
+  "Change_Log": "Audit trail of edits between versions; current values are what the tabs show.",
+  "Orig_Contacts": "Archived v2 contacts; the Frameworks tab Outreach contacts directory carries the published contacts.",
+  "Orig_Evidence_Register": "Archived v2 evidence, superseded by Fact_Register (all 58 facts are on the tabs).",
+  "Orig_Engagement_Log": "Archived v2 engagement notes, superseded by v4 Next action on each card.",
+  "Orig_Scoring_Model_v2": "Retired v2 scoring model, replaced by v4 Methodology (on the Partner screen).",
+  "Orig_Score_Breakdown_v2": "Retired v2 score breakdown, replaced by v4 A-E components on each card.",
+  "Orig_Capture_Template": "Blank v2 data-capture template.",
+  "Orig_Read_Me": "Archived v2 read-me.",
+  "Orig_Lists": "Drop-down lists for the v2 template."
  }
 }

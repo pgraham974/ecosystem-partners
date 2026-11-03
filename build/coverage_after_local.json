@@ -1,0 +1,47 @@
+{
+ "records": 330,
+ "byType": {
+  "OPP": 63,
+  "FACT": 58,
+  "BIP": 20,
+  "FIN": 24,
+  "DR": 34,
+  "LHA": 20,
+  "TERMS": 6,
+  "METH": 105
+ },
+ "dataUnmapped": [],
+ "dom": {
+  "errors": [],
+  "frameworks": {
+   "expected": 20,
+   "present": 20,
+   "anyRecordPresent": 36,
+   "missing": []
+  },
+  "mack": {
+   "expected": 88,
+   "present": 88,
+   "anyRecordPresent": 171,
+   "missing": []
+  },
+  "rp": {
+   "expected": 34,
+   "present": 34,
+   "anyRecordPresent": 124,
+   "missing": []
+  },
+  "pscreen": {
+   "expected": 250,
+   "present": 250,
+   "anyRecordPresent": 319,
+   "missing": []
+  },
+  "operators": {
+   "expected": 33,
+   "present": 33,
+   "anyRecordPresent": 148,
+   "missing": []
+  }
+ }
+}
