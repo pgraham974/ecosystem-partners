@@ -297,8 +297,8 @@ async function init(){
  D.councils=[];D.subareas=[];D.owners=[];D.ownersByKey={};D.ownerAreas={};
  // Evidence only: no legacy valuation, rent, LHA or sector-ranking feeds.
  await psLoad();
- $('#status').textContent='Provider evidence, covenant screening, frameworks and outreach contacts · rankings disabled';
- const requested=location.hash.slice(1);viewMode(['rp','pscreen','operators','frameworks','sheets'].includes(requested)?requested:'rp');
+ $('#status').textContent='Linked workbook evidence, diligence gates and next actions · postcode rankings disabled';
+ const requested=location.hash.slice(1);viewMode(['flow','rp','pscreen','operators','frameworks','sheets'].includes(requested.split('/')[0])?requested:'flow');
 }
 async function login(){$('#lerr').textContent='';const r=await fetch(SUPA_URL+'/auth/v1/token?grant_type=password',{method:'POST',headers:{apikey:SUPA_KEY,'Content-Type':'application/json'},body:JSON.stringify({email:$('#lem').value,password:$('#lpw').value})});const j=await r.json();if(!j.access_token){$('#lerr').textContent=j.error_description||j.msg||'sign-in failed';return}TOKEN=j.access_token;LS.set('sb_token',TOKEN);LS.set('sb_refresh',j.refresh_token||'');start()}
 async function refreshToken(){const rt=LS.get('sb_refresh');if(!rt)return false;const r=await fetch(SUPA_URL+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{apikey:SUPA_KEY,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:rt})});const j=await r.json();if(j.access_token){TOKEN=j.access_token;LS.set('sb_token',TOKEN);LS.set('sb_refresh',j.refresh_token||rt);return true}return false}
@@ -1141,5 +1141,5 @@ function sheetsRender(){const s=sheetsCurrent(),rows=sheetsRows(s);document.quer
 function sheetsCSV(){const s=sheetsCurrent(),rows=[s.columns,...sheetsRows(s)];const csv='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/^[=+@-]/,"'$&").replace(/"/g,'""')+'"').join(',')).join('\r\n');const u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=u;a.download=s.name.replace(/[^a-z0-9]+/gi,'_')+'_FULL_PUBLIC.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
 
 opCompute=async function(city){return {}};
-init().catch(e=>{$('#status').textContent='Partner research could not start: '+e.message});
+loadScript(new URL('partner-flow-model.js?v=20261103',location.href).href).then(()=>loadScript(new URL('partner-flow-ui.js?v=20261103',location.href).href)).then(()=>init()).catch(e=>{$('#status').textContent='Partner research could not start: '+e.message});
 </script></body></html>
