@@ -1,8 +1,8 @@
 {
  "version": "mack-pipeline-1",
- "built": "2026-11-03T21:56:13",
+ "built": "2026-11-04T09:58:18",
  "user": "Mack Living",
- "checkDate": "2026-11-03",
+ "checkDate": "2026-11-04",
  "weights": {
   "A": 25,
   "B": 15,
@@ -966,6 +966,158 @@
    "url": "https://app.bipintelligence.com/ui/opportunities/award/5443121182",
    "framework": false,
    "mackPos": "Watch"
+  },
+  {
+   "id": "MP-21",
+   "name": "Islington Supported Housing and Floating Support Framework (2425-0692)",
+   "buyer": "London Borough of Islington",
+   "buyerType": "Local authority",
+   "region": "London",
+   "service": "Supported housing (Lots 1 to 3) and floating support (Lot 4)",
+   "route": "Competitive flexible procedure, Light Touch; PSQ then tender; framework reopenable",
+   "kind": "Framework tender",
+   "bip": [],
+   "facts": [],
+   "opps": [],
+   "ml": null,
+   "inputs": {
+    "A": 2,
+    "B": 2,
+    "C": null,
+    "D": null,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "UNKNOWN",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "Tender notice 3 Nov 2026. 8 year flexible framework from est. 1 Oct 2027. \u00a3200m incl VAT is the framework CEILING (BiP shows \u00a3166.7m ex VAT); no volume committed. Particular suitability: VCSE. Lots 1 to 3 are 24h or transitional supported accommodation; support is psychologically informed and staffed. Requests to participate due 1 Dec 2026 11:59.",
+   "next": "Confirm whether a non-VCSE (Mack Opco) can apply or must partner; decide lots; PSQ by 1 Dec.",
+   "incumbents": [],
+   "deadline": "2026-12-01",
+   "start": "2027-10-01",
+   "end": "2035-09-30",
+   "value": 200000000,
+   "basis": "Framework ceiling incl VAT",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6037612192",
+   "framework": true,
+   "mackPos": "Not yet bid"
+  },
+  {
+   "id": "MP-22",
+   "name": "Hampshire: New Supported Accommodation Development Schemes (AS30961, HADSOM mini competition)",
+   "buyer": "Hampshire County Council",
+   "buyerType": "Local authority",
+   "region": "South East",
+   "service": "Property provision for adult supported accommodation (council provides support)",
+   "route": "Mini competition via HADSOM framework",
+   "kind": "Upcoming tender",
+   "bip": [],
+   "facts": [],
+   "opps": [],
+   "ml": null,
+   "inputs": {
+    "A": null,
+    "B": 2,
+    "C": 2,
+    "D": null,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "PASS",
+    "G-Geo": "UNKNOWN",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "PIN published 3 Nov 2026; contract notice expected 30 Nov 2026. Seeks Registered Providers of Social Housing or Registered Charities to provide property. Mini competition through HADSOM, so only HADSOM members can bid. No value published.",
+   "next": "Check whether Mack or a partner RP is on HADSOM; if not, route is via an RP partner.",
+   "incumbents": [],
+   "deadline": null,
+   "start": null,
+   "end": null,
+   "value": null,
+   "basis": null,
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6037912814",
+   "framework": false,
+   "mackPos": "Not on HADSOM (unverified)"
+  },
+  {
+   "id": "MP-23",
+   "name": "West London Alliance TA Visiting Support Service pilot (TAVSS, C0878)",
+   "buyer": "London Borough of Ealing Council",
+   "buyerType": "Local authority",
+   "region": "London",
+   "service": "Visiting support and occupancy checks in TA (not property)",
+   "route": "Pre-market engagement; contract notice est. 25 Jan 2027",
+   "kind": "Upcoming tender",
+   "bip": [],
+   "facts": [],
+   "opps": [],
+   "ml": null,
+   "inputs": {
+    "A": null,
+    "B": 2,
+    "C": 1,
+    "D": null,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "UNKNOWN",
+    "G-Geo": "UNKNOWN",
+    "G-Live": "PASS",
+    "G-Elig": "UNKNOWN"
+   },
+   "why": "PME notice 2 Nov 2026. \u00a3240k ex VAT est., 1 year pilot 1 Apr 2027 to 31 Mar 2028, 2,000 to 4,000 households. Service only, no property. Engagement deadline 30 Nov 2026 noon via Atamis; group session w/c 16 Nov.",
+   "next": "Decide if Mack offers a support service; if yes, register on Atamis before 30 Nov.",
+   "incumbents": [],
+   "deadline": "2026-11-30",
+   "start": "2027-04-01",
+   "end": "2028-03-31",
+   "value": 240000,
+   "basis": "Estimated, ex VAT",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6037484974",
+   "framework": false,
+   "mackPos": "Not engaged"
+  },
+  {
+   "id": "MP-24",
+   "name": "Westmorland and Furness Domestic Abuse Supported Accommodation (DASA)",
+   "buyer": "Westmorland and Furness Council",
+   "buyerType": "Local authority",
+   "region": "North West (Cumbria)",
+   "service": "Domestic abuse supported accommodation and support",
+   "route": "Open procedure, Light Touch; 2 contracts",
+   "kind": "Open tender",
+   "bip": [],
+   "facts": [],
+   "opps": [],
+   "ml": null,
+   "inputs": {
+    "A": 2,
+    "B": 2,
+    "C": null,
+    "D": null,
+    "E": 3
+   },
+   "gates": {
+    "G-Service": "UNKNOWN",
+    "G-Geo": "UNKNOWN",
+    "G-Live": "PASS",
+    "G-Elig": "PASS"
+   },
+   "why": "Tender notice 3 Nov 2026. \u00a32.34m incl VAT total (BiP \u00a31.95m ex VAT): South Lakeland and Eden \u00a31.06m, Barrow \u00a31.28m. 1 Apr 2027 to 31 Mar 2030, plus up to 3 x 12 months. Quality 90 / cost 10. Enquiries by 19 Nov, tenders by 3 Dec 2026 14:00.",
+   "next": "Check DA specialism needed; likely needs a specialist DA partner.",
+   "incumbents": [],
+   "deadline": "2026-12-03",
+   "start": "2027-04-01",
+   "end": "2030-03-31",
+   "value": 2338488,
+   "basis": "Estimated total incl VAT",
+   "url": "https://app.bipintelligence.com/ui/opportunities/notice/6037638682",
+   "framework": false,
+   "mackPos": "Not yet bid"
   }
  ],
  "buyers": [
@@ -1141,6 +1293,54 @@
     "MP-20"
    ],
    "ceiling": 400000,
+   "fin": null
+  },
+  {
+   "name": "London Borough of Islington",
+   "type": "Local authority",
+   "regions": [
+    "London"
+   ],
+   "items": [
+    "MP-21"
+   ],
+   "ceiling": 200000000,
+   "fin": null
+  },
+  {
+   "name": "Hampshire County Council",
+   "type": "Local authority",
+   "regions": [
+    "South East"
+   ],
+   "items": [
+    "MP-22"
+   ],
+   "ceiling": 0,
+   "fin": null
+  },
+  {
+   "name": "London Borough of Ealing Council",
+   "type": "Local authority",
+   "regions": [
+    "London"
+   ],
+   "items": [
+    "MP-23"
+   ],
+   "ceiling": 240000,
+   "fin": null
+  },
+  {
+   "name": "Westmorland and Furness Council",
+   "type": "Local authority",
+   "regions": [
+    "North West (Cumbria)"
+   ],
+   "items": [
+    "MP-24"
+   ],
+   "ceiling": 2338488,
    "fin": null
   }
  ],
@@ -2445,7 +2645,7 @@
    "opps": [
     "GM-023"
    ],
-   "refreshed": "2026-11-03",
+   "refreshed": "2026-11-04",
    "lotSuppliers": null,
    "mackLots": null,
    "spendByBuyer": {
@@ -2514,7 +2714,7 @@
    "opps": [
     "GM-014"
    ],
-   "refreshed": "2026-11-03",
+   "refreshed": "2026-11-04",
    "lotSuppliers": null,
    "mackLots": null,
    "spendByBuyer": {
@@ -2530,7 +2730,7 @@
    {
     "framework": "MoJ Provision of Community Accommodation Services Open Framework",
     "entity": "Mack Opco Ltd (Mack House, 13 Bath Road, Cheltenham GL53 7HG)",
-    "lots": "Lots 2, 3 and 4 (BiP award 6030619061, re-checked 2026-11-03)",
+    "lots": "Lots 2, 3 and 4 (BiP award 6030619061, re-checked 2026-11-04)",
     "term": "2 Nov 2026 to 1 Nov 2034",
     "status": "Appointed (framework only; no call-off awarded)",
     "ceiling": "\u00a32.0bn whole-framework estimated maximum ex VAT: CEILING, not committed",
@@ -2562,5 +2762,9 @@
   ]
  },
  "mlIdentity": "Supplier-register number 5543323 must not be silently identified with the financial-screen number 05543523 or with Mack Living. Check the original register and Companies House before using supplier rights.",
- "bipExtra": null
+ "bipExtra": {
+  "checked": "2026-11-04",
+  "source": "BiP Intelligence search_notices/get_notice, published 3 to 4 Nov 2026; keyword filter: supported, temporary, community, emergency accommodation, CAS3, leasing",
+  "note": "Inputs are cautious judgements from notice text; None = unknown. Mack Opco spend search 1 to 4 Nov returned 0 rows."
+ }
 }
