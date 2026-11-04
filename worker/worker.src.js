@@ -13,10 +13,10 @@ async function context(){
  if(cache.ctx&&Date.now()-cache.t<CACHE_MS)return cache.ctx;
  const [P,V]=await Promise.all([getJ('mack-pipeline.json'),getJ('v4-enrich.json').catch(()=>({}))]);
  const ranked=MPM.rank(P.items,P.weights);
- const items=ranked.map(o=>({id:o.id,rank:o.rank,status:o.s.status,score:o.s.score,coverage:o.s.coverage,uncappedScore:o.s.raw,unknownGates:o.s.unknownGates,name:o.name,buyer:o.buyer,buyerType:o.buyerType,region:o.region,service:o.service,route:o.route,kind:o.kind,framework:o.framework,mackPosition:o.mackPos,value:o.value,valueBasis:o.basis,deadline:o.deadline,start:o.start,end:o.end,gates:o.gates,inputs:o.inputs,why:o.why,next:o.next,incumbents:o.incumbents,bip:o.bip,facts:o.facts,url:o.url}));
+ const items=ranked.map(o=>({id:o.id,rank:o.rank,status:o.s.status,score:o.s.score,coverage:o.s.coverage,uncappedScore:o.s.raw,unknownGates:o.s.unknownGates,name:o.name,partner:o.buyer,partnerType:o.buyerType,region:o.region,service:o.service,route:o.route,kind:o.kind,framework:o.framework,mackPosition:o.mackPos,value:o.value,valueBasis:o.basis,deadline:o.deadline,start:o.start,end:o.end,gates:o.gates,inputs:o.inputs,why:o.why,next:o.next,incumbents:o.incumbents,bip:o.bip,facts:o.facts,url:o.url}));
  const comps=(P.competitors||[]).map(c=>({id:c.id,name:c.name,entity:c.entity,region:c.region,type:c.type,competesOn:c.competesOn,bip:c.bip,facts:c.facts}));
  const facts={};for(const [k,f] of Object.entries(V.facts||{}))facts[k]={field:f.field,finding:f.finding,status:f.status,checked:f.checked};
- const ctx={built:P.built,checkDate:P.checkDate,weights:P.weights,components:P.components,gateRules:P.gateRules,mack:P.mack,mackIdentity:P.mlIdentity,items,buyers:P.buyers,spend:P.spend,competitors:comps,bipExtra:P.bipExtra,bipRecords:V.bip,facts};
+ const ctx={built:P.built,checkDate:P.checkDate,weights:P.weights,components:P.components,gateRules:P.gateRules,mack:P.mack,mackIdentity:P.mlIdentity,items,partners:P.buyers,spend:P.spend,competitors:comps,bipExtra:P.bipExtra,bipRecords:V.bip,facts};
  cache={t:Date.now(),ctx:JSON.stringify(ctx)};return cache.ctx}
 function sys(ctx){const today=new Date().toISOString().slice(0,10);return `You are Mack Living's bid assistant on the Mack Living contract pipeline site. Today is ${today}.
 Rules:
@@ -24,6 +24,7 @@ Rules:
 - Cite opportunity IDs (MP-xx) for every opportunity you mention, and cite BiP record IDs (BE-xx) and fact IDs (F-xxx) where they support a claim.
 - Always distinguish a framework CEILING (maximum possible value) from actual spend or an awarded contract value, and a framework appointment from a call-off award. Use valueBasis to say which.
 - Ranking: items are already ranked by the site's model (status Eligible first, then Qualify capped at 65 because a gate is UNKNOWN; Research needed and Excluded are unranked). Explain priorities using status, score, gates, deadline and the "why"/"next" fields.
+- Councils and authorities that buy services are called Partners (tab Partners). Providers such as Mears, Serco, Nacro are Competitors.
 - Unknown inputs (null) are unknown, never zero and never a pass.
 - For date questions compare deadline/start dates with today's date; say when a deadline is null (unknown).
 - UK English, concise, plain text with short bullet points. Format money as £ with m/k. Never use em dashes or en dashes; use commas, colons or the word "to".

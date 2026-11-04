@@ -1,81 +1,65 @@
 #!/usr/bin/env python3
-"""Coverage check: every workbook record must reach the site's integrated tabs.
-  python3 build/coverage_check.py                 data mode: site/v4-enrich.json placements cover every record (fails otherwise)
-  python3 build/coverage_check.py --dom URL [out.json]   also render each tab headless and confirm each record is in that tab's DOM
-Exit code 1 on any unmapped sheet, unmapped record, or record missing from its tab."""
-import sys,os,json,re
-sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+"""Exactly-one-home check. Every record (all workbook records plus pipeline, partners, competitors, sites, contracts, notices, LHA rows)
+must sit in exactly one row of exactly one tab of site-data.json, and the workbook must mirror the tabs (same sheet names, columns, IDs).
+  python3 build/coverage_check.py [--dom URL] [out.json]   exit 1 on any missing or duplicated record, drift, dash, or JS error."""
+import sys,os,json,re,collections
+HERE=os.path.dirname(os.path.abspath(__file__));SITE=os.path.dirname(HERE);sys.path.insert(0,HERE)
 import v4_records as VR
-HERE=os.path.dirname(os.path.abspath(__file__));ROOT=os.path.dirname(HERE)
-SITE=os.path.join(ROOT,'site') if os.path.isdir(os.path.join(ROOT,'site')) else ROOT
-TABS=['frameworks','mack','rp','pscreen','operators']
-PTABS={'pipeline':'PIPE','buyers':'BUYER','competitors':'COMP'}
+def universe():
+    R=VR.load();J=json.load(open(os.path.join(SITE,'v4-enrich.json')))
+    K=set(VR.keys(R,J.get('mack',{}).get('focusOpps',[])))
+    MP=json.load(open(os.path.join(SITE,'mack-pipeline.json')));ML=json.load(open(os.path.join(SITE,'mack-living.json')));L=json.load(open(os.path.join(SITE,'market-lha.json')))
+    K|={'PIPE:'+i['id'] for i in MP['items']}|{'PARTNER:'+b['name'] for b in MP['buyers']}|{'COMP:'+c['id'] for c in MP['competitors']}
+    K|={'SITE:'+s['id'] for s in ML['sites']+ML['watchlist']}|{'ML:'+c['id'] for c in ML['contracts']}|{'NEW:'+n['id'] for n in J['newItems']}
+    K|={'BRMA:'+r['name'] for r in L['rates']}|{'SCORE:'+k for k in 'ABCDE'}|{'SCORE:Gates'}
+    if os.path.exists(os.path.join(SITE,'bip-data.json')):K|={'BIPDATA:'+str(r['id']) for r in json.load(open(os.path.join(SITE,'bip-data.json')))['rows']}
+    return K
+def check(homes,K,label,fail):
+    c=collections.Counter(k for ks in homes.values() for k in ks)
+    miss=sorted(K-set(c));dup=sorted(k for k,n in c.items() if n>1);extra=sorted(set(c)-K)
+    fail+=['%s missing: %s'%(label,k) for k in miss]+['%s duplicated: %s'%(label,k) for k in dup]+['%s unknown record: %s'%(label,k) for k in extra]
+    return len(K)-len(miss),len(dup)
 def main():
-    R=VR.load();fail=[]
-    for s in R['sheets']:
-        if s not in VR.MAPPED and s not in VR.SHEETS_ONLY:fail.append('sheet not mapped and no Sheets-only reason: '+s)
-    if R['pipeline_rows']:fail.append('Property_Pipeline has %d rows but no tab mapping'%R['pipeline_rows'])
-    J=json.load(open(os.path.join(SITE,'v4-enrich.json')));P={k:set(v) for k,v in J.get('placements',{}).items()}
-    K=VR.keys(R,J.get('mack',{}).get('focusOpps',[]))
-    miss=[k for k in K if not P.get(k)];short=[k for k in K if P.get(k) and not K[k]<=P[k]]
-    fail+=['record has no tab: '+k for k in miss]+['record missing expected tab %s: %s'%(sorted(K[k]-P[k]),k) for k in short]
-    by={}
-    for k in K:by.setdefault(k.split(':')[0],0);by[k.split(':')[0]]+=1
-    MP=json.load(open(os.path.join(SITE,'mack-pipeline.json')));PK={'PIPE':[i['id'] for i in MP['items']],'BUYER':[b['name'] for b in MP['buyers']],'COMP':[c['id'] for c in MP['competitors']]}
-    for i in MP['items']:
-        for b in i['bip']:
-            if b not in J['bip']:fail.append('pipeline %s cites missing BiP %s'%(i['id'],b))
-        for f in i['facts']:
-            if f not in J['facts']:fail.append('pipeline %s cites missing fact %s'%(i['id'],f))
-        for o in i['opps']:
-            if o not in {x['id'] for x in J['opps']}:fail.append('pipeline %s cites missing record %s'%(i['id'],o))
-    print('mack pipeline: items %d buyers %d competitors %d'%tuple(len(PK[k]) for k in ('PIPE','BUYER','COMP')))
-    print('workbook',os.path.basename(R['path']),'records',len(K),by)
-    print('data mode: mapped %d/%d'%(len(K)-len(miss),len(K)))
-    rep={'records':len(K),'byType':by,'dataUnmapped':miss}
+    fail=[];K=universe();S=json.load(open(os.path.join(SITE,'site-data.json')))
+    homes={};per={}
+    for t in S['tabs']:
+        ks=[k for s in t['sections'] for r in s['rows'] for k in [r['_rec']]+r.get('_also',[])];homes[t['key']]=ks;per[t['name']]=len(ks)
+    ok,dup=check(homes,K,'data',fail)
+    raw=open(os.path.join(SITE,'site-data.json'),encoding='utf-8').read()+open(os.path.join(SITE,'index.html'),encoding='utf-8').read()+open(os.path.join(SITE,'app.js'),encoding='utf-8').read()
+    if re.search('[\u2013\u2014]',raw):fail.append('em or en dash found in site text')
+    from openpyxl import load_workbook
+    wb=load_workbook(os.path.join(SITE,S['workbook']),read_only=True)
+    if wb.sheetnames!=[t['name'][:31] for t in S['tabs']]:fail.append('workbook sheets %s do not match tabs'%wb.sheetnames)
+    else:
+        for t in S['tabs']:
+            vals=[r for r in wb[t['name'][:31]].iter_rows(values_only=True)];i=0
+            for s in t['sections']:
+                while i<len(vals) and vals[i][0]!=s['name']:i+=1
+                hdr=[x for x in vals[i+1] if x is not None];ids=[str(v[[c[0] for c in s['cols']].index('id')]) for v in vals[i+2:i+2+len(s['rows'])]]
+                if hdr!=[c[1] for c in s['cols']]:fail.append('workbook columns drift: '+s['name'])
+                if ids!=[str(r['id']) for r in s['rows']]:fail.append('workbook IDs drift: '+s['name'])
+                i+=2+len(s['rows'])
+    print('records %d, homed exactly once %d, duplicates %d'%(len(K),ok-dup,dup));print('per tab',per)
+    rep={'records':len(K),'perTab':per}
     if '--dom' in sys.argv:
-        url=sys.argv[sys.argv.index('--dom')+1];dom=dom_scan(url,K,R,PK);rep['dom']=dom
-        for t in TABS:print('DOM %-10s expected %4d present %4d missing %d'%(t,dom[t]['expected'],dom[t]['present'],len(dom[t]['missing'])))
-        for t in TABS:fail+=['%s missing in DOM: %s'%(t,k) for k in dom[t]['missing']]
-        for t,pre in PTABS.items():
-            m=dom['p_'+t];print('DOM %-11s expected %4d present %4d'%(t,len(PK[pre]),len(PK[pre])-len(m)));fail+=['%s missing in DOM: %s'%(t,k) for k in m]
-        if dom['errors']:fail.append('console errors: %s'%dom['errors'][:3])
+        url=sys.argv[sys.argv.index('--dom')+1];dom,errs=dom_scan(url,S);rep['domPerTab']={k:len(v) for k,v in dom.items()};rep['errors']=errs
+        okd,dupd=check(dom,K,'DOM',fail);print('DOM homed %d/%d, duplicates %d'%(okd,len(K),dupd),rep['domPerTab'])
+        if errs:fail.append('console errors: %s'%errs[:3])
     out=[a for a in sys.argv[1:] if a.endswith('.json')]
-    if out:json.dump(rep,open(out[0],'w'),indent=1,default=list)
+    if out:json.dump(rep,open(out[0],'w'),indent=1)
     for f in fail[:60]:print('FAIL',f)
     print('COVERAGE','FAIL (%d)'%len(fail) if fail else 'OK');sys.exit(1 if fail else 0)
-def needles(k,R):
-    t,i=k.split(':',1);n=[i]
-    if t=='FIN':
-        f=next(x for x in R['fin'] if x['Key']==i);n=[f.get('Signing / counterparty entity','')]
-    if t=='TERMS':
-        x=next(x for x in R['terms'] if x['_k']==i);n=[str(x.get('Programme',''))]
-    if t=='LHA':
-        x=next(x for x in R['lha'] if x['Lookup key (BRMA|beds)']==i);n=['%.2f'%x['LHA £ pcm (UC monthly)']]
-    if t=='METH':
-        x=next(x for x in R['meth'] if x['_k']==i);n=[x['cells'][0][:60]]
-    return [s for s in n if s]
-def dom_scan(url,K,R,PK=None):
+def dom_scan(url,S,shots=None):
     from playwright.sync_api import sync_playwright
-    res={'errors':[]}
+    errs=[];res={}
     with sync_playwright() as p:
-        b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox']);pg=b.new_page(viewport={'width':1400,'height':1000})
-        pg.on('console',lambda m:m.type=='error' and res['errors'].append(m.text));pg.on('pageerror',lambda e:res['errors'].append(str(e)))
+        b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox']);pg=b.new_page(viewport={'width':1500,'height':1000})
+        pg.on('console',lambda m:m.type=='error' and errs.append(m.text));pg.on('pageerror',lambda e:errs.append(str(e)))
         pg.goto(url,wait_until='networkidle')
-        for t in TABS:
-            pg.evaluate(f"viewMode('{t}')");pg.wait_for_timeout(3000)
-            d=pg.evaluate("""(()=>{const v=[...document.querySelectorAll('[id$=_view]')].find(x=>!x.classList.contains('hidden'))||document.body;
-              const recs=[...v.querySelectorAll('[data-rec]')].flatMap(x=>x.dataset.rec.split(' '));return {recs,txt:v.textContent}})()""")
-            recs=set(d['recs']);txt=d['txt'];exp=[k for k,v in K.items() if t in v];pres=[];all_=[]
-            for k in K:
-                ok=k in recs or any(n in txt for n in needles(k,R))
-                if ok:all_.append(k)
-            miss=[k for k in exp if k not in all_]
-            res[t]={'expected':len(exp),'present':len(exp)-len(miss),'anyRecordPresent':len(all_),'missing':miss}
-        for t,pre in PTABS.items():
-            pg.evaluate(f"viewMode('{t}')");pg.wait_for_timeout(2500)
-            recs=set(pg.evaluate("[...document.querySelectorAll('#mp_view [data-rec]')].map(x=>x.dataset.rec)"))
-            res['p_'+t]=[k for k in (PK or {}).get(pre,[]) if pre+':'+k not in recs]
+        for t in S['tabs']:
+            pg.evaluate("location.hash='%s'"%t['key']);pg.wait_for_timeout(1200)
+            res[t['key']]=pg.evaluate("[...document.querySelectorAll('[data-rec]')].flatMap(x=>[x.dataset.rec,...(x.dataset.also||'').split(';').filter(Boolean)])")
+            if shots:pg.screenshot(path=os.path.join(shots,t['key']+'.png'))
         b.close()
-    return res
+    return res,errs
 if __name__=='__main__':main()
