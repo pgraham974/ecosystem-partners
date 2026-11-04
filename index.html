@@ -1142,4 +1142,5 @@ function sheetsCSV(){const s=sheetsCurrent(),rows=[s.columns,...sheetsRows(s)];c
 
 opCompute=async function(city){return {}};
 loadScript(new URL('partner-flow-model.js?v=market-v2',location.href).href).then(()=>loadScript(new URL('partner-flow-ui.js?v=market-v2',location.href).href)).then(()=>loadScript(new URL('market-score.js?v=market-v2',location.href).href)).then(()=>loadScript(new URL('market-upgrade.js?v=market-v2',location.href).href)).then(()=>loadScript(new URL('mack-model.js?v=20261103',location.href).href)).then(()=>loadScript(new URL('mack-living.js?v=20261103',location.href).href)).then(()=>loadScript(new URL('v4-enrich.js?v=v4-20261103d',location.href).href)).then(()=>init()).then(()=>loadScript(new URL('mack-pipeline-model.js?v=mp1',location.href).href)).then(()=>loadScript(new URL('mack-pipeline.js?v=mp1',location.href).href)).then(()=>MackPipeline.start()).catch(e=>{$('#status').textContent='Partner research could not start: '+e.message});
-</script></body></html>
+</script><script src="ask-pipeline.js?v=1" defer></script>
+</body></html>
