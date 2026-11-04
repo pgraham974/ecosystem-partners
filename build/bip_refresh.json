@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-04",
+ "checked": "2026-11-03",
  "note": "Live BiP re-fetch 3 Nov 2026 (get_award / search_spend_transactions). Overlays BiP_Evidence values in the site build; workbook cells unchanged.",
  "records": {
   "BE-01": {
@@ -103,7 +103,7 @@
   },
   "BE-16": {
    "value": 16844.37,
-   "basis": "Actual payments: Bury Council to ICAB, 12 payments, Aug 2026 (BiP spend refresh); ICAB also paid by LB Wandsworth £90,963.68 (12) and LB Haringey £446,168.30 (4) in Aug 2026",
+   "basis": "Actual payments: Bury Council to ICAB, 12 payments, Aug 2026 (BiP spend refresh); ICAB also paid by LB Wandsworth \u00a390,963.68 (12) and LB Haringey \u00a3446,168.30 (4) in Aug 2026",
    "spendByBuyer": {
     "Bury Council": [
      16844.37,
@@ -129,21 +129,5 @@
     ]
    }
   }
- },
- "sync": {
-  "date": "2026-11-04",
-  "notices": [
-   6037612192,
-   6037912814,
-   6037484974,
-   6037638682
-  ],
-  "awardsReviewed": 17,
-  "awardsRelevant": [
-   "Rochdale HFLS to The Bond Board £370,352 (6037484853)",
-   "Lambeth Adults Supported Accommodation Pathway to Thames Reach and St Mungo (several awards, £1.7m to £4.08m each)",
-   "Milton Keynes TA booking platform to Access Accounting £429,000 (6037639827)"
-  ],
-  "mackSpend": "0 rows 1 to 4 Nov 2026"
  }
 }
