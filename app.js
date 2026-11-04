@@ -7,7 +7,7 @@ function link(v){const t=IDX[v];return t?'<a class="ln" href="#'+t+'/'+encodeURI
 function cell(k,v){if(v==null||v==='')return '<span class="mu">-</span>';if(Array.isArray(v))return v.length?v.map(link).join(' '):'<span class="mu">-</span>';
  if(k==='status')return '<span class="pill" style="color:'+col(v)+';border-color:'+col(v)+'">'+e(v)+'</span>';
  if(typeof v==='string'&&/^https?:\/\//.test(v))return '<a href="'+e(v)+'" target="_blank" rel="noopener">link</a>';
- if(['partner','record'].includes(k)||IDX[v]&&k!=='id')return link(v);return e(v)}
+ if(typeof v==='string'&&v.length>140)return '<div class="cl" title="'+e(v)+'">'+e(v)+'</div>';if(['partner','record'].includes(k))return link(v);return e(v)}
 function rerank(sec){const w=W();const by={};sec.rows.forEach(r=>by[r.id]=r);
  const out=M.rank(sec.rows.map(r=>({id:r.id,inputs:{A:r.A,B:r.B,C:r.C,D:r.D,E:r.E},gates:r._gates})),w);
  return out.map(o=>Object.assign({},by[o.id],{rank:o.rank,status:o.s.status,score:o.s.score,coverage:Math.round(o.s.coverage*100)}))}

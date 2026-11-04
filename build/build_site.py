@@ -29,7 +29,7 @@ def score(i,W):
     return st,sc,(None if raw is None else round(raw,1)),round(cov,2)
 def gbp(v):
     if v is None:return None
-    return '£%.1fm'%(v/1e6) if v>=1e6 else '£%dk'%round(v/1e3) if v>=1e3 else '£%d'%round(v)
+    return '£%.1fbn'%(v/1e9) if v>=1e9 else '£%.1fm'%(v/1e6) if v>=1e6 else '£%dk'%round(v/1e3) if v>=1e3 else '£%d'%round(v)
 def j(x):return ', '.join(str(a) for a in x if a not in (None,'')) if isinstance(x,list) else x
 OPP={o['id']:o for o in J['opps']}
 def otab(o):
@@ -51,7 +51,7 @@ for i,st,sc,raw,cov in items:
     also=(['ML:'+i['ml']] if i.get('ml') else [])+(['NEW:'+newby[i['name']]] if i['name'] in newby else [])
     prow.append({'_rec':'PIPE:'+i['id'],'_also':also,'rank':r,'id':i['id'],'name':i['name'],'partner':pid.get(i['buyer']),'kind':i['kind'],'region':i['region'],
      'status':st,'score':sc,'coverage':round(cov*100),**{k:i['inputs'].get(k) for k in KEYS},
-     'gates':' '.join('%s %s'%(k.replace('G-',''),v) for k,v in i['gates'].items()),'mack':i['mackPos'],'deadline':i.get('deadline'),
+     'gates':', '.join('%s %s'%(k.replace('G-',''),v) for k,v in i['gates'].items()),'mack':i['mackPos'],'deadline':i.get('deadline'),
      'dates':' to '.join(x for x in (i.get('start'),i.get('end')) if x) or None,'value':gbp(i.get('value')),
      'basis':(None if i.get('value') is None else 'Actual spend' if re.search('actual',i.get('basis') or '',re.I) else 'Ceiling, not committed'),
      'incumbents':j(i['incumbents']),'why':i['why'],'next':i['next'],'sources':i['bip']+i['facts'],'records':i['opps'],'_gates':i['gates']})
