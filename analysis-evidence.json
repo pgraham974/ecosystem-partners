@@ -12,6 +12,7 @@
     {"file": "mack-living.json", "label": "Mack Living route file", "updated": "2026-11-03"},
     {"file": "mack-monday.json", "label": "Monday meeting file", "updated": "2026-11-10"},
     {"file": "scoring-weights.json", "label": "Score weights", "updated": "2026-11-10"},
+    {"file": "competitors.json", "label": "Competitors", "updated": "2026-11-10", "also": "Recovered from the Mack pipeline file and checked against v4 built 2026-11-03"},
     {"file": "analysis-evidence.json", "label": "Analysis evidence", "updated": "2026-11-10"}
   ],
   "lha": {

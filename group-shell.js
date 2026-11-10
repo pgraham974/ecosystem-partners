@@ -5,12 +5,12 @@
   const $ = window.$ || (s => document.querySelector(s));
   const esc = window.esc || (s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])));
   const NOTES_KEY = 'gh-monday-notes';
-  const state = {mode:'market', section:'', shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, lha:null, frameworks:0};
+  const state = {mode:'market', section:'', shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, lha:null, frameworks:0, competitors:null, compRegion:''};
   const previous = viewMode;
 
   function asset(name) {
     const url = new URL(name, location.href);
-    url.searchParams.set('v', 'group-20261110b');
+    url.searchParams.set('v', 'group-20261110c');
     return url.href;
   }
   async function loadJson(name) {
@@ -104,7 +104,7 @@
       const buttons = [['market', 'Matrix', !state.shortlist && state.mode !== 'directory'], ['market/shortlist', 'Shortlist', state.shortlist], ['market/directory', 'Directory', state.mode === 'directory' && !topOn], ['market/top', 'Top 10', !!topOn]];
       sub.innerHTML = buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
     } else if (top === 'analysis') {
-      const buttons = [['analysis/regions', 'Evidence', state.section === 'regions' || state.section === 'top'], ['analysis/contracts', 'Contracts', state.section === 'contracts'], ['analysis/frameworks', 'Framework records', state.section === 'frameworks'], ['analysis/opportunities', 'Opportunity records', state.section === 'opportunities'], ['analysis/workbook', 'Workbook', state.section === 'workbook']];
+      const buttons = [['analysis/regions', 'Evidence', state.section === 'regions' || state.section === 'top'], ['analysis/competitors', 'Competitors', state.section === 'competitors'], ['analysis/contracts', 'Contracts', state.section === 'contracts'], ['analysis/frameworks', 'Framework records', state.section === 'frameworks'], ['analysis/opportunities', 'Opportunity records', state.section === 'opportunities'], ['analysis/workbook', 'Workbook', state.section === 'workbook']];
       sub.innerHTML = buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
     } else sub.innerHTML = '<span class="foot">Monday morning Mack Living and Laurito Capital</span>';
     sub.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
@@ -158,7 +158,7 @@
     renderAnalysis();
     paint();
     setHash(name === 'top' ? 'analysis' : 'analysis/' + name);
-    const anchor = name === 'contracts' ? 'gh-contracts' : (name === 'regions' ? 'gh-regions' : (name.indexOf('region/') === 0 ? 'region-' + name.slice(7) : ''));
+    const anchor = name === 'contracts' ? 'gh-contracts' : (name === 'competitors' ? 'gh-competitors' : (name === 'regions' ? 'gh-regions' : (name.indexOf('region/') === 0 ? 'region-' + name.slice(7) : '')));
     if (anchor) { const node = document.getElementById(anchor); if (node) node.scrollIntoView({block:'start'}); }
   }
   function renderMack() {
@@ -199,18 +199,47 @@
     const bip = state.evidence.bip;
     const host = $('#analysis-body');
     host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Analysis Dashboard</p><h1>Regions, evidence and opportunities</h1><p class="lc-purpose">' + esc(COPY.analysisLead) + '</p></div>'
-      + '<section class="card"><h2>Dashboard framework</h2><p>' + esc(COPY.framework) + '</p><p class="foot">' + state.frameworks + ' framework records, file ' + esc(state.frameworksUpdated) + '.</p><div class="gh-shortcuts"><button type="button" class="btn sec" data-gh-go="analysis/frameworks">Framework records</button><button type="button" class="btn sec" data-gh-go="analysis/opportunities">Opportunity records</button><button type="button" class="btn sec" data-gh-go="analysis/return">Return check</button><button type="button" class="btn sec" data-gh-go="analysis/workbook">Workbook</button><button type="button" class="btn sec" data-gh-go="market/shortlist">Market Screen shortlist</button></div><p class="foot">' + esc(COPY.propertySite) + ' <a href="https://pgraham974.github.io/ecosystem-deals/" target="_blank" rel="noopener">Property comparison site</a></p></section>'
+      + '<section class="card"><h2>Dashboard framework</h2><p>' + esc(COPY.framework) + '</p><p class="foot">' + state.frameworks + ' framework records, file ' + esc(state.frameworksUpdated) + '.</p><div class="gh-shortcuts"><button type="button" class="btn sec" data-gh-go="analysis/competitors">Competitors</button><button type="button" class="btn sec" data-gh-go="analysis/frameworks">Framework records</button><button type="button" class="btn sec" data-gh-go="analysis/opportunities">Opportunity records</button><button type="button" class="btn sec" data-gh-go="analysis/return">Return check</button><button type="button" class="btn sec" data-gh-go="analysis/workbook">Workbook</button><button type="button" class="btn sec" data-gh-go="market/shortlist">Market Screen shortlist</button></div><p class="foot">' + esc(COPY.propertySite) + ' <a href="https://pgraham974.github.io/ecosystem-deals/" target="_blank" rel="noopener">Property comparison site</a></p></section>'
       + '<section class="card" id="gh-datasets">' + datasetBlock(true) + '</section>'
       + '<section class="card" id="gh-regions"><h2>Priority regions</h2><p class="foot">Each region is a placeholder to confirm. It is seeded from coverage already in this repo.</p><div class="gh-grid">' + state.monday.regions.map((row) => '<article><h3>' + esc(row.name) + '</h3><p><span class="tag a">' + esc(row.status) + '</span></p><p class="foot">' + esc(row.seededFrom) + '</p></article>').join('') + '</div></section>'
       + '<section class="card" id="gh-lha"><h2>' + esc(COPY.lhaTitle) + '</h2><p>Monthly Universal Credit rates for ' + esc(lha.period) + ', valid ' + esc(lha.validFrom) + ' to ' + esc(lha.validTo) + '. Publisher: ' + esc(lha.publisher) + '.</p><p><a href="' + esc(lha.publicationUrl) + '" target="_blank" rel="noopener">GOV.UK publication</a> · <a href="' + esc(lha.englandCsv) + '" target="_blank" rel="noopener">England CSV</a> · <a href="' + esc(lha.voaLookup) + '" target="_blank" rel="noopener">VOA postcode lookup</a></p><p class="foot">Publication updated ' + esc(lha.publicationUpdated) + '. ' + esc(lha.publicationUpdatedNote) + '</p><p class="foot">Rate file retrieved ' + esc(lha.fileRetrieved) + ' and matched ' + esc(lha.fileVerified) + '. ' + esc(lha.spotCheckNote) + '</p><p>' + esc(lha.guidance) + '</p>' + lhaTable(picked)
       + '<details class="ms-fold"><summary>All BRMAs in the rate file (' + state.lha.rates.length + ')</summary><p class="foot">Scotland CSV and Wales CSV were part of the 3 November 2026 match. <a href="' + esc(lha.scotlandCsv) + '" target="_blank" rel="noopener">Scotland</a> · <a href="' + esc(lha.walesCsv) + '" target="_blank" rel="noopener">Wales</a></p>' + lhaTable(state.lha.rates) + '</details></section>'
       + '<section class="card" id="gh-benchmarks"><h2>' + esc(COPY.benchmarksTitle) + '</h2><p>' + esc(COPY.benchmarksIntro) + '</p>' + benchmarks + '</section>'
+      + competitorSection()
       + '<section class="card" id="gh-contracts"><h2>' + esc(COPY.contractsTitle) + '</h2><h3>' + esc(COPY.routesTitle) + '</h3><p class="foot">' + esc(COPY.routesIntro) + ' Route file ' + esc(state.routesUpdated) + '.</p><div class="scroll"><table><thead><tr><th class="l">Route</th><th class="l">Area</th><th class="l">Recorded status</th><th>As of</th></tr></thead><tbody>'
       + routes.map((row) => '<tr><td class="l"><b>' + shown(row.shortName || row.name) + '</b><details><summary>Blocker on file</summary><p>' + shown(row.blockerSummary || row.primaryBlocker || COPY.blank) + '</p></details></td><td class="l">' + shown((row.regions || []).map((id) => regionName[id] || id).join(', ')) + '</td><td class="l">' + shown(row.statusLabel || '') + '</td><td>' + esc(row.statusAsOf || '') + '</td></tr>').join('')
       + '</tbody></table></div><article class="card" id="gh-manchester-cas"><h3>' + esc(card.name) + '</h3><p><span class="tag a">' + esc(card.status) + '</span></p><p>' + esc(COPY.manchester) + '</p><dl class="kv">' + fields.map(([key, label]) => '<dt>' + esc(label) + '</dt><dd>' + esc(card[key] ? card[key] : COPY.blank) + '</dd>').join('') + '</dl></article></section>'
       + bipBlock(bip);
     host.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
+    host.querySelectorAll('[data-bip]').forEach((button) => button.onclick = () => openBip(button.dataset.bip));
+    const regionPick = document.getElementById('gh-comp-region');
+    if (regionPick) regionPick.onchange = () => { state.compRegion = regionPick.value; renderAnalysis(); const node = document.getElementById('gh-competitors'); if (node) node.scrollIntoView({block:'start'}); };
   }
+  async function openBip(id) {
+    state.mode = 'analysis';
+    state.section = 'frameworks';
+    state.shortlist = false;
+    previous('frameworks');
+    paint();
+    setHash('analysis/frameworks');
+    for (let i = 0; i < 40; i++) {
+      const chip = document.querySelector('[data-rec="BIP:' + id + '"]');
+      if (chip) { chip.scrollIntoView({block:'center'}); return; }
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
+  }
+  function competitorSection() {
+    const all = (state.competitors && state.competitors.competitors) || [];
+    const regions = [...new Set(all.map((row) => row.region))].sort((a, b) => a.localeCompare(b, 'en'));
+    const shown = GroupModel.filterCompetitors(all, state.compRegion);
+    const cards = shown.map((row) => {
+      const awards = (row.bip || []).map((id) => '<button type="button" class="btn sec" data-bip="' + esc(id) + '">' + esc(id) + '</button>').join(' ');
+      const opps = (row.competesOn || []).map((link) => link.id ? '<b>' + esc(link.id) + '</b> ' + esc(link.name) : esc(link.name) + ' <span class="foot">' + esc(COPY.noCurrentOpp) + '</span>').join('<br>');
+      return '<article class="gh-comp"><h3>' + esc(row.name) + ' <span class="foot">' + esc(row.id) + '</span></h3><p>' + esc(row.entity || COPY.blank) + '</p><p>' + esc(row.region) + ' · ' + esc(row.type) + '</p><p>BiP awards ' + (awards || esc(COPY.blank)) + '</p><p>Competes on<br>' + (opps || esc(COPY.blank)) + '</p><details><summary>Note</summary><p>' + shownText(row.note) + (row.also ? '</p><p class="foot">' + shownText(row.also) : '') + '</p></details></article>';
+    }).join('');
+    return '<section class="card" id="gh-competitors"><h2>' + esc(COPY.competitorsTitle) + '</h2><p>' + esc(COPY.competitorsIntro) + '</p><p class="foot">File ' + esc((state.competitors && state.competitors.updated) || '') + '.</p><div class="ctl"><label>Region <select id="gh-comp-region"><option value="">All regions</option>' + regions.map((region) => '<option value="' + esc(region) + '"' + (state.compRegion === region ? ' selected' : '') + '>' + esc(region) + '</option>').join('') + '</select></label><span class="foot">' + shown.length + ' of ' + all.length + ' shown</span></div>' + cards + '</section>';
+  }
+  function shownText(value) { return shown(value || COPY.blank); }
   function bipBlock(bip) {
     const built = new Date(bip.built + 'T00:00:00');
     const age = Math.floor((Date.now() - built.getTime()) / 86400000);
@@ -289,12 +318,13 @@
 
   try { state.localNotes = localStorage.getItem(NOTES_KEY) || ''; } catch (error) { state.localNotes = ''; }
   const ready = (async () => {
-    const [scores, monday, evidence, living, lha, frameworks] = await Promise.all([
-      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json')
+    const [scores, monday, evidence, living, lha, frameworks, competitors] = await Promise.all([
+      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json')
     ]);
     state.scores = scores;
     state.monday = monday;
     state.evidence = evidence;
+    state.competitors = competitors;
     state.routes = living.contracts || [];
     state.routesUpdated = living.updated || '';
     state.lha = lha;

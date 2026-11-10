@@ -109,6 +109,7 @@ test('dataset catalogue dates match the source files', () => {
     'mack-living.json': read('mack-living.json').updated,
     'mack-monday.json': monday.updated,
     'scoring-weights.json': weights.updated,
+    'competitors.json': read('competitors.json').updated,
     'analysis-evidence.json': evidence.updated
   };
   assert.equal(Model.datasetMismatches(evidence.datasets, actual).length, 0);
@@ -126,5 +127,30 @@ test('BiP reference uses the existing build date and does not replace the feed',
   assert.equal(evidence.bip.view, 'analysis/frameworks');
   assert.match(evidence.bip.source, /v4-enrich.json/);
   assert.equal(evidence.vip, undefined);
+});
+test('64 competitors restored and linked to current ids', () => {
+  const file = read('competitors.json');
+  const enrich = read('v4-enrich.json');
+  const ids = new Set(enrich.opps.map((row) => row.id).concat(enrich.newItems.map((row) => row.id)));
+  const bip = new Set(Object.keys(enrich.bip));
+  assert.equal(file.count, 64);
+  assert.equal(file.competitors.length, 64);
+  assert.equal(file.recoveredFrom, 'd847727 mack-pipeline.json');
+  const mears = file.competitors.find((row) => row.id === 'GM-001');
+  assert.equal(mears.name, 'Mears Group');
+  assert.equal(mears.entity, 'Mears Limited');
+  assert.deepEqual(mears.bip, ['BE-01', 'BE-19']);
+  assert.ok(mears.competesOn.some((link) => link.id === 'MJ-001'));
+  assert.ok(mears.competesOn.some((link) => link.id === 'GM-046'));
+  const places = file.competitors.find((row) => row.competesOn.some((link) => link.was === 'MP-19'));
+  assert.equal(places.competesOn.find((link) => link.was === 'MP-19').id, 'NEW-PFP-DECANT');
+  for (const row of file.competitors) {
+    for (const award of row.bip) assert.equal(bip.has(award), true, row.id + ' ' + award);
+    for (const link of row.competesOn) if (link.id) assert.equal(ids.has(link.id), true, link.id);
+  }
+  assert.equal(Model.filterCompetitors(file.competitors, '').length, 64);
+  assert.equal(Model.filterCompetitors(file.competitors, 'Greater Manchester').length, 27);
+  assert.equal(Model.filterCompetitors(file.competitors, 'England and Wales').length, 31);
+  assert.equal(JSON.stringify(file).includes('\u2014') || JSON.stringify(file).includes('\u2013'), false);
 });
 if (failed) process.exit(1);

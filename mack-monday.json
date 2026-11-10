@@ -48,6 +48,7 @@
     {"id": "shortlist", "label": "Market Screen shortlist", "hash": "market/shortlist"},
     {"id": "contracts", "label": "Open contract opportunities", "hash": "analysis/contracts"},
     {"id": "bip", "label": "BiP awards and pipeline", "hash": "analysis/frameworks"},
+    {"id": "competitors", "label": "Competitors", "hash": "analysis/competitors"},
     {"id": "agenda", "label": "Agenda and notes", "hash": "mack/agenda"}
   ],
   "agenda": [

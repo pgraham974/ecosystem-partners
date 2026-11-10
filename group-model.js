@@ -43,6 +43,11 @@
     walk(value, path || '');
     return found;
   }
+  function filterCompetitors(rows, region) {
+    const list = Array.isArray(rows) ? rows : [];
+    if (!region) return list.slice();
+    return list.filter((row) => row.region === region);
+  }
   function datasetMismatches(catalogue, actual) {
     const mismatches = [];
     for (const row of catalogue) {
@@ -72,7 +77,10 @@
     propertySite: 'The separate property comparison site remains at the existing address. It is not this Analysis Dashboard.',
     benchmarksIntro: 'Guaranteed rent and management fee amounts are shown only where a public source is already cited. Otherwise the slot says to be supplied. Marketing lines in the operator file are not treated as a fee.',
     routesIntro: 'These routes are already in mack-living.json. They are outreach notes, not awards. The Manchester CAS card under them is separate and blank.',
-    weightsInUse: 'Weights in use'
+    weightsInUse: 'Weights in use',
+    competitorsTitle: 'Competitors',
+    competitorsIntro: 'Recovered from the Mack pipeline file on 10 November 2026 and checked against the v4 file built 3 November 2026. BiP buttons open the existing award tables on Framework records.',
+    noCurrentOpp: 'No current opportunity id.'
   });
-  root.GroupModel = Object.freeze({KEYS, sum, checkWeights, groupTotals, blankCard, scanCopy, datasetMismatches, COPY});
+  root.GroupModel = Object.freeze({KEYS, sum, checkWeights, groupTotals, blankCard, scanCopy, datasetMismatches, filterCompetitors, COPY});
 })(typeof window !== 'undefined' ? window : globalThis);
