@@ -118,9 +118,13 @@ test('new copy has no semicolon or dash', () => {
   for (const file of files) assert.equal(Model.scanCopy(read(file)).length, 0, file);
   assert.equal(Model.scanCopy(Model.COPY).length, 0);
 });
-test('VIP section does not invent a feed', () => {
-  assert.equal(evidence.vip.inRepo, false);
-  assert.equal(evidence.vip.pipeline[0].includes('None is in this repo'), true);
-  assert.equal(JSON.stringify(evidence.vip).includes('http'), false);
+test('BiP reference uses the existing build date and does not replace the feed', () => {
+  const refresh = read('build/bip_refresh.json');
+  const enrich = read('v4-enrich.json');
+  assert.equal(evidence.bip.built, enrich.built.slice(0, 10));
+  assert.equal(evidence.bip.refreshChecked, refresh.checked);
+  assert.equal(evidence.bip.view, 'analysis/frameworks');
+  assert.match(evidence.bip.source, /v4-enrich.json/);
+  assert.equal(evidence.vip, undefined);
 });
 if (failed) process.exit(1);

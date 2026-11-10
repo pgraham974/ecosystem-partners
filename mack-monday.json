@@ -47,6 +47,7 @@
     {"id": "regions", "label": "Priority regions", "hash": "analysis/regions"},
     {"id": "shortlist", "label": "Market Screen shortlist", "hash": "market/shortlist"},
     {"id": "contracts", "label": "Open contract opportunities", "hash": "analysis/contracts"},
+    {"id": "bip", "label": "BiP awards and pipeline", "hash": "analysis/frameworks"},
     {"id": "agenda", "label": "Agenda and notes", "hash": "mack/agenda"}
   ],
   "agenda": [

@@ -78,22 +78,12 @@
     "next": "",
     "sources": []
   },
-  "vip": {
-    "inRepo": false,
-    "checked": "2026-11-10",
-    "finding": "Nothing in this repository is a VIP Tracker feed, schema, client or import.",
-    "worthBringing": [
-      "Opportunity status and the last time that status changed",
-      "Bid or response deadlines",
-      "A link from a VIP record to a counterparty already on the Market Screen",
-      "The region, so the Monday list and the Analysis Dashboard can use the same names"
-    ],
-    "pipeline": [
-      "A documented VIP export or API has to be supplied first. None is in this repo, so no address is guessed here.",
-      "A scheduled job would fetch that source and refuse the run if the payload has no source timestamp.",
-      "The job would write one JSON file whose updated field is that source timestamp, then this page would read only that file.",
-      "Until that file exists, this page shows no VIP rows."
-    ],
-    "staleRisk": "If a feed is connected later and the job stops, or if someone pastes a partial extract, the rows would go out of date while still looking current. Every dataset on this page shows its last-updated date so a stale file is visible. An incomplete VIP link must not be read as a live tracker."
+  "bip": {
+    "name": "BiP Intelligence",
+    "built": "2026-11-03",
+    "refreshChecked": "2026-11-03",
+    "source": "Licensed BiP Intelligence awards, notices and spend already carried in v4-enrich.json. The 3 November 2026 refresh overlay is build/bip_refresh.json.",
+    "where": "Framework records show the BiP award, notice and spend tables. The workbook holds the same evidence rows. This page only links to that existing view.",
+    "view": "analysis/frameworks"
   }
 }

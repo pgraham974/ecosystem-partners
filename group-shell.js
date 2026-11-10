@@ -10,7 +10,7 @@
 
   function asset(name) {
     const url = new URL(name, location.href);
-    url.searchParams.set('v', 'group-20261110');
+    url.searchParams.set('v', 'group-20261110b');
     return url.href;
   }
   async function loadJson(name) {
@@ -196,7 +196,7 @@
     const routes = state.monday.contractIds.map((id) => state.routes.find((row) => row.id === id)).filter(Boolean);
     const card = state.evidence.manchesterCas;
     const fields = [['buyer', 'Buyer'], ['notice', 'Notice'], ['value', 'Value'], ['term', 'Term'], ['geography', 'Geography'], ['route', 'Route'], ['rent', 'Rent'], ['deadline', 'Deadline'], ['contacts', 'Contacts'], ['next', 'Next step']];
-    const vip = state.evidence.vip;
+    const bip = state.evidence.bip;
     const host = $('#analysis-body');
     host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Analysis Dashboard</p><h1>Regions, evidence and opportunities</h1><p class="lc-purpose">' + esc(COPY.analysisLead) + '</p></div>'
       + '<section class="card"><h2>Dashboard framework</h2><p>' + esc(COPY.framework) + '</p><p class="foot">' + state.frameworks + ' framework records, file ' + esc(state.frameworksUpdated) + '.</p><div class="gh-shortcuts"><button type="button" class="btn sec" data-gh-go="analysis/frameworks">Framework records</button><button type="button" class="btn sec" data-gh-go="analysis/opportunities">Opportunity records</button><button type="button" class="btn sec" data-gh-go="analysis/return">Return check</button><button type="button" class="btn sec" data-gh-go="analysis/workbook">Workbook</button><button type="button" class="btn sec" data-gh-go="market/shortlist">Market Screen shortlist</button></div><p class="foot">' + esc(COPY.propertySite) + ' <a href="https://pgraham974.github.io/ecosystem-deals/" target="_blank" rel="noopener">Property comparison site</a></p></section>'
@@ -208,17 +208,25 @@
       + '<section class="card" id="gh-contracts"><h2>' + esc(COPY.contractsTitle) + '</h2><h3>' + esc(COPY.routesTitle) + '</h3><p class="foot">' + esc(COPY.routesIntro) + ' Route file ' + esc(state.routesUpdated) + '.</p><div class="scroll"><table><thead><tr><th class="l">Route</th><th class="l">Area</th><th class="l">Recorded status</th><th>As of</th></tr></thead><tbody>'
       + routes.map((row) => '<tr><td class="l"><b>' + shown(row.shortName || row.name) + '</b><details><summary>Blocker on file</summary><p>' + shown(row.blockerSummary || row.primaryBlocker || COPY.blank) + '</p></details></td><td class="l">' + shown((row.regions || []).map((id) => regionName[id] || id).join(', ')) + '</td><td class="l">' + shown(row.statusLabel || '') + '</td><td>' + esc(row.statusAsOf || '') + '</td></tr>').join('')
       + '</tbody></table></div><article class="card" id="gh-manchester-cas"><h3>' + esc(card.name) + '</h3><p><span class="tag a">' + esc(card.status) + '</span></p><p>' + esc(COPY.manchester) + '</p><dl class="kv">' + fields.map(([key, label]) => '<dt>' + esc(label) + '</dt><dd>' + esc(card[key] ? card[key] : COPY.blank) + '</dd>').join('') + '</dl></article></section>'
-      + '<section class="card" id="gh-vip"><h2>' + esc(COPY.vipTitle) + '</h2><p>' + esc(vip.finding) + ' Checked ' + esc(vip.checked) + '.</p><h3>Worth bringing in later</h3><ul>' + vip.worthBringing.map((item) => '<li>' + esc(item) + '</li>').join('') + '</ul><h3>Possible pipeline</h3><ol>' + vip.pipeline.map((item) => '<li>' + esc(item) + '</li>').join('') + '</ol><p class="gh-proposed">' + esc(vip.staleRisk) + '</p></section>';
+      + bipBlock(bip);
     host.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
+  }
+  function bipBlock(bip) {
+    const built = new Date(bip.built + 'T00:00:00');
+    const age = Math.floor((Date.now() - built.getTime()) / 86400000);
+    const stale = age > 2 ? '<p class="gh-proposed">Last BiP build ' + esc(bip.built) + ' is ' + age + ' days old. Treat the awards and spend as dated.</p>' : '<p class="foot">Last BiP build ' + esc(bip.built) + '.</p>';
+    return '<section class="card" id="gh-bip"><h2>' + esc(COPY.bipTitle) + '</h2><p>' + esc(bip.source) + '</p><p>' + esc(bip.where) + '</p><p class="foot">Refresh overlay checked ' + esc(bip.refreshChecked) + '.</p>' + stale + '<button type="button" class="btn sec" data-gh-go="' + esc(bip.view) + '">' + esc(COPY.bipOpen) + '</button></section>';
   }
   function decorateMarket() {
     const host = $('#ps_body');
     const hero = host && host.querySelector('.ms-hero');
     if (!hero || host.querySelector('#gh-market-extra')) return;
     const setNote = state.setId === 'proposed' ? 'Proposed weights, not agreed.' : 'Current live weights.';
-    hero.insertAdjacentHTML('afterend', '<div class="card" id="gh-market-extra"><p>' + esc(COPY.marketSteps) + '</p><p><b>' + esc(COPY.weightsInUse) + ':</b> ' + esc(setNote) + '</p>' + (state.shortlist ? '<p class="gh-proposed">' + esc(COPY.shortlist) + (host.querySelectorAll('#ms-matrix tbody tr').length ? '' : ' ' + esc(COPY.shortlistEmpty)) + '</p>' : '') + datasetBlock(false) + '</div>');
+    const bip = state.evidence && state.evidence.bip;
+    hero.insertAdjacentHTML('afterend', '<div class="card" id="gh-market-extra"><p>' + esc(COPY.marketSteps) + '</p><p><b>' + esc(COPY.weightsInUse) + ':</b> ' + esc(setNote) + '</p>' + (state.shortlist ? '<p class="gh-proposed">' + esc(COPY.shortlist) + (host.querySelectorAll('#ms-matrix tbody tr').length ? '' : ' ' + esc(COPY.shortlistEmpty)) + '</p>' : '') + (bip ? '<p class="foot">BiP awards stay on Framework records. Last build ' + esc(bip.built) + '.</p><button type="button" class="btn sec" data-gh-go="' + esc(bip.view) + '">' + esc(COPY.bipOpen) + '</button>' : '') + datasetBlock(false) + '</div>');
     const select = $('#gh-set');
     if (select) select.onchange = () => { choose(select.value); MarketScreen.render(); };
+    host.querySelectorAll('#gh-market-extra [data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
   }
 
   const mackView = document.createElement('div');
