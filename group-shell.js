@@ -5,7 +5,7 @@
   const $ = window.$ || (s => document.querySelector(s));
   const esc = window.esc || (s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])));
   const NOTES_KEY = 'gh-monday-notes';
-  const state = {mode:'market', section:'', shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, lha:null, frameworks:0, competitors:null, compRegion:''};
+  const state = {mode:'market', section:'', shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, living:null, v4:null, fwItems:null, lha:null, frameworks:0, competitors:null, compRegion:'', ml:{region:'', lease:'', status:'', sort:'deadline'}};
   const previous = viewMode;
 
   function asset(name) {
@@ -161,20 +161,33 @@
     const anchor = name === 'contracts' ? 'gh-contracts' : (name === 'competitors' ? 'gh-competitors' : (name === 'regions' ? 'gh-regions' : (name.indexOf('region/') === 0 ? 'region-' + name.slice(7) : '')));
     if (anchor) { const node = document.getElementById(anchor); if (node) node.scrollIntoView({block:'start'}); }
   }
+  function dealField(label, value) {
+    return '<div><dt>' + esc(label) + '</dt><dd>' + esc(value || MlCommercial.NOT_STATED) + '</dd></div>';
+  }
   function renderMack() {
-    const regionName = Object.fromEntries(state.monday.regions.map((row) => [row.id, row.name]));
-    const routes = state.monday.contractIds.map((id) => state.routes.find((row) => row.id === id)).filter(Boolean);
+    const pack = MlCommercial.build({living: state.living, frameworks: {items: state.fwItems || []}, v4: state.v4, manchester: state.evidence && state.evidence.manchesterCas, today: new Date().toISOString().slice(0, 10)});
+    const query = state.ml;
+    const visible = MlCommercial.sortCards(MlCommercial.filterCards(pack.cards, query), query.sort);
+    const leases = [...new Set(pack.cards.map((row) => row.leaseType))];
+    const statuses = [...new Set(pack.cards.map((row) => row.bucket))];
+    const regions = [['', 'All regions'], ['GM', 'Greater Manchester'], ['BRS', 'Bristol / West'], ['GLOS', 'Gloucestershire'], ['National', 'England and Wales']];
+    const summary = pack.summary;
     const host = $('#mack-body');
-    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Mack Living</p><h1>' + esc(state.monday.meeting.name) + '</h1><p class="lc-purpose">' + esc(state.monday.meeting.purpose) + '</p></div>'
-      + '<div class="card"><p class="foot">Meeting file ' + esc(state.monday.updated) + '. Route file ' + esc(state.routesUpdated) + '.</p><div class="gh-shortcuts">' + state.monday.shortcuts.map((item) => '<button type="button" class="btn sec" data-gh-go="' + esc(item.hash) + '">' + esc(item.label) + '</button>').join('') + '</div></div>'
-      + '<section class="card" id="gh-regions-mack"><h2>Priority regions</h2><div class="gh-grid">' + state.monday.regions.map((row) => '<article id="mack-region-' + esc(row.id) + '"><h3>' + esc(row.name) + '</h3><p><span class="tag a">' + esc(row.status) + '</span></p><p class="foot">' + esc(row.seededFrom) + '</p><button type="button" class="btn sec" data-gh-go="analysis/region/' + esc(row.id) + '">Open in Analysis Dashboard</button></article>').join('') + '</div></section>'
-      + '<section class="card"><h2>Priority contracts</h2><p class="foot">' + esc(COPY.routesIntro) + '</p><div class="scroll"><table><thead><tr><th class="l">Route</th><th class="l">Area</th><th class="l">Status</th><th>As of</th></tr></thead><tbody>'
-      + routes.map((row) => '<tr><td class="l">' + shown(row.shortName || row.name) + '</td><td class="l">' + shown((row.regions || []).map((id) => regionName[id] || id).join(', ')) + '</td><td class="l">' + shown(row.statusLabel || row.status || '') + '</td><td>' + esc(row.statusAsOf || '') + '</td></tr>').join('')
-      + '</tbody></table></div><p><button type="button" class="btn sec" data-gh-go="analysis/contracts">Open contract opportunities</button></p></section>'
-      + '<section class="card" id="gh-agenda"><h2>Agenda and notes</h2><ol>' + state.monday.agenda.map((item) => '<li><b>' + esc(item.item) + '</b><p>' + esc(item.note) + '</p></li>').join('') + '</ol>'
+    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Mack Living</p><h1>What is the lease?</h1><p class="lc-purpose">Length, rent, voids and repairs, shown only where a source states them. Anything else is not stated or to confirm.</p></div>'
+      + '<div class="card"><div class="ms-summary"><span><b>' + summary.live + '</b> open records</span><span><b>' + esc(summary.nearest ? Number(summary.nearest.slice(8)) + ' ' + ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(summary.nearest.slice(5,7))-1] + ' ' + summary.nearest.slice(0,4) : 'not stated') + '</b> nearest deadline</span><span><b>' + (summary.units == null ? 'not stated' : summary.units) + '</b> stated units</span><span><b>' + esc(summary.longest) + '</b> longest stated term</span></div><p class="foot">Open records exclude historical, forthcoming, appointed and to confirm rows. Stated units are the minimum 66 on the recorded P-1476 notice only. The longest term is the longest lease length written on a term or route row.</p><div class="gh-shortcuts">' + state.monday.shortcuts.map((item) => '<button type="button" class="btn sec" data-gh-go="' + esc(item.hash) + '">' + esc(item.label) + '</button>').join('') + '</div></div>'
+      + '<section class="card" id="gh-deals"><div class="ctl"><label>Region <select id="ml-region">' + regions.map(([id, label]) => '<option value="' + id + '"' + (query.region === id ? ' selected' : '') + '>' + esc(label) + '</option>').join('') + '</select></label><label>Lease type <select id="ml-lease"><option value="">All types</option>' + leases.map((item) => '<option' + (query.lease === item ? ' selected' : '') + '>' + esc(item) + '</option>').join('') + '</select></label><label>Status <select id="ml-status"><option value="">All statuses</option>' + statuses.map((item) => '<option' + (query.status === item ? ' selected' : '') + '>' + esc(item) + '</option>').join('') + '</select></label><label>Sort <select id="ml-sort"><option value="deadline"' + (query.sort === 'deadline' ? ' selected' : '') + '>Deadline</option><option value="term"' + (query.sort === 'term' ? ' selected' : '') + '>Term length</option></select></label><span class="foot">' + visible.length + ' of ' + pack.cards.length + ' shown</span></div>'
+      + visible.map((row) => '<article class="gh-deal"><div class="gh-deal-h"><h3>' + esc(row.name) + '</h3><span class="tag">' + esc(row.bucket) + '</span></div><p>' + esc(row.leaseType) + ' · ' + esc(row.region) + ' · ' + esc(row.source) + '</p><p class="foot">' + esc(row.status) + '</p><dl class="gh-deal-grid">' + dealField('Length', row.length) + dealField('Start', row.start) + dealField('End', row.end) + dealField('Breaks or extensions', row.breaks) + dealField('Rent basis', row.rentBasis) + dealField('Rent level', row.rentLevel) + dealField('Voids', row.voids) + dealField('Repairs', row.repairs) + dealField('Buyer', row.buyer) + dealField('Units sought', row.units) + dealField('Deadline', row.deadlineLabel) + '</dl><p><b>Next step. </b>' + esc(row.next) + '</p><p>BiP ' + ((row.bip || []).length ? row.bip.map((id) => '<button type="button" class="btn sec" data-bip="' + esc(id) + '">' + esc(id) + '</button>').join(' ') : esc(MlCommercial.NOT_STATED)) + '</p>' + (row.evidence ? '<details><summary>Source wording</summary><p>' + esc(row.evidence) + '</p></details>' : '') + '</article>').join('')
+      + '</section>'
+      + '<section class="card" id="gh-agenda"><h2>Monday discussion</h2><p>' + esc(state.monday.meeting.purpose) + '</p><ol>' + state.monday.agenda.map((item) => '<li><b>' + esc(item.item) + '</b><p>' + esc(item.note) + '</p></li>').join('') + '</ol>'
+      + '<details><summary>Priority regions, still to confirm</summary><div class="gh-grid">' + state.monday.regions.map((row) => '<article><h3>' + esc(row.name) + '</h3><p><span class="tag a">' + esc(row.status) + '</span></p><p class="foot">' + esc(row.seededFrom) + '</p></article>').join('') + '</div></details>'
       + '<p class="foot">' + esc(state.monday.notesHelp) + '</p><label class="gh-notes">Shared file notes<textarea readonly>' + esc(state.monday.notes || '') + '</textarea></label><label class="gh-notes">' + esc(COPY.notesLocal) + '<textarea id="gh-local-notes">' + esc(state.localNotes) + '</textarea></label></section>'
       + '<div class="card">' + datasetBlock(false) + '</div>';
     host.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
+    host.querySelectorAll('[data-bip]').forEach((button) => button.onclick = () => openBip(button.dataset.bip));
+    $('#ml-region').onchange = (event) => { state.ml.region = event.target.value; renderMack(); };
+    $('#ml-lease').onchange = (event) => { state.ml.lease = event.target.value; renderMack(); };
+    $('#ml-status').onchange = (event) => { state.ml.status = event.target.value; renderMack(); };
+    $('#ml-sort').onchange = (event) => { state.ml.sort = event.target.value; renderMack(); };
     const box = $('#gh-local-notes');
     if (box) box.oninput = () => { state.localNotes = box.value; try { localStorage.setItem(NOTES_KEY, box.value); } catch (error) {} };
   }
@@ -318,13 +331,16 @@
 
   try { state.localNotes = localStorage.getItem(NOTES_KEY) || ''; } catch (error) { state.localNotes = ''; }
   const ready = (async () => {
-    const [scores, monday, evidence, living, lha, frameworks, competitors] = await Promise.all([
-      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json')
+    const [scores, monday, evidence, living, lha, frameworks, competitors, v4] = await Promise.all([
+      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json')
     ]);
     state.scores = scores;
     state.monday = monday;
     state.evidence = evidence;
     state.competitors = competitors;
+    state.v4 = v4;
+    state.fwItems = frameworks.items || [];
+    state.living = living;
     state.routes = living.contracts || [];
     state.routesUpdated = living.updated || '';
     state.lha = lha;

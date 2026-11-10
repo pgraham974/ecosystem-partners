@@ -364,4 +364,11 @@ header{display:flex;min-height:52px}#nav2 .mainnav{display:flex;flex-wrap:wrap;a
 .gh-comp h3{margin:0 0 4px;font-size:16px}
 .gh-comp p{margin:4px 0}
 .gh-comp .btn{margin:2px 6px 2px 0}
+.gh-deal{border-top:1px solid var(--line);padding:14px 0}
+.gh-deal-h{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.gh-deal h3{margin:0;font-size:18px}
+.gh-deal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px 14px;margin:8px 0}
+.gh-deal-grid dt{color:var(--mut);font-size:11px}
+.gh-deal-grid dd{margin:0;font-weight:600}
+@media(max-width:760px){.gh-deal-grid{grid-template-columns:1fr}#gh-deals .ctl{padding-right:84px}}
 @media(max-width:760px){header{padding:10px 16px;gap:12px}header .lc-product{font-size:11px}header .lc-product span{max-width:160px}#status{display:none}#nav2 .mainnav{padding:0 8px}#nav2 .mainb{font-size:14px;padding:8px 10px;min-height:44px}#nav2 .ms-analysis{margin-left:0}aside.card{padding:8px 16px}main{padding:8px 12px 20px}.ms-hero{padding:14px 4px 4px}.ms-hero h1{font-size:28px}.ms-hero .lc-purpose{font-size:14px}.card{padding:14px;border-radius:10px}.ms-summary{gap:10px 16px}.ms-summary b{font-size:16px}.ms-matrix-wrap{margin-left:-14px;margin-right:-14px}#ms-matrix th:first-child{min-width:150px}#ms-matrix .ms-provider{min-width:150px;max-width:170px}.ms-detail-grid{grid-template-columns:1fr}.ms-controls>label{max-width:100%;flex:1 1 140px}.ms-controls input,.ms-controls select{width:100%}#lha-brma{max-width:100%}.ms-fold .ctl label{max-width:100%}.pf-facts{grid-template-columns:1fr}.pf-facts dd{margin-bottom:8px}.lc-more-menu{left:auto;right:0}#gh-sub{padding:8px 8px 0}.gh-grid{grid-template-columns:1fr}.gh-brand{flex:1 1 220px}.gh-wordmark{border-left:0;padding-left:0}.lc-product{flex-basis:100%}}
