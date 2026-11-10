@@ -1,0 +1,61 @@
+{
+  "updated": "2026-11-10",
+  "file": "mack-monday.json",
+  "title": "Mack Living",
+  "meeting": {
+    "name": "Monday morning Mack Living and Laurito Capital",
+    "cadence": "Weekly, Monday morning",
+    "purpose": "A short list for the weekly discussion. Regions below are seeded from areas this site already covers. Each one is a placeholder to confirm."
+  },
+  "regions": [
+    {
+      "id": "GM",
+      "name": "Greater Manchester",
+      "status": "placeholder to confirm",
+      "seededFrom": "Frameworks, operator records and Mack Living routes already use Greater Manchester."
+    },
+    {
+      "id": "BRS",
+      "name": "Bristol / West of England",
+      "status": "placeholder to confirm",
+      "seededFrom": "Frameworks, operator records and Mack Living routes already use Bristol / West."
+    },
+    {
+      "id": "GLOS",
+      "name": "Gloucestershire",
+      "status": "placeholder to confirm",
+      "seededFrom": "Frameworks and Mack Living routes already use Gloucestershire, including Cheltenham and Gloucester."
+    },
+    {
+      "id": "EDI",
+      "name": "Edinburgh / Lothians",
+      "status": "placeholder to confirm",
+      "seededFrom": "The partner screens include Edinburgh and mark it as parked. It is listed here only so the Monday meeting can confirm or drop it."
+    }
+  ],
+  "contractIds": [
+    "bristol-private-renting",
+    "manchester-long-term-ta",
+    "gm-empty-homes-leasing",
+    "aasc-landlord-supply",
+    "cas3-incumbent-property-supply",
+    "glos-cheltenham-p3-council",
+    "bristol-ea-dn677298",
+    "gmca1769-supported-16plus"
+  ],
+  "shortcuts": [
+    {"id": "regions", "label": "Priority regions", "hash": "analysis/regions"},
+    {"id": "shortlist", "label": "Market Screen shortlist", "hash": "market/shortlist"},
+    {"id": "contracts", "label": "Open contract opportunities", "hash": "analysis/contracts"},
+    {"id": "agenda", "label": "Agenda and notes", "hash": "mack/agenda"}
+  ],
+  "agenda": [
+    {"item": "Confirm the priority regions", "note": "Each region on this tab is a placeholder to confirm."},
+    {"item": "Walk the Market Screen shortlist", "note": "Shortlist means every provider that meets all eight tests on the weight set in use."},
+    {"item": "Review open contract opportunities", "note": "Includes the blank Manchester CAS card."},
+    {"item": "Manchester CAS", "note": "to verify with Chris and bid contacts. Do not fill the card in the meeting notes as if the terms were known."},
+    {"item": "Scoring weights", "note": "Luke and Liza still have to agree the proposed weights. The live screen stays on the current weights until they do."}
+  ],
+  "notes": "",
+  "notesHelp": "Shared notes are edited in mack-monday.json. The box on the page stays in this browser only and is not the shared file."
+}

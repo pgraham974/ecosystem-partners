@@ -1,0 +1,99 @@
+{
+  "updated": "2026-11-10",
+  "file": "analysis-evidence.json",
+  "datasets": [
+    {"file": "partners.json", "label": "Accounts screen", "updated": "2026-10-15", "also": "Research reviewed 2026-10-19"},
+    {"file": "rp_charities.json", "label": "Registered provider and charity research", "updated": "2026-10-19"},
+    {"file": "operators.json", "label": "Operator file", "updated": "2026-10-14"},
+    {"file": "frameworks.json", "label": "Framework records", "updated": "2026-10-15"},
+    {"file": "sheets_public.json", "label": "Workbook import", "updated": "2026-10-20", "also": "v4 build 2026-11-03"},
+    {"file": "v4-enrich.json", "label": "v4 opportunity extract", "updated": "2026-11-03"},
+    {"file": "market-lha.json", "label": "LHA rate file", "updated": "2026-11-03", "also": "DWP publication updated 2026-04-08. Eight England rows rechecked 2026-11-10."},
+    {"file": "mack-living.json", "label": "Mack Living route file", "updated": "2026-11-03"},
+    {"file": "mack-monday.json", "label": "Monday meeting file", "updated": "2026-11-10"},
+    {"file": "scoring-weights.json", "label": "Score weights", "updated": "2026-11-10"},
+    {"file": "analysis-evidence.json", "label": "Analysis evidence", "updated": "2026-11-10"}
+  ],
+  "lha": {
+    "period": "2026/27",
+    "validFrom": "2026-04-01",
+    "validTo": "2027-03-31",
+    "publisher": "Department for Work and Pensions",
+    "publicationUrl": "https://www.gov.uk/government/publications/universal-credit-local-housing-allowance-rates-2026-to-2027",
+    "publicationUpdated": "2026-04-08",
+    "publicationUpdatedNote": "The 8 April 2026 publication date is the date recorded when this repo matched the official CSVs on 3 November 2026. It was not re-read from the GOV.UK page on 10 November 2026.",
+    "voaLookup": "https://lha-direct.voa.gov.uk/search.aspx",
+    "fileRetrieved": "2026-11-03",
+    "fileVerified": "2026-11-03",
+    "spotCheck": "2026-11-10",
+    "spotCheckNote": "On 10 November 2026 the eight England BRMAs listed below were checked against the DWP England CSV and matched market-lha.json. The wider Great Britain file remains the 3 November 2026 match of 192 areas.",
+    "englandCsv": "https://assets.publishing.service.gov.uk/media/69d654a2e1430e837a86f64a/england-rates-2026-to-2027.csv",
+    "scotlandCsv": "https://assets.publishing.service.gov.uk/media/69d657392ea7bc150a394ae5/scotland-rates-2026-to-2027.csv",
+    "walesCsv": "https://assets.publishing.service.gov.uk/media/69d6574a28142a9bd207ba09/wales-rates-2026-to-2027.csv",
+    "brmas": [
+      "Central Greater Manchester",
+      "Southern Greater Manchester",
+      "Bolton and Bury",
+      "Oldham and Rochdale",
+      "Wigan",
+      "Bristol",
+      "Cheltenham",
+      "Gloucester"
+    ],
+    "guidance": "These names are the reference shortlist already used on this site. They are not an address match. Bristol and Gloucestershire each span more than one BRMA. Manchester is not a single rate. Use the VOA full-postcode lookup, then pick the BRMA by its official name. Edinburgh is a Monday placeholder only. No Edinburgh rate is shown, because this site does not map a city to a BRMA."
+  },
+  "benchmarks": [
+    {
+      "regionId": "BRS",
+      "topic": "Council estimated maximum market rents",
+      "value": "Room £800, 1-bed £975, 2-bed £1340, 3-bed £1600, 4-bed £2400",
+      "unit": "£ per month, as printed on the council page",
+      "sourceTitle": "Get help with renting out your property",
+      "sourceUrl": "https://www.bristol.gov.uk/business/housing-for-business-and-professionals/private-landlords/get-help-with-renting-out-your-property",
+      "observedAt": "2026-11-03",
+      "note": "These figures sit in the tenant-introduction section. They are not evidenced headlease rents, not a guaranteed rent and not a management fee."
+    },
+    {"regionId": "GM", "topic": "Guaranteed rent", "value": "to be supplied", "sourceTitle": "", "sourceUrl": "", "observedAt": "", "note": "No public amount is recorded for a Greater Manchester guaranteed rent."},
+    {"regionId": "GM", "topic": "Management fee", "value": "to be supplied", "sourceTitle": "", "sourceUrl": "", "observedAt": "", "note": "No public management fee is recorded for Greater Manchester."},
+    {"regionId": "BRS", "topic": "Guaranteed rent", "value": "to be supplied", "sourceTitle": "", "sourceUrl": "", "observedAt": "", "note": "The Bristol council rent table above is not a guaranteed rent."},
+    {"regionId": "BRS", "topic": "Management fee", "value": "to be supplied", "sourceTitle": "", "sourceUrl": "", "observedAt": "", "note": "No public management fee is recorded for Bristol."},
+    {"regionId": "GLOS", "topic": "Guaranteed rent", "value": "to be supplied", "sourceTitle": "", "sourceUrl": "", "observedAt": "", "note": "No public amount is recorded for Gloucestershire."},
+    {"regionId": "GLOS", "topic": "Management fee", "value": "to be supplied", "sourceTitle": "", "sourceUrl": "", "observedAt": "", "note": "No public management fee is recorded for Gloucestershire."},
+    {"regionId": "EDI", "topic": "Guaranteed rent", "value": "to be supplied", "sourceTitle": "", "sourceUrl": "", "observedAt": "", "note": "No public amount is recorded for Edinburgh."},
+    {"regionId": "EDI", "topic": "Management fee", "value": "to be supplied", "sourceTitle": "", "sourceUrl": "", "observedAt": "", "note": "No public management fee is recorded for Edinburgh."}
+  ],
+  "manchesterCas": {
+    "id": "manchester-cas",
+    "name": "Manchester CAS",
+    "status": "to verify with Chris and bid contacts",
+    "buyer": "",
+    "notice": "",
+    "value": "",
+    "term": "",
+    "geography": "",
+    "route": "",
+    "rent": "",
+    "deadline": "",
+    "contacts": "",
+    "next": "",
+    "sources": []
+  },
+  "vip": {
+    "inRepo": false,
+    "checked": "2026-11-10",
+    "finding": "Nothing in this repository is a VIP Tracker feed, schema, client or import.",
+    "worthBringing": [
+      "Opportunity status and the last time that status changed",
+      "Bid or response deadlines",
+      "A link from a VIP record to a counterparty already on the Market Screen",
+      "The region, so the Monday list and the Analysis Dashboard can use the same names"
+    ],
+    "pipeline": [
+      "A documented VIP export or API has to be supplied first. None is in this repo, so no address is guessed here.",
+      "A scheduled job would fetch that source and refuse the run if the payload has no source timestamp.",
+      "The job would write one JSON file whose updated field is that source timestamp, then this page would read only that file.",
+      "Until that file exists, this page shows no VIP rows."
+    ],
+    "staleRisk": "If a feed is connected later and the job stops, or if someone pastes a partial extract, the rows would go out of date while still looking current. Every dataset on this page shows its last-updated date so a stale file is visible. An incomplete VIP link must not be read as a live tracker."
+  }
+}

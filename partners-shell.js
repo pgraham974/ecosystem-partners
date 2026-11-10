@@ -38,6 +38,7 @@
     document.querySelectorAll('[id$="_view"]').forEach((view) => view.classList.add('hidden'));
   }
   function setHash(hash) {
+    if (window.GroupHub && window.GroupHub.ownsNav) return;
     const url = new URL(location.href);
     url.hash = hash;
     history.replaceState(null, '', url);
@@ -47,6 +48,7 @@
     catch (error) { return ''; }
   }
   function shellNav(active) {
+    if (window.GroupHub && window.GroupHub.ownsNav) { window.GroupHub.paint(); return; }
     const nav = $('#nav2');
     if (!nav) return;
     const items = [['who','Counterparties'],['opportunities','Opportunities'],['frameworks','Frameworks'],['workbook','Workbook']];
@@ -122,7 +124,7 @@
     const segments = [['all','All (' + state.entities.length + ')'], ['rp','Registered providers and charities (' + counts.rp + ')'], ['operator','Commercial operators (' + counts.operator + ')'], ['other','Other (' + counts.other + ')']];
     const cities = [...new Set(state.entities.flatMap((entity) => entity.cities))].sort((a, b) => a.localeCompare(b));
     const selected = state.entities.find((entity) => entity.id === state.selected);
-    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Ecosystem Partners</p><h1>Who might take the property?</h1><p class="lc-purpose">One directory. Registered providers and charities, commercial operators, and everyone else each appear once.</p></div>'
+    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Market Screen</p><h1>Who might take the property?</h1><p class="lc-purpose">One directory for Mack Living and Laurito Capital. Registered providers and charities, commercial operators, and everyone else each appear once.</p></div>'
       + '<div class="card"><p>' + esc(PartnersMece.DISCLAIMER) + ' Accounts file ' + esc(state.files.partners.updated || '') + '. RP research ' + esc(state.files.rp.updated || '') + '. Operator file ' + esc(state.files.operators.updated || '') + '.</p><p class="foot">' + esc(PartnersMece.rankRule(state.segment === 'all' && state.top ? 'rp' : state.segment)) + '</p><div class="kpis"><div class="kpi"><small>Registered providers and charities</small><b>' + counts.rp + '</b></div><div class="kpi"><small>Commercial operators</small><b>' + counts.operator + '</b></div><div class="kpi"><small>Other</small><b>' + counts.other + '</b></div></div>'
       + '<div class="ctl"><span class="seg">' + segments.map(([id, label]) => '<button type="button" class="segb' + (state.segment === id ? ' on' : '') + '" data-seg="' + id + '">' + esc(label) + '</button>').join('') + '</span>'
       + '<label>Area <select id="who-city"><option value="">All areas</option>' + cities.map((city) => '<option' + (state.city === city ? ' selected' : '') + '>' + esc(city) + '</option>').join('') + '</select></label>'

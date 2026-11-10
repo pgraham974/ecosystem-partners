@@ -1,0 +1,52 @@
+{
+  "updated": "2026-11-10",
+  "file": "scoring-weights.json",
+  "screen": "Market Screen",
+  "agreed": false,
+  "agreement": "Luke and Liza still have to agree the weights. The proposed set is not agreed.",
+  "engine": "Eight pass or fail tests. A pass scores its full weight. A fail scores zero. An unknown scores zero and stays unknown. The total is not scaled up to 100 when evidence is missing. A hold for insolvency, overdue accounts, a going-concern flag, a qualified audit, negative net assets or a non-active company overrides the label. It does not change the points.",
+  "thresholds": {
+    "years": 10,
+    "revenue": 1000000,
+    "assets": 250000,
+    "staff": 10,
+    "accountsMaxMonths": 18,
+    "note": "Thresholds are unchanged. A different floor for years, turnover, net assets, headcount or accounts age is a separate decision for Luke and Liza."
+  },
+  "groups": [
+    {"id": "financial", "label": "Financial health", "keys": ["profit", "assets", "liquidity", "freshness"]},
+    {"id": "ownership", "label": "Ownership structure", "keys": ["governance"]},
+    {"id": "size", "label": "Company size", "keys": ["revenue", "staff"]},
+    {"id": "other", "label": "Other", "keys": ["age"]}
+  ],
+  "tests": [
+    {"key": "age", "label": "Operating history", "group": "other"},
+    {"key": "revenue", "label": "Revenue", "group": "size"},
+    {"key": "profit", "label": "Profitability", "group": "financial"},
+    {"key": "assets", "label": "Net assets", "group": "financial"},
+    {"key": "liquidity", "label": "Net current assets", "group": "financial"},
+    {"key": "staff", "label": "Employees", "group": "size"},
+    {"key": "governance", "label": "Governance", "group": "ownership"},
+    {"key": "freshness", "label": "Accounts freshness", "group": "financial"}
+  ],
+  "sets": {
+    "current": {
+      "id": "current",
+      "label": "Current live weights",
+      "status": "live",
+      "weights": {"age": 10, "revenue": 15, "profit": 15, "assets": 20, "liquidity": 15, "staff": 10, "governance": 10, "freshness": 5}
+    },
+    "proposed": {
+      "id": "proposed",
+      "label": "Proposed weights",
+      "status": "proposed",
+      "agreed": false,
+      "weights": {"age": 10, "revenue": 12, "profit": 20, "assets": 10, "liquidity": 15, "staff": 8, "governance": 20, "freshness": 5}
+    }
+  },
+  "rationale": {
+    "today": "Financial health is profit 15, net assets 20, net current assets 15 and accounts freshness 5, so 55 points. Net assets is the heaviest single test, so a large balance sheet can outweigh a loss. Ownership structure is only the governance test at 10 points. That test checks legal form and board size. It does not score a parent guarantee. Company size is revenue 15 and employees 10, so 25 points, on top of the balance-sheet weight. Operating history is 10 points for at least 10 years of trading.",
+    "proposal": "The proposed set keeps the same eight tests and the same thresholds. Net assets fall from 20 to 10. Profit rises from 15 to 20. Turnover falls from 15 to 12 and headcount from 10 to 8. Governance rises from 10 to 20. Liquidity stays at 15, accounts freshness at 5 and operating history at 10. Financial health becomes 50. Ownership structure becomes 20. Company size becomes 20. Other stays at 10. Unknowns are still not treated as a pass.",
+    "notThisScreen": "The v4 workbook, built 3 November 2026, has a separate contract and counterparty model. Its signing-entity weights are also marked proposed in that sheet: registry match 10, accounts recency 15, scale 15, profitability 25, liquidity and reserves 25, regulatory viability 10. This Market Screen does not recalculate those workbook scores. The operator size gate of £20 million turnover and £5 million net assets is a different test again."
+  }
+}
