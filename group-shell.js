@@ -6,7 +6,7 @@
   const esc = window.esc || (s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])));
   const NOTES_KEY = 'gh-monday-notes';
   const CHECKLIST_KEY = 'gh-checklist-v1';
-  const state = {mode:'board', section:'', region:'GM', boardPick:'', positionFile:null, shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, living:null, v4:null, fwItems:null, lha:null, frameworks:0, competitors:null, compRegion:'', ml:{region:'GM', lease:'', status:'', sort:'deadline'}};
+  const state = {mode:'board', section:'', region:'GM', boardPick:'', positionFile:null, shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, living:null, v4:null, fwItems:null, lha:null, frameworks:0, competitors:null, compRegion:'', ax:{status:'', type:'', brma:'', open:''}, recOpen:'', ml:{region:'GM', lease:'', status:'', sort:'deadline', focus:'', show:false}};
   let checklistDoc = null;
   let checklistMeta = {purpose:'', storageNote:''};
   let checklistMessage = '';
@@ -26,8 +26,56 @@
     return esc(String(value ?? '').replace(/\s*;\s*/g, '. ').replace(/[\u2014\u2013]/g, ', '));
   }
   function money(value) {
-    if (typeof value !== 'number' || !Number.isFinite(value)) return COPY.blank;
+    if (typeof value !== 'number' || !Number.isFinite(value)) return 'Not yet recorded';
     return new Intl.NumberFormat('en-GB', {style:'currency', currency:'GBP', minimumFractionDigits: value % 1 ? 2 : 0, maximumFractionDigits: 2}).format(value);
+  }
+  function countsOf(rows, keyFn) {
+    const map = new Map();
+    for (const row of rows) {
+      const key = keyFn(row) || 'Not yet recorded';
+      map.set(key, (map.get(key) || 0) + 1);
+    }
+    return [...map.entries()].map(([label, count]) => ({id: label, label, count})).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'en'));
+  }
+  function barChart(rows, attr, active) {
+    if (!rows.length) return '<p class="bd-empty">Not yet recorded</p>';
+    const max = Math.max(1, ...rows.map((row) => row.count));
+    return '<div class="an-chart" role="group">' + rows.map((row) => '<button type="button" class="bd-bar' + (active === row.id ? ' on' : '') + '" data-' + attr + '="' + esc(row.id) + '"><span>' + esc(row.label) + '</span><i><b style="width:' + Math.max(4, row.count / max * 100) + '%"></b></i><em>' + row.count + '</em></button>').join('') + '</div>';
+  }
+  function valueChart(rows, attr, active) {
+    if (!rows.length) return '<p class="bd-empty">Not yet recorded</p>';
+    const max = Math.max(1, ...rows.map((row) => row.amount));
+    return '<div class="an-chart an-values" role="group">' + rows.map((row) => '<button type="button" class="bd-bar' + (active === row.id ? ' on' : '') + '" data-' + attr + '="' + esc(row.id) + '"><span>' + esc(row.label) + '</span><i><b style="width:' + Math.max(4, row.amount / max * 100) + '%"></b></i><em>' + esc(row.text) + '</em></button>').join('') + '</div>';
+  }
+  function kpiRow(items) {
+    return '<div class="kpis">' + items.map((item) => '<div class="kpi"><small>' + esc(item.label) + '</small><b>' + esc(item.value) + '</b></div>').join('') + '</div>';
+  }
+  function takeList(lines) {
+    return '<ul class="an-takes">' + lines.filter(Boolean).map((line) => '<li>' + esc(line) + '</li>').join('') + '</ul>';
+  }
+  function fold(id, title, body, open) {
+    return '<details class="ms-fold an-fold" id="' + id + '"' + (open ? ' open' : '') + '><summary>' + esc(title) + '</summary>' + body + '</details>';
+  }
+  function regionNow() {
+    return BoardroomModel.regionById(state.region);
+  }
+  function competitorRegionName(id) {
+    return {GM: 'Greater Manchester', BRS: 'Bristol', GLOS: 'Gloucestershire', National: 'England and Wales'}[id] || '';
+  }
+  function frameworksHere() {
+    const region = regionNow();
+    return (state.fwItems || []).filter((item) => {
+      const list = item.regions || [];
+      if (region.id === 'National') return list.includes('National');
+      return list.includes(region.id);
+    });
+  }
+  function ukWhen(iso) {
+    if (!iso) return 'Not yet recorded';
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const parts = String(iso).split('-');
+    if (parts.length < 3) return iso;
+    return Number(parts[2]) + ' ' + months[Number(parts[1]) - 1] + ' ' + parts[0];
   }
   function setHash(hash) {
     const url = new URL(location.href);
@@ -186,31 +234,70 @@
     return '<div><dt>' + esc(label) + '</dt><dd>' + esc(value || MlCommercial.NOT_STATED) + '</dd></div>';
   }
   function renderMack() {
-    const pack = MlCommercial.build({living: state.living, frameworks: {items: state.fwItems || []}, v4: state.v4, manchester: state.evidence && state.evidence.manchesterCas, today: new Date().toISOString().slice(0, 10)});
+    const today = new Date().toISOString().slice(0, 10);
+    const pack = MlCommercial.build({living: state.living, frameworks: {items: state.fwItems || []}, v4: state.v4, manchester: state.evidence && state.evidence.manchesterCas, today});
     const query = state.ml;
-    const visible = MlCommercial.sortCards(MlCommercial.filterCards(pack.cards, query), query.sort);
-    const leases = [...new Set(pack.cards.map((row) => row.leaseType))];
-    const statuses = [...new Set(pack.cards.map((row) => row.bucket))];
-    const regions = [['', 'All regions'], ['GM', 'Greater Manchester'], ['BRS', 'Bristol / West'], ['GLOS', 'Gloucestershire'], ['National', 'England and Wales']];
-    const summary = pack.summary;
+    const area = regionNow();
+    const regionCards = MlCommercial.filterCards(pack.cards, {region: query.region, lease: '', status: ''});
+    const summary = MlCommercial.summarise(regionCards, today);
+    let visible = MlCommercial.sortCards(MlCommercial.filterCards(pack.cards, query), query.sort);
+    if (query.focus) visible = visible.filter((row) => row.id === query.focus);
+    const leases = countsOf(regionCards, (row) => row.leaseType);
+    const statuses = countsOf(regionCards, (row) => row.bucket);
+    const dated = regionCards.filter((row) => /^\d{4}-\d{2}-\d{2}$/.test(row.deadline || ''));
+    const times = dated.map((row) => Date.parse(row.deadline));
+    const min = times.length ? Math.min(...times) : 0;
+    const span = times.length ? Math.max(1, Math.max(...times) - min) : 1;
+    const timeline = dated.length ? '<div class="an-chart">' + dated.slice().sort((a, b) => a.deadline.localeCompare(b.deadline)).map((row) => {
+      const left = (Date.parse(row.deadline) - min) / span * 92;
+      return '<button type="button" class="bd-row' + (query.focus === row.id ? ' on' : '') + '" data-ml-focus="' + esc(row.id) + '"><span>' + esc(row.name) + '</span><i><b style="left:' + left + '%;width:8%"></b></i></button>';
+    }).join('') + '</div>' : '<p class="bd-empty">No firm deadline is recorded in this area.</p>';
+    const nearest = summary.nearest ? ukWhen(summary.nearest) : 'Not yet recorded';
     const host = $('#mack-body');
-    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Mack Living</p><h1>What is the lease?</h1><p class="lc-purpose">Length, rent, voids and repairs, shown only where a source states them. Anything else is not stated or to confirm.</p></div>'
-      + '<div class="card"><div class="ms-summary"><span><b>' + summary.live + '</b> open records</span><span><b>' + esc(summary.nearest ? Number(summary.nearest.slice(8)) + ' ' + ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(summary.nearest.slice(5,7))-1] + ' ' + summary.nearest.slice(0,4) : 'not stated') + '</b> nearest deadline</span><span><b>' + (summary.units == null ? 'not stated' : summary.units) + '</b> stated units</span><span><b>' + esc(summary.longest) + '</b> longest stated term</span></div><p class="foot">Open records exclude historical, forthcoming, appointed and to confirm rows. Stated units are the minimum 66 on the recorded P-1476 notice only. The longest term is the longest lease length written on a term or route row.</p><div class="gh-shortcuts">' + state.monday.shortcuts.map((item) => '<button type="button" class="btn sec" data-gh-go="' + esc(item.hash) + '">' + esc(item.label) + '</button>').join('') + '<button type="button" class="btn sec" data-gh-go="board">Boardroom</button></div></div>'
-      + '<section class="card" id="gh-deals"><div class="ctl"><label>Region <select id="ml-region">' + regions.map(([id, label]) => '<option value="' + id + '"' + (query.region === id ? ' selected' : '') + '>' + esc(label) + '</option>').join('') + '</select></label><label>Lease type <select id="ml-lease"><option value="">All types</option>' + leases.map((item) => '<option' + (query.lease === item ? ' selected' : '') + '>' + esc(item) + '</option>').join('') + '</select></label><label>Status <select id="ml-status"><option value="">All statuses</option>' + statuses.map((item) => '<option' + (query.status === item ? ' selected' : '') + '>' + esc(item) + '</option>').join('') + '</select></label><label>Sort <select id="ml-sort"><option value="deadline"' + (query.sort === 'deadline' ? ' selected' : '') + '>Deadline</option><option value="term"' + (query.sort === 'term' ? ' selected' : '') + '>Term length</option></select></label><span class="foot">' + visible.length + ' of ' + pack.cards.length + ' shown</span></div>'
-      + visible.map((row) => '<article class="gh-deal" id="ml-' + esc(row.id || '') + '"><div class="gh-deal-h"><h3>' + esc(row.name) + '</h3><span class="tag">' + esc(row.bucket) + '</span></div><p>' + esc(row.leaseType) + ' · ' + esc(row.region) + ' · ' + esc(row.source) + '</p><p class="foot">' + esc(row.status) + '</p><dl class="gh-deal-grid">' + dealField('Length', row.length) + dealField('Start', row.start) + dealField('End', row.end) + dealField('Breaks or extensions', row.breaks) + dealField('Rent basis', row.rentBasis) + dealField('Rent level', row.rentLevel) + dealField('Voids', row.voids) + dealField('Repairs', row.repairs) + dealField('Buyer', row.buyer) + dealField('Units sought', row.units) + dealField('Deadline', row.deadlineLabel) + '</dl><p><b>Next step. </b>' + esc(row.next) + '</p><p>BiP ' + ((row.bip || []).length ? row.bip.map((id) => '<button type="button" class="btn sec" data-bip="' + esc(id) + '">' + esc(id) + '</button>').join(' ') : esc(MlCommercial.NOT_STATED)) + '</p>' + (row.evidence ? '<details><summary>Source wording</summary><p>' + esc(row.evidence) + '</p></details>' : '') + '</article>').join('')
+    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Mack Living</p><h1>Lease picture for ' + esc(area.label) + '</h1><p class="lc-purpose">Length, rent, voids and repairs, shown only where a source states them. The area follows the header.</p></div>'
+      + '<section class="card" id="ms-analytics">' + kpiRow([
+        {label: 'Open records', value: String(summary.live)},
+        {label: 'Nearest deadline', value: nearest},
+        {label: 'Stated units', value: summary.units == null ? 'Not yet recorded' : String(summary.units)},
+        {label: 'Longest stated term', value: summary.longest && summary.longest !== MlCommercial.NOT_STATED ? summary.longest : 'Not yet recorded'}
+      ])
+      + takeList([
+        summary.live + ' open records in ' + area.label + '. Open excludes historical, forthcoming, appointed and to confirm rows.',
+        summary.nearest ? 'The nearest dated deadline from today is ' + nearest + '.' : 'No deadline on or after today is recorded in this area.',
+        (function () { const unitCards = regionCards.filter((row) => row.unitsNumber); return unitCards.length === 1 ? 'The only stated unit count in this view is ' + unitCards[0].unitsNumber + ' on ' + unitCards[0].name + '.' : (unitCards.length ? 'Stated unit counts in this view sum to ' + summary.units + '.' : 'No unit count is written on the records in this area.'); })()
+      ])
+      + '<div class="an-grid"><article><h2>Lease type</h2>' + barChart(leases, 'ml-lease', query.lease) + '</article><article><h2>Status</h2>' + barChart(statuses, 'ml-status', query.status) + '</article></div>'
+      + '<h2>Deadlines</h2>' + timeline
+      + (query.lease || query.status || query.focus ? '<p class="an-note"><button type="button" class="btn sec" id="ml-clear">Clear chart filter</button></p>' : '')
       + '</section>'
-      + '<section class="card" id="gh-agenda"><h2>Monday discussion</h2><p>' + esc(state.monday.meeting.purpose) + '</p><ol>' + state.monday.agenda.map((item) => '<li><b>' + esc(item.item) + '</b><p>' + esc(item.note) + '</p></li>').join('') + '</ol>'
-      + '<details><summary>Priority regions, still to confirm</summary><div class="gh-grid">' + state.monday.regions.map((row) => '<article><h3>' + esc(row.name) + '</h3><p><span class="tag a">' + esc(row.status) + '</span></p><p class="foot">' + esc(row.seededFrom) + '</p></article>').join('') + '</div></details>'
-      + '<p class="foot">' + esc(state.monday.notesHelp) + '</p><label class="gh-notes">Shared file notes<textarea readonly>' + esc(state.monday.notes || '') + '</textarea></label><label class="gh-notes">' + esc(COPY.notesLocal) + '<textarea id="gh-local-notes">' + esc(state.localNotes) + '</textarea></label></section>'
-      + '<div class="card">' + datasetBlock(false) + '</div>';
-    host.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
+      + fold('gh-deals', 'Show detail', '<div class="ctl"><label>Sort <select id="ml-sort"><option value="deadline"' + (query.sort === 'deadline' ? ' selected' : '') + '>Deadline</option><option value="term"' + (query.sort === 'term' ? ' selected' : '') + '>Term length</option></select></label><span class="foot">' + visible.length + ' of ' + regionCards.length + ' in this area</span></div>'
+        + (visible.length ? visible.map((row) => '<article class="gh-deal" id="ml-' + esc(row.id || '') + '"><div class="gh-deal-h"><h3>' + esc(row.name) + '</h3><span class="tag">' + esc(row.bucket) + '</span></div><p>' + esc(row.leaseType) + ', ' + esc(row.region) + ', ' + esc(row.source) + '</p><p class="foot">' + esc(row.status) + '</p><dl class="gh-deal-grid">' + dealField('Length', row.length) + dealField('Start', row.start) + dealField('End', row.end) + dealField('Breaks or extensions', row.breaks) + dealField('Rent basis', row.rentBasis) + dealField('Rent level', row.rentLevel) + dealField('Voids', row.voids) + dealField('Repairs', row.repairs) + dealField('Buyer', row.buyer) + dealField('Units sought', row.units) + dealField('Deadline', row.deadlineLabel) + '</dl><p><b>Next step. </b>' + esc(row.next) + '</p><p>BiP ' + ((row.bip || []).length ? row.bip.map((id) => '<button type="button" class="btn sec" data-bip="' + esc(id) + '">' + esc(id) + '</button>').join(' ') : esc(MlCommercial.NOT_STATED)) + '</p>' + (row.evidence ? '<details><summary>Source wording</summary><p>' + esc(row.evidence) + '</p></details>' : '') + '</article>').join('') : '<p class="bd-empty">No lease record matches this filter.</p>'), query.show)
+      + fold('gh-agenda', 'Show Monday discussion', '<p>' + esc(state.monday.meeting.purpose) + '</p><ol>' + state.monday.agenda.map((item) => '<li><b>' + esc(item.item) + '</b><p>' + esc(item.note) + '</p></li>').join('') + '</ol><p class="foot">' + esc(state.monday.notesHelp) + '</p><label class="gh-notes">Shared file notes<textarea readonly>' + esc(state.monday.notes || '') + '</textarea></label><label class="gh-notes">' + esc(COPY.notesLocal) + '<textarea id="gh-local-notes">' + esc(state.localNotes) + '</textarea></label>', false);
     host.querySelectorAll('[data-bip]').forEach((button) => button.onclick = () => openBip(button.dataset.bip));
-    $('#ml-region').onchange = (event) => { state.ml.region = event.target.value; renderMack(); };
-    $('#ml-lease').onchange = (event) => { state.ml.lease = event.target.value; renderMack(); };
-    $('#ml-status').onchange = (event) => { state.ml.status = event.target.value; renderMack(); };
-    $('#ml-sort').onchange = (event) => { state.ml.sort = event.target.value; renderMack(); };
+    host.querySelectorAll('[data-ml-lease]').forEach((button) => button.onclick = () => {
+      state.ml.lease = state.ml.lease === button.dataset.mlLease ? '' : button.dataset.mlLease;
+      state.ml.focus = '';
+      state.ml.show = true;
+      renderMack();
+    });
+    host.querySelectorAll('[data-ml-status]').forEach((button) => button.onclick = () => {
+      state.ml.status = state.ml.status === button.dataset.mlStatus ? '' : button.dataset.mlStatus;
+      state.ml.focus = '';
+      state.ml.show = true;
+      renderMack();
+    });
+    host.querySelectorAll('[data-ml-focus]').forEach((button) => button.onclick = () => {
+      state.ml.focus = state.ml.focus === button.dataset.mlFocus ? '' : button.dataset.mlFocus;
+      state.ml.show = true;
+      renderMack();
+    });
+    const clearer = $('#ml-clear');
+    if (clearer) clearer.onclick = () => { state.ml.lease = ''; state.ml.status = ''; state.ml.focus = ''; state.ml.show = false; renderMack(); };
+    const sort = $('#ml-sort');
+    if (sort) sort.onchange = (event) => { state.ml.sort = event.target.value; state.ml.show = true; renderMack(); };
     const box = $('#gh-local-notes');
     if (box) box.oninput = () => { state.localNotes = box.value; try { localStorage.setItem(NOTES_KEY, box.value); } catch (error) {} };
+    if (query.show) { const node = document.getElementById('gh-deals'); if (node) node.open = true; }
   }
   function lhaTable(rows) {
     return '<div class="scroll"><table id="lha-table"><thead><tr><th class="l">BRMA</th><th>Shared</th><th>1 bed</th><th>2 bed</th><th>3 bed</th><th>4 bed</th></tr></thead><tbody>'
@@ -218,36 +305,76 @@
       + '</tbody></table></div>';
   }
   function renderAnalysis() {
-    const lha = state.evidence.lha;
-    const picked = lha.brmas.map((name) => state.lha.rates.find((row) => row.name === name && row.country === 'England')).filter(Boolean);
-    const regionName = Object.fromEntries(state.monday.regions.map((row) => [row.id, row.name]));
-    const benchmarks = state.monday.regions.map((region) => {
-      const rows = state.evidence.benchmarks.filter((row) => row.regionId === region.id);
-      return '<article class="card" id="region-' + esc(region.id) + '"><h3>' + esc(region.name) + '</h3><p><span class="tag a">' + esc(region.status) + '</span></p><table><thead><tr><th class="l">Benchmark</th><th class="l">Figure</th><th class="l">Source</th><th>Date</th></tr></thead><tbody>'
-        + rows.map((row) => '<tr><td class="l">' + esc(row.topic) + '</td><td class="l">' + esc(row.value) + '</td><td class="l">' + (row.sourceUrl ? '<a href="' + esc(row.sourceUrl) + '" target="_blank" rel="noopener">' + esc(row.sourceTitle || row.sourceUrl) + '</a>' : esc(COPY.blank)) + '</td><td>' + esc(row.observedAt || COPY.blank) + '</td></tr><tr><td class="l foot" colspan="4">' + esc(row.note || '') + '</td></tr>').join('')
-        + '</tbody></table></article>';
-    }).join('');
-    const routes = state.monday.contractIds.map((id) => state.routes.find((row) => row.id === id)).filter(Boolean);
-    const card = state.evidence.manchesterCas;
-    const fields = [['buyer', 'Buyer'], ['notice', 'Notice'], ['value', 'Value'], ['term', 'Term'], ['geography', 'Geography'], ['route', 'Route'], ['rent', 'Rent'], ['deadline', 'Deadline'], ['contacts', 'Contacts'], ['next', 'Next step']];
+    const area = regionNow();
+    const compName = competitorRegionName(area.id);
+    const frameworks = frameworksHere();
+    const statuses = countsOf(frameworks, (item) => item.status_n || 'Not yet recorded');
+    const allComps = (state.competitors && state.competitors.competitors) || [];
+    const comps = GroupModel.filterCompetitors(allComps, compName);
+    const types = countsOf(comps, (row) => row.type);
+    const withBip = comps.filter((row) => (row.bip || []).length).length;
+    const benches = (state.evidence.benchmarks || []).filter((row) => row.regionId === area.id);
+    const missing = benches.filter((row) => row.value === 'to be supplied');
+    const lhaNames = BoardroomModel.LHA_NAMES[area.id] || [];
+    const lhaRows = lhaNames.map((label) => (state.lha.rates || []).find((row) => row.name === label && row.country === 'England')).filter(Boolean);
+    const lhaBars = lhaRows.filter((row) => typeof row['2'] === 'number').map((row) => ({id: row.name, label: row.name, amount: row['2'], text: money(row['2'])}));
+    const open = state.ax.open || (['lha', 'benchmarks', 'competitors'].includes(state.section) ? state.section : '');
+    const fwShown = state.ax.status ? frameworks.filter((item) => (item.status_n || 'Not yet recorded') === state.ax.status) : frameworks;
+    const compShown = state.ax.type ? comps.filter((row) => row.type === state.ax.type) : comps;
+    const lhaShown = state.ax.brma ? lhaRows.filter((row) => row.name === state.ax.brma) : lhaRows;
+    const topStatus = statuses[0];
     const bip = state.evidence.bip;
+    const benchLine = !benches.length ? 'No commercial benchmark is recorded for this area.' : (missing.length ? missing.map((row) => row.topic).join(' and ') + (missing.length > 1 ? ' are still to be supplied.' : ' is still to be supplied.') : 'Every recorded benchmark in this area has a cited figure.');
     const host = $('#analysis-body');
-    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Analysis Dashboard</p><h1>Regions, evidence and opportunities</h1><p class="lc-purpose">' + esc(COPY.analysisLead) + '</p></div>'
-      + '<section class="card"><h2>Dashboard framework</h2><p>' + esc(COPY.framework) + '</p><p class="foot">' + state.frameworks + ' framework records, file ' + esc(state.frameworksUpdated) + '.</p><div class="gh-shortcuts"><button type="button" class="btn sec" data-gh-go="analysis/competitors">Competitors</button><button type="button" class="btn sec" data-gh-go="analysis/frameworks">Framework records</button><button type="button" class="btn sec" data-gh-go="analysis/opportunities">Opportunity records</button><button type="button" class="btn sec" data-gh-go="analysis/return">Return check</button><button type="button" class="btn sec" data-gh-go="analysis/workbook">Workbook</button><button type="button" class="btn sec" data-gh-go="market/shortlist">Market Screen shortlist</button><a class="btn sec" href="https://pgrahamlc.github.io/ecosystem-deals/#entry/checklist" target="_blank" rel="noopener">Go / No-Go checklist</a></div><p class="foot">' + esc(COPY.propertySite) + ' <a href="https://pgraham974.github.io/ecosystem-deals/" target="_blank" rel="noopener">Property comparison site</a></p></section>'
-      + '<section class="card" id="gh-datasets">' + datasetBlock(true) + '</section>'
-      + '<section class="card" id="gh-regions"><h2>Priority regions</h2><p class="foot">Each region is a placeholder to confirm. It is seeded from coverage already in this repo.</p><div class="gh-grid">' + state.monday.regions.map((row) => '<article><h3>' + esc(row.name) + '</h3><p><span class="tag a">' + esc(row.status) + '</span></p><p class="foot">' + esc(row.seededFrom) + '</p></article>').join('') + '</div></section>'
-      + '<section class="card" id="gh-lha"><h2>' + esc(COPY.lhaTitle) + '</h2><p>Monthly Universal Credit rates for ' + esc(lha.period) + ', valid ' + esc(lha.validFrom) + ' to ' + esc(lha.validTo) + '. Publisher: ' + esc(lha.publisher) + '.</p><p><a href="' + esc(lha.publicationUrl) + '" target="_blank" rel="noopener">GOV.UK publication</a> · <a href="' + esc(lha.englandCsv) + '" target="_blank" rel="noopener">England CSV</a> · <a href="' + esc(lha.voaLookup) + '" target="_blank" rel="noopener">VOA postcode lookup</a></p><p class="foot">Publication updated ' + esc(lha.publicationUpdated) + '. ' + esc(lha.publicationUpdatedNote) + '</p><p class="foot">Rate file retrieved ' + esc(lha.fileRetrieved) + ' and matched ' + esc(lha.fileVerified) + '. ' + esc(lha.spotCheckNote) + '</p><p>' + esc(lha.guidance) + '</p>' + lhaTable(picked)
-      + '<details class="ms-fold"><summary>All BRMAs in the rate file (' + state.lha.rates.length + ')</summary><p class="foot">Scotland CSV and Wales CSV were part of the 3 November 2026 match. <a href="' + esc(lha.scotlandCsv) + '" target="_blank" rel="noopener">Scotland</a> · <a href="' + esc(lha.walesCsv) + '" target="_blank" rel="noopener">Wales</a></p>' + lhaTable(state.lha.rates) + '</details></section>'
-      + '<section class="card" id="gh-benchmarks"><h2>' + esc(COPY.benchmarksTitle) + '</h2><p>' + esc(COPY.benchmarksIntro) + '</p>' + benchmarks + '</section>'
-      + competitorSection()
-      + '<section class="card" id="gh-contracts"><h2>' + esc(COPY.contractsTitle) + '</h2><h3>' + esc(COPY.routesTitle) + '</h3><p class="foot">' + esc(COPY.routesIntro) + ' Route file ' + esc(state.routesUpdated) + '.</p><div class="scroll"><table><thead><tr><th class="l">Route</th><th class="l">Area</th><th class="l">Recorded status</th><th>As of</th></tr></thead><tbody>'
-      + routes.map((row) => '<tr><td class="l"><b>' + shown(row.shortName || row.name) + '</b><details><summary>Blocker on file</summary><p>' + shown(row.blockerSummary || row.primaryBlocker || COPY.blank) + '</p></details></td><td class="l">' + shown((row.regions || []).map((id) => regionName[id] || id).join(', ')) + '</td><td class="l">' + shown(row.statusLabel || '') + '</td><td>' + esc(row.statusAsOf || '') + '</td></tr>').join('')
-      + '</tbody></table></div><article class="card" id="gh-manchester-cas"><h3>' + esc(card.name) + '</h3><p><span class="tag a">' + esc(card.status) + '</span></p><p>' + esc(COPY.manchester) + '</p><dl class="kv">' + fields.map(([key, label]) => '<dt>' + esc(label) + '</dt><dd>' + esc(card[key] ? card[key] : COPY.blank) + '</dd>').join('') + '</dl></article></section>'
-      + bipBlock(bip);
+    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Analysis Dashboard</p><h1>Evidence for ' + esc(area.label) + '</h1><p class="lc-purpose">Framework status, competitors and the allowance spread for this area. Lease cards stay on Mack Living. Rent gap stays on the boardroom.</p></div>'
+      + '<section class="card" id="ms-analytics">' + kpiRow([
+        {label: 'Framework records', value: String(frameworks.length)},
+        {label: 'Competitors', value: String(comps.length)},
+        {label: 'Competitors with a BiP award', value: String(withBip)},
+        {label: 'BiP file built', value: bip && bip.built ? ukWhen(bip.built) : 'Not yet recorded'}
+      ])
+      + takeList([
+        topStatus ? topStatus.count + ' of ' + frameworks.length + ' framework records that list ' + area.label + ' are ' + topStatus.label + '.' : 'No framework record lists ' + area.label + '.',
+        comps.length + ' competitors are recorded for ' + (compName || area.label) + '. ' + (withBip === 1 ? '1 of them links a BiP award.' : withBip + ' of them link a BiP award.'),
+        benchLine
+      ])
+      + '<div class="an-grid"><article><h2>Framework status</h2>' + barChart(statuses, 'an-status', state.ax.status) + '</article><article><h2>Competitor type</h2>' + barChart(types, 'an-type', state.ax.type) + '</article></div>'
+      + '<h2>2 bed LHA in this area</h2>' + valueChart(lhaBars, 'an-brma', state.ax.brma)
+      + '<p class="foot">DWP Universal Credit 2026/27 monthly rates. The boardroom shows one reference row. This chart is the 2 bed rate for each BRMA named for the area.</p>'
+      + (bip ? '<p class="foot">BiP awards and spend stay on Framework records. Last build ' + esc(bip.built) + '.</p><button type="button" class="btn sec" data-gh-go="records/frameworks">' + esc(COPY.bipOpen) + '</button>' : '')
+      + (state.ax.status || state.ax.type || state.ax.brma ? '<p class="an-note"><button type="button" class="btn sec" id="an-clear">Clear chart filter</button></p>' : '')
+      + '</section>'
+      + fold('gh-frameworks', 'Show detail', '<p class="foot">' + fwShown.length + ' framework records. File ' + esc(state.frameworksUpdated) + '.</p><div class="scroll"><table><thead><tr><th class="l">Framework</th><th class="l">Status</th><th class="l">Route</th></tr></thead><tbody>'
+        + fwShown.map((item) => '<tr><td class="l">' + shown(item.name) + '</td><td class="l">' + shown(item.status_n || 'Not yet recorded') + '</td><td class="l">' + shown(item.investor_route || 'Not yet recorded') + '</td></tr>').join('')
+        + '</tbody></table></div><p><button type="button" class="btn sec" data-gh-go="records/frameworks">Open the full framework records</button></p>', open === 'frameworks' || !!state.ax.status)
+      + fold('gh-competitors', 'Show competitor detail', '<p class="foot">' + esc(COPY.competitorsIntro) + '</p>' + (compShown.length ? compShown.map((row) => {
+        const awards = (row.bip || []).map((id) => '<button type="button" class="btn sec" data-bip="' + esc(id) + '">' + esc(id) + '</button>').join(' ');
+        const opps = (row.competesOn || []).map((link) => link.id ? '<b>' + esc(link.id) + '</b> ' + esc(link.name) : esc(link.name) + ' <span class="foot">' + esc(COPY.noCurrentOpp) + '</span>').join('<br>');
+        return '<article class="gh-comp"><h3>' + esc(row.name) + ' <span class="foot">' + esc(row.id) + '</span></h3><p>' + esc(row.entity || 'Not yet recorded') + '</p><p>' + esc(row.type) + '</p><p>BiP awards ' + (awards || 'Not yet recorded') + '</p><p>Competes on<br>' + (opps || 'Not yet recorded') + '</p><details><summary>Note</summary><p>' + shownText(row.note) + (row.also ? '</p><p class="foot">' + shownText(row.also) : '') + '</p></details></article>';
+      }).join('') : '<p class="bd-empty">No competitor is recorded for this area.</p>'), open === 'competitors' || !!state.ax.type)
+      + fold('gh-lha', 'Show LHA detail', '<p>' + esc(state.evidence.lha.guidance) + '</p>' + (lhaShown.length ? lhaTable(lhaShown) : '<p class="bd-empty">Not yet recorded</p>') + '<p><a href="' + esc(state.evidence.lha.publicationUrl) + '" target="_blank" rel="noopener">GOV.UK publication</a></p>', open === 'lha' || !!state.ax.brma)
+      + fold('gh-benchmarks', 'Show benchmark detail', '<p>' + esc(COPY.benchmarksIntro) + '</p>' + (benches.length ? '<div class="scroll"><table><thead><tr><th class="l">Benchmark</th><th class="l">Figure</th><th class="l">Source</th><th>Date</th></tr></thead><tbody>'
+        + benches.map((row) => '<tr><td class="l">' + esc(row.topic) + '</td><td class="l">' + esc(row.value) + '</td><td class="l">' + (row.sourceUrl ? '<a href="' + esc(row.sourceUrl) + '" target="_blank" rel="noopener">' + esc(row.sourceTitle || row.sourceUrl) + '</a>' : 'Not yet recorded') + '</td><td>' + esc(row.observedAt || 'Not yet recorded') + '</td></tr><tr><td class="l foot" colspan="4">' + esc(row.note || '') + '</td></tr>').join('')
+        + '</tbody></table></div>' : '<p class="bd-empty">Not yet recorded</p>'), open === 'benchmarks');
     host.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
     host.querySelectorAll('[data-bip]').forEach((button) => button.onclick = () => openBip(button.dataset.bip));
-    const regionPick = document.getElementById('gh-comp-region');
-    if (regionPick) regionPick.onchange = () => { state.compRegion = regionPick.value; renderAnalysis(); const node = document.getElementById('gh-competitors'); if (node) node.scrollIntoView({block:'start'}); };
+    host.querySelectorAll('[data-an-status]').forEach((button) => button.onclick = () => {
+      state.ax.status = state.ax.status === button.dataset.anStatus ? '' : button.dataset.anStatus;
+      state.ax.open = state.ax.status ? 'frameworks' : '';
+      renderAnalysis();
+    });
+    host.querySelectorAll('[data-an-type]').forEach((button) => button.onclick = () => {
+      state.ax.type = state.ax.type === button.dataset.anType ? '' : button.dataset.anType;
+      state.ax.open = state.ax.type ? 'competitors' : '';
+      renderAnalysis();
+    });
+    host.querySelectorAll('[data-an-brma]').forEach((button) => button.onclick = () => {
+      state.ax.brma = state.ax.brma === button.dataset.anBrma ? '' : button.dataset.anBrma;
+      state.ax.open = state.ax.brma ? 'lha' : '';
+      renderAnalysis();
+    });
+    const clearer = $('#an-clear');
+    if (clearer) clearer.onclick = () => { state.ax = {status:'', type:'', brma:'', open:''}; renderAnalysis(); };
   }
   async function openBip(id) {
     state.mode = 'analysis';
@@ -286,7 +413,8 @@
     if (!hero || host.querySelector('#gh-market-extra')) return;
     const setNote = state.setId === 'proposed' ? 'Proposed weights, not agreed.' : 'Current live weights.';
     const bip = state.evidence && state.evidence.bip;
-    hero.insertAdjacentHTML('afterend', '<div class="card" id="gh-market-extra"><p>' + esc(COPY.marketSteps) + '</p><p><b>' + esc(COPY.weightsInUse) + ':</b> ' + esc(setNote) + '</p>' + (state.shortlist ? '<p class="gh-proposed">' + esc(COPY.shortlist) + (host.querySelectorAll('#ms-matrix tbody tr').length ? '' : ' ' + esc(COPY.shortlistEmpty)) + '</p>' : '') + (bip ? '<p class="foot">BiP awards stay on Framework records. Last build ' + esc(bip.built) + '.</p><button type="button" class="btn sec" data-gh-go="' + esc(bip.view) + '">' + esc(COPY.bipOpen) + '</button>' : '') + datasetBlock(false) + '</div>');
+    const anchor = host.querySelector('#ms-analytics') || hero;
+    anchor.insertAdjacentHTML('beforeend', '<div id="gh-market-extra">' + (state.shortlist ? '<p class="gh-proposed">' + esc(COPY.shortlist) + (host.querySelectorAll('#ms-matrix tbody tr').length ? '' : ' ' + esc(COPY.shortlistEmpty)) + '</p>' : '') + '<p class="foot"><b>' + esc(COPY.weightsInUse) + '.</b> ' + esc(setNote) + '</p>' + (bip ? '<p class="foot">BiP awards stay on Framework records. Last build ' + esc(bip.built) + '.</p><button type="button" class="btn sec" data-gh-go="records/frameworks">' + esc(COPY.bipOpen) + '</button>' : '') + '</div>');
     const select = $('#gh-set');
     if (select) select.onchange = () => { choose(select.value); MarketScreen.render(); };
     host.querySelectorAll('#gh-market-extra [data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
@@ -477,8 +605,19 @@
   function setRegion(id) {
     state.region = id;
     state.boardPick = '';
+    state.ax = {status:'', type:'', brma:'', open:''};
+    state.ml.focus = '';
+    state.ml.lease = '';
+    state.ml.status = '';
+    state.ml.show = false;
+    state.recOpen = '';
     try { localStorage.setItem('gh-region', id); } catch (error) {}
     applyRegion();
+    if (window.MarketScreen) {
+      MarketScreen.state.testKey = '';
+      MarketScreen.state.detailOpen = false;
+      if (!state.shortlist) MarketScreen.state.status = '';
+    }
     const header = document.getElementById('gh-region');
     if (header) header.value = id;
     if (state.mode === 'board') renderBoard();
@@ -506,17 +645,73 @@
     paint();
     setHash('board');
   }
+  function renderRecords() {
+    const area = regionNow();
+    const pos = positionData()[area.id] || {};
+    const deals = pos.dealsExecuted == null ? 'Not yet recorded' : String(pos.dealsExecuted);
+    const held = pos.propertiesHeld == null ? 'Not yet recorded' : String(pos.propertiesHeld);
+    const datasets = (state.evidence && state.evidence.datasets) || [];
+    const dated = datasets.filter((row) => /^\d{4}-\d{2}-\d{2}$/.test(row.updated || ''));
+    const times = dated.map((row) => Date.parse(row.updated));
+    const min = times.length ? Math.min(...times) : 0;
+    const span = times.length ? Math.max(1, Math.max(...times) - min) : 1;
+    const timeline = dated.length ? '<div class="an-chart">' + dated.map((row) => {
+      const left = (Date.parse(row.updated) - min) / span * 92;
+      return '<button type="button" class="bd-row' + (state.recOpen === row.file ? ' on' : '') + '" data-rec-file="' + esc(row.file) + '"><span>' + esc(row.label) + '</span><i><b style="left:' + left + '%;width:8%"></b></i></button>';
+    }).join('') + '</div>' : '<p class="bd-empty">Not yet recorded</p>';
+    const counts = [
+      {id: 'frameworks', label: 'Framework records', count: (state.fwItems || []).length},
+      {id: 'competitors', label: 'Competitors', count: ((state.competitors && state.competitors.competitors) || []).length},
+      {id: 'routes', label: 'Mack routes', count: (state.routes || []).length},
+      {id: 'datasets', label: 'Dataset files', count: datasets.length}
+    ];
+    const newest = dated.slice().sort((a, b) => b.updated.localeCompare(a.updated))[0];
+    const host = document.getElementById('records-body');
+    host.innerHTML = '<div class="an-start"><p class="bd-kicker">Records</p><h1>Data appendix for ' + esc(area.label) + '</h1><p>Catalogue dates and the position sheet. Raw framework, opportunity and workbook rows open from a chart or a button.</p></div>'
+      + '<section class="card">' + kpiRow([
+        {label: 'Deals executed', value: deals},
+        {label: 'Properties held', value: held},
+        {label: 'Dataset files', value: String(datasets.length)},
+        {label: 'Newest file date', value: newest ? ukWhen(newest.updated) : 'Not yet recorded'}
+      ])
+      + takeList([
+        'Deals executed and properties held for ' + area.label + ' are ' + (pos.dealsExecuted == null && pos.propertiesHeld == null ? 'not yet recorded. Enter them under Show position sheet.' : 'taken from the position sheet in this browser.'),
+        datasets.length + ' dataset files are catalogued. ' + (newest ? 'The newest date in the catalogue is ' + ukWhen(newest.updated) + ' on ' + newest.label + '.' : 'No catalogue date is recorded.'),
+        'Framework records, opportunity records and the workbook are the raw tables. They stay off this page until you open them.'
+      ])
+      + '<h2>How many records are on file</h2>' + barChart(counts, 'rec-kind', '')
+      + '<h2>When each dataset was last updated</h2>' + timeline
+      + '</section>'
+      + fold('gh-datasets', 'Show detail', '<ul class="gh-dates">' + datasets.map((row) => '<li id="rec-' + esc(row.file) + '"><b>' + esc(row.label) + '</b> ' + esc(row.updated) + (row.also ? ' <span class="foot">' + esc(row.also) + '</span>' : '') + ' <span class="foot">' + esc(row.file) + '</span></li>').join('') + '</ul>', state.recOpen === 'datasets' || datasets.some((row) => row.file === state.recOpen))
+      + fold('gh-position', 'Show position sheet', '<div id="pos-slot"></div>', state.recOpen === 'position');
+    host.querySelectorAll('[data-rec-kind]').forEach((button) => button.onclick = () => {
+      const kind = button.dataset.recKind;
+      if (kind === 'datasets') { state.recOpen = 'datasets'; renderRecords(); return; }
+      if (kind === 'frameworks') viewMode('records/frameworks');
+      else if (kind === 'competitors') viewMode('analysis/competitors');
+      else if (kind === 'routes') viewMode('mack');
+    });
+    host.querySelectorAll('[data-rec-file]').forEach((button) => button.onclick = () => {
+      state.recOpen = button.dataset.recFile;
+      renderRecords();
+      const node = document.getElementById('rec-' + button.dataset.recFile);
+      if (node) node.scrollIntoView({block:'center'});
+    });
+    BoardroomUI.positionForm(document.getElementById('pos-slot'), area.id, positionData(), (saved) => {
+      if (!saved) { viewMode('board'); return; }
+      const all = positionData();
+      all[area.id] = saved;
+      try { localStorage.setItem('gh-position', JSON.stringify(all)); } catch (error) {}
+      state.recOpen = 'position';
+      renderRecords();
+    });
+  }
   function openPosition() {
     leaveBoard();
     state.mode = 'records';
     state.section = 'position';
     show('records_view');
-    BoardroomUI.positionForm(document.getElementById('records-body'), state.region, positionData(), (saved) => {
-      if (!saved) { viewMode('board'); return; }
-      const all = positionData();
-      all[state.region] = saved;
-      try { localStorage.setItem('gh-position', JSON.stringify(all)); } catch (error) {}
-    });
+    renderRecords();
     paint();
     setHash('records/position');
   }
@@ -625,6 +820,7 @@
     state.auctions = auctions;
     state.ons = ons;
     try { state.region = localStorage.getItem('gh-region') || 'GM'; } catch (error) { state.region = 'GM'; }
+    applyRegion();
     state.scores = scores;
     state.monday = monday;
     state.evidence = evidence;
