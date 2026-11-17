@@ -372,3 +372,30 @@ header{display:flex;min-height:52px}#nav2 .mainnav{display:flex;flex-wrap:wrap;a
 .gh-deal-grid dd{margin:0;font-weight:600}
 @media(max-width:760px){.gh-deal-grid{grid-template-columns:1fr}#gh-deals .ctl{padding-right:84px}}
 @media(max-width:760px){header{padding:10px 16px;gap:12px}header .lc-product{font-size:11px}header .lc-product span{max-width:160px}#status{display:none}#nav2 .mainnav{padding:0 8px}#nav2 .mainb{font-size:14px;padding:8px 10px;min-height:44px}#nav2 .ms-analysis{margin-left:0}aside.card{padding:8px 16px}main{padding:8px 12px 20px}.ms-hero{padding:14px 4px 4px}.ms-hero h1{font-size:28px}.ms-hero .lc-purpose{font-size:14px}.card{padding:14px;border-radius:10px}.ms-summary{gap:10px 16px}.ms-summary b{font-size:16px}.ms-matrix-wrap{margin-left:-14px;margin-right:-14px}#ms-matrix th:first-child{min-width:150px}#ms-matrix .ms-provider{min-width:150px;max-width:170px}.ms-detail-grid{grid-template-columns:1fr}.ms-controls>label{max-width:100%;flex:1 1 140px}.ms-controls input,.ms-controls select{width:100%}#lha-brma{max-width:100%}.ms-fold .ctl label{max-width:100%}.pf-facts{grid-template-columns:1fr}.pf-facts dd{margin-bottom:8px}.lc-more-menu{left:auto;right:0}#gh-sub{padding:8px 8px 0}.gh-grid{grid-template-columns:1fr}.gh-brand{flex:1 1 220px}.gh-wordmark{border-left:0;padding-left:0}.lc-product{flex-basis:100%}}
+
+/* Go / No-Go checklist */
+#gh-sub .subb{max-width:100%;white-space:normal;text-align:left}
+.gh-deal,#gh-lha,#gh-regions,#gh-manchester-cas,#region-GM,#checklist_view section{scroll-margin-top:16px}
+#checklist_view .gn-top{display:flex;gap:12px;align-items:flex-start}
+#checklist_view .gn-check{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:650;white-space:nowrap;min-height:28px}
+#checklist_view .gn-check input{width:18px;height:18px;accent-color:#1a9c5b}
+#checklist_view .gn-q{margin:2px 0 0;font-size:15px;font-weight:650}
+#checklist_view .gn-item{border-top:1px solid var(--line);padding:12px 0}
+#checklist_view .gn-item.done{background:#f3faf6;margin:0 -8px;padding:12px 8px;border-radius:8px}
+#checklist_view .gn-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin-top:8px}
+#checklist_view .gn-meta label,#checklist_view .gn-notes{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--mut)}
+#checklist_view .gn-meta input,#checklist_view .gn-meta select,#checklist_view .gn-add input{font:inherit;font-size:14px;color:var(--ink);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:#fff;min-height:36px}
+#checklist_view .gn-meta input{min-width:160px}
+#checklist_view .gn-notes{margin-top:8px}
+#checklist_view .gn-notes textarea{min-height:52px}
+#checklist_view .gn-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+#checklist_view .gn-links .btn{font-size:12px;padding:5px 9px;min-height:32px}
+#checklist_view .gn-bar{height:8px;background:#eef1f5;border-radius:4px;overflow:hidden;margin:6px 0 4px}
+#checklist_view .gn-bar span{display:block;height:8px;background:#1a9c5b}
+#checklist_view .gn-ws-h{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+#checklist_view .gn-ws-h h2{margin:0}
+#checklist_view .gn-add{display:flex;flex-direction:row;align-items:end;gap:8px;margin-top:10px}
+#checklist_view .gn-add input{flex:1;min-width:0}
+#checklist_view .gn-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+#checklist_view details{margin-top:8px}
+@media(max-width:760px){#checklist_view .gn-top{flex-direction:column;gap:6px}#checklist_view .gn-add{flex-direction:column;align-items:stretch}}

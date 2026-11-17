@@ -5,12 +5,16 @@
   const $ = window.$ || (s => document.querySelector(s));
   const esc = window.esc || (s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])));
   const NOTES_KEY = 'gh-monday-notes';
+  const CHECKLIST_KEY = 'gh-checklist-v1';
   const state = {mode:'market', section:'', shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, living:null, v4:null, fwItems:null, lha:null, frameworks:0, competitors:null, compRegion:'', ml:{region:'', lease:'', status:'', sort:'deadline'}};
+  let checklistDoc = null;
+  let checklistMeta = {purpose:'', storageNote:''};
+  let checklistMessage = '';
   const previous = viewMode;
 
   function asset(name) {
     const url = new URL(name, location.href);
-    url.searchParams.set('v', 'group-20261110c');
+    url.searchParams.set('v', 'group-20261117');
     return url.href;
   }
   async function loadJson(name) {
@@ -95,7 +99,7 @@
     const nav = $('#nav2');
     if (!nav) return;
     const top = state.mode === 'directory' ? 'market' : (state.mode === 'analysis' ? 'analysis' : state.mode);
-    const items = [['mack', 'Mack Living'], ['market', 'Market Screen'], ['analysis', 'Analysis Dashboard']];
+    const items = [['mack', 'Mack Living'], ['market', 'Market Screen'], ['analysis', 'Analysis Dashboard'], ['checklist', 'Go / No-Go']];
     nav.innerHTML = '<div class="mainnav">' + items.map(([id, label]) => '<button type="button" class="mainb' + (top === id ? ' on' : '') + '" data-gh="' + id + '">' + label + '</button>').join('') + '</div><div id="gh-sub"></div>';
     nav.querySelectorAll('[data-gh]').forEach((button) => button.onclick = () => viewMode(button.dataset.gh));
     const sub = $('#gh-sub');
@@ -104,8 +108,12 @@
       const buttons = [['market', 'Matrix', !state.shortlist && state.mode !== 'directory'], ['market/shortlist', 'Shortlist', state.shortlist], ['market/directory', 'Directory', state.mode === 'directory' && !topOn], ['market/top', 'Top 10', !!topOn]];
       sub.innerHTML = buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
     } else if (top === 'analysis') {
-      const buttons = [['analysis/regions', 'Evidence', state.section === 'regions' || state.section === 'top'], ['analysis/competitors', 'Competitors', state.section === 'competitors'], ['analysis/contracts', 'Contracts', state.section === 'contracts'], ['analysis/frameworks', 'Framework records', state.section === 'frameworks'], ['analysis/opportunities', 'Opportunity records', state.section === 'opportunities'], ['analysis/workbook', 'Workbook', state.section === 'workbook']];
+      const evidenceOn = ['regions', 'top', 'lha', 'manchester', 'benchmarks'].includes(state.section) || String(state.section).indexOf('region/') === 0;
+      const buttons = [['analysis/regions', 'Evidence', evidenceOn], ['analysis/competitors', 'Competitors', state.section === 'competitors'], ['analysis/contracts', 'Contracts', state.section === 'contracts'], ['analysis/frameworks', 'Framework records', state.section === 'frameworks'], ['analysis/opportunities', 'Opportunity records', state.section === 'opportunities'], ['analysis/workbook', 'Workbook', state.section === 'workbook']];
       sub.innerHTML = buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
+    } else if (top === 'checklist') {
+      const rows = (checklistDoc && checklistDoc.workstreams) || [];
+      sub.innerHTML = rows.map((ws) => '<button type="button" class="subb' + (state.section === ws.id ? ' on' : '') + '" data-gh-go="checklist/' + esc(ws.id) + '">' + esc(ws.title) + '</button>').join('');
     } else sub.innerHTML = '<span class="foot">Monday morning Mack Living and Laurito Capital</span>';
     sub.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
   }
@@ -143,22 +151,33 @@
     renderMack();
     paint();
     setHash(tail ? 'mack/' + tail : 'mack');
-    if (tail === 'agenda') { const node = document.getElementById('gh-agenda'); if (node) node.scrollIntoView({block:'start'}); }
+    const anchor = tail === 'agenda' ? 'gh-agenda' : (tail ? 'ml-' + tail : '');
+    if (anchor) { const node = document.getElementById(anchor); if (node) node.scrollIntoView({block:'start'}); }
+  }
+  function opportunityId(value) {
+    return /^(GM|BR|GL)-[A-Z0-9-]+$/.test(value || '') ? value : '';
   }
   function openAnalysis(section) {
     const name = section || 'top';
     state.mode = 'analysis';
-    state.section = name;
+    state.section = name.indexOf('opportunities/') === 0 ? 'opportunities' : name;
     state.shortlist = false;
     if (name === 'frameworks') { previous('frameworks'); paint(); setHash('analysis/frameworks'); return; }
-    if (name === 'opportunities') { previous('flow'); paint(); setHash('analysis/opportunities'); return; }
+    if (name === 'opportunities' || name.indexOf('opportunities/') === 0) {
+      const id = opportunityId(name.slice('opportunities/'.length));
+      previous(id ? 'flow/' + id : 'flow');
+      paint();
+      setHash(id ? 'analysis/opportunities/' + id : 'analysis/opportunities');
+      return;
+    }
     if (name === 'workbook') { previous('sheets'); paint(); setHash('analysis/workbook'); return; }
     if (name === 'return') { previous('return'); paint(); setHash('analysis/return'); return; }
     show('analysis_view');
     renderAnalysis();
     paint();
     setHash(name === 'top' ? 'analysis' : 'analysis/' + name);
-    const anchor = name === 'contracts' ? 'gh-contracts' : (name === 'competitors' ? 'gh-competitors' : (name === 'regions' ? 'gh-regions' : (name.indexOf('region/') === 0 ? 'region-' + name.slice(7) : '')));
+    const anchors = {contracts:'gh-contracts', competitors:'gh-competitors', regions:'gh-regions', lha:'gh-lha', manchester:'gh-manchester-cas', benchmarks:'gh-benchmarks'};
+    const anchor = name.indexOf('region/') === 0 ? 'region-' + name.slice(7) : (anchors[name] || '');
     if (anchor) { const node = document.getElementById(anchor); if (node) node.scrollIntoView({block:'start'}); }
   }
   function dealField(label, value) {
@@ -174,9 +193,9 @@
     const summary = pack.summary;
     const host = $('#mack-body');
     host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Mack Living</p><h1>What is the lease?</h1><p class="lc-purpose">Length, rent, voids and repairs, shown only where a source states them. Anything else is not stated or to confirm.</p></div>'
-      + '<div class="card"><div class="ms-summary"><span><b>' + summary.live + '</b> open records</span><span><b>' + esc(summary.nearest ? Number(summary.nearest.slice(8)) + ' ' + ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(summary.nearest.slice(5,7))-1] + ' ' + summary.nearest.slice(0,4) : 'not stated') + '</b> nearest deadline</span><span><b>' + (summary.units == null ? 'not stated' : summary.units) + '</b> stated units</span><span><b>' + esc(summary.longest) + '</b> longest stated term</span></div><p class="foot">Open records exclude historical, forthcoming, appointed and to confirm rows. Stated units are the minimum 66 on the recorded P-1476 notice only. The longest term is the longest lease length written on a term or route row.</p><div class="gh-shortcuts">' + state.monday.shortcuts.map((item) => '<button type="button" class="btn sec" data-gh-go="' + esc(item.hash) + '">' + esc(item.label) + '</button>').join('') + '</div></div>'
+      + '<div class="card"><div class="ms-summary"><span><b>' + summary.live + '</b> open records</span><span><b>' + esc(summary.nearest ? Number(summary.nearest.slice(8)) + ' ' + ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(summary.nearest.slice(5,7))-1] + ' ' + summary.nearest.slice(0,4) : 'not stated') + '</b> nearest deadline</span><span><b>' + (summary.units == null ? 'not stated' : summary.units) + '</b> stated units</span><span><b>' + esc(summary.longest) + '</b> longest stated term</span></div><p class="foot">Open records exclude historical, forthcoming, appointed and to confirm rows. Stated units are the minimum 66 on the recorded P-1476 notice only. The longest term is the longest lease length written on a term or route row.</p><div class="gh-shortcuts">' + state.monday.shortcuts.map((item) => '<button type="button" class="btn sec" data-gh-go="' + esc(item.hash) + '">' + esc(item.label) + '</button>').join('') + '<button type="button" class="btn sec" data-gh-go="checklist">Go / No-Go Checklist</button></div></div>'
       + '<section class="card" id="gh-deals"><div class="ctl"><label>Region <select id="ml-region">' + regions.map(([id, label]) => '<option value="' + id + '"' + (query.region === id ? ' selected' : '') + '>' + esc(label) + '</option>').join('') + '</select></label><label>Lease type <select id="ml-lease"><option value="">All types</option>' + leases.map((item) => '<option' + (query.lease === item ? ' selected' : '') + '>' + esc(item) + '</option>').join('') + '</select></label><label>Status <select id="ml-status"><option value="">All statuses</option>' + statuses.map((item) => '<option' + (query.status === item ? ' selected' : '') + '>' + esc(item) + '</option>').join('') + '</select></label><label>Sort <select id="ml-sort"><option value="deadline"' + (query.sort === 'deadline' ? ' selected' : '') + '>Deadline</option><option value="term"' + (query.sort === 'term' ? ' selected' : '') + '>Term length</option></select></label><span class="foot">' + visible.length + ' of ' + pack.cards.length + ' shown</span></div>'
-      + visible.map((row) => '<article class="gh-deal"><div class="gh-deal-h"><h3>' + esc(row.name) + '</h3><span class="tag">' + esc(row.bucket) + '</span></div><p>' + esc(row.leaseType) + ' · ' + esc(row.region) + ' · ' + esc(row.source) + '</p><p class="foot">' + esc(row.status) + '</p><dl class="gh-deal-grid">' + dealField('Length', row.length) + dealField('Start', row.start) + dealField('End', row.end) + dealField('Breaks or extensions', row.breaks) + dealField('Rent basis', row.rentBasis) + dealField('Rent level', row.rentLevel) + dealField('Voids', row.voids) + dealField('Repairs', row.repairs) + dealField('Buyer', row.buyer) + dealField('Units sought', row.units) + dealField('Deadline', row.deadlineLabel) + '</dl><p><b>Next step. </b>' + esc(row.next) + '</p><p>BiP ' + ((row.bip || []).length ? row.bip.map((id) => '<button type="button" class="btn sec" data-bip="' + esc(id) + '">' + esc(id) + '</button>').join(' ') : esc(MlCommercial.NOT_STATED)) + '</p>' + (row.evidence ? '<details><summary>Source wording</summary><p>' + esc(row.evidence) + '</p></details>' : '') + '</article>').join('')
+      + visible.map((row) => '<article class="gh-deal" id="ml-' + esc(row.id || '') + '"><div class="gh-deal-h"><h3>' + esc(row.name) + '</h3><span class="tag">' + esc(row.bucket) + '</span></div><p>' + esc(row.leaseType) + ' · ' + esc(row.region) + ' · ' + esc(row.source) + '</p><p class="foot">' + esc(row.status) + '</p><dl class="gh-deal-grid">' + dealField('Length', row.length) + dealField('Start', row.start) + dealField('End', row.end) + dealField('Breaks or extensions', row.breaks) + dealField('Rent basis', row.rentBasis) + dealField('Rent level', row.rentLevel) + dealField('Voids', row.voids) + dealField('Repairs', row.repairs) + dealField('Buyer', row.buyer) + dealField('Units sought', row.units) + dealField('Deadline', row.deadlineLabel) + '</dl><p><b>Next step. </b>' + esc(row.next) + '</p><p>BiP ' + ((row.bip || []).length ? row.bip.map((id) => '<button type="button" class="btn sec" data-bip="' + esc(id) + '">' + esc(id) + '</button>').join(' ') : esc(MlCommercial.NOT_STATED)) + '</p>' + (row.evidence ? '<details><summary>Source wording</summary><p>' + esc(row.evidence) + '</p></details>' : '') + '</article>').join('')
       + '</section>'
       + '<section class="card" id="gh-agenda"><h2>Monday discussion</h2><p>' + esc(state.monday.meeting.purpose) + '</p><ol>' + state.monday.agenda.map((item) => '<li><b>' + esc(item.item) + '</b><p>' + esc(item.note) + '</p></li>').join('') + '</ol>'
       + '<details><summary>Priority regions, still to confirm</summary><div class="gh-grid">' + state.monday.regions.map((row) => '<article><h3>' + esc(row.name) + '</h3><p><span class="tag a">' + esc(row.status) + '</span></p><p class="foot">' + esc(row.seededFrom) + '</p></article>').join('') + '</div></details>'
@@ -212,7 +231,7 @@
     const bip = state.evidence.bip;
     const host = $('#analysis-body');
     host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Analysis Dashboard</p><h1>Regions, evidence and opportunities</h1><p class="lc-purpose">' + esc(COPY.analysisLead) + '</p></div>'
-      + '<section class="card"><h2>Dashboard framework</h2><p>' + esc(COPY.framework) + '</p><p class="foot">' + state.frameworks + ' framework records, file ' + esc(state.frameworksUpdated) + '.</p><div class="gh-shortcuts"><button type="button" class="btn sec" data-gh-go="analysis/competitors">Competitors</button><button type="button" class="btn sec" data-gh-go="analysis/frameworks">Framework records</button><button type="button" class="btn sec" data-gh-go="analysis/opportunities">Opportunity records</button><button type="button" class="btn sec" data-gh-go="analysis/return">Return check</button><button type="button" class="btn sec" data-gh-go="analysis/workbook">Workbook</button><button type="button" class="btn sec" data-gh-go="market/shortlist">Market Screen shortlist</button></div><p class="foot">' + esc(COPY.propertySite) + ' <a href="https://pgraham974.github.io/ecosystem-deals/" target="_blank" rel="noopener">Property comparison site</a></p></section>'
+      + '<section class="card"><h2>Dashboard framework</h2><p>' + esc(COPY.framework) + '</p><p class="foot">' + state.frameworks + ' framework records, file ' + esc(state.frameworksUpdated) + '.</p><div class="gh-shortcuts"><button type="button" class="btn sec" data-gh-go="analysis/competitors">Competitors</button><button type="button" class="btn sec" data-gh-go="analysis/frameworks">Framework records</button><button type="button" class="btn sec" data-gh-go="analysis/opportunities">Opportunity records</button><button type="button" class="btn sec" data-gh-go="analysis/return">Return check</button><button type="button" class="btn sec" data-gh-go="analysis/workbook">Workbook</button><button type="button" class="btn sec" data-gh-go="market/shortlist">Market Screen shortlist</button><button type="button" class="btn sec" data-gh-go="checklist">Go / No-Go Checklist</button></div><p class="foot">' + esc(COPY.propertySite) + ' <a href="https://pgraham974.github.io/ecosystem-deals/" target="_blank" rel="noopener">Property comparison site</a></p></section>'
       + '<section class="card" id="gh-datasets">' + datasetBlock(true) + '</section>'
       + '<section class="card" id="gh-regions"><h2>Priority regions</h2><p class="foot">Each region is a placeholder to confirm. It is seeded from coverage already in this repo.</p><div class="gh-grid">' + state.monday.regions.map((row) => '<article><h3>' + esc(row.name) + '</h3><p><span class="tag a">' + esc(row.status) + '</span></p><p class="foot">' + esc(row.seededFrom) + '</p></article>').join('') + '</div></section>'
       + '<section class="card" id="gh-lha"><h2>' + esc(COPY.lhaTitle) + '</h2><p>Monthly Universal Credit rates for ' + esc(lha.period) + ', valid ' + esc(lha.validFrom) + ' to ' + esc(lha.validTo) + '. Publisher: ' + esc(lha.publisher) + '.</p><p><a href="' + esc(lha.publicationUrl) + '" target="_blank" rel="noopener">GOV.UK publication</a> · <a href="' + esc(lha.englandCsv) + '" target="_blank" rel="noopener">England CSV</a> · <a href="' + esc(lha.voaLookup) + '" target="_blank" rel="noopener">VOA postcode lookup</a></p><p class="foot">Publication updated ' + esc(lha.publicationUpdated) + '. ' + esc(lha.publicationUpdatedNote) + '</p><p class="foot">Rate file retrieved ' + esc(lha.fileRetrieved) + ' and matched ' + esc(lha.fileVerified) + '. ' + esc(lha.spotCheckNote) + '</p><p>' + esc(lha.guidance) + '</p>' + lhaTable(picked)
@@ -271,6 +290,167 @@
     host.querySelectorAll('#gh-market-extra [data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
   }
 
+  function saveChecklist() {
+    try { localStorage.setItem(CHECKLIST_KEY, ChecklistModel.serialise(checklistDoc)); } catch (error) {}
+  }
+  function storedChecklist(seed) {
+    const seeded = ChecklistModel.fromSeed(seed);
+    try {
+      const raw = localStorage.getItem(CHECKLIST_KEY);
+      if (!raw) return seeded;
+      const parsed = ChecklistModel.parseImport(raw);
+      return parsed.error ? seeded : parsed.state;
+    } catch (error) {
+      return seeded;
+    }
+  }
+  function checklistCount(done, total) {
+    return done + ' of ' + total + ' done';
+  }
+  function checklistLink(link) {
+    if (link.hash) return '<button type="button" class="btn sec" data-gh-go="' + esc(link.hash) + '">' + esc(link.label) + '</button>';
+    return '<a class="btn sec" href="' + esc(link.href) + '" target="_blank" rel="noopener">' + esc(link.label) + '</a>';
+  }
+  function renderChecklist() {
+    const host = $('#checklist-body');
+    if (!host) return;
+    if (!checklistDoc || !window.ChecklistModel) {
+      host.innerHTML = '<p role="status">Loading the checklist...</p>';
+      return;
+    }
+    const summary = ChecklistModel.summarise(checklistDoc);
+    const statuses = ChecklistModel.STATUSES;
+    const sections = checklistDoc.workstreams.map((ws) => {
+      const count = summary.streams.find((row) => row.id === ws.id) || {done:0, total:0, percent:0};
+      const items = ws.items.map((item) => {
+        const options = statuses.map((row) => '<option value="' + row.id + '"' + (item.status === row.id ? ' selected' : '') + '>' + row.label + '</option>').join('');
+        const links = (item.links || []).map(checklistLink).join('');
+        return '<article class="gn-item' + (item.done ? ' done' : '') + '" id="gn-item-' + esc(ws.id) + '-' + esc(item.id) + '">'
+          + '<div class="gn-top"><label class="gn-check"><input type="checkbox" data-gn-done="' + esc(ws.id) + '" data-gn-item="' + esc(item.id) + '"' + (item.done ? ' checked' : '') + '> Done</label>'
+          + '<p class="gn-q">' + esc(item.text) + '</p></div>'
+          + '<div class="gn-meta"><label>Status <select data-gn-status="' + esc(ws.id) + '" data-gn-item="' + esc(item.id) + '">' + options + '</select></label>'
+          + '<label>Owner <input data-gn-owner="' + esc(ws.id) + '" data-gn-item="' + esc(item.id) + '" value="' + esc(item.owner) + '" placeholder="Name" autocomplete="off"></label>'
+          + '<button type="button" class="btn sec" data-gn-del="' + esc(ws.id) + '" data-gn-item="' + esc(item.id) + '">Delete</button></div>'
+          + '<label class="gn-notes">Notes or answer <textarea data-gn-notes="' + esc(ws.id) + '" data-gn-item="' + esc(item.id) + '" placeholder="Short answer">' + esc(item.notes) + '</textarea></label>'
+          + (links ? '<div class="gn-links">' + links + '</div>' : '')
+          + '</article>';
+      }).join('');
+      return '<section class="card" id="gn-' + esc(ws.id) + '"><div class="gn-ws-h"><h2>' + esc(ws.title) + '</h2><p class="foot" id="gn-prog-' + esc(ws.id) + '">' + checklistCount(count.done, count.total) + '</p></div>'
+        + '<div class="gn-bar" aria-hidden="true"><span style="width:' + count.percent + '%"></span></div>'
+        + items
+        + '<form class="gn-add" data-gn-add="' + esc(ws.id) + '"><input placeholder="New checklist item" aria-label="New item in ' + esc(ws.title) + '" autocomplete="off"><button class="btn" type="submit">Add item</button></form>'
+        + '<details><summary class="foot">Remove this workstream</summary><button type="button" class="btn sec" data-gn-del-ws="' + esc(ws.id) + '">Delete workstream</button></details>'
+        + '</section>';
+    }).join('');
+    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Go / No-Go</p><h1>Go / No-Go Checklist</h1><p class="lc-purpose">' + esc(checklistMeta.purpose) + '</p></div>'
+      + '<div class="kpis"><div class="kpi"><small>Overall</small><b id="gn-overall">' + checklistCount(summary.done, summary.total) + '</b></div>'
+      + summary.streams.map((row) => '<div class="kpi"><small>' + esc(row.title) + '</small><b>' + checklistCount(row.done, row.total) + '</b></div>').join('')
+      + '</div>'
+      + sections
+      + '<section class="card" id="gn-share"><h2>Add a workstream</h2><form class="gn-add" id="gn-add-ws"><input id="gn-ws-name" placeholder="New workstream name" aria-label="New workstream name" autocomplete="off"><button class="btn" type="submit">Add workstream</button></form>'
+      + '<div class="gn-tools"><button type="button" class="btn sec" id="gn-export">Export JSON</button><button type="button" class="btn sec" id="gn-import-btn">Import JSON</button><input id="gn-import" type="file" accept="application/json,.json" hidden></div>'
+      + '<p role="status" id="gn-msg">' + esc(checklistMessage) + '</p>'
+      + '<p class="foot">' + esc(checklistMeta.storageNote) + '</p></section>';
+    wireChecklist(host);
+  }
+  function wireChecklist(host) {
+    const say = (text) => { const msg = $('#gn-msg'); if (msg) msg.textContent = text; };
+    host.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
+    host.querySelectorAll('[data-gn-done]').forEach((box) => box.onchange = () => {
+      checklistMessage = '';
+      checklistDoc = ChecklistModel.setDone(checklistDoc, box.dataset.gnDone, box.dataset.gnItem, box.checked);
+      saveChecklist();
+      renderChecklist();
+    });
+    host.querySelectorAll('[data-gn-status]').forEach((select) => select.onchange = () => {
+      checklistMessage = '';
+      checklistDoc = ChecklistModel.setStatus(checklistDoc, select.dataset.gnStatus, select.dataset.gnItem, select.value);
+      saveChecklist();
+      renderChecklist();
+    });
+    host.querySelectorAll('[data-gn-owner]').forEach((input) => input.oninput = () => {
+      checklistDoc = ChecklistModel.setField(checklistDoc, input.dataset.gnOwner, input.dataset.gnItem, 'owner', input.value);
+      saveChecklist();
+    });
+    host.querySelectorAll('[data-gn-notes]').forEach((input) => input.oninput = () => {
+      checklistDoc = ChecklistModel.setField(checklistDoc, input.dataset.gnNotes, input.dataset.gnItem, 'notes', input.value);
+      saveChecklist();
+    });
+    host.querySelectorAll('[data-gn-del]').forEach((button) => button.onclick = () => {
+      checklistMessage = '';
+      checklistDoc = ChecklistModel.deleteItem(checklistDoc, button.dataset.gnDel, button.dataset.gnItem).state;
+      saveChecklist();
+      renderChecklist();
+    });
+    host.querySelectorAll('[data-gn-del-ws]').forEach((button) => button.onclick = () => {
+      checklistMessage = '';
+      checklistDoc = ChecklistModel.deleteWorkstream(checklistDoc, button.dataset.gnDelWs).state;
+      saveChecklist();
+      renderChecklist();
+      paint();
+    });
+    host.querySelectorAll('form[data-gn-add]').forEach((form) => form.onsubmit = (event) => {
+      event.preventDefault();
+      const result = ChecklistModel.addItem(checklistDoc, form.dataset.gnAdd, form.querySelector('input').value);
+      checklistMessage = result.error || '';
+      if (result.error) { say(result.error); return; }
+      checklistDoc = result.state;
+      saveChecklist();
+      renderChecklist();
+    });
+    const addWs = $('#gn-add-ws');
+    if (addWs) addWs.onsubmit = (event) => {
+      event.preventDefault();
+      const result = ChecklistModel.addWorkstream(checklistDoc, $('#gn-ws-name').value);
+      checklistMessage = result.error || '';
+      if (result.error) { say(result.error); return; }
+      checklistDoc = result.state;
+      saveChecklist();
+      renderChecklist();
+      paint();
+    };
+    const exportBtn = $('#gn-export');
+    if (exportBtn) exportBtn.onclick = () => {
+      const blob = new Blob([ChecklistModel.serialise(checklistDoc)], {type:'application/json'});
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'go-no-go-checklist.json';
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+    };
+    const importBtn = $('#gn-import-btn');
+    const importFile = $('#gn-import');
+    if (importBtn && importFile) {
+      importBtn.onclick = () => importFile.click();
+      importFile.onchange = () => {
+        const file = importFile.files && importFile.files[0];
+        importFile.value = '';
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          const parsed = ChecklistModel.parseImport(String(reader.result || ''));
+          if (parsed.error) { checklistMessage = parsed.error; renderChecklist(); return; }
+          checklistDoc = parsed.state;
+          checklistMessage = 'Checklist replaced from the file.';
+          saveChecklist();
+          renderChecklist();
+          paint();
+        };
+        reader.readAsText(file);
+      };
+    }
+  }
+  function openChecklist(tail) {
+    state.mode = 'checklist';
+    state.section = tail || '';
+    state.shortlist = false;
+    show('checklist_view');
+    renderChecklist();
+    paint();
+    setHash(tail ? 'checklist/' + tail : 'checklist');
+    if (tail) { const node = document.getElementById('gn-' + tail); if (node) node.scrollIntoView({block:'start'}); }
+  }
+
   const mackView = document.createElement('div');
   mackView.id = 'mack_view';
   mackView.className = 'hidden';
@@ -279,15 +459,20 @@
   analysisView.id = 'analysis_view';
   analysisView.className = 'hidden';
   analysisView.innerHTML = '<main id="analysis-body"></main>';
-  document.body.append(mackView, analysisView);
+  const checklistView = document.createElement('div');
+  checklistView.id = 'checklist_view';
+  checklistView.className = 'hidden';
+  checklistView.innerHTML = '<main id="checklist-body"></main>';
+  document.body.append(mackView, analysisView, checklistView);
 
   viewMode = function (mode) {
     const raw = String(mode || 'market');
     const parts = raw.split('/');
     const head = parts[0];
     const tail = parts.slice(1).join('/');
-    if (head === 'lha' || head === 'rent') { openAnalysis('regions'); return; }
+    if (head === 'lha' || head === 'rent') { openAnalysis('lha'); return; }
     if (head === 'mack') { openMack(tail); return; }
+    if (head === 'checklist') { openChecklist(tail); return; }
     if (head === 'analysis') { openAnalysis(tail); return; }
     if (head === 'market' || head === 'pscreen') {
       if (tail === 'directory' || tail === 'top') {
@@ -306,7 +491,7 @@
       return;
     }
     if (head === 'frameworks') { openAnalysis('frameworks'); return; }
-    if (head === 'flow' || head === 'opportunities') { openAnalysis('opportunities'); return; }
+    if (head === 'flow' || head === 'opportunities') { openAnalysis(opportunityId(tail) ? 'opportunities/' + tail : 'opportunities'); return; }
     if (head === 'sheets' || head === 'workbook') { openAnalysis('workbook'); return; }
     if (head === 'return') { openAnalysis('return'); return; }
     openMarket(false);
@@ -331,9 +516,14 @@
 
   try { state.localNotes = localStorage.getItem(NOTES_KEY) || ''; } catch (error) { state.localNotes = ''; }
   const ready = (async () => {
-    const [scores, monday, evidence, living, lha, frameworks, competitors, v4] = await Promise.all([
-      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json')
+    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, checklistSeed] = await Promise.all([
+      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json'), loadJson('checklist.json')
     ]);
+    checklistMeta = {
+      purpose: typeof checklistSeed.purpose === 'string' ? checklistSeed.purpose : '',
+      storageNote: typeof checklistSeed.storageNote === 'string' ? checklistSeed.storageNote : ''
+    };
+    checklistDoc = storedChecklist(checklistSeed);
     state.scores = scores;
     state.monday = monday;
     state.evidence = evidence;

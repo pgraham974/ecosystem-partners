@@ -1,0 +1,131 @@
+{
+  "updated": "2026-11-17",
+  "file": "checklist.json",
+  "title": "Go / No-Go Checklist",
+  "purpose": "A go or no-go list for the Mack Living and Laurito Capital partnership. Tick an item when it is done and add a short answer where you have one.",
+  "storageNote": "Ticks, notes and owners stay in this browser. Export the file to share the list. The starting items are in checklist.json.",
+  "workstreams": [
+    {
+      "id": "la-lease",
+      "title": "Local Authority 10-year Lease Agreements",
+      "items": [
+        {
+          "id": "offer",
+          "text": "Understand what is on offer?",
+          "done": false,
+          "notes": "",
+          "owner": "",
+          "status": "not-started",
+          "links": [
+            {"label": "Mack Living lease terms", "hash": "mack/manchester-long-term-ta"},
+            {"label": "Manchester City Council record", "hash": "analysis/opportunities/GM-035"}
+          ]
+        },
+        {
+          "id": "engage-decision",
+          "text": "Do we want to engage with it?",
+          "done": false,
+          "notes": "",
+          "owner": "",
+          "status": "not-started",
+          "links": [
+            {"label": "Market Screen", "hash": "market"},
+            {"label": "Market Screen shortlist", "hash": "market/shortlist"}
+          ]
+        },
+        {
+          "id": "how-engage",
+          "text": "How do we engage?",
+          "done": false,
+          "notes": "",
+          "owner": "",
+          "status": "not-started",
+          "links": [
+            {"label": "Mack Living next step", "hash": "mack/manchester-long-term-ta"},
+            {"label": "Framework records", "hash": "analysis/frameworks"}
+          ]
+        },
+        {
+          "id": "complete",
+          "text": "How do we complete an engagement and activate deal flow?",
+          "done": false,
+          "notes": "",
+          "owner": "",
+          "status": "not-started",
+          "links": [
+            {"label": "Opportunity records", "hash": "analysis/opportunities"},
+            {"label": "Return check", "hash": "analysis/return"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "portfolio",
+      "title": "Assembling A Portfolio",
+      "items": [
+        {
+          "id": "manchester",
+          "text": "Is Manchester a good market for you?",
+          "done": true,
+          "notes": "Yes",
+          "owner": "",
+          "status": "done",
+          "links": [
+            {"label": "Analysis Dashboard Manchester evidence", "hash": "analysis/regions"},
+            {"label": "Greater Manchester LHA rates", "hash": "analysis/lha"},
+            {"label": "Greater Manchester benchmarks", "hash": "analysis/region/GM"}
+          ]
+        },
+        {
+          "id": "property-type",
+          "text": "What type of property is needed to fulfil this requirement?",
+          "done": false,
+          "notes": "",
+          "owner": "",
+          "status": "not-started",
+          "links": [
+            {"label": "Demand on the Manchester City Council record", "hash": "analysis/opportunities/GM-035"}
+          ]
+        },
+        {
+          "id": "volume",
+          "text": "Can we realistically access a sufficient volume?",
+          "done": false,
+          "notes": "",
+          "owner": "",
+          "status": "not-started",
+          "links": [
+            {"label": "Manchester City Council scale and demand", "hash": "analysis/opportunities/GM-035"},
+            {"label": "Recorded routes", "hash": "analysis/contracts"}
+          ]
+        },
+        {
+          "id": "gates",
+          "text": "Can we be competitive at a level that meets our acquisition gates?",
+          "done": false,
+          "notes": "",
+          "owner": "",
+          "status": "not-started",
+          "links": [
+            {"label": "Acquisition gates", "hash": "analysis/opportunities"},
+            {"label": "Market Screen tests", "hash": "market"},
+            {"label": "Return check", "hash": "analysis/return"}
+          ]
+        },
+        {
+          "id": "pathways",
+          "text": "What specific pathways will we use to identify stock?",
+          "done": false,
+          "notes": "",
+          "owner": "",
+          "status": "not-started",
+          "links": [
+            {"label": "Recorded stock routes", "hash": "analysis/contracts"},
+            {"label": "Mack Living", "hash": "mack"},
+            {"label": "Property comparison site", "href": "https://pgraham974.github.io/ecosystem-deals/"}
+          ]
+        }
+      ]
+    }
+  ]
+}
