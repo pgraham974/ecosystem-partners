@@ -55,14 +55,19 @@ test('blank portfolio and open market stay not recorded', () => {
   assert.equal(gm.omrKnown, false);
   assert.equal(gm.lights.find((row) => row.label === 'Deals and holdings').detail, 'Not yet recorded');
 });
-test('an entered open market rent creates a gap against the reference LHA only', () => {
-  const position = JSON.parse(JSON.stringify(input.position));
-  position.GM.omr['2'] = 1000;
-  position.GM.omr.source = 'Entered on the position sheet';
-  const next = Model.build({...input, position});
+test('ONS Manchester rents and the LHA gap are computed, not typed as a target count', () => {
+  const ons = {source: 'ONS Price Index of Private Rents, released 21 October 2026', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics', areas: {'Manchester': {month: 'Sep 2026', all: 1380, b1: 1007, b2: 1239, b3: 1441, b4: 2024}, 'Bristol, City of': {month: 'Sep 2026', b1: 1230, b2: 1551, b3: 1769, b4: 2558}}};
+  const next = Model.build({...input, ons, auctions: {regions: {GM: {matched: 6, unknown: 116, current: 137}}}});
   const two = next.rates.find((row) => row.key === '2');
-  assert.equal(two.gap, 125);
-  assert.equal(next.rates.find((row) => row.key === '1').gap, null);
+  assert.equal(two.omr, 1239);
+  assert.equal(two.gap, 875 - 1239);
+  assert.equal(two.gapPercent, Math.round(((875 - 1239) / 1239) * 1000) / 10);
+  assert.equal(next.rates.find((row) => row.key === 'shared').omr, null);
+  assert.equal(next.rates.find((row) => row.key === '4').onsLabel, '4 or more');
+  assert.equal(next.portfolio.targets.matched, 6);
+  assert.equal(next.portfolio.targets.unknown, 116);
+  const bristol = Model.build({...input, region: 'BRS', ons});
+  assert.equal(bristol.rates.find((row) => row.key === '2').omr, 1551);
 });
 test('copy has no semicolon or dash', () => {
   assert.equal(Group.scanCopy(gm.verdict).length, 0);

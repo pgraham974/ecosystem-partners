@@ -13,8 +13,13 @@
   }
   function rateCell(bed, field) {
     if (field === 'reference') return bed.reference == null ? 'Not in file' : root.BoardroomModel.money(bed.reference);
-    if (field === 'omr') return bed.omr == null ? 'Not yet recorded' : root.BoardroomModel.money(bed.omr);
-    return bed.gap == null ? 'Not yet recorded' : (bed.gap > 0 ? '+' : '') + root.BoardroomModel.money(bed.gap);
+    if (field === 'omr') {
+      if (!bed.onsLabel) return 'Not in this ONS series';
+      return bed.omr == null ? 'Not in the ONS file' : root.BoardroomModel.money(bed.omr);
+    }
+    if (bed.gap == null) return 'Not yet recorded';
+    const sign = bed.gap > 0 ? '+' : '';
+    return sign + root.BoardroomModel.money(bed.gap) + ' (' + (bed.gapPercent > 0 ? '+' : '') + bed.gapPercent + '%)';
   }
   function timeline(rows) {
     const start = Date.UTC(2024, 0, 1);
@@ -52,8 +57,8 @@
       + '<section class="bd-contracts" aria-label="Contracts"><div class="bd-counts"><span><b>' + screen.contracts.schemes + '</b> schemes</span><span><b>' + screen.contracts.withBip + '</b> with BiP</span><span><b>1</b> area</span><div class="bd-matrix"><h2>What exists here</h2><p>' + (types || 'None recorded') + '</p></div></div><div class="bd-time"><h2>Timeline</h2>' + timeline(screen.timeline) + '</div></section>'
       + '<section class="bd-three" aria-label="Rates">'
       + '<article><h2>LHA</h2><p>' + esc(screen.region.reference || 'No reference BRMA') + '</p><ul>' + screen.rates.map((bed) => '<li><span>' + esc(bed.label) + '</span><b>' + esc(rateCell(bed, 'reference')) + '</b></li>').join('') + '</ul><p class="bd-src">' + esc(screen.lhaProvenance) + '</p></article>'
-      + '<article><h2>Open market</h2><p>ONS rents are not in the file.</p><ul>' + screen.rates.map((bed) => '<li><span>' + esc(bed.label) + '</span><b>' + esc(rateCell(bed, 'omr')) + '</b></li>').join('') + '</ul><button type="button" class="btn sec" data-go="records/position">Enter rents</button></article>'
-      + '<article><h2>Gap</h2><p>Open market minus the reference LHA.</p><ul>' + screen.rates.map((bed) => '<li><span>' + esc(bed.label) + '</span><b>' + esc(rateCell(bed, 'gap')) + '</b></li>').join('') + '</ul><p>Targets this gap implies: <b>' + (screen.portfolio.targets == null ? 'Not yet recorded' : screen.portfolio.targets) + '</b></p></article>'
+      + '<article><h2>Open market</h2><p>' + esc(screen.ons.area ? screen.ons.area + ', ' + screen.ons.month : 'No ONS area for this selection') + '</p><ul>' + screen.rates.map((bed) => '<li><span>' + esc(bed.onsLabel || bed.label) + '</span><b>' + esc(rateCell(bed, 'omr')) + '</b></li>').join('') + '</ul><p class="bd-src">ONS Price Index of Private Rents, 21 Oct 2026 release. ' + esc(screen.ons.note) + '</p></article>'
+      + '<article><h2>Gap</h2><p>LHA minus open market.</p><ul>' + screen.rates.map((bed) => '<li><span>' + esc(bed.onsLabel || bed.label) + '</span><b>' + esc(rateCell(bed, 'gap')) + '</b></li>').join('') + '</ul><p>' + (screen.auctions ? '<a href="' + esc(screen.auctionsLive || 'https://pgrahamlc.github.io/ecosystem-deals/#auctions') + '" target="_blank" rel="noopener">' + screen.auctions.matched + ' current auction lots matching criteria (Ecosystem Deals)</a>. ' + screen.auctions.unknown + ' have no bed count.' : 'Current auction lots are not loaded.') + '</p></article>'
       + '</section>'
       + '<section class="bd-bottom"><article><h2>Portfolio</h2><div class="bd-counts"><span><b>' + (screen.portfolio.deals == null ? 'Not yet recorded' : screen.portfolio.deals) + '</b> deals executed</span><span><b>' + (screen.portfolio.held == null ? 'Not yet recorded' : screen.portfolio.held) + '</b> properties held</span><span><b>' + screen.portfolio.operators + '</b> operators on frameworks</span></div>' + bars(screen.ranked) + '</article>'
       + '<article class="bd-health"><h2>Region health</h2><ul>' + screen.lights.map((item) => '<li class="bd-' + item.tone + '"><b>' + esc(item.label) + '</b><span>' + esc(item.detail) + '</span></li>').join('') + '</ul><p class="bd-verdict">' + esc(screen.verdict) + '</p></article></section>'
@@ -69,20 +74,12 @@
     if (back) back.onclick = () => hooks.onSelect && hooks.onSelect('');
   }
   function positionForm(host, regionId, saved, onSave) {
-    const row = (saved && saved[regionId]) || {dealsExecuted: null, propertiesHeld: null, targets: null, omr: {}};
-    const omr = row.omr || {};
+    const row = (saved && saved[regionId]) || {dealsExecuted: null, propertiesHeld: null};
     const field = (key, label, value) => '<label>' + label + '<input data-k="' + key + '" inputmode="decimal" value="' + esc(value == null ? '' : value) + '" placeholder="Not yet recorded"></label>';
     host.innerHTML = '<div class="an-start"><p class="bd-kicker">Records</p><h1>Position sheet</h1><p>Enter only a figure you have. A blank stays Not yet recorded on the boardroom. This stays in this browser.</p><p><button type="button" class="btn sec" id="pos-back">Back to the boardroom</button></p></div><form class="bd-form" id="pos-form">'
       + field('deals', 'Deals executed', row.dealsExecuted)
       + field('held', 'Properties held', row.propertiesHeld)
-      + field('targets', 'Acquisition targets implied', row.targets)
-      + '<h2>Open market rent, £ a month</h2><p>Source, if you have one. ONS is not already in the file.</p>'
-      + field('source', 'Source', omr.source || '')
-      + field('shared', 'HMO / shared', omr.shared)
-      + field('1', '1 bed', omr['1'])
-      + field('2', '2 bed', omr['2'])
-      + field('3', '3 bed', omr['3'])
-      + field('4', '4 bed', omr['4'])
+      + '<p>Open market rents come from the ONS file. Auction lots come from Ecosystem Deals. This sheet is only for deals executed and properties held.</p>'
       + '<button class="btn" type="submit">Save to this browser</button><p id="pos-msg" role="status"></p></form>';
     host.querySelector('#pos-back').onclick = () => onSave(null);
     host.querySelector('#pos-form').onsubmit = (event) => {
@@ -91,9 +88,7 @@
       const numberOrNull = (key) => { const value = read(key); if (value === '') return null; const number = Number(value); return Number.isFinite(number) ? number : null; };
       onSave({
         dealsExecuted: numberOrNull('deals'),
-        propertiesHeld: numberOrNull('held'),
-        targets: numberOrNull('targets'),
-        omr: {source: read('source'), observedAt: new Date().toISOString().slice(0, 10), shared: numberOrNull('shared'), '1': numberOrNull('1'), '2': numberOrNull('2'), '3': numberOrNull('3'), '4': numberOrNull('4')}
+        propertiesHeld: numberOrNull('held')
       });
       host.querySelector('#pos-msg').textContent = 'Saved. The boardroom will use these figures.';
     };

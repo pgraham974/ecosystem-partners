@@ -122,7 +122,7 @@
     const header = document.querySelector('header');
     if (!header) return;
     const mark = asset('laurito-lockup.png');
-    header.innerHTML = '<div class="gh-brand"><a class="lc-brand" href="#board" id="gh-brand"><img src="' + esc(mark) + '" alt="Laurito Capital"></a><div class="gh-wordmark"><b>Mack Living</b></div></div><label class="gh-region">Area <select id="gh-region">' + BoardroomModel.REGIONS.map((row) => '<option value="' + row.id + '"' + (row.id === state.region ? ' selected' : '') + '>' + esc(row.label) + '</option>').join('') + '</select></label><a class="an-deals" href="https://pgrahamlc.github.io/ecosystem-deals/" target="_blank" rel="noopener">Ecosystem Deals</a><div id="status">Dated research, not credit approval</div>';
+    header.innerHTML = '<div class="gh-brand"><a class="lc-brand" href="#board" id="gh-brand"><img src="' + esc(mark) + '" alt="Laurito Capital"></a><div class="gh-wordmark"><b>Mack Living</b></div></div><label class="gh-region">Area <select id="gh-region">' + BoardroomModel.REGIONS.map((row) => '<option value="' + row.id + '"' + (row.id === state.region ? ' selected' : '') + '>' + esc(row.label) + '</option>').join('') + '</select></label><a class="an-deals" href="https://pgrahamlc.github.io/ecosystem-deals/#entry/checklist" target="_blank" rel="noopener">Go / No-Go checklist</a><div id="status">Dated research, not credit approval</div>';
     $('#gh-brand').onclick = (event) => { event.preventDefault(); viewMode('board'); };
     $('#gh-region').onchange = () => setRegion($('#gh-region').value);
     document.title = 'Mack Living and Laurito Capital';
@@ -233,7 +233,7 @@
     const bip = state.evidence.bip;
     const host = $('#analysis-body');
     host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Analysis Dashboard</p><h1>Regions, evidence and opportunities</h1><p class="lc-purpose">' + esc(COPY.analysisLead) + '</p></div>'
-      + '<section class="card"><h2>Dashboard framework</h2><p>' + esc(COPY.framework) + '</p><p class="foot">' + state.frameworks + ' framework records, file ' + esc(state.frameworksUpdated) + '.</p><div class="gh-shortcuts"><button type="button" class="btn sec" data-gh-go="analysis/competitors">Competitors</button><button type="button" class="btn sec" data-gh-go="analysis/frameworks">Framework records</button><button type="button" class="btn sec" data-gh-go="analysis/opportunities">Opportunity records</button><button type="button" class="btn sec" data-gh-go="analysis/return">Return check</button><button type="button" class="btn sec" data-gh-go="analysis/workbook">Workbook</button><button type="button" class="btn sec" data-gh-go="market/shortlist">Market Screen shortlist</button><button type="button" class="btn sec" data-gh-go="checklist">Go / No-Go Checklist</button></div><p class="foot">' + esc(COPY.propertySite) + ' <a href="https://pgraham974.github.io/ecosystem-deals/" target="_blank" rel="noopener">Property comparison site</a></p></section>'
+      + '<section class="card"><h2>Dashboard framework</h2><p>' + esc(COPY.framework) + '</p><p class="foot">' + state.frameworks + ' framework records, file ' + esc(state.frameworksUpdated) + '.</p><div class="gh-shortcuts"><button type="button" class="btn sec" data-gh-go="analysis/competitors">Competitors</button><button type="button" class="btn sec" data-gh-go="analysis/frameworks">Framework records</button><button type="button" class="btn sec" data-gh-go="analysis/opportunities">Opportunity records</button><button type="button" class="btn sec" data-gh-go="analysis/return">Return check</button><button type="button" class="btn sec" data-gh-go="analysis/workbook">Workbook</button><button type="button" class="btn sec" data-gh-go="market/shortlist">Market Screen shortlist</button><a class="btn sec" href="https://pgrahamlc.github.io/ecosystem-deals/#entry/checklist" target="_blank" rel="noopener">Go / No-Go checklist</a></div><p class="foot">' + esc(COPY.propertySite) + ' <a href="https://pgraham974.github.io/ecosystem-deals/" target="_blank" rel="noopener">Property comparison site</a></p></section>'
       + '<section class="card" id="gh-datasets">' + datasetBlock(true) + '</section>'
       + '<section class="card" id="gh-regions"><h2>Priority regions</h2><p class="foot">Each region is a placeholder to confirm. It is seeded from coverage already in this repo.</p><div class="gh-grid">' + state.monday.regions.map((row) => '<article><h3>' + esc(row.name) + '</h3><p><span class="tag a">' + esc(row.status) + '</span></p><p class="foot">' + esc(row.seededFrom) + '</p></article>').join('') + '</div></section>'
       + '<section class="card" id="gh-lha"><h2>' + esc(COPY.lhaTitle) + '</h2><p>Monthly Universal Credit rates for ' + esc(lha.period) + ', valid ' + esc(lha.validFrom) + ' to ' + esc(lha.validTo) + '. Publisher: ' + esc(lha.publisher) + '.</p><p><a href="' + esc(lha.publicationUrl) + '" target="_blank" rel="noopener">GOV.UK publication</a> · <a href="' + esc(lha.englandCsv) + '" target="_blank" rel="noopener">England CSV</a> · <a href="' + esc(lha.voaLookup) + '" target="_blank" rel="noopener">VOA postcode lookup</a></p><p class="foot">Publication updated ' + esc(lha.publicationUpdated) + '. ' + esc(lha.publicationUpdatedNote) + '</p><p class="foot">Rate file retrieved ' + esc(lha.fileRetrieved) + ' and matched ' + esc(lha.fileVerified) + '. ' + esc(lha.spotCheckNote) + '</p><p>' + esc(lha.guidance) + '</p>' + lhaTable(picked)
@@ -495,7 +495,7 @@
   function renderBoard() {
     document.body.classList.add('bd-on');
     const host = document.getElementById('board-body');
-    const built = BoardroomModel.build({today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData()});
+    const built = BoardroomModel.build({today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions});
     BoardroomUI.render(host, built, {selected: state.boardPick, onRegion: setRegion, onPresent: togglePresent, onGo: (hash) => viewMode(hash), onSelect: (id) => { state.boardPick = id; renderBoard(); }});
   }
   function openBoard() {
@@ -617,10 +617,13 @@
 
   try { state.localNotes = localStorage.getItem(NOTES_KEY) || ''; } catch (error) { state.localNotes = ''; }
   const ready = (async () => {
-    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, positionFile] = await Promise.all([
-      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json'), loadJson('portfolio-position.json')
+    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, positionFile, auctions, ons] = await Promise.all([
+      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json'), loadJson('portfolio-position.json'), loadJson('auction-targets.json'),
+      fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/rents.json', {cache: 'no-store'}).then((response) => response.ok ? response.json() : null).catch(() => null)
     ]);
     state.positionFile = positionFile;
+    state.auctions = auctions;
+    state.ons = ons;
     try { state.region = localStorage.getItem('gh-region') || 'GM'; } catch (error) { state.region = 'GM'; }
     state.scores = scores;
     state.monday = monday;

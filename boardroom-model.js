@@ -12,7 +12,14 @@
     BRS: ['Bristol'],
     GLOS: ['Cheltenham', 'Gloucester']
   });
-  const BEDS = Object.freeze([['shared', 'SAR', 'HMO / shared'], ['1', '1', '1 bed'], ['2', '2', '2 bed'], ['3', '3', '3 bed'], ['4', '4', '4 bed']]);
+  const BEDS = Object.freeze([
+    ['shared', 'SAR', 'HMO / shared', ''],
+    ['1', '1', '1 bed', '1 bed'],
+    ['2', '2', '2 bed', '2 bed'],
+    ['3', '3', '3 bed', '3 bed'],
+    ['4', '4', '4 bed', '4 or more']
+  ]);
+  const ONS_AREA = Object.freeze({GM: 'Manchester', BRS: 'Bristol, City of', GLOS: 'Cheltenham'});
   const BIP_FIELDS = Object.freeze(['id', 'type', 'title', 'buyer', 'suppliers', 'lotSuppliers', 'value', 'basis', 'start', 'end', 'region', 'status', 'opps', 'url', 'checked', 'published', 'framework']);
 
   function regionById(id) {
@@ -129,23 +136,35 @@
     const names = LHA_NAMES[region.id] || [];
     const rows = names.map((name) => (file.rates || []).find((row) => row.name === name && row.country === 'England')).filter(Boolean);
     const reference = rows.find((row) => row.name === region.reference) || rows[0] || null;
-    const beds = BEDS.map(([key, field, label]) => {
+    const onsFile = (input.ons && input.ons.areas) || {};
+    const onsName = ONS_AREA[region.id] || '';
+    const ons = onsName ? onsFile[onsName] : null;
+    const onsKey = {shared: '', '1': 'b1', '2': 'b2', '3': 'b3', '4': 'b4'};
+    const beds = BEDS.map(([key, field, label, onsLabel]) => {
       const values = rows.map((row) => num(row[field])).filter((value) => value != null);
+      const market = ons && onsKey[key] ? num(ons[onsKey[key]]) : null;
+      const lha = reference ? num(reference[field]) : null;
+      const gap = lha != null && market != null && market !== 0 ? Math.round((lha - market) * 100) / 100 : null;
+      const gapPercent = gap != null ? Math.round((gap / market) * 1000) / 10 : null;
       return {
-        key, label,
-        reference: reference ? num(reference[field]) : null,
+        key, label, onsLabel,
+        reference: lha,
         min: values.length ? Math.min(...values) : null,
-        max: values.length ? Math.max(...values) : null
+        max: values.length ? Math.max(...values) : null,
+        omr: market,
+        gap, gapPercent
       };
     });
     const position = (input.position && input.position[region.id]) || {};
-    const omr = position.omr || {};
-    const rates = beds.map((bed) => ({
-      ...bed,
-      omr: num(omr[bed.key]),
-      gap: num(omr[bed.key]) != null && bed.reference != null ? Math.round((num(omr[bed.key]) - bed.reference) * 100) / 100 : null
-    }));
+    const rates = beds;
     const omrKnown = rates.some((bed) => bed.omr != null);
+    const onsMeta = {
+      area: onsName,
+      month: ons ? ons.month : '',
+      source: (input.ons && input.ons.source) || '',
+      url: (input.ons && input.ons.url) || '',
+      note: '4 or more is the ONS category. It is not a pure 4 bed rent. This series has no shared room average.'
+    };
     const typeMap = {};
     for (const row of schemes) typeMap[row.type] = (typeMap[row.type] || 0) + 1;
     const ranked = schemes.filter((row) => row.operators.count > 0).sort((a, b) => b.operators.count - a.operators.count || a.name.localeCompare(b.name));
@@ -154,17 +173,19 @@
     const past = schemes.filter((row) => row.end.firm && row.end.iso < today).length;
     const deals = num(position.dealsExecuted);
     const held = num(position.propertiesHeld);
-    const targets = num(position.targets);
+    const auction = (input.auctions && input.auctions.regions && input.auctions.regions[region.id]) || null;
     const lights = [
-      omrKnown ? light(rates.some((bed) => bed.gap > 0) ? 'bad' : 'good', 'Rent gap', omrKnown ? 'Open market is recorded against the reference LHA.' : '') : light('none', 'Rent gap', 'Not yet recorded'),
-      targets == null ? light('none', 'Supply of targets', 'Not yet recorded') : light(targets > 0 ? 'good' : 'mid', 'Supply of targets', String(targets) + ' recorded'),
+      omrKnown ? light(rates.some((bed) => bed.gap != null && bed.gap < 0) ? 'mid' : 'good', 'Rent gap', 'LHA minus the ONS rent for the named area.') : light('none', 'Rent gap', 'Not yet recorded'),
+      !auction ? light('none', 'Supply of targets', 'Not yet recorded') : light(auction.matched > 0 ? 'good' : 'mid', 'Supply of targets', auction.matched + ' lots state 3 or 4 bed. ' + auction.unknown + ' have no bed count.'),
       light(operatorPlaces > 0 ? 'good' : 'bad', 'Operator coverage', operatorPlaces ? operatorPlaces + ' operator places on frameworks' : 'None recorded'),
       past ? light('bad', 'Framework expiry', past + (past === 1 ? ' firm end date is already past' : ' firm end dates are already past')) : soon ? light('mid', 'Framework expiry', soon + (soon === 1 ? ' firm date falls inside 12 months' : ' firm dates fall inside 12 months')) : light(schemes.some((row) => row.end.firm) ? 'good' : 'mid', 'Framework expiry', schemes.some((row) => row.end.firm) ? 'No firm end inside 12 months' : 'Firm end dates are unknown'),
       deals == null && held == null ? light('none', 'Deals and holdings', 'Not yet recorded') : light('good', 'Deals and holdings', 'A figure has been entered on the position sheet')
     ];
-    const verdict = omrKnown
-      ? 'LHA is cited and an open market rent has been entered, so the gap can be read.'
-      : 'LHA is cited. Open market rent, the gap, deals and holdings are not yet recorded.';
+    const comparable = rates.filter((row) => row.gap != null);
+    const allBelow = comparable.length > 0 && comparable.every((row) => row.gap < 0);
+    const verdict = !omrKnown
+      ? 'Open market rent is not in the ONS file for this area. Deals executed and properties held are not yet recorded.'
+      : (allBelow ? 'LHA is below the September 2026 ONS rent on every comparable bed size.' : 'The LHA gap is not the same sign on every bed size.') + ' Deals executed and properties held are not yet recorded.';
     return {
       today,
       region: {id: region.id, label: region.label, reference: reference ? reference.name : ''},
@@ -181,9 +202,11 @@
       ranked,
       rates,
       omrKnown,
-      omrSource: clean(omr.source),
-      lhaProvenance: 'DWP Universal Credit LHA 2026/27, via market-lha.json.',
-      portfolio: {deals, held, operators: operatorPlaces, targets},
+      ons: onsMeta,
+      lhaProvenance: 'DWP Universal Credit LHA 2026/27, via market-lha.json. The reference row is ' + (reference ? reference.name : 'not in the file') + '.',
+      auctions: auction,
+      auctionsLive: (input.auctions && input.auctions.live) || 'https://pgrahamlc.github.io/ecosystem-deals/#auctions',
+      portfolio: {deals, held, operators: operatorPlaces, targets: auction},
       soon,
       lights,
       verdict
