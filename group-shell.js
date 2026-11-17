@@ -6,7 +6,7 @@
   const esc = window.esc || (s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])));
   const NOTES_KEY = 'gh-monday-notes';
   const CHECKLIST_KEY = 'gh-checklist-v1';
-  const state = {mode:'market', section:'', shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, living:null, v4:null, fwItems:null, lha:null, frameworks:0, competitors:null, compRegion:'', ml:{region:'', lease:'', status:'', sort:'deadline'}};
+  const state = {mode:'board', section:'', region:'GM', boardPick:'', positionFile:null, shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, living:null, v4:null, fwItems:null, lha:null, frameworks:0, competitors:null, compRegion:'', ml:{region:'GM', lease:'', status:'', sort:'deadline'}};
   let checklistDoc = null;
   let checklistMeta = {purpose:'', storageNote:''};
   let checklistMessage = '';
@@ -98,31 +98,33 @@
   function paint() {
     const nav = $('#nav2');
     if (!nav) return;
-    const top = state.mode === 'directory' ? 'market' : (state.mode === 'analysis' ? 'analysis' : state.mode);
-    const items = [['mack', 'Mack Living'], ['market', 'Market Screen'], ['analysis', 'Analysis Dashboard'], ['checklist', 'Go / No-Go']];
+    const top = state.mode === 'directory' ? 'records' : state.mode;
+    const items = [['board', 'Boardroom'], ['market', 'Market Screen'], ['analysis', 'Analysis Dashboard'], ['mack', 'Mack Living'], ['records', 'Records']];
     nav.innerHTML = '<div class="mainnav">' + items.map(([id, label]) => '<button type="button" class="mainb' + (top === id ? ' on' : '') + '" data-gh="' + id + '">' + label + '</button>').join('') + '</div><div id="gh-sub"></div>';
     nav.querySelectorAll('[data-gh]').forEach((button) => button.onclick = () => viewMode(button.dataset.gh));
     const sub = $('#gh-sub');
     if (top === 'market') {
       const topOn = state.mode === 'directory' && window.PartnersHub && PartnersHub.state.top;
       const buttons = [['market', 'Matrix', !state.shortlist && state.mode !== 'directory'], ['market/shortlist', 'Shortlist', state.shortlist], ['market/directory', 'Directory', state.mode === 'directory' && !topOn], ['market/top', 'Top 10', !!topOn]];
-      sub.innerHTML = buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
+      sub.innerHTML = '<button type="button" class="subb" data-gh-go="board">Back to the boardroom</button>' + buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
     } else if (top === 'analysis') {
       const evidenceOn = ['regions', 'top', 'lha', 'manchester', 'benchmarks'].includes(state.section) || String(state.section).indexOf('region/') === 0;
-      const buttons = [['analysis/regions', 'Evidence', evidenceOn], ['analysis/competitors', 'Competitors', state.section === 'competitors'], ['analysis/contracts', 'Contracts', state.section === 'contracts'], ['analysis/frameworks', 'Framework records', state.section === 'frameworks'], ['analysis/opportunities', 'Opportunity records', state.section === 'opportunities'], ['analysis/workbook', 'Workbook', state.section === 'workbook']];
-      sub.innerHTML = buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
-    } else if (top === 'checklist') {
-      const rows = (checklistDoc && checklistDoc.workstreams) || [];
-      sub.innerHTML = rows.map((ws) => '<button type="button" class="subb' + (state.section === ws.id ? ' on' : '') + '" data-gh-go="checklist/' + esc(ws.id) + '">' + esc(ws.title) + '</button>').join('');
-    } else sub.innerHTML = '<span class="foot">Monday morning Mack Living and Laurito Capital</span>';
+      const buttons = [['analysis/regions', 'Evidence', evidenceOn], ['records/frameworks', 'Framework records', false], ['records/opportunities', 'Opportunity records', false], ['records/workbook', 'Workbook', false]];
+      sub.innerHTML = '<button type="button" class="subb" data-gh-go="board">Back to the boardroom</button>' + buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
+    } else if (top === 'records') {
+      const buttons = [['records/position', 'Position', state.section === 'position'], ['records/frameworks', 'Frameworks', state.section === 'frameworks'], ['records/opportunities', 'Opportunities', state.section === 'opportunities'], ['records/workbook', 'Workbook', state.section === 'workbook'], ['records/counterparties', 'Counterparties', state.section === 'counterparties']];
+      sub.innerHTML = '<button type="button" class="subb" data-gh-go="board">Back to the boardroom</button>' + buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
+    } else if (top === 'board') sub.innerHTML = '';
+    else sub.innerHTML = '<button type="button" class="subb" data-gh-go="board">Back to the boardroom</button><span class="foot">' + esc(BoardroomModel.regionById(state.region).label) + ' only</span>';
     sub.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
   }
   function brand() {
     const header = document.querySelector('header');
     if (!header) return;
     const mark = asset('laurito-lockup.png');
-    header.innerHTML = '<div class="gh-brand"><a class="lc-brand" href="#market" id="gh-brand"><img src="' + esc(mark) + '" alt="Laurito Capital"></a><div class="gh-wordmark"><b>Mack Living</b></div></div><div class="lc-product">Market screening and analysis<span>Mack Living and Laurito Capital</span></div><div id="status">Dated research, not credit approval</div>';
-    $('#gh-brand').onclick = (event) => { event.preventDefault(); viewMode('market'); };
+    header.innerHTML = '<div class="gh-brand"><a class="lc-brand" href="#board" id="gh-brand"><img src="' + esc(mark) + '" alt="Laurito Capital"></a><div class="gh-wordmark"><b>Mack Living</b></div></div><label class="gh-region">Area <select id="gh-region">' + BoardroomModel.REGIONS.map((row) => '<option value="' + row.id + '"' + (row.id === state.region ? ' selected' : '') + '>' + esc(row.label) + '</option>').join('') + '</select></label><a class="an-deals" href="https://pgrahamlc.github.io/ecosystem-deals/" target="_blank" rel="noopener">Ecosystem Deals</a><div id="status">Dated research, not credit approval</div>';
+    $('#gh-brand').onclick = (event) => { event.preventDefault(); viewMode('board'); };
+    $('#gh-region').onchange = () => setRegion($('#gh-region').value);
     document.title = 'Mack Living and Laurito Capital';
     const disclaimer = document.querySelector('aside.card');
     if (disclaimer) disclaimer.innerHTML = '<details><summary><b>Evidence only.</b> A blank is unknown, not a pass.</summary><p>' + esc(COPY.disclaimer) + '</p></details>';
@@ -193,7 +195,7 @@
     const summary = pack.summary;
     const host = $('#mack-body');
     host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Mack Living</p><h1>What is the lease?</h1><p class="lc-purpose">Length, rent, voids and repairs, shown only where a source states them. Anything else is not stated or to confirm.</p></div>'
-      + '<div class="card"><div class="ms-summary"><span><b>' + summary.live + '</b> open records</span><span><b>' + esc(summary.nearest ? Number(summary.nearest.slice(8)) + ' ' + ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(summary.nearest.slice(5,7))-1] + ' ' + summary.nearest.slice(0,4) : 'not stated') + '</b> nearest deadline</span><span><b>' + (summary.units == null ? 'not stated' : summary.units) + '</b> stated units</span><span><b>' + esc(summary.longest) + '</b> longest stated term</span></div><p class="foot">Open records exclude historical, forthcoming, appointed and to confirm rows. Stated units are the minimum 66 on the recorded P-1476 notice only. The longest term is the longest lease length written on a term or route row.</p><div class="gh-shortcuts">' + state.monday.shortcuts.map((item) => '<button type="button" class="btn sec" data-gh-go="' + esc(item.hash) + '">' + esc(item.label) + '</button>').join('') + '<button type="button" class="btn sec" data-gh-go="checklist">Go / No-Go Checklist</button></div></div>'
+      + '<div class="card"><div class="ms-summary"><span><b>' + summary.live + '</b> open records</span><span><b>' + esc(summary.nearest ? Number(summary.nearest.slice(8)) + ' ' + ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(summary.nearest.slice(5,7))-1] + ' ' + summary.nearest.slice(0,4) : 'not stated') + '</b> nearest deadline</span><span><b>' + (summary.units == null ? 'not stated' : summary.units) + '</b> stated units</span><span><b>' + esc(summary.longest) + '</b> longest stated term</span></div><p class="foot">Open records exclude historical, forthcoming, appointed and to confirm rows. Stated units are the minimum 66 on the recorded P-1476 notice only. The longest term is the longest lease length written on a term or route row.</p><div class="gh-shortcuts">' + state.monday.shortcuts.map((item) => '<button type="button" class="btn sec" data-gh-go="' + esc(item.hash) + '">' + esc(item.label) + '</button>').join('') + '<button type="button" class="btn sec" data-gh-go="board">Boardroom</button></div></div>'
       + '<section class="card" id="gh-deals"><div class="ctl"><label>Region <select id="ml-region">' + regions.map(([id, label]) => '<option value="' + id + '"' + (query.region === id ? ' selected' : '') + '>' + esc(label) + '</option>').join('') + '</select></label><label>Lease type <select id="ml-lease"><option value="">All types</option>' + leases.map((item) => '<option' + (query.lease === item ? ' selected' : '') + '>' + esc(item) + '</option>').join('') + '</select></label><label>Status <select id="ml-status"><option value="">All statuses</option>' + statuses.map((item) => '<option' + (query.status === item ? ' selected' : '') + '>' + esc(item) + '</option>').join('') + '</select></label><label>Sort <select id="ml-sort"><option value="deadline"' + (query.sort === 'deadline' ? ' selected' : '') + '>Deadline</option><option value="term"' + (query.sort === 'term' ? ' selected' : '') + '>Term length</option></select></label><span class="foot">' + visible.length + ' of ' + pack.cards.length + ' shown</span></div>'
       + visible.map((row) => '<article class="gh-deal" id="ml-' + esc(row.id || '') + '"><div class="gh-deal-h"><h3>' + esc(row.name) + '</h3><span class="tag">' + esc(row.bucket) + '</span></div><p>' + esc(row.leaseType) + ' · ' + esc(row.region) + ' · ' + esc(row.source) + '</p><p class="foot">' + esc(row.status) + '</p><dl class="gh-deal-grid">' + dealField('Length', row.length) + dealField('Start', row.start) + dealField('End', row.end) + dealField('Breaks or extensions', row.breaks) + dealField('Rent basis', row.rentBasis) + dealField('Rent level', row.rentLevel) + dealField('Voids', row.voids) + dealField('Repairs', row.repairs) + dealField('Buyer', row.buyer) + dealField('Units sought', row.units) + dealField('Deadline', row.deadlineLabel) + '</dl><p><b>Next step. </b>' + esc(row.next) + '</p><p>BiP ' + ((row.bip || []).length ? row.bip.map((id) => '<button type="button" class="btn sec" data-bip="' + esc(id) + '">' + esc(id) + '</button>').join(' ') : esc(MlCommercial.NOT_STATED)) + '</p>' + (row.evidence ? '<details><summary>Source wording</summary><p>' + esc(row.evidence) + '</p></details>' : '') + '</article>').join('')
       + '</section>'
@@ -451,6 +453,94 @@
     if (tail) { const node = document.getElementById('gn-' + tail); if (node) node.scrollIntoView({block:'start'}); }
   }
 
+  function leaveBoard() {
+    document.body.classList.remove('bd-on', 'bd-present');
+  }
+  function positionData() {
+    const file = (state.positionFile && state.positionFile.regions) || {};
+    let local = {};
+    try { local = JSON.parse(localStorage.getItem('gh-position') || '{}'); } catch (error) { local = {}; }
+    const merged = {};
+    for (const region of BoardroomModel.REGIONS) {
+      const base = file[region.id] || {};
+      const saved = local[region.id] || {};
+      merged[region.id] = Object.assign({}, base, saved, {omr: Object.assign({}, base.omr || {}, saved.omr || {})});
+    }
+    return merged;
+  }
+  function applyRegion() {
+    const region = BoardroomModel.regionById(state.region);
+    state.ml.region = region.id === 'National' ? '' : region.id;
+    if (typeof FWF !== 'undefined') FWF.reg = region.id === 'National' ? '' : region.id;
+    if (window.MarketScreen && MarketScreen.state) MarketScreen.state.city = region.city || '';
+  }
+  function setRegion(id) {
+    state.region = id;
+    state.boardPick = '';
+    try { localStorage.setItem('gh-region', id); } catch (error) {}
+    applyRegion();
+    const header = document.getElementById('gh-region');
+    if (header) header.value = id;
+    if (state.mode === 'board') renderBoard();
+    else if (state.mode === 'mack') renderMack();
+    else if (state.mode === 'analysis') renderAnalysis();
+    else if (state.mode === 'market' && window.MarketScreen) MarketScreen.render();
+    else if (state.mode === 'records') viewMode('records/' + (state.section || 'position'));
+  }
+  function togglePresent() {
+    const on = document.body.classList.toggle('bd-present');
+    if (on && document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(() => {});
+    else if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+  }
+  function renderBoard() {
+    document.body.classList.add('bd-on');
+    const host = document.getElementById('board-body');
+    const built = BoardroomModel.build({today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData()});
+    BoardroomUI.render(host, built, {selected: state.boardPick, onRegion: setRegion, onPresent: togglePresent, onGo: (hash) => viewMode(hash), onSelect: (id) => { state.boardPick = id; renderBoard(); }});
+  }
+  function openBoard() {
+    state.mode = 'board';
+    state.section = '';
+    show('board_view');
+    renderBoard();
+    paint();
+    setHash('board');
+  }
+  function openPosition() {
+    leaveBoard();
+    state.mode = 'records';
+    state.section = 'position';
+    show('records_view');
+    BoardroomUI.positionForm(document.getElementById('records-body'), state.region, positionData(), (saved) => {
+      if (!saved) { viewMode('board'); return; }
+      const all = positionData();
+      all[state.region] = saved;
+      try { localStorage.setItem('gh-position', JSON.stringify(all)); } catch (error) {}
+    });
+    paint();
+    setHash('records/position');
+  }
+  function openRecords(section) {
+    const name = section || 'position';
+    if (name === 'position') { openPosition(); return; }
+    leaveBoard();
+    state.mode = 'records';
+    const head = name.split('/')[0];
+    state.section = head;
+    if (head === 'opportunities') {
+      const id = opportunityId(name.slice('opportunities/'.length));
+      previous(id ? 'flow/' + id : 'flow');
+      paint();
+      setHash(id ? 'records/opportunities/' + id : 'records/opportunities');
+      return;
+    }
+    if (head === 'workbook') { previous('sheets'); paint(); setHash('records/workbook'); return; }
+    if (head === 'counterparties') { previous('who'); paint(); setHash('records/counterparties'); return; }
+    previous('frameworks');
+    paint();
+    setHash('records/frameworks');
+  }
+
   const mackView = document.createElement('div');
   mackView.id = 'mack_view';
   mackView.className = 'hidden';
@@ -463,17 +553,27 @@
   checklistView.id = 'checklist_view';
   checklistView.className = 'hidden';
   checklistView.innerHTML = '<main id="checklist-body"></main>';
-  document.body.append(mackView, analysisView, checklistView);
+  const boardView = document.createElement('div');
+  boardView.id = 'board_view';
+  boardView.className = 'hidden';
+  boardView.innerHTML = '<main id="board-body"></main>';
+  const recordsView = document.createElement('div');
+  recordsView.id = 'records_view';
+  recordsView.className = 'hidden';
+  recordsView.innerHTML = '<main id="records-body"></main>';
+  document.body.append(boardView, recordsView, mackView, analysisView, checklistView);
 
   viewMode = function (mode) {
     const raw = String(mode || 'market');
     const parts = raw.split('/');
     const head = parts[0];
     const tail = parts.slice(1).join('/');
+    if (!head || head === 'board' || head === 'analytics' || head === 'checklist') { openBoard(); return; }
+    if (head === 'records' || head === 'data') { openRecords(tail); return; }
+    leaveBoard();
     if (head === 'lha' || head === 'rent') { openAnalysis('lha'); return; }
     if (head === 'mack') { openMack(tail); return; }
-    if (head === 'checklist') { openChecklist(tail); return; }
-    if (head === 'analysis') { openAnalysis(tail); return; }
+    if (head === 'analysis') { openAnalysis(tail === 'frameworks' ? 'regions' : tail); return; }
     if (head === 'market' || head === 'pscreen') {
       if (tail === 'directory' || tail === 'top') {
         if (window.PartnersHub) {
@@ -490,11 +590,12 @@
       else openMarket(false);
       return;
     }
-    if (head === 'frameworks') { openAnalysis('frameworks'); return; }
-    if (head === 'flow' || head === 'opportunities') { openAnalysis(opportunityId(tail) ? 'opportunities/' + tail : 'opportunities'); return; }
-    if (head === 'sheets' || head === 'workbook') { openAnalysis('workbook'); return; }
+    if (head === 'frameworks') { openRecords('frameworks'); return; }
+    if (head === 'flow' || head === 'opportunities') { openRecords(opportunityId(tail) ? 'opportunities/' + tail : 'opportunities'); return; }
+    if (head === 'sheets' || head === 'workbook') { openRecords('workbook'); return; }
     if (head === 'return') { openAnalysis('return'); return; }
-    openMarket(false);
+    if (head === 'who') { openRecords('counterparties'); return; }
+    openBoard();
   };
   window.viewMode = viewMode;
   window.addEventListener('hashchange', () => {
@@ -516,14 +617,11 @@
 
   try { state.localNotes = localStorage.getItem(NOTES_KEY) || ''; } catch (error) { state.localNotes = ''; }
   const ready = (async () => {
-    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, checklistSeed] = await Promise.all([
-      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json'), loadJson('checklist.json')
+    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, positionFile] = await Promise.all([
+      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json'), loadJson('portfolio-position.json')
     ]);
-    checklistMeta = {
-      purpose: typeof checklistSeed.purpose === 'string' ? checklistSeed.purpose : '',
-      storageNote: typeof checklistSeed.storageNote === 'string' ? checklistSeed.storageNote : ''
-    };
-    checklistDoc = storedChecklist(checklistSeed);
+    state.positionFile = positionFile;
+    try { state.region = localStorage.getItem('gh-region') || 'GM'; } catch (error) { state.region = 'GM'; }
     state.scores = scores;
     state.monday = monday;
     state.evidence = evidence;

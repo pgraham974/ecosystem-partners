@@ -63,7 +63,7 @@
     shortlistEmpty: 'No provider meets all eight tests on the weights in use. A missing turnover or profit figure is enough to keep a record off this list.',
     weightSession: 'Number changes apply in this browser only. Agreed weights are changed in scoring-weights.json. The proposed set is not agreed. Luke and Liza still have to confirm it.',
     analysisLead: 'Regional and opportunity analysis for Mack Living and Laurito Capital. Partner scoring stays on the Market Screen.',
-    framework: 'Four views share one site. Mack Living is the Monday list. Market Screen is the partner and market screen. Analysis Dashboard is the regional evidence, the contract list and the workbook opportunities. Go / No-Go is the partnership checklist. Detail sits behind each expander.',
+    framework: 'The boardroom is the front screen for one area. Market Screen, the Analysis Dashboard, Mack Living and Records open from it. Detail stays behind a click. A blank figure is not yet recorded.',
     manchester: 'This card is blank on purpose. It is not filled from the workbook or from the recorded routes. Status: to verify with Chris and bid contacts.',
     bipTitle: 'BiP awards and pipeline',
     bipOpen: 'Open BiP frameworks and awards',
