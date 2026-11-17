@@ -14,7 +14,7 @@
 
   function asset(name) {
     const url = new URL(name, location.href);
-    url.searchParams.set('v', 'board-20261117f');
+    url.searchParams.set('v', 'board-20261117g');
     return url.href;
   }
   async function loadJson(name) {
@@ -756,6 +756,17 @@
     const button = document.getElementById('bd-present');
     if (button) button.textContent = 'Present';
   });
+  async function refreshAuctions() {
+    if (!window.AuctionCounts) return;
+    try {
+      const response = await fetch(AuctionCounts.LIVE, {cache: 'no-store'});
+      if (!response.ok) return;
+      const file = await response.json();
+      const today = new Date().toISOString().slice(0, 10);
+      state.auctions = AuctionCounts.pack(file, today, 'live');
+      if (state.mode === 'board') renderBoard();
+    } catch (error) {}
+  }
   function renderBoard() {
     document.body.classList.add('bd-on');
     const host = document.getElementById('board-body');
@@ -943,6 +954,7 @@
     ]);
     state.positionFile = positionFile;
     state.auctions = auctions;
+    refreshAuctions();
     state.ons = ons;
     try { state.region = localStorage.getItem('gh-region') || 'GM'; } catch (error) { state.region = 'GM'; }
     applyRegion();

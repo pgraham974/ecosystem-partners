@@ -211,6 +211,8 @@
       lhaProvenance: 'DWP Universal Credit LHA 2026/27, via market-lha.json. The reference row is ' + (reference ? reference.name : 'not in the file') + '.',
       auctions: auction,
       auctionsLive: (input.auctions && input.auctions.live) || 'https://pgrahamlc.github.io/ecosystem-deals/#auctions',
+      auctionsFrom: (input.auctions && input.auctions.refreshedFrom) || '',
+      auctionsUpdated: (input.auctions && input.auctions.updated_at) || '',
       portfolio: {deals, held, operators: operatorPlaces, uniqueOperators: uniqueOperators.size, targets: auction},
       soon,
       lights,

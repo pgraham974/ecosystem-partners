@@ -1,9 +1,10 @@
 {
-  "source": "https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/data/auctions/lots.json",
+  "source": "https://pgrahamlc.github.io/ecosystem-deals/data/auctions/lots.json",
   "live": "https://pgrahamlc.github.io/ecosystem-deals/#auctions",
   "updated_at": "2026-11-17T10:26:13.062Z",
   "asOf": "2026-11-17",
-  "rule": "Upcoming lots that are not stale, with an auction date of 17 Nov 2026 or later, or with no date. A lot matches when the title or type states 3 or 4 bedrooms. Lots with no bedroom number are counted as unknown. The 17 Nov 2026 file contains no Allsop lots.",
+  "refreshedFrom": "snapshot",
+  "rule": "Upcoming lots that are not stale, with an auction date of today or later, or with no date. A lot matches when the title or type states 3 or 4 bedrooms. Lots with no bedroom number are counted as unknown. Allsop lots are excluded.",
   "label": "current auction lots matching criteria (Ecosystem Deals)",
   "criteria": "3 to 4 bed",
   "regions": {
