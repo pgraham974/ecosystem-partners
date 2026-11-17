@@ -478,3 +478,26 @@ body{overflow-x:auto}
 .an-takes li{margin:4px 0}
 .an-note{margin:8px 0 0}
 @media(max-width:800px){.an-grid{grid-template-columns:1fr}}
+.bd-mid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.8fr);gap:8px;min-width:0}
+.bd-chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.bd-chip{border:1px solid var(--line);background:#fff;border-radius:16px;padding:4px 10px;cursor:pointer;font:inherit;font-size:12px;color:var(--ink)}
+.bd-chip.on{background:#0f1a2e;color:#fff;border-color:#0f1a2e}
+.bd-chip b,.bd-matrix .bd-chip b{display:inline;background:transparent;padding:0;font-size:inherit;color:inherit}
+.bd-scheme{display:grid;grid-template-columns:minmax(180px,1.8fr) minmax(110px,.8fr) minmax(120px,.9fr) 72px;gap:8px;width:100%;min-width:560px;text-align:left;border:0;border-bottom:1px solid var(--line);background:transparent;padding:7px 2px;cursor:pointer;font:inherit;align-items:start}
+.bd-scheme-head{cursor:default;color:var(--mut);font-size:11px;font-weight:650}
+.bd-scheme span{white-space:normal;overflow-wrap:anywhere}
+.bd-matrix-body{max-height:440px;overflow:auto}
+.bd-axis-row{display:grid;grid-template-columns:minmax(140px,38%) minmax(0,1fr);margin-top:4px}
+.bd-axis{position:relative;height:16px}
+.bd-axis span{position:absolute;top:0;font-size:10px;color:var(--mut);transform:translateX(-50%)}
+.bd-count{border:0;background:transparent;text-align:left;cursor:pointer;font:inherit;color:inherit;padding:0}
+.bd-count:hover b{text-decoration:underline}
+.bd-health-btn{display:flex;justify-content:space-between;gap:8px;width:100%;border:0;background:transparent;text-align:left;cursor:pointer;font:inherit;padding:2px 0}
+.bd-health-btn b{font-size:12px}
+.bd-health-btn span{color:var(--mut);text-align:right;white-space:normal}
+.bd-health li{display:block}
+.bd-bars{max-height:240px;overflow:auto}
+.bd-row{align-items:center;grid-template-columns:minmax(140px,38%) minmax(0,1fr)}
+.bd-out{font-weight:650}
+body.bd-present #bd-present{position:fixed;top:12px;right:12px;z-index:30}
+@media(max-width:1280px){.bd-mid{grid-template-columns:1fr}}

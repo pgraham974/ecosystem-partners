@@ -3,29 +3,29 @@
   "live": "https://pgrahamlc.github.io/ecosystem-deals/#auctions",
   "updated_at": "2026-11-17T10:26:13.062Z",
   "asOf": "2026-11-17",
-  "rule": "Upcoming lots that are not stale, with an auction date of 17 Nov 2026 or later, or with no date. A lot matches when the title or type states 3 or 4 bedrooms. Lots with no bedroom number are counted as unknown.",
+  "rule": "Upcoming lots that are not stale, with an auction date of 17 Nov 2026 or later, or with no date. A lot matches when the title or type states 3 or 4 bedrooms. Lots with no bedroom number are counted as unknown. The 17 Nov 2026 file contains no Allsop lots.",
   "label": "current auction lots matching criteria (Ecosystem Deals)",
   "criteria": "3 to 4 bed",
   "regions": {
     "GM": {
       "city": "Manchester",
-      "current": 137,
+      "current": 118,
       "matched": 6,
-      "unknown": 116,
+      "unknown": 97,
       "other": 15
     },
     "BRS": {
       "city": "Bristol",
-      "current": 18,
+      "current": 17,
       "matched": 3,
-      "unknown": 12,
+      "unknown": 11,
       "other": 3
     },
     "GLOS": {
       "city": "Cheltenham",
-      "current": 34,
+      "current": 33,
       "matched": 1,
-      "unknown": 33,
+      "unknown": 32,
       "other": 0
     }
   }

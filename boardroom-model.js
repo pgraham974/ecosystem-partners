@@ -169,6 +169,8 @@
     for (const row of schemes) typeMap[row.type] = (typeMap[row.type] || 0) + 1;
     const ranked = schemes.filter((row) => row.operators.count > 0).sort((a, b) => b.operators.count - a.operators.count || a.name.localeCompare(b.name));
     const operatorPlaces = ranked.reduce((sum, row) => sum + row.operators.count, 0);
+    const uniqueOperators = new Set();
+    for (const row of schemes) for (const name of row.operators.names) uniqueOperators.add(name);
     const soon = schemes.filter((row) => (row.end.firm && row.end.iso >= today && row.end.iso <= horizon) || (row.start.firm && row.start.iso >= today && row.start.iso <= horizon)).length;
     const past = schemes.filter((row) => row.end.firm && row.end.iso < today).length;
     const deals = num(position.dealsExecuted);
@@ -177,15 +179,18 @@
     const lights = [
       omrKnown ? light(rates.some((bed) => bed.gap != null && bed.gap < 0) ? 'mid' : 'good', 'Rent gap', 'LHA minus the ONS rent for the named area.') : light('none', 'Rent gap', 'Not yet recorded'),
       !auction ? light('none', 'Supply of targets', 'Not yet recorded') : light(auction.matched > 0 ? 'good' : 'mid', 'Supply of targets', auction.matched + ' lots state 3 or 4 bed. ' + auction.unknown + ' have no bed count.'),
-      light(operatorPlaces > 0 ? 'good' : 'bad', 'Operator coverage', operatorPlaces ? operatorPlaces + ' operator places on frameworks' : 'None recorded'),
+      light(operatorPlaces > 0 ? 'good' : 'bad', 'Operator coverage', operatorPlaces ? operatorPlaces + ' places on these frameworks. ' + uniqueOperators.size + ' firms are named. A firm on two frameworks is counted twice. Market Screen counts provider accounts, which is a separate list.' : 'None recorded'),
       past ? light('bad', 'Framework expiry', past + (past === 1 ? ' firm end date is already past' : ' firm end dates are already past')) : soon ? light('mid', 'Framework expiry', soon + (soon === 1 ? ' firm date falls inside 12 months' : ' firm dates fall inside 12 months')) : light(schemes.some((row) => row.end.firm) ? 'good' : 'mid', 'Framework expiry', schemes.some((row) => row.end.firm) ? 'No firm end inside 12 months' : 'Firm end dates are unknown'),
       deals == null && held == null ? light('none', 'Deals and holdings', 'Not yet recorded') : light('good', 'Deals and holdings', 'A figure has been entered on the position sheet')
     ];
     const comparable = rates.filter((row) => row.gap != null);
     const allBelow = comparable.length > 0 && comparable.every((row) => row.gap < 0);
+    const positionLine = deals == null && held == null
+      ? 'Deals executed and properties held are not yet recorded.'
+      : 'Deals executed: ' + (deals == null ? 'not yet recorded' : deals) + '. Properties held: ' + (held == null ? 'not yet recorded' : held) + '.';
     const verdict = !omrKnown
-      ? 'Open market rent is not in the ONS file for this area. Deals executed and properties held are not yet recorded.'
-      : (allBelow ? 'LHA is below the September 2026 ONS rent on every comparable bed size.' : 'The LHA gap is not the same sign on every bed size.') + ' Deals executed and properties held are not yet recorded.';
+      ? 'Open market rent is not in the ONS file for this area. ' + positionLine
+      : (allBelow ? 'LHA is below the September 2026 ONS rent on every comparable bed size.' : 'The LHA gap is not the same sign on every bed size.') + ' ' + positionLine;
     return {
       today,
       region: {id: region.id, label: region.label, reference: reference ? reference.name : ''},
@@ -206,7 +211,7 @@
       lhaProvenance: 'DWP Universal Credit LHA 2026/27, via market-lha.json. The reference row is ' + (reference ? reference.name : 'not in the file') + '.',
       auctions: auction,
       auctionsLive: (input.auctions && input.auctions.live) || 'https://pgrahamlc.github.io/ecosystem-deals/#auctions',
-      portfolio: {deals, held, operators: operatorPlaces, targets: auction},
+      portfolio: {deals, held, operators: operatorPlaces, uniqueOperators: uniqueOperators.size, targets: auction},
       soon,
       lights,
       verdict

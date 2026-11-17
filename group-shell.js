@@ -14,7 +14,7 @@
 
   function asset(name) {
     const url = new URL(name, location.href);
-    url.searchParams.set('v', 'group-20261117');
+    url.searchParams.set('v', 'board-20261117f');
     return url.href;
   }
   async function loadJson(name) {
@@ -146,7 +146,7 @@
   function paint() {
     const nav = $('#nav2');
     if (!nav) return;
-    const top = state.mode === 'directory' ? 'records' : state.mode;
+    const top = state.mode === 'directory' ? 'market' : state.mode;
     const items = [['board', 'Boardroom'], ['market', 'Market Screen'], ['analysis', 'Analysis Dashboard'], ['mack', 'Mack Living'], ['records', 'Records']];
     nav.innerHTML = '<div class="mainnav">' + items.map(([id, label]) => '<button type="button" class="mainb' + (top === id ? ' on' : '') + '" data-gh="' + id + '">' + label + '</button>').join('') + '</div><div id="gh-sub"></div>';
     nav.querySelectorAll('[data-gh]').forEach((button) => button.onclick = () => viewMode(button.dataset.gh));
@@ -324,7 +324,8 @@
     const lhaShown = state.ax.brma ? lhaRows.filter((row) => row.name === state.ax.brma) : lhaRows;
     const topStatus = statuses[0];
     const bip = state.evidence.bip;
-    const benchLine = !benches.length ? 'No commercial benchmark is recorded for this area.' : (missing.length ? missing.map((row) => row.topic).join(' and ') + (missing.length > 1 ? ' are still to be supplied.' : ' is still to be supplied.') : 'Every recorded benchmark in this area has a cited figure.');
+    let benchLine = !benches.length ? 'No commercial benchmark is recorded for this area.' : (missing.length ? missing.map((row) => row.topic).join(' and ') + (missing.length > 1 ? ' are still to be supplied.' : ' is still to be supplied.') : 'Every recorded benchmark in this area has a cited figure.');
+    if (area.id === 'BRS' && state.ons && state.ons.areas && state.ons.areas['Bristol, City of']) benchLine += ' The council rent table and the ONS September 2026 Bristol rents are different series, and the figures do not match.';
     const host = $('#analysis-body');
     host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Analysis Dashboard</p><h1>Evidence for ' + esc(area.label) + '</h1><p class="lc-purpose">Framework status, competitors and the allowance spread for this area. Lease cards stay on Mack Living. Rent gap stays on the boardroom.</p></div>'
       + '<section class="card" id="ms-analytics">' + kpiRow([
@@ -601,6 +602,8 @@
     state.ml.region = region.id === 'National' ? '' : region.id;
     if (typeof FWF !== 'undefined') FWF.reg = region.id === 'National' ? '' : region.id;
     if (window.MarketScreen && MarketScreen.state) MarketScreen.state.city = region.city || '';
+    if (window.PartnersHub && PartnersHub.state) PartnersHub.state.city = region.city || '';
+    state.flowSynced = false;
   }
   function setRegion(id) {
     state.region = id;
@@ -625,17 +628,139 @@
     else if (state.mode === 'analysis') renderAnalysis();
     else if (state.mode === 'market' && window.MarketScreen) MarketScreen.render();
     else if (state.mode === 'records') viewMode('records/' + (state.section || 'position'));
+    else if (state.mode === 'directory') viewMode(window.PartnersHub && PartnersHub.state.top ? 'market/top' : 'market/directory');
+  }
+  function tuck(root, selector, marker) {
+    const node = root && root.querySelector(selector);
+    if (!node || root.querySelector('[data-tuck="' + marker + '"]')) return false;
+    const details = document.createElement('details');
+    details.className = 'ms-fold';
+    details.dataset.tuck = marker;
+    details.innerHTML = '<summary>Show detail</summary>';
+    node.parentNode.insertBefore(details, node);
+    details.appendChild(node);
+    return true;
+  }
+  function chartInto(host, rows, onPick) {
+    if (!host || host.querySelector('.an-chart') || !rows.length) return;
+    const box = document.createElement('div');
+    box.className = 'an-chart';
+    box.innerHTML = barChart(rows, 'tuck', '');
+    host.insertBefore(box, host.firstChild);
+    box.querySelectorAll('[data-tuck]').forEach((button) => button.onclick = () => onPick(button.dataset.tuck));
+  }
+  function tuckFrameworks() {
+    const root = document.getElementById('fw_body');
+    if (!root) return;
+    const fw = document.getElementById('fw_reg');
+    if (fw && typeof FWF !== 'undefined' && fw.value !== (FWF.reg || '')) fw.value = FWF.reg || '';
+    const pieces = ['[data-v4-fw]', '[data-v4-fw2]', '.opgrid'].map((selector) => root.querySelector(selector));
+    const lease = root.querySelector('#fwlt');
+    if (lease) pieces.push(lease.closest('.card'));
+    const loose = pieces.filter((node) => node && !node.closest('details'));
+    if (!loose.length) return;
+    let details = root.querySelector('details[data-tuck="fw"]');
+    if (!details) {
+      details = document.createElement('details');
+      details.className = 'ms-fold';
+      details.dataset.tuck = 'fw';
+      details.innerHTML = '<summary>Show detail</summary>';
+      const anchor = root.querySelector('#fw_detail');
+      if (anchor && !anchor.closest('details')) root.insertBefore(details, anchor);
+      else root.appendChild(details);
+    }
+    loose.forEach((node) => details.appendChild(node));
+  }
+  function tuckFlow() {
+    const root = document.getElementById('flow_body');
+    if (!root || !root.querySelector('#pf-table')) return;
+    const select = root.querySelector('#pf-region');
+    const want = {GM: 'Greater Manchester', BRS: 'Bristol', GLOS: 'Gloucestershire', National: ''}[state.region] || '';
+    if (!state.flowSynced && select && [...select.options].some((option) => option.value === want) && select.value !== want) {
+      state.flowSynced = true;
+      select.value = want;
+      select.dispatchEvent(new Event('change'));
+      return;
+    }
+    state.flowSynced = true;
+    if (root.querySelector('[data-tuck="flow"]')) return;
+    const counts = new Map();
+    root.querySelectorAll('#pf-table tbody tr').forEach((row) => {
+      const badge = row.querySelector('.tag');
+      const label = badge ? badge.textContent : 'Not yet recorded';
+      counts.set(label, (counts.get(label) || 0) + 1);
+    });
+    const rows = [...counts.entries()].map(([label, count]) => ({id: label, label, count})).sort((a, b) => b.count - a.count);
+    const intro = root.querySelector('.pf-intro');
+    if (intro) chartInto(intro, rows, (label) => {
+      const map = {'Gate failed': 'failed', 'Demand paused': 'paused', 'Some demand paused': 'paused', 'Review overdue': 'review'};
+      const filter = root.querySelector('#pf-filter');
+      if (!filter) return;
+      filter.value = map[label] || '';
+      filter.dispatchEvent(new Event('change'));
+    });
+    tuck(root, '#pf-table', 'flow');
+  }
+  function tuckWho() {
+    const root = document.getElementById('who_body');
+    if (!root || !root.querySelector('#who-table') || root.querySelector('[data-tuck="who"]')) return;
+    const card = root.querySelector('.card');
+    if (card) {
+      const counts = [...root.querySelectorAll('.kpi')].map((kpi) => ({id: kpi.querySelector('small') ? kpi.querySelector('small').textContent : '', label: kpi.querySelector('small') ? kpi.querySelector('small').textContent : '', count: Number(kpi.querySelector('b') && kpi.querySelector('b').textContent) || 0}));
+      chartInto(card, counts.filter((row) => row.count), (label) => {
+        const button = [...root.querySelectorAll('[data-seg]')].find((item) => item.textContent.indexOf(label.split(' ')[0]) === 0 || item.textContent.indexOf(label) !== -1);
+        if (button) button.click();
+      });
+    }
+    tuck(root, '#who-table', 'who');
+  }
+  function tuckSheets() {
+    const root = document.getElementById('sheets_body');
+    if (!root || !root.querySelector('#sheets_table') || !window.SHEETBOOKS) return;
+    const book = window.SHEETBOOKS.books[Number(document.querySelector('#sheets_book') && document.querySelector('#sheets_book').value) || 0];
+    if (book && !root.querySelector('.an-chart')) {
+      const rows = book.sheets.map((sheet) => ({id: sheet.name, label: sheet.name, count: (sheet.rows || []).length}));
+      const card = root.querySelector('.card');
+      chartInto(card || root, rows, (name) => {
+        const sheet = document.querySelector('#sheets_sheet');
+        if (!sheet) return;
+        const option = [...sheet.options].find((item) => item.textContent === name);
+        if (!option) return;
+        sheet.value = option.value;
+        sheet.dispatchEvent(new Event('change'));
+      });
+    }
+    tuck(root, '#sheets_table', 'sheets');
+  }
+  function watchSheets() {
+    ['fw_body', 'flow_body', 'who_body', 'sheets_body'].forEach((id) => {
+      const node = document.getElementById(id);
+      if (!node || node.dataset.watch) return;
+      node.dataset.watch = '1';
+      new MutationObserver(() => {
+        if (id === 'fw_body') tuckFrameworks();
+        if (id === 'flow_body') tuckFlow();
+        if (id === 'who_body') tuckWho();
+        if (id === 'sheets_body') tuckSheets();
+      }).observe(node, {childList: true});
+    });
   }
   function togglePresent() {
     const on = document.body.classList.toggle('bd-present');
     if (on && document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(() => {});
     else if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
   }
+  document.addEventListener('fullscreenchange', () => {
+    if (document.fullscreenElement) return;
+    document.body.classList.remove('bd-present');
+    const button = document.getElementById('bd-present');
+    if (button) button.textContent = 'Present';
+  });
   function renderBoard() {
     document.body.classList.add('bd-on');
     const host = document.getElementById('board-body');
     const built = BoardroomModel.build({today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions});
-    BoardroomUI.render(host, built, {selected: state.boardPick, onRegion: setRegion, onPresent: togglePresent, onGo: (hash) => viewMode(hash), onSelect: (id) => { state.boardPick = id; renderBoard(); }});
+    BoardroomUI.render(host, built, {selected: state.boardPick, onRegion: setRegion, onPresent: togglePresent, onGo: (hash) => { if (hash === 'records/position') state.recOpen = 'position'; viewMode(hash); }, onSelect: (id) => { state.boardPick = id; renderBoard(); }});
   }
   function openBoard() {
     state.mode = 'board';
@@ -837,5 +962,13 @@
     brand();
     paint();
   })();
+  if (typeof sheetsStart === 'function') {
+    const oldSheets = sheetsStart;
+    sheetsStart = async function () {
+      await oldSheets();
+      tuckSheets();
+    };
+  }
+  watchSheets();
   window.GroupHub = {ownsNav: true, ready, paint, get state() { return state; }};
 })();
