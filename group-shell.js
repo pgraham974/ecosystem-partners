@@ -14,7 +14,7 @@
 
   function asset(name) {
     const url = new URL(name, location.href);
-    url.searchParams.set('v', 'board-20261117g');
+    url.searchParams.set('v', 'board-20261117h');
     return url.href;
   }
   async function loadJson(name) {
@@ -48,7 +48,10 @@
     return '<div class="an-chart an-values" role="group">' + rows.map((row) => '<button type="button" class="bd-bar' + (active === row.id ? ' on' : '') + '" data-' + attr + '="' + esc(row.id) + '"><span>' + esc(row.label) + '</span><i><b style="width:' + Math.max(4, row.amount / max * 100) + '%"></b></i><em>' + esc(row.text) + '</em></button>').join('') + '</div>';
   }
   function kpiRow(items) {
-    return '<div class="kpis">' + items.map((item) => '<div class="kpi"><small>' + esc(item.label) + '</small><b>' + esc(item.value) + '</b></div>').join('') + '</div>';
+    return '<div class="kpis">' + items.map((item) => {
+      const blank = /not stated|not yet recorded|to confirm|not published/i.test(String(item.value));
+      return '<div class="kpi"><small>' + esc(item.label) + '</small><b class="' + (blank ? 'is-blank' : '') + '">' + esc(item.value) + '</b></div>';
+    }).join('') + '</div>';
   }
   function takeList(lines) {
     return '<ul class="an-takes">' + lines.filter(Boolean).map((line) => '<li>' + esc(line) + '</li>').join('') + '</ul>';
@@ -231,7 +234,9 @@
     if (anchor) { const node = document.getElementById(anchor); if (node) node.scrollIntoView({block:'start'}); }
   }
   function dealField(label, value) {
-    return '<div><dt>' + esc(label) + '</dt><dd>' + esc(value || MlCommercial.NOT_STATED) + '</dd></div>';
+    const text = value || MlCommercial.NOT_STATED;
+    const blank = /not stated|not yet recorded|to confirm|not published/i.test(String(text));
+    return '<div><dt>' + esc(label) + '</dt><dd class="' + (blank ? 'is-blank' : '') + '">' + esc(text) + '</dd></div>';
   }
   function renderMack() {
     const today = new Date().toISOString().slice(0, 10);
