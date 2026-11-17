@@ -439,10 +439,12 @@ body.bd-present #board_view{height:auto;min-height:100vh;overflow:auto}
 .bd-src,.bd-empty{color:var(--mut);font-size:11px;margin:4px 0 0}
 .bd-health li b{font-size:12px}
 .bd-health li span{color:var(--mut);text-align:right}
-.bd-good{box-shadow:inset 3px 0 0 #1a9c5b}
-.bd-mid{box-shadow:inset 3px 0 0 #b26a00}
-.bd-bad{box-shadow:inset 3px 0 0 #c62828}
-.bd-none{box-shadow:inset 3px 0 0 #c5ced6}
+.bd-good,.bd-mid,.bd-bad,.bd-none{box-shadow:none;border-left:3px solid #c5ced6}
+.bd-health li.bd-good,.bd-health li.bd-mid,.bd-health li.bd-bad,.bd-health li.bd-none{padding:4px 0 4px 12px}
+.bd-good{border-left-color:#1a9c5b}
+.bd-mid{border-left-color:#b26a00}
+.bd-bad{border-left-color:#c62828}
+.bd-none{border-left-color:#c5ced6}
 .bd-verdict{margin:8px 0 0;font-size:13px;font-weight:650}
 .bd-drill{position:fixed;right:16px;top:88px;bottom:16px;width:min(380px,92vw);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 40px #02172622;padding:14px;overflow:auto;z-index:5;animation:bd-in .25s ease;-webkit-overflow-scrolling:touch}
 @media(min-width:901px){.bd.has-drill{padding-right:min(420px,42vw)}}
@@ -504,12 +506,13 @@ body{overflow-x:auto}
 .bd-axis span{position:absolute;top:0;font-size:10px;color:var(--mut);transform:translateX(-50%)}
 .bd-count{border:0;background:transparent;text-align:left;cursor:pointer;font:inherit;color:inherit;padding:0}
 .bd-count:hover b{text-decoration:underline}
-.bd-health-btn{display:flex;justify-content:space-between;gap:8px;width:100%;border:0;background:transparent;text-align:left;cursor:pointer;font:inherit;padding:2px 0}
+.bd-health-btn{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;border:0;background:transparent;text-align:left;cursor:pointer;font:inherit;padding:4px 0}
 .bd-health-btn b{font-size:12px}
-.bd-health-btn span{color:var(--mut);text-align:right;white-space:normal}
+.bd-health-btn span{display:block;width:100%;color:var(--mut);text-align:left;white-space:normal;overflow:visible}
 .bd-health li{display:block}
 .bd-bars{max-height:240px;overflow:auto}
 .bd-row{align-items:center;grid-template-columns:minmax(140px,38%) minmax(0,1fr)}
 .bd-out{font-weight:650}
 body.bd-present #bd-present{position:fixed;top:12px;right:12px;z-index:30}
+.owner,.pc,.gh-proposed,.dlmb,.pf-context,.ms-hold,.v4card,[style*="border-left"]{padding-left:12px}
 @media(max-width:700px){.bd-split,.an-grid,.bd-three{grid-template-columns:1fr}.bd-three>:last-child,.an-grid>:last-child{grid-column:auto}.bd-counts,.kpis{grid-template-columns:1fr 1fr}}
