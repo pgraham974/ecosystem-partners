@@ -14,7 +14,7 @@
 
   function asset(name) {
     const url = new URL(name, location.href);
-    url.searchParams.set('v', 'board-20261118c');
+    url.searchParams.set('v', 'board-20261118d');
     return url.href;
   }
   async function loadJson(name) {
@@ -263,7 +263,7 @@
     }).join('') + '</div>' : '<p class="bd-empty">No firm deadline is recorded in this area.</p>';
     const nearest = summary.nearest ? ukWhen(summary.nearest) : 'Not yet recorded';
     const host = $('#mack-body');
-    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Mack Living</p><h1>Lease picture for ' + esc(area.label) + '</h1><p class="lc-purpose">Length, rent, voids and repairs, shown only where a source states them. The area follows the header.</p></div>'
+    host.innerHTML = '<div id="ml-charts"></div><div class="ms-hero"><p class="lc-kicker">Mack Living</p><h1>Lease picture for ' + esc(area.label) + '</h1><p class="lc-purpose">Length, rent, voids and repairs, shown only where a source states them. The area follows the header.</p></div>'
       + '<section class="card" id="ms-analytics">' + kpiRow([
         {label: 'Open records', value: String(summary.live)},
         {label: 'Nearest deadline', value: nearest},
@@ -302,6 +302,7 @@
     });
     const clearer = $('#ml-clear');
     if (clearer) clearer.onclick = () => { state.ml.lease = ''; state.ml.status = ''; state.ml.focus = ''; state.ml.show = false; renderMack(); };
+    mountCharts(host, BoardroomModel.build(boardInput()), ['gaps']);
     const sort = $('#ml-sort');
     if (sort) sort.onchange = (event) => { state.ml.sort = event.target.value; state.ml.show = true; renderMack(); };
     const box = $('#gh-local-notes');
@@ -385,6 +386,7 @@
     });
     const clearer = $('#an-clear');
     if (clearer) clearer.onclick = () => { state.ax = {status:'', type:'', brma:'', open:''}; renderAnalysis(); };
+    mountCharts(host, BoardroomModel.build(boardInput()), ['kpis', 'heatmap', 'gaps', 'gantt', 'donut', 'concentration', 'bubbles', 'partners']);
   }
   async function openBip(id) {
     state.mode = 'analysis';
@@ -420,6 +422,7 @@
   function decorateMarket() {
     const host = $('#ps_body');
     const hero = host && host.querySelector('.ms-hero');
+    if (host && !host.querySelector('.an-pack-wrap')) mountCharts(host, BoardroomModel.build(boardInput()), ['heatmap', 'gaps']);
     if (!hero || host.querySelector('#gh-market-extra')) return;
     const setNote = state.setId === 'proposed' ? 'Proposed weights, not agreed.' : 'Current live weights.';
     const bip = state.evidence && state.evidence.bip;
@@ -773,6 +776,39 @@
   function boardInput() {
     return {today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions, hurdle: state.hurdle, signals: state.signals};
   }
+  function chartPack(built) {
+    if (!window.AnalyticsModel) return null;
+    return AnalyticsModel.build({
+      today: built.today,
+      region: built.region && BoardroomModel.regionById(built.region.id),
+      lha: state.lha,
+      ons: state.ons,
+      schemes: built.schemes,
+      rates: built.rates,
+      bip: state.v4 && state.v4.bip,
+      opps: state.v4 && state.v4.opps,
+      auctions: state.auctions,
+      hurdle: state.hurdle,
+      signals: state.signals
+    });
+  }
+  function mountCharts(host, built, focus) {
+    if (!host || !window.AnalyticsUI) return;
+    const pack = chartPack(built);
+    if (!pack) return;
+    const html = AnalyticsUI.html(pack, focus);
+    const slot = host.querySelector('#ml-charts, #rec-charts');
+    if (slot) {
+      slot.innerHTML = html;
+      AnalyticsUI.bind(slot, setRegion);
+      return;
+    }
+    const wrap = document.createElement('div');
+    wrap.innerHTML = html;
+    const node = wrap.firstElementChild;
+    host.insertBefore(node, host.firstChild);
+    AnalyticsUI.bind(node, setRegion);
+  }
   function watchFor(screen, regionId) {
     const extra = TriageModel.signalItems ? TriageModel.signalItems(state.signals, regionId) : [];
     return TriageModel.mergeWatch ? TriageModel.mergeWatch(screen.watch, extra) : screen.watch;
@@ -789,6 +825,11 @@
       if (gatesRes.ok) state.hurdle = AuctionCounts.yieldOnCost(await gatesRes.json());
       if (state.mode === 'board') renderBoard();
       if (state.mode === 'triage') renderTriage();
+      if (state.mode === 'analysis') renderAnalysis();
+      if (state.mode === 'partners') renderPartners();
+      if (state.mode === 'mack') renderMack();
+      if (state.mode === 'records') renderRecords();
+      if (state.mode === 'market' && window.MarketScreen) MarketScreen.render();
     } catch (error) {}
   }
   function renderBoard() {
@@ -796,6 +837,13 @@
     const host = document.getElementById('board-body');
     const built = BoardroomModel.build(boardInput());
     BoardroomUI.render(host, built, {selected: state.boardPick, onRegion: setRegion, onPresent: togglePresent, onGo: (hash) => { if (hash === 'records/position') { state.recOpen = 'position'; viewMode(hash); return; } if (hash === 'triage') { state.watchJump = true; openTriage(); return; } viewMode(hash); }, onSelect: (id) => { state.boardPick = id; renderBoard(); }});
+    const counts = host.querySelector('.bd-counts');
+    if (counts && window.AnalyticsUI) {
+      const holder = document.createElement('div');
+      holder.innerHTML = AnalyticsUI.html(chartPack(built), ['heatmap', 'gaps', 'gantt', 'donut']);
+      counts.insertAdjacentElement('afterend', holder.firstElementChild);
+      AnalyticsUI.bind(host, setRegion);
+    }
   }
   function moneyPlain(value) {
     return new Intl.NumberFormat('en-GB', {style:'currency', currency:'GBP', maximumFractionDigits:0}).format(value);
@@ -852,6 +900,7 @@
     if (closer) closer.onclick = () => { state.watchOpen = ''; renderTriage(); };
     const panel = document.getElementById('tr-watch-detail');
     if (panel) panel.focus();
+    mountCharts(host, built, ['kpis', 'bubbles', 'gaps']);
   }
   function watchBlank(value) {
     return value ? esc(value) : '<span class="is-blank">Not yet recorded</span>';
@@ -962,6 +1011,7 @@
     });
     const opened = document.getElementById('sh-detail');
     if (opened) opened.focus();
+    mountCharts(host, BoardroomModel.build(boardInput()), ['concentration', 'bubbles', 'partners']);
   }
   function openBoard() {
     state.mode = 'board';
@@ -993,7 +1043,7 @@
     ];
     const newest = dated.slice().sort((a, b) => b.updated.localeCompare(a.updated))[0];
     const host = document.getElementById('records-body');
-    host.innerHTML = '<div class="an-start"><p class="bd-kicker">Records</p><h1>Data appendix for ' + esc(area.label) + '</h1><p>Catalogue dates and the position sheet. Raw framework, opportunity and workbook rows open from a chart or a button.</p></div>'
+    host.innerHTML = '<div id="rec-charts"></div><div class="an-start"><p class="bd-kicker">Records</p><h1>Data appendix for ' + esc(area.label) + '</h1><p>Catalogue dates and the position sheet. Raw framework, opportunity and workbook rows open from a chart or a button.</p></div>'
       + '<section class="card">' + kpiRow([
         {label: 'Deals executed', value: deals},
         {label: 'Properties held', value: held},
@@ -1010,6 +1060,7 @@
       + '</section>'
       + fold('gh-datasets', 'Show detail', '<ul class="gh-dates">' + datasets.map((row) => '<li id="rec-' + esc(row.file) + '"><b>' + esc(row.label) + '</b> ' + esc(row.updated) + (row.also ? ' <span class="foot">' + esc(row.also) + '</span>' : '') + ' <span class="foot">' + esc(row.file) + '</span></li>').join('') + '</ul>', state.recOpen === 'datasets' || datasets.some((row) => row.file === state.recOpen))
       + fold('gh-position', 'Show position sheet', '<div id="pos-slot"></div>', state.recOpen === 'position');
+    mountCharts(host, BoardroomModel.build(boardInput()), ['kpis']);
     host.querySelectorAll('[data-rec-kind]').forEach((button) => button.onclick = () => {
       const kind = button.dataset.recKind;
       if (kind === 'datasets') { state.recOpen = 'datasets'; renderRecords(); return; }

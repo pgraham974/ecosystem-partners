@@ -4,6 +4,7 @@
     {
       "id": "signal-national-cas",
       "name": "National CAS",
+      "units": 3000,
       "regions": ["all"],
       "date": "",
       "kind": "Reported live",
@@ -25,6 +26,7 @@
     {
       "id": "signal-glasgow-prsa",
       "name": "Glasgow private rented sector accommodation",
+      "units": 250,
       "regions": ["GLA"],
       "date": "2027-04-01",
       "kind": "Reported start",
@@ -53,6 +55,7 @@
     {
       "id": "clearsprings",
       "name": "Clearsprings",
+      "units": 2500,
       "regions": ["all"],
       "signal": "Asylum accommodation. South of England demand.",
       "public": "The Home Office answer of 30 April 2025 places Clearsprings Ready Homes in Wales, the South East and London. On 9 June 2026 Clearsprings told the Home Affairs Committee that about 2,500 bedspaces across the south were proposed and ready to go live.",
