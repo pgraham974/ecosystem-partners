@@ -115,6 +115,20 @@
     if (ends.length) return {items: ends, fallback: true};
     return {items: [], fallback: false};
   }
+  function signalItems(file, regionId) {
+    return ((file && file.watch) || []).filter((row) => {
+      const list = row.regions || [];
+      return list.indexOf('all') !== -1 || list.indexOf(regionId) !== -1;
+    }).map((row) => Object.assign({}, row));
+  }
+  function demandItems(file) {
+    return ((file && file.demand) || []).map((row) => Object.assign({}, row));
+  }
+  function mergeWatch(base, extra) {
+    const items = (extra || []).concat((base && base.items) || []);
+    items.sort((a, b) => (a.kind === 'Reported live' ? 0 : 1) - (b.kind === 'Reported live' ? 0 : 1) || String(a.date || '9999').localeCompare(String(b.date || '9999')) || String(a.name).localeCompare(String(b.name)));
+    return {items, fallback: !!(base && base.fallback && !(extra || []).length)};
+  }
   function indicativeHomes(median) {
     if (typeof median !== 'number' || !Number.isFinite(median) || median <= 0) return null;
     const pot = 5000000 / 0.4;
@@ -177,6 +191,6 @@
     };
   }
   root.TriageModel = Object.freeze({
-    RULE, DEAL, AUCTIONS, addMonths, publicLength, frameworkUnverified, opportunityUnverified, opportunityInRegion, flag, noticeType, watch, indicativeHomes, feedStatus, build
+    RULE, DEAL, AUCTIONS, addMonths, publicLength, frameworkUnverified, opportunityUnverified, opportunityInRegion, flag, noticeType, watch, signalItems, demandItems, mergeWatch, indicativeHomes, feedStatus, build
   });
 })(typeof window !== 'undefined' ? window : globalThis);

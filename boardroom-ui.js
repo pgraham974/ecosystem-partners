@@ -168,8 +168,10 @@
     };
   }
   function upcomingTile(next) {
-    const watch = root.TriageModel ? root.TriageModel.watch(next.schemes || [], next.today) : {items: []};
-    const first = watch.items[0];
+    const watched = root.TriageModel ? root.TriageModel.watch(next.schemes || [], next.today) : {items: []};
+    const extra = root.TriageModel && root.TriageModel.signalItems ? root.TriageModel.signalItems(next.signals, next.region && next.region.id) : [];
+    const watch = root.TriageModel && root.TriageModel.mergeWatch ? root.TriageModel.mergeWatch(watched, extra) : watched;
+    const first = (watch.items || []).find((row) => row.date) || watch.items[0];
     const when = first && first.date ? root.BoardroomModel.ukDate(first.date) : '';
     const label = first ? ((first.name.length > 36 ? first.name.slice(0, 34) + '...' : first.name) + (when ? ', ' + when : ', date not firm')) : 'Nothing in the next 18 months';
     return '<button type="button" class="bd-count" data-go="triage" title="Open the upcoming frameworks watch"><b>' + watch.items.length + '</b><span>upcoming frameworks</span><span>' + esc(label) + '</span></button>';

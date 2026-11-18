@@ -6,7 +6,7 @@
   const esc = window.esc || (s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])));
   const NOTES_KEY = 'gh-monday-notes';
   const CHECKLIST_KEY = 'gh-checklist-v1';
-  const state = {mode:'board', section:'', region:'GM', boardPick:'', positionFile:null, shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, living:null, v4:null, fwItems:null, lha:null, frameworks:0, competitors:null, compRegion:'', ax:{status:'', type:'', brma:'', open:''}, recOpen:'', watchOpen:'', watchJump:false, sharePick:'', shareGroup:'', shareEntities:false, ml:{region:'GM', lease:'', status:'', sort:'deadline', focus:'', show:false}};
+  const state = {mode:'board', section:'', region:'GM', boardPick:'', positionFile:null, shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, living:null, v4:null, fwItems:null, lha:null, frameworks:0, competitors:null, compRegion:'', ax:{status:'', type:'', brma:'', open:''}, recOpen:'', watchOpen:'', watchJump:false, sharePick:'', shareGroup:'', shareEntities:false, partnersView:'share', signals:null, ml:{region:'GM', lease:'', status:'', sort:'deadline', focus:'', show:false}};
   let checklistDoc = null;
   let checklistMeta = {purpose:'', storageNote:''};
   let checklistMessage = '';
@@ -14,7 +14,7 @@
 
   function asset(name) {
     const url = new URL(name, location.href);
-    url.searchParams.set('v', 'board-20261118b');
+    url.searchParams.set('v', 'board-20261118c');
     return url.href;
   }
   async function loadJson(name) {
@@ -165,7 +165,10 @@
     } else if (top === 'records') {
       const buttons = [['records/position', 'Position', state.section === 'position'], ['records/frameworks', 'Frameworks', state.section === 'frameworks'], ['records/opportunities', 'Opportunities', state.section === 'opportunities'], ['records/workbook', 'Workbook', state.section === 'workbook'], ['records/counterparties', 'Counterparties', state.section === 'counterparties']];
       sub.innerHTML = '<button type="button" class="subb" data-gh-go="board">Back to the boardroom</button>' + buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
-    } else if (top === 'partners') sub.innerHTML = '<button type="button" class="subb" data-gh-go="board">Back to the boardroom</button><span class="foot">Market share for ' + esc(BoardroomModel.regionById(state.region).label) + '</span>';
+    } else if (top === 'partners') {
+      const buttons = [['partners/demand', 'Demand', state.partnersView === 'demand'], ['partners/share', 'Market share', state.partnersView !== 'demand']];
+      sub.innerHTML = '<button type="button" class="subb" data-gh-go="board">Back to the boardroom</button>' + buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
+    }
     else if (top === 'board' || top === 'triage') sub.innerHTML = '';
     else sub.innerHTML = '<button type="button" class="subb" data-gh-go="board">Back to the boardroom</button><span class="foot">' + esc(BoardroomModel.regionById(state.region).label) + ' only</span>';
     sub.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
@@ -634,7 +637,7 @@
     if (header) header.value = id;
     if (state.mode === 'board') renderBoard();
     else if (state.mode === 'triage') renderTriage();
-    else if (state.mode === 'partners') renderShare();
+    else if (state.mode === 'partners') renderPartners();
     else if (state.mode === 'mack') renderMack();
     else if (state.mode === 'analysis') renderAnalysis();
     else if (state.mode === 'market' && window.MarketScreen) MarketScreen.render();
@@ -768,7 +771,11 @@
     if (button) button.textContent = 'Present';
   });
   function boardInput() {
-    return {today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions, hurdle: state.hurdle};
+    return {today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions, hurdle: state.hurdle, signals: state.signals};
+  }
+  function watchFor(screen, regionId) {
+    const extra = TriageModel.signalItems ? TriageModel.signalItems(state.signals, regionId) : [];
+    return TriageModel.mergeWatch ? TriageModel.mergeWatch(screen.watch, extra) : screen.watch;
   }
   async function refreshAuctions() {
     if (!window.AuctionCounts) return;
@@ -815,6 +822,7 @@
       median: priceRow && typeof priceRow.all === 'number' ? priceRow.all : null,
       feed: state.feed
     });
+    screen.watch = watchFor(screen, area.id);
     const tone = screen.verdict === 'Do not pursue' ? 'stop' : (screen.verdict === 'Needs information' ? 'needs' : 'go');
     const watchNote = screen.watch.fallback ? 'No early notice is on file. These dates are contract ends, used as re-procurement signals.' : (screen.watch.items.length ? 'Notices or start dates inside 18 months.' : 'No notice and no firm end date inside 18 months.');
     const host = document.getElementById('triage-body');
@@ -853,7 +861,7 @@
     if (!items.length) return '<p class="is-blank">Nothing in the next 18 months is on file.</p>';
     return items.map((row) => {
       const open = state.watchOpen === row.id;
-      const when = row.date ? ukWhen(row.date) : 'Date not firm';
+      const when = row.date ? ukWhen(row.date) : (row.when || 'Date not firm');
       return '<button type="button" class="tr-watch' + (open ? ' on' : '') + '" data-watch="' + esc(row.id) + '" aria-expanded="' + (open ? 'true' : 'false') + '"><span>' + esc(row.name) + '</span><i><b style="width:100%"></b></i><em>' + esc(row.kind) + ' ' + esc(when) + '</em></button>' + (open ? watchDetail(row) : '');
     }).join('');
   }
@@ -878,14 +886,30 @@
       if (node) node.scrollIntoView({block: 'start'});
     }
   }
-  function openShare() {
+  function openPartners() {
     state.mode = 'partners';
     state.section = '';
     leaveBoard();
     show('share_view');
-    renderShare();
+    renderPartners();
     paint();
-    setHash('partners');
+    setHash(state.partnersView === 'demand' ? 'partners/demand' : 'partners/share');
+  }
+  function renderPartners() {
+    if (state.partnersView === 'demand') renderDemandSignals();
+    else renderShare();
+  }
+  function demandCards() {
+    const rows = TriageModel.demandItems ? TriageModel.demandItems(state.signals) : [];
+    if (!rows.length) return '<p class="is-blank">Demand signals are not yet recorded.</p>';
+    return rows.map((row) => '<article class="tr-watch-detail"><h3>' + esc(row.name) + '</h3><p>' + esc(row.signal) + '</p><p>' + esc(row.public) + '</p><p class="is-blank">' + esc(row.gap) + '</p><p class="foot">' + esc(row.verified) + '</p><ol>' + (row.sources || []).map((source) => '<li><a href="' + esc(source.url) + '" target="_blank" rel="noopener">' + esc(source.label) + '</a></li>').join('') + '</ol></article>').join('');
+  }
+  function renderDemandSignals() {
+    const area = regionNow();
+    const host = document.getElementById('share-body');
+    host.innerHTML = '<div class="bd"><div class="bd-top"><div><p class="bd-kicker">Partners</p><h1>Demand, ' + esc(area.label) + '</h1></div></div>'
+      + '<p class="bd-src">Public demand signals only. These are not a share of a contract and they are not a bid.</p>'
+      + demandCards() + '</div>';
   }
   function shareAmount(contract, amount) {
     if (contract.metric === 'value') return moneyPlain(amount);
@@ -921,6 +945,7 @@
       + '<p class="bd-src">Each bar uses one metric. A published ceiling is not divided across suppliers. Units are not on these BiP rows. ' + built.skipped.length + ' BiP rows in this area have no supplier split, so their share is not yet recorded.</p>'
       + '<section class="bd-targets"><h2>By contract</h2>' + (stacks || '<p class="is-blank">Not yet recorded</p>') + '</section>'
       + '<section class="bd-targets"><h2>Groups by ' + esc(built.metricLabel || 'share') + '</h2>' + (ranks || '<p class="is-blank">Not yet recorded</p>') + '</section>'
+      + '<section class="bd-targets"><h2>Demand signals</h2>' + demandCards() + '</section>'
       + detail
       + '<details><summary>Show detail</summary><div class="bd-detail"><table><thead><tr><th>Contract</th><th>Group</th><th>Amount</th><th>Share</th><th>Metric</th></tr></thead><tbody>' + (table || '<tr><td colspan="5">Not yet recorded</td></tr>') + '</tbody></table></div></details></div>';
     const toggle = document.getElementById('sh-entities');
@@ -1069,7 +1094,7 @@
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
     if (state.watchOpen) { state.watchOpen = ''; if (state.mode === 'triage') renderTriage(); }
-    else if (state.sharePick || state.shareGroup) { state.sharePick = ''; state.shareGroup = ''; if (state.mode === 'partners') renderShare(); }
+    else if (state.sharePick || state.shareGroup) { state.sharePick = ''; state.shareGroup = ''; if (state.mode === 'partners') renderPartners(); }
   });
 
   viewMode = function (mode) {
@@ -1079,7 +1104,7 @@
     const tail = parts.slice(1).join('/');
     if (!head || head === 'board' || head === 'analytics' || head === 'checklist') { openBoard(); return; }
     if (head === 'triage') { openTriage(); return; }
-    if (head === 'partners' || head === 'share') { openShare(); return; }
+    if (head === 'partners' || head === 'share') { state.partnersView = tail === 'demand' ? 'demand' : 'share'; openPartners(); return; }
     if (head === 'records' || head === 'data') { openRecords(tail); return; }
     leaveBoard();
     if (head === 'lha' || head === 'rent') { openAnalysis('lha'); return; }
@@ -1128,8 +1153,8 @@
 
   try { state.localNotes = localStorage.getItem(NOTES_KEY) || ''; } catch (error) { state.localNotes = ''; }
   const ready = (async () => {
-    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, positionFile, auctions, feed, ons, prices] = await Promise.all([
-      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json'), loadJson('portfolio-position.json'), loadJson('auction-targets.json'), loadJson('mack-feed.json'),
+    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, positionFile, auctions, feed, signals, ons, prices] = await Promise.all([
+      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json'), loadJson('portfolio-position.json'), loadJson('auction-targets.json'), loadJson('mack-feed.json'), loadJson('public-signals.json'),
       fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/rents.json', {cache: 'no-store'}).then((response) => response.ok ? response.json() : null).catch(() => null),
       fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/prices.json', {cache: 'no-store'}).then((response) => response.ok ? response.json() : null).catch(() => null)
     ]);
@@ -1140,6 +1165,7 @@
     state.ons = ons;
     state.prices = prices;
     state.feed = feed;
+    state.signals = signals;
     try { state.region = localStorage.getItem('gh-region') || 'GM'; } catch (error) { state.region = 'GM'; }
     applyRegion();
     state.scores = scores;

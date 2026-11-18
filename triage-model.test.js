@@ -78,4 +78,20 @@ test('the watch uses an end date only when no notice is on file', () => {
   assert.equal(withNotice.items[0].noticeType, 'Start');
   assert.equal(withNotice.items[0].why.indexOf(';'), -1);
 });
+test('national CAS is on every area and Glasgow PRSA stays in Glasgow', () => {
+  const file = JSON.parse(fs.readFileSync(path.join(__dirname, 'public-signals.json'), 'utf8'));
+  const national = Triage.signalItems(file, 'GM').find((row) => row.id === 'signal-national-cas');
+  const glasgowOnly = Triage.signalItems(file, 'GLA');
+  assert.equal(national.kind, 'Reported live');
+  assert.equal(national.sources.length, 0);
+  assert.ok(national.why.indexOf('3,000') > -1);
+  assert.equal(Group.scanCopy(national.why).length, 0);
+  assert.equal(Group.scanCopy(glasgowOnly.find((row) => row.id === 'signal-glasgow-prsa').why).length, 0);
+  assert.equal(glasgowOnly.some((row) => row.id === 'signal-glasgow-prsa'), true);
+  assert.equal(Triage.signalItems(file, 'GM').some((row) => row.id === 'signal-glasgow-prsa'), false);
+  assert.equal(glasgowOnly.find((row) => row.id === 'signal-glasgow-prsa').sources[0].label, 'Public Contracts Scotland');
+  const merged = Triage.mergeWatch({items: [{id: 'a', name: 'Later', date: '2027-04-01', kind: 'Due to start'}], fallback: false}, [national]);
+  assert.equal(merged.items[0].id, 'signal-national-cas');
+  assert.equal(Triage.demandItems(file).length, 2);
+});
 if (failed) process.exit(1);

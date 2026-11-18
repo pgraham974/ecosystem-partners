@@ -253,7 +253,8 @@
       portfolio: {deals, held, operators: operatorPlaces, uniqueOperators: uniqueOperators.size, targets: auction},
       soon,
       lights,
-      verdict
+      verdict,
+      signals: input.signals || null
     };
   }
   function publicValue(item, records) {

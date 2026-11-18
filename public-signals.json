@@ -1,0 +1,88 @@
+{
+  "updated": "2026-11-18",
+  "watch": [
+    {
+      "id": "signal-national-cas",
+      "name": "National CAS",
+      "regions": ["all"],
+      "date": "",
+      "kind": "Reported live",
+      "when": "18 November 2026",
+      "noticeType": "Not yet recorded",
+      "authority": "",
+      "region": "England and Wales, 12 regions",
+      "start": "",
+      "end": "",
+      "value": null,
+      "valueBasis": "",
+      "operators": [],
+      "operatorCount": 0,
+      "verified": "Unverified",
+      "why": "Reported live on 18 November 2026. Up to 3,000 units, in self-contained homes and shared HMOs, across 12 regions in England and Wales. The call-off structure is not yet known. Mack Living intends to bid in all regions. A Find a Tender or Contracts Finder notice for this 3,000 unit requirement was not found.",
+      "sources": [],
+      "bip": []
+    },
+    {
+      "id": "signal-glasgow-prsa",
+      "name": "Glasgow private rented sector accommodation",
+      "regions": ["GLA"],
+      "date": "2027-04-01",
+      "kind": "Reported start",
+      "noticeType": "Tender",
+      "authority": "Glasgow City Council",
+      "region": "Glasgow",
+      "start": "2027-04-01",
+      "end": "",
+      "value": null,
+      "valueBasis": "",
+      "operators": [],
+      "operatorCount": 0,
+      "verified": "Unverified",
+      "why": "Public Contracts Scotland notice OCT567071, published 21 October 2026. Each contract is 250 homes by the end of year one, and the council may award up to four contracts. A proportion of homes must be accessible. The reported start is April 2027, the reported award is around early March 2027, and the reported accessible share is 5%. Those three points are not stated on the notice page.",
+      "sources": [
+        {
+          "label": "Public Contracts Scotland",
+          "title": "Accommodation only services for people experiencing homelessness, private rented sector accommodation",
+          "url": "https://www.publiccontractsscotland.gov.uk/search/show/search_view.aspx?ID=OCT567071"
+        }
+      ],
+      "bip": []
+    }
+  ],
+  "demand": [
+    {
+      "id": "clearsprings",
+      "name": "Clearsprings",
+      "regions": ["all"],
+      "signal": "Asylum accommodation. South of England demand.",
+      "public": "The Home Office answer of 30 April 2025 places Clearsprings Ready Homes in Wales, the South East and London. On 9 June 2026 Clearsprings told the Home Affairs Committee that about 2,500 bedspaces across the south were proposed and ready to go live.",
+      "gap": "A separate south of England requirements notice is not yet recorded.",
+      "verified": "Unverified",
+      "sources": [
+        {
+          "label": "UK Parliament",
+          "url": "https://questions-statements.parliament.uk/written-questions/detail/2025-04-22/46903"
+        },
+        {
+          "label": "Home Affairs Committee",
+          "url": "https://committees.parliament.uk/oralevidence/17723/pdf/"
+        }
+      ]
+    },
+    {
+      "id": "serco",
+      "name": "Serco",
+      "regions": ["all"],
+      "signal": "Requirements opened nationally.",
+      "public": "The Home Office answer of 30 April 2025 places Serco on the asylum accommodation contracts for the North West, the Midlands and the East of England.",
+      "gap": "A public notice that requirements have opened nationally is not yet recorded.",
+      "verified": "Unverified",
+      "sources": [
+        {
+          "label": "UK Parliament",
+          "url": "https://questions-statements.parliament.uk/written-questions/detail/2025-04-22/46903"
+        }
+      ]
+    }
+  ]
+}
