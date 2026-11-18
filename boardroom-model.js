@@ -157,7 +157,13 @@
         end: bipEnd || {raw: ownEnd.raw, firm: false, iso: ''},
         startId: bipStart ? records.find((record) => readDate(record.start).firm).id : '',
         operators: operatorsFrom(records, link && link.kind),
-        bip: records.map((record) => record.id)
+        bip: records.map((record) => record.id),
+        regionLabel: region.label,
+        noticeText: [item.status_n, item.status].filter(Boolean).join(' '),
+        unverified: item.confidence !== 'H' || /unverified|not verified|placeholder|to verify|forthcoming|not found/i.test([item.status, item.status_n, item.notes, ...((item.suppliers) || [])].join(' ')),
+        valueAmount: publicValue(item, records).amount,
+        valueBasis: publicValue(item, records).basis,
+        sources: publicSources(item, records)
       });
     });
     const file = input.lha || {rates: []};
@@ -249,6 +255,32 @@
       lights,
       verdict
     };
+  }
+  function publicValue(item, records) {
+    const record = (records || []).find((row) => typeof row.value === 'number' && row.value > 0);
+    if (record) return {amount: record.value, basis: record.basis || 'Published BiP value'};
+    if (typeof item.value_gbp === 'number' && item.value_gbp > 0) return {amount: item.value_gbp, basis: 'Published notice value'};
+    return {amount: null, basis: ''};
+  }
+  function publicSources(item, records) {
+    const out = [];
+    const push = (url, title) => {
+      const cleanUrl = String(url || '').trim();
+      if (!/^https:\/\//i.test(cleanUrl)) return;
+      if (out.some((row) => row.url === cleanUrl)) return;
+      let label = '';
+      if (/find-tender\.service\.gov\.uk/i.test(cleanUrl)) label = 'Find a Tender';
+      else if (/contractsfinder\.service\.gov\.uk/i.test(cleanUrl)) label = 'Contracts Finder';
+      else if (/bipintelligence\.com/i.test(cleanUrl)) label = 'BiP Tracker';
+      if (!label) return;
+      out.push({url: cleanUrl, title: String(title || label), label});
+    };
+    for (const source of (item && item.sources) || []) push(source.url, source.title);
+    for (const record of records || []) {
+      push(record.url, record.title);
+      if (/^\d+-\d+$/.test(String(record.fts || ''))) push('https://www.find-tender.service.gov.uk/Notice/' + record.fts, 'Find a Tender notice ' + record.fts);
+    }
+    return out;
   }
   function onsNote(region) {
     const base = '4 or more is the ONS category. It is not a pure 4 bed rent. This series has no shared room average.';

@@ -105,7 +105,7 @@
       + '<div class="bd-top"><div><p class="bd-kicker">Boardroom</p><h1>' + esc(screen.region.label) + '</h1></div>'
       + '<div class="bd-tools"><button type="button" class="btn sec" id="bd-present">' + (presenting ? 'Exit' : 'Present') + '</button></div></div>'
       + '<ul class="an-takes">' + screen.lights.slice(0, 3).map((item) => '<li>' + esc(item.label + '. ' + item.detail) + '</li>').join('') + '</ul>'
-      + '<div class="bd-counts"><button type="button" class="bd-count" data-type="" title="Show every scheme"><b>' + screen.contracts.schemes + '</b><span>schemes</span></button><span><b>' + screen.contracts.withBip + '</b> with BiP</span><span><b>1</b> area</span><button type="button" class="bd-count" data-go="records/position" title="Enter deals executed">' + figure(screen.portfolio.deals == null ? 'Not yet recorded' : screen.portfolio.deals) + '<span>deals executed</span></button><button type="button" class="bd-count" data-go="records/position" title="Enter properties held">' + figure(screen.portfolio.held == null ? 'Not yet recorded' : screen.portfolio.held) + '<span>properties held</span></button><span title="Places on framework records. A firm on two frameworks counts twice. This is not the Market Screen provider count."><b>' + screen.portfolio.operators + '</b> operator places</span></div>'
+      + '<div class="bd-counts"><button type="button" class="bd-count" data-type="" title="Show every scheme"><b>' + screen.contracts.schemes + '</b><span>schemes</span></button><span><b>' + screen.contracts.withBip + '</b> with BiP</span><span><b>1</b> area</span>' + upcomingTile(screen) + '<button type="button" class="bd-count" data-go="records/position" title="Enter deals executed">' + figure(screen.portfolio.deals == null ? 'Not yet recorded' : screen.portfolio.deals) + '<span>deals executed</span></button><button type="button" class="bd-count" data-go="records/position" title="Enter properties held">' + figure(screen.portfolio.held == null ? 'Not yet recorded' : screen.portfolio.held) + '<span>properties held</span></button><span title="Places on framework records. A firm on two frameworks counts twice. This is not the Market Screen provider count."><b>' + screen.portfolio.operators + '</b> operator places</span></div>'
       + '<section class="bd-split" aria-label="Timeline and health"><div class="bd-time"><h2>Timeline</h2>' + timeline(screen.timeline) + '<h2>Operator places</h2><div class="bd-bars">' + bars(screen.ranked) + '</div></div>'
       + '<article class="bd-health"><h2>Region health</h2><ul>' + screen.lights.map((item) => { const blank = /^(not yet recorded|not stated|to confirm|not published|unknown)$/i.test(item.detail); return '<li class="bd-' + item.tone + '"><button type="button" class="bd-health-btn" data-health="' + esc(item.label) + '" title="' + esc(item.detail) + '"><b>' + esc(item.label) + '</b><span class="' + (blank ? 'is-blank' : '') + '">' + esc(item.detail) + '</span></button></li>'; }).join('') + '</ul><p class="bd-verdict">' + esc(screen.verdict) + '</p></article></section>'
       + '<section class="bd-matrix" aria-label="Scheme matrix"><h2>What exists here</h2><div class="bd-chips"><button type="button" class="bd-chip' + (typeFilter ? '' : ' on') + '" data-type="">All <b>' + screen.schemes.length + '</b></button>' + types + '</div><p class="bd-src">' + shown.length + ' schemes shown. Select a row for dates, operators and BiP.</p>' + schemeRows(shown) + '</section>'
@@ -166,6 +166,13 @@
       });
       host.querySelector('#pos-msg').textContent = 'Saved. The boardroom will use these figures.';
     };
+  }
+  function upcomingTile(next) {
+    const watch = root.TriageModel ? root.TriageModel.watch(next.schemes || [], next.today) : {items: []};
+    const first = watch.items[0];
+    const when = first && first.date ? root.BoardroomModel.ukDate(first.date) : '';
+    const label = first ? ((first.name.length > 36 ? first.name.slice(0, 34) + '...' : first.name) + (when ? ', ' + when : ', date not firm')) : 'Nothing in the next 18 months';
+    return '<button type="button" class="bd-count" data-go="triage" title="Open the upcoming frameworks watch"><b>' + watch.items.length + '</b><span>upcoming frameworks</span><span>' + esc(label) + '</span></button>';
   }
   function pounds(value) {
     if (value == null || !Number.isFinite(Number(value))) return '';

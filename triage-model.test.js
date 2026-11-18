@@ -74,5 +74,8 @@ test('the watch uses an end date only when no notice is on file', () => {
   const onlyEnd = Triage.watch([{id: 'b', name: 'Live framework', status: 'Live', start: {firm: true, iso: '2024-01-01'}, end: {firm: true, iso: '2027-08-01'}}], today);
   assert.equal(onlyEnd.fallback, true);
   assert.equal(onlyEnd.items[0].kind, 'End date used as a re-procurement signal');
+  assert.equal(onlyEnd.items[0].noticeType, 'End-date signal');
+  assert.equal(withNotice.items[0].noticeType, 'Start');
+  assert.equal(withNotice.items[0].why.indexOf(';'), -1);
 });
 if (failed) process.exit(1);

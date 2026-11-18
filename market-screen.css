@@ -443,6 +443,21 @@ body.bd-present #board_view{height:auto;min-height:100vh;overflow:auto}
 .bd-dot.ok{background:#1f7a4d}
 .bd-dot.over{background:#a33b3b}
 .bd-detail{overflow-x:auto}
+.bd-count{min-width:0}
+.bd-count span{white-space:normal}
+.tr-watch{display:grid;gap:2px;width:100%;border:0;background:transparent;text-align:left;font:inherit;cursor:pointer;padding:6px 4px;border-radius:8px}
+.tr-watch:hover,.tr-watch:focus-visible,.tr-watch.on{background:#f3f7f4;outline:2px solid #1f4d3a}
+.tr-watch i{position:relative;display:block;height:8px;background:#e7efe9;border-radius:4px}
+.tr-watch b{display:block;height:8px;width:100%;background:#1f4d3a;border-radius:4px}
+.tr-watch em{font-style:normal;font-size:12px;color:var(--mut)}
+.tr-watch-detail{margin:6px 0 10px;padding:10px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.tr-watch-detail dl{display:grid;grid-template-columns:120px minmax(0,1fr);gap:4px 8px;margin:8px 0}
+.tr-watch-detail dt{color:var(--mut);font-size:12px}
+.sh-stack{display:grid;gap:4px;width:100%;border:0;background:transparent;text-align:left;font:inherit;cursor:pointer;padding:6px 0;border-radius:8px}
+.sh-stack:hover,.sh-stack:focus-visible{outline:2px solid #1f4d3a}
+.sh-bar{display:flex;height:16px;width:100%;border-radius:4px;overflow:hidden;background:#eef1f4}
+.sh-bar i{display:block;height:16px}
+.bd-bed small{display:block;color:var(--mut);font-size:11px;font-weight:400}
 .bd-bottom{grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr)}
 .bd article,.bd-counts,.bd-matrix,.bd-time{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0;min-height:0;overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;scrollbar-width:auto;scrollbar-color:#3d4c59 #e6ebf0}
 .bd h2{margin:0 0 4px;font-size:13px}
