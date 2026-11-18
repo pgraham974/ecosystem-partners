@@ -1,0 +1,12 @@
+{
+  "file": "mack-feed.json",
+  "updated": "",
+  "weeklyTarget": "One weekly Mack Living feed covering contracts, pipeline, durations, property requirements and regional demand.",
+  "items": [
+    {"id": "contracts", "label": "Contracts", "supplied": false},
+    {"id": "pipeline", "label": "Pipeline", "supplied": false},
+    {"id": "durations", "label": "Durations", "supplied": false},
+    {"id": "propertyRequirements", "label": "Property requirements", "supplied": false},
+    {"id": "regionalDemand", "label": "Regional demand", "supplied": false}
+  ]
+}

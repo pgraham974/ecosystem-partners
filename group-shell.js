@@ -150,7 +150,7 @@
     const nav = $('#nav2');
     if (!nav) return;
     const top = state.mode === 'directory' ? 'market' : state.mode;
-    const items = [['board', 'Boardroom'], ['market', 'Market Screen'], ['analysis', 'Analysis Dashboard'], ['mack', 'Mack Living'], ['records', 'Records']];
+    const items = [['board', 'Boardroom'], ['triage', 'Triage'], ['market', 'Market Screen'], ['analysis', 'Analysis Dashboard'], ['mack', 'Mack Living'], ['records', 'Records']];
     nav.innerHTML = '<div class="mainnav">' + items.map(([id, label]) => '<button type="button" class="mainb' + (top === id ? ' on' : '') + '" data-gh="' + id + '">' + label + '</button>').join('') + '</div><div id="gh-sub"></div>';
     nav.querySelectorAll('[data-gh]').forEach((button) => button.onclick = () => viewMode(button.dataset.gh));
     const sub = $('#gh-sub');
@@ -165,7 +165,7 @@
     } else if (top === 'records') {
       const buttons = [['records/position', 'Position', state.section === 'position'], ['records/frameworks', 'Frameworks', state.section === 'frameworks'], ['records/opportunities', 'Opportunities', state.section === 'opportunities'], ['records/workbook', 'Workbook', state.section === 'workbook'], ['records/counterparties', 'Counterparties', state.section === 'counterparties']];
       sub.innerHTML = '<button type="button" class="subb" data-gh-go="board">Back to the boardroom</button>' + buttons.map(([hash, label, on]) => '<button type="button" class="subb' + (on ? ' on' : '') + '" data-gh-go="' + hash + '">' + label + '</button>').join('');
-    } else if (top === 'board') sub.innerHTML = '';
+    } else if (top === 'board' || top === 'triage') sub.innerHTML = '';
     else sub.innerHTML = '<button type="button" class="subb" data-gh-go="board">Back to the boardroom</button><span class="foot">' + esc(BoardroomModel.regionById(state.region).label) + ' only</span>';
     sub.querySelectorAll('[data-gh-go]').forEach((button) => button.onclick = () => viewMode(button.dataset.ghGo));
   }
@@ -350,8 +350,8 @@
       + (bip ? '<p class="foot">BiP awards and spend stay on Framework records. Last build ' + esc(bip.built) + '.</p><button type="button" class="btn sec" data-gh-go="records/frameworks">' + esc(COPY.bipOpen) + '</button>' : '')
       + (state.ax.status || state.ax.type || state.ax.brma ? '<p class="an-note"><button type="button" class="btn sec" id="an-clear">Clear chart filter</button></p>' : '')
       + '</section>'
-      + fold('gh-frameworks', 'Show detail', '<p class="foot">' + fwShown.length + ' framework records. File ' + esc(state.frameworksUpdated) + '.</p><div class="scroll"><table><thead><tr><th class="l">Framework</th><th class="l">Status</th><th class="l">Route</th></tr></thead><tbody>'
-        + fwShown.map((item) => '<tr><td class="l">' + shown(item.name) + '</td><td class="l">' + shown(item.status_n || 'Not yet recorded') + '</td><td class="l">' + shown(item.investor_route || 'Not yet recorded') + '</td></tr>').join('')
+      + fold('gh-frameworks', 'Show detail', '<p class="foot">' + fwShown.length + ' framework records. ' + fwShown.filter((item) => TriageModel.frameworkUnverified(item)).length + ' are unverified. File ' + esc(state.frameworksUpdated) + '.</p><div class="scroll"><table><thead><tr><th class="l">Framework</th><th class="l">Status</th><th class="l">Record</th><th class="l">Route</th></tr></thead><tbody>'
+        + fwShown.map((item) => '<tr><td class="l">' + shown(item.name) + '</td><td class="l">' + shown(item.status_n || 'Not yet recorded') + '</td><td class="l"><span class="' + (TriageModel.frameworkUnverified(item) ? 'is-blank' : '') + '">' + (TriageModel.frameworkUnverified(item) ? 'Unverified' : 'Confirmed') + '</span></td><td class="l">' + shown(item.investor_route || 'Not yet recorded') + '</td></tr>').join('')
         + '</tbody></table></div><p><button type="button" class="btn sec" data-gh-go="records/frameworks">Open the full framework records</button></p>', open === 'frameworks' || !!state.ax.status)
       + fold('gh-competitors', 'Show competitor detail', '<p class="foot">' + esc(COPY.competitorsIntro) + '</p>' + (compShown.length ? compShown.map((row) => {
         const awards = (row.bip || []).map((id) => '<button type="button" class="btn sec" data-bip="' + esc(id) + '">' + esc(id) + '</button>').join(' ');
@@ -629,6 +629,7 @@
     const header = document.getElementById('gh-region');
     if (header) header.value = id;
     if (state.mode === 'board') renderBoard();
+    else if (state.mode === 'triage') renderTriage();
     else if (state.mode === 'mack') renderMack();
     else if (state.mode === 'analysis') renderAnalysis();
     else if (state.mode === 'market' && window.MarketScreen) MarketScreen.render();
@@ -778,6 +779,61 @@
     const built = BoardroomModel.build({today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions});
     BoardroomUI.render(host, built, {selected: state.boardPick, onRegion: setRegion, onPresent: togglePresent, onGo: (hash) => { if (hash === 'records/position') state.recOpen = 'position'; viewMode(hash); }, onSelect: (id) => { state.boardPick = id; renderBoard(); }});
   }
+  function moneyPlain(value) {
+    return new Intl.NumberFormat('en-GB', {style:'currency', currency:'GBP', maximumFractionDigits:0}).format(value);
+  }
+  function renderTriage() {
+    const area = regionNow();
+    const today = new Date().toISOString().slice(0, 10);
+    const built = BoardroomModel.build({today, region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions});
+    const pack = MlCommercial.build({living: state.living, frameworks: {items: state.fwItems || []}, v4: state.v4, manchester: state.evidence && state.evidence.manchesterCas, today});
+    const cards = MlCommercial.filterCards(pack.cards, {region: area.id === 'National' ? '' : area.id, lease:'', status:''});
+    const priceKey = {GM:'Manchester', BRS:'City Of Bristol', GLOS:'Cheltenham'}[area.id];
+    const priceRow = state.prices && state.prices.cities && priceKey ? state.prices.cities[priceKey] : null;
+    const screen = TriageModel.build({
+      today,
+      region: {id: area.id, label: area.label, opp: area.opp || BoardroomModel.regionById(area.id).opp},
+      schemes: built.schemes,
+      rates: built.rates,
+      auctions: built.auctions,
+      frameworks: frameworksHere(),
+      opportunities: (state.v4 && state.v4.opps) || [],
+      manchesterCas: area.id === 'GM' ? state.evidence.manchesterCas : null,
+      operators: built.portfolio.operators,
+      propertyRecords: cards.filter((row) => row.unitsNumber || TriageModel.publicLength(row.length)).map((row) => ({id: row.id, name: row.name, length: row.length, homes: row.unitsNumber || null})),
+      median: priceRow && typeof priceRow.all === 'number' ? priceRow.all : null,
+      feed: state.feed
+    });
+    const tone = screen.verdict === 'Do not pursue' ? 'stop' : (screen.verdict === 'Needs information' ? 'needs' : 'go');
+    const watchNote = screen.watch.fallback ? 'No early notice is on file. These dates are contract ends, used as re-procurement signals.' : (screen.watch.items.length ? 'Notices or start dates inside 18 months.' : 'No notice and no firm end date inside 18 months.');
+    const host = document.getElementById('triage-body');
+    host.innerHTML = '<div class="bd-top"><div><p class="bd-kicker">Triage</p><h1>' + esc(area.label) + '</h1></div></div>'
+      + '<p class="foot">Laurito Capital investment triage for this area. It also shows what Mack Living has and has not supplied. Contract rates, counterparty terms, names and emails are not on this screen.</p>'
+      + '<div class="kpis"><div class="kpi"><small>Unverified records</small><b class="' + (screen.unverified ? 'is-blank' : '') + '">' + screen.unverified + '</b></div><div class="kpi"><small>Confirmed records</small><b>' + screen.confirmed + '</b></div><div class="kpi"><small>Schemes</small><b>' + screen.steps.position.schemes + '</b></div><div class="kpi"><small>Verdict</small><b>' + esc(screen.verdict) + '</b></div></div>'
+      + '<div class="tr-steps">'
+      + '<article class="tr-step"><h2>1. Mack Living position</h2><p>' + screen.steps.position.schemes + ' framework schemes. ' + screen.steps.position.withBip + ' link a BiP record. ' + screen.steps.position.operators + ' operator places. ' + screen.steps.position.past + ' firm end date' + (screen.steps.position.past === 1 ? ' is' : 's are') + ' already past.</p></article>'
+      + '<article class="tr-step"><h2>2. Market context</h2><p>' + (screen.steps.market.gapKnown ? 'The LHA gap against the ONS rent is recorded on the boardroom.' : 'Open market rent is not recorded.') + '</p><p>' + (screen.steps.market.matched == null ? 'Auction lots are not loaded.' : screen.steps.market.matched + ' current lots match 3 or 4 bed. ' + screen.steps.market.unknown + ' have no bed count.') + '</p>'
+      + '<button type="button" class="btn sec" id="tr-example">' + (state.triageExample ? 'Hide the £5m example' : 'Show the £5m example') + '</button>'
+      + (state.triageExample ? (screen.example ? '<p class="foot">Indicative only. £5m of equity at 60% LTV is a purchase pot of ' + moneyPlain(screen.example.pot) + '. Divided by the Land Registry median of ' + moneyPlain(screen.example.median) + ' (standard sales, October 2025 to August 2026) that is about ' + screen.example.homes + ' homes. This is not a valuation or a bid.</p>' : '<p class="is-blank">Not yet recorded. This example needs one Land Registry median for the area.</p>') : '')
+      + '</article>'
+      + '<article class="tr-step"><h2>3. Commercial terms</h2><p>' + screen.steps.terms.onFile + ' contract length' + (screen.steps.terms.onFile === 1 ? '' : 's') + ' on file. ' + screen.steps.terms.notSupplied + ' not yet supplied.</p><p>' + (screen.steps.terms.homes ? screen.steps.terms.homes + ' homes are stated on a public notice.' : 'No property count is on file.') + '</p><p class="foot">Rates, voids and counterparty terms are not shown.</p></article>'
+      + '<article class="tr-step"><h2>4. Investment case</h2><p>Buy box status is not in this file.</p><p>' + (screen.steps.investment.matched == null ? 'Matching lots are not loaded.' : screen.steps.investment.matched + ' lots currently match 3 or 4 bed.') + '</p><p><a class="btn sec" href="' + esc(screen.steps.investment.deal) + '" target="_blank" rel="noopener">Fourteen gates scorecard</a> <a class="btn sec" href="' + esc(screen.steps.investment.auctions) + '" target="_blank" rel="noopener">Matching lots</a></p></article>'
+      + '</div>'
+      + '<article class="tr-verdict tr-' + tone + '"><h2>' + esc(screen.verdict) + '</h2><p>' + esc(screen.rule) + '</p>' + (screen.missing.length ? '<ul class="an-takes">' + screen.missing.map((line) => '<li>' + esc(line) + '</li>').join('') + '</ul>' : '') + '</article>'
+      + '<div class="an-grid"><article class="tr-step"><h2>Upcoming frameworks watch</h2><p class="foot">' + esc(watchNote) + '</p>' + (screen.watch.items.length ? screen.watch.items.map((row) => '<button type="button" class="bd-row" title="' + esc(row.name) + '"><span>' + esc(row.name) + '</span><i><b style="width:100%"></b></i></button><p class="foot">' + esc(row.kind) + (row.date ? ' ' + esc(row.date) : ' Date not firm') + '</p>').join('') : '<p class="is-blank">Nothing in the next 18 months is on file.</p>') + '</article>'
+      + '<article class="tr-step"><h2>Mack Living data feed</h2><p>' + (screen.feed.awaiting ? 'Awaiting Mack Living feed.' : screen.feed.supplied + ' of ' + screen.feed.required + ' items supplied.') + '</p><p class="foot">' + (screen.feed.updated ? 'Last updated ' + esc(screen.feed.updated) + '.' : 'Last updated not yet recorded.') + '</p><ul>' + screen.feed.items.map((item) => '<li>' + esc(item.label) + ' <span class="' + (item.supplied ? '' : 'is-blank') + '">' + (item.supplied ? 'Supplied' : 'Awaiting Mack Living feed') + '</span></li>').join('') + '</ul><p class="foot">' + esc(screen.feed.weeklyTarget) + '</p></article></div>';
+    const button = document.getElementById('tr-example');
+    if (button) button.onclick = () => { state.triageExample = !state.triageExample; renderTriage(); };
+  }
+  function openTriage() {
+    state.mode = 'triage';
+    state.section = '';
+    leaveBoard();
+    show('triage_view');
+    renderTriage();
+    paint();
+    setHash('triage');
+  }
   function openBoard() {
     state.mode = 'board';
     state.section = '';
@@ -897,7 +953,11 @@
   recordsView.id = 'records_view';
   recordsView.className = 'hidden';
   recordsView.innerHTML = '<main id="records-body"></main>';
-  document.body.append(boardView, recordsView, mackView, analysisView, checklistView);
+  const triageView = document.createElement('div');
+  triageView.id = 'triage_view';
+  triageView.className = 'hidden';
+  triageView.innerHTML = '<main id="triage-body"></main>';
+  document.body.append(boardView, triageView, recordsView, mackView, analysisView, checklistView);
 
   viewMode = function (mode) {
     const raw = String(mode || 'market');
@@ -905,6 +965,7 @@
     const head = parts[0];
     const tail = parts.slice(1).join('/');
     if (!head || head === 'board' || head === 'analytics' || head === 'checklist') { openBoard(); return; }
+    if (head === 'triage') { openTriage(); return; }
     if (head === 'records' || head === 'data') { openRecords(tail); return; }
     leaveBoard();
     if (head === 'lha' || head === 'rent') { openAnalysis('lha'); return; }
@@ -953,14 +1014,17 @@
 
   try { state.localNotes = localStorage.getItem(NOTES_KEY) || ''; } catch (error) { state.localNotes = ''; }
   const ready = (async () => {
-    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, positionFile, auctions, ons] = await Promise.all([
-      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json'), loadJson('portfolio-position.json'), loadJson('auction-targets.json'),
-      fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/rents.json', {cache: 'no-store'}).then((response) => response.ok ? response.json() : null).catch(() => null)
+    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, positionFile, auctions, feed, ons, prices] = await Promise.all([
+      loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json'), loadJson('portfolio-position.json'), loadJson('auction-targets.json'), loadJson('mack-feed.json'),
+      fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/rents.json', {cache: 'no-store'}).then((response) => response.ok ? response.json() : null).catch(() => null),
+      fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/prices.json', {cache: 'no-store'}).then((response) => response.ok ? response.json() : null).catch(() => null)
     ]);
     state.positionFile = positionFile;
     state.auctions = auctions;
     refreshAuctions();
     state.ons = ons;
+    state.prices = prices;
+    state.feed = feed;
     try { state.region = localStorage.getItem('gh-region') || 'GM'; } catch (error) { state.region = 'GM'; }
     applyRegion();
     state.scores = scores;
