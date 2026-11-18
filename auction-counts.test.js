@@ -46,4 +46,35 @@ test('an undated upcoming lot is current', () => {
   const regions = Counts.count([lot({auction_date: '', title: '3 bed'})], today);
   assert.equal(regions.GM.matched, 1);
 });
+test('yield on cost follows the gates anchors and the price test does not invent a missing price', () => {
+  const yoc = Counts.yieldOnCost({anchors: {exitYield: 0.06, debtCost: 0.065}, spreads: {yocOverExit: 100, yocOverDebt: 100}});
+  assert.equal(yoc, 0.075);
+  const rates = [{key: '3', reference: 950, omr: 1441}];
+  const out = Counts.assess([
+    {beds: '3', price: 100000, url: 'https://example.test/a', title: 'Under'},
+    {beds: '3', price: 200000, url: 'https://example.test/b', title: 'Over'},
+    {beds: '3', price: null, url: '', title: 'No price'},
+    {beds: 'unknown', price: 100000, url: '', title: 'No beds'}
+  ], rates, yoc);
+  assert.equal(out.lha.rows[0].threshold, Math.round((950 * 12) / 0.075));
+  assert.equal(out.lha.rows[0].result, 'below');
+  assert.equal(out.lha.rows[1].result, 'above');
+  assert.equal(out.lha.below, 1);
+  assert.equal(out.lha.above, 1);
+  assert.equal(out.lha.untested, 2);
+  assert.equal(Counts.yieldOnCost({}), null);
+  assert.equal(Counts.yieldOnCost({anchors: {exitYield: 0.06, debtCost: 0.065}, spreadsBp: {yocOverExit: 100, yocOverDebt: 100}}), 0.075);
+});
+test('Liverpool, Edinburgh and Cheshire follow the Deals city field and Allsop stays out', () => {
+  const regions = Counts.count([
+    lot({city: 'Liverpool', title: '3 bed'}),
+    lot({city: 'Liverpool', source: 'Allsop', title: '3 bed'}),
+    lot({city: 'Edinburgh', title: '2 bed flat'}),
+    lot({city: 'Cheshire', title: 'Shop in Warrington'})
+  ], today);
+  assert.equal(regions.LIV.matched, 1);
+  assert.equal(regions.LIV.current, 1);
+  assert.equal(regions.EDI.other, 1);
+  assert.equal(regions.CHS.unknown, 1);
+});
 if (failed) process.exit(1);

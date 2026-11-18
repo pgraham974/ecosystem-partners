@@ -2,7 +2,7 @@
   "source": "https://pgrahamlc.github.io/ecosystem-deals/data/auctions/lots.json",
   "live": "https://pgrahamlc.github.io/ecosystem-deals/#auctions",
   "updated_at": "2026-11-17T10:26:13.062Z",
-  "asOf": "2026-11-17",
+  "asOf": "2026-11-18",
   "refreshedFrom": "snapshot",
   "rule": "Upcoming lots that are not stale, with an auction date of today or later, or with no date. A lot matches when the title or type states 3 or 4 bedrooms. Lots with no bedroom number are counted as unknown. Allsop lots are excluded.",
   "label": "current auction lots matching criteria (Ecosystem Deals)",
@@ -15,12 +15,47 @@
       "unknown": 97,
       "other": 15
     },
+    "LIV": {
+      "city": "Liverpool",
+      "current": 62,
+      "matched": 0,
+      "unknown": 61,
+      "other": 1
+    },
+    "CHS": {
+      "city": "Cheshire",
+      "current": 21,
+      "matched": 0,
+      "unknown": 20,
+      "other": 1
+    },
+    "BIR": {
+      "city": "Birmingham",
+      "current": 25,
+      "matched": 2,
+      "unknown": 22,
+      "other": 1
+    },
     "BRS": {
       "city": "Bristol",
       "current": 17,
       "matched": 3,
       "unknown": 11,
       "other": 3
+    },
+    "GLA": {
+      "city": "Glasgow",
+      "current": 80,
+      "matched": 11,
+      "unknown": 36,
+      "other": 33
+    },
+    "EDI": {
+      "city": "Edinburgh",
+      "current": 19,
+      "matched": 3,
+      "unknown": 9,
+      "other": 7
     },
     "GLOS": {
       "city": "Cheltenham",
@@ -29,5 +64,3382 @@
       "unknown": 32,
       "other": 0
     }
-  }
+  },
+  "lots": [
+    {
+      "id": "lot-b2b3af78275c791b",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/28315",
+      "title": "(Plot 6), Land To The East Of Beaufort Road, Bacup, Lancashire OL13 8RY"
+    },
+    {
+      "id": "lot-62ea042056031180",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/28659",
+      "title": "(Plot 7), Land To The East Of Beaufort Road, Bacup, Lancashire OL13 8RY"
+    },
+    {
+      "id": "lot-511b5e7f14a5f792",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14520992",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-122e52ffdb058dcd",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "2",
+      "price": 130000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154602",
+      "title": "1 Hubert Worthington House, George Street, Alderley Edge, Cheshire, SK9 7ET"
+    },
+    {
+      "id": "lot-9bed33930cfb2e54",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/16794",
+      "title": "1 Market Street & 2 Post Office Street, Altrincham, Cheshire WA14 1QE"
+    },
+    {
+      "id": "lot-8b0b97d1baa57118",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "3",
+      "price": 290000,
+      "url": "https://www.auctionhouse.co.uk/southwest/auction/lot/154285",
+      "title": "1 Mercia Road, Winchcombe, Cheltenham GL54 5QD"
+    },
+    {
+      "id": "lot-528c8249549f0f76",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Bristol",
+      "title": "1 Warns Court Old Brewery Lane, Tetbury , Gloucestershire, GL8 8LL"
+    },
+    {
+      "id": "lot-a8120d3361f2e38b",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/732034/",
+      "title": "1 Westonia (Basement Flat), 9, Park Place, WESTON-SUPER-MARE, Avon, BS23 2BA"
+    },
+    {
+      "id": "lot-0ae9350a10b94748",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/734009/",
+      "title": "1, Magazine Lane, WALLASEY, Merseyside, CH45 1LT"
+    },
+    {
+      "id": "lot-0beddc176660e627",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14495866",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-268a05d1e67b62e6",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": 128000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/153581",
+      "title": "1/1, 58 Bell Street, Glasgow, Glasgow City G1 1LQ"
+    },
+    {
+      "id": "lot-13876fbc75f51bdf",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": 65000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154821",
+      "title": "1/10, 220 Wallace Street, Glasgow, Glasgow City G5 8AF"
+    },
+    {
+      "id": "lot-82bb298579d6081d",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14522250",
+      "title": "3 Bedroom House"
+    },
+    {
+      "id": "lot-f0e9d54a0bff652b",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25700",
+      "title": "10 Bridge Street, Warrington, Cheshire WA1 2QW"
+    },
+    {
+      "id": "lot-1799131e200f5334",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "2",
+      "price": 53000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154441",
+      "title": "10 Lily Rose Close, Chorley Old Road, Bolton, Greater Manchester BL1 5RY"
+    },
+    {
+      "id": "lot-d4c013fc82ae99f2",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/23937",
+      "title": "10 Tottington Road, Bury, Lancashire BL8 1LH"
+    },
+    {
+      "id": "lot-1333cf2ff85cb822",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/733147/",
+      "title": "10, Firs Road, SALE, Cheshire, M33 5FH"
+    },
+    {
+      "id": "lot-1785900c9d11383e",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731469/",
+      "title": "10, Lancaster Road, TEWKESBURY, Gloucestershire, GL20 5HA"
+    },
+    {
+      "id": "lot-474d7fe75635f4e5",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33365",
+      "title": "100 Circular Drive, Chester, Cheshire, CH4 8LZ"
+    },
+    {
+      "id": "lot-d1d8fb141f3876a2",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "3",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14516555",
+      "title": "3 Bedroom Flat"
+    },
+    {
+      "id": "lot-dc78be0229bc1df2",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=377241",
+      "title": "101 Breeze Hill, Liverpool, Merseyside, L9 1DZ"
+    },
+    {
+      "id": "lot-9694ead898a74898",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14293362",
+      "title": "Vacant Commercial"
+    },
+    {
+      "id": "lot-ae553efd492045b1",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "2",
+      "price": 100000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154383",
+      "title": "102 Cambridge Street, Chadderton, Oldham, OL9 7BY"
+    },
+    {
+      "id": "lot-12840b4c6bedbb3b",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/732541/",
+      "title": "104 Royal Arch Apartments, The Mailbox, Wharfside Street, BIRMINGHAM, West Midlands, B1 ..."
+    },
+    {
+      "id": "lot-30db6d1c093b65ab",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14486465",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-558d99bea9942015",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Gloucester",
+      "title": "11 Bishops Walk, Tewkesbury, Gloucestershire, GL20 5LQ"
+    },
+    {
+      "id": "lot-f18c1f753279b2ac",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/15245",
+      "title": "11 Poplar Street, Manchester, Lancashire M29 8AX"
+    },
+    {
+      "id": "lot-416db49140dfe438",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33223",
+      "title": "11 Scarborough Street, Moston, Manchester, Greater Manchester M40 9JT"
+    },
+    {
+      "id": "lot-d5cb96d8cd2b5c60",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25702",
+      "title": "11-13 Winwick Street, Warrington, Cheshire WA1 1XR"
+    },
+    {
+      "id": "lot-6487a733de89207f",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14466881",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-c360a05ab6afb702",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "117 Speedwell Road, South Yardley, Birmingham, B25 8HN"
+    },
+    {
+      "id": "lot-9a952afc13f5ff2e",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/29942",
+      "title": "118 Church Street, Golborne, Warrington, Lancashire WA3 3TW"
+    },
+    {
+      "id": "lot-648fb8144c07ff6e",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25619",
+      "title": "119 East Road, Longsight, Manchester, Greater Manchester M12 5GY"
+    },
+    {
+      "id": "lot-42756c2e2dab25c5",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/19630",
+      "title": "12 Churchgate, Bolton, Lancashire BL1 1HL"
+    },
+    {
+      "id": "lot-05d44d03430afaad",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "other",
+      "price": 220000,
+      "url": "https://www.auctionhouse.co.uk/southwest/auction/lot/154600",
+      "title": "12 Colchester Crescent, Bristol, Avon BS4 1SG"
+    },
+    {
+      "id": "lot-acf05459fcda30af",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14508208",
+      "title": "Vacant Commercial"
+    },
+    {
+      "id": "lot-d2150639981187d8",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "2",
+      "price": 150000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154252",
+      "title": "12 St. Matthews Terrace, Edgeley, Stockport, Greater Manchester SK3 9EY"
+    },
+    {
+      "id": "lot-fc5ccfecf3128e20",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32779",
+      "title": "121 Morris Green Lane, Bolton, Lancashire BL3 3JE"
+    },
+    {
+      "id": "lot-0e9ca3d3f413c9b3",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/28606",
+      "title": "122 Lethamhill Road, Glasgow, City Of Glasgow G33 2SJ"
+    },
+    {
+      "id": "lot-5dc34fd6f6a2c5b7",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/29943",
+      "title": "124 Church Street, Golborne, Warrington, Lancashire WA3 3TW"
+    },
+    {
+      "id": "lot-8db50e235db7867e",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14506780",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-cc4e475849d3e05a",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": 105000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154833",
+      "title": "127 Bolton Road, Ashton-In-Makerfield, Wigan, Greater Manchester WN4 8AE"
+    },
+    {
+      "id": "lot-ea90d0c0e26b0406",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=372829",
+      "title": "129 Westminster Road, Liverpool, Liverpool, L4 4LW"
+    },
+    {
+      "id": "lot-ea2bbc563aa837c8",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14511149",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-6313165086d279c0",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14525752",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-c8259eeaf5321697",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33446",
+      "title": "13 Foxbank Street, Manchester, Greater Manchester, M13 0DJ"
+    },
+    {
+      "id": "lot-57d0ea0ceedea7dd",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "3",
+      "price": 150000,
+      "url": "https://www.auctionhouse.co.uk/southwest/auction/lot/154720",
+      "title": "13 Hanover Street, Barton Hill, Bristol BS5 9QW"
+    },
+    {
+      "id": "lot-b0fcc953ee44e895",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14521485",
+      "title": "Vacant Commercial"
+    },
+    {
+      "id": "lot-2442cef5d6d1ab16",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14513478",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-319ec47e8853c812",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=378424",
+      "title": "135 Dentons Green Lane, Dentons Green, St. Helens, Merseyside, WA10 6RF"
+    },
+    {
+      "id": "lot-83415e95ce9c0804",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14513070",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-a3da6e44f65d9f8d",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "1",
+      "price": 40000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/153250",
+      "title": "137a Manchester Road, Mossley, Ashton-under-Lyne, OL5 9AA"
+    },
+    {
+      "id": "lot-1caa34b630544b2c",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14514073",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-6a9045b41e68ea6e",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=372000",
+      "title": "139A Kensington/1 Thornes Road, Liverpool, Merseyside, L7 2RE"
+    },
+    {
+      "id": "lot-cc9026f98b1ec28b",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/202601261613sq_2fp3",
+      "title": "14 Hey Street, Ince, Wigan, Lancashire WN3 4UG"
+    },
+    {
+      "id": "lot-15eeab9c1f76e1d3",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "2",
+      "price": 80000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154777",
+      "title": "14 Queens Terrace, Stacksteads, Rossendale, OL13 0EQ"
+    },
+    {
+      "id": "lot-cb6e3711e50155af",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=377300",
+      "title": "14-16, Argyle Street South, Birkenhead, Wirral, CH41 9BX"
+    },
+    {
+      "id": "lot-bb0e228bca757add",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": 200000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154804",
+      "title": "148 Mount Annan Drive, Glasgow, Glasgow City G44 4SA"
+    },
+    {
+      "id": "lot-4f08b18391ac64b2",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": 200000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154803",
+      "title": "148 Mount Annan Drive, Glasgow, Glasgow City G44 4SA"
+    },
+    {
+      "id": "lot-44fc6eabcd35b036",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14499062",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-104e1e352014a13d",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14464501",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-b46d889b105e0d60",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=377315",
+      "title": "154 Moorfield Road, Widnes, Cheshire, WA8 3HL"
+    },
+    {
+      "id": "lot-746eaee22ee6ce90",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14470434",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-a63a0582b461e3f1",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/22746",
+      "title": "16 Birkdale Court, Tarbock Road, Huyton, Liverpool, Merseyside L36 0RQ"
+    },
+    {
+      "id": "lot-72fc0a6da7ac825b",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25462",
+      "title": "16 Forest Street, Oldham, Lancashire OL8 3ER"
+    },
+    {
+      "id": "lot-bb1155654bf9d1c3",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=378558",
+      "title": "16 Longford Street, Liverpool, Merseyside, L8 9SD"
+    },
+    {
+      "id": "lot-0de9cd1016ebee8c",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33366",
+      "title": "16 Sedgefield Road, Chester, Cheshire, CH1 4PU"
+    },
+    {
+      "id": "lot-beacf3a457840fa0",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "3",
+      "price": 310000,
+      "url": "https://www.auctionhouse.co.uk/birmingham/auction/lot/154510",
+      "title": "16 Spring Road, Edgbaston, Birmingham, West Midlands B15 2HG"
+    },
+    {
+      "id": "lot-90bc58b1292a53d3",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=376663",
+      "title": "16 Standside Park, Skelmersdale, Lancashire, WN8 8BH"
+    },
+    {
+      "id": "lot-104d9cb0a36dc0e8",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14491259",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-2ef794c1f73cde56",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25464",
+      "title": "161 Gladstone Street, St. Helens, Merseyside WA10 4NW"
+    },
+    {
+      "id": "lot-b6432d14bd966734",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=374792",
+      "title": "163 Mab Lane, Liverpool, Merseyside, L12 6QN"
+    },
+    {
+      "id": "lot-8a2997def69f12bf",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14499096",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-48acf233fc2cb807",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=375132",
+      "title": "17 Stonehill Street, Liverpool, Merseyside, L4 2QA"
+    },
+    {
+      "id": "lot-8d98786fad3d2c47",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/735086/",
+      "title": "17, Chilwood Close, BRISTOL, Avon, BS37 9US"
+    },
+    {
+      "id": "lot-1c156bcbfc7f0b83",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731293/",
+      "title": "17, Heywood Road, CINDERFORD, Gloucestershire, GL14 2PL"
+    },
+    {
+      "id": "lot-54aa0175793eabe3",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32932",
+      "title": "170 Park Lane, Macclesfield, Cheshire SK11 6UD"
+    },
+    {
+      "id": "lot-c6d92872a1b6f414",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/19229",
+      "title": "174 Egerton, Skelmersdale, Lancashire WN8 6AF"
+    },
+    {
+      "id": "lot-688029ba16a7aaf6",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14515977",
+      "title": "Vacant Commercial"
+    },
+    {
+      "id": "lot-0b8b22a0b56a4a07",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=378279",
+      "title": "19 Addenbrooke Drive, Speke, Liverpool, Merseyside, L24 9LL"
+    },
+    {
+      "id": "lot-409f01a59f6888e6",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/22747",
+      "title": "19 Birkdale Court, Tarbock Road, Huyton, Liverpool, Merseyside L36 0RQ"
+    },
+    {
+      "id": "lot-7a03246ff31c8ff3",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33368",
+      "title": "19 Newton Hall Drive, Chester, Cheshire, CH2 1PQ"
+    },
+    {
+      "id": "lot-4c8b945f1bd642e1",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33367",
+      "title": "19 South Avenue, Chester, Cheshire, CH2 3PR"
+    },
+    {
+      "id": "lot-1789acb46ab17720",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=374295",
+      "title": "1F Devonfield Road, Liverpool, Merseyside, L9 3BG"
+    },
+    {
+      "id": "lot-872b930482099ce7",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/202602040911sq_wddm",
+      "title": "2 Cinder Lane, Fairford GL7 4AX"
+    },
+    {
+      "id": "lot-8f5ab5017d71a466",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14516997",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-fa1f20135bf4fec0",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "3",
+      "price": 145000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154293",
+      "title": "20 Amberley Walk, Chadderton, Oldham, OL9 6SL"
+    },
+    {
+      "id": "lot-1d89e1e26c0cb4f5",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "3",
+      "price": 88000,
+      "url": "https://www.auctionhouse.co.uk/southwest/auction/lot/154662",
+      "title": "20 Colombo Crescent, Weston-Super-Mare BS23 4QA"
+    },
+    {
+      "id": "lot-c2834adb1e8c9bb3",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32184",
+      "title": "20 Tongbarn, Skelmersdale, Lancashire WN8 8EL"
+    },
+    {
+      "id": "lot-8f9dcf1fc36be720",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/23192",
+      "title": "200 Elephant Lane, St. Helens, Merseyside WA9 5EL"
+    },
+    {
+      "id": "lot-bd36bed3cc0d25ca",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14524290",
+      "title": "Vacant Commercial"
+    },
+    {
+      "id": "lot-84079d5ebbc485ad",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "3",
+      "price": 85000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154222",
+      "title": "207 Halifax Road, Rochdale, OL12 9RF"
+    },
+    {
+      "id": "lot-4ffa2ef3e18854c9",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "unknown",
+      "price": 495000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154782",
+      "title": "21 Eskside West, Musselburgh, East Lothian EH21 6PL"
+    },
+    {
+      "id": "lot-eb7563dad2ef36cc",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "3",
+      "price": 120000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154544",
+      "title": "21 Fenchurch Avenue, Manchester, M40 2RH"
+    },
+    {
+      "id": "lot-9b29308e814adb1d",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14286358",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-4498b5ac8138250f",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14522573",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-d08538f00cbc399f",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14521910",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-983fd69da025e632",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14526228",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-76ad95db5f417064",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "2",
+      "price": 100000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154400",
+      "title": "21/9 East Crosscauseway, Edinburgh, City Of Edinburgh EH8 9HE"
+    },
+    {
+      "id": "lot-76103d4ecbb2fadc",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14522148",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-4e9c5e5a5b49954a",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/27737",
+      "title": "22 & 24 Windy Bank Avenue, Lowton, Warrington, Lancashire WA3 2TH"
+    },
+    {
+      "id": "lot-29c82ce4f14ba9ab",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14502343",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-eeb1ffbf3c94a34e",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=377300",
+      "title": "22 Glen Road, Liverpool, L13 4DF"
+    },
+    {
+      "id": "lot-3135fc247be330ca",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14517915",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-19488e064ed7321b",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14509109",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-2e744b630fc979e2",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14513053",
+      "title": "3 Bedroom Flat"
+    },
+    {
+      "id": "lot-700cebf026169d81",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14515739",
+      "title": "3 Bedroom Flat"
+    },
+    {
+      "id": "lot-ff1e02187809856c",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33352",
+      "title": "23 Sunnyside Road, Bolton, Lancashire, BL1 6DZ"
+    },
+    {
+      "id": "lot-d2481fcd9e409a13",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14494336",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-e44cf3f483df3f0a",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/30934",
+      "title": "234 Derby Road, Bootle, Merseyside L20 8LJ"
+    },
+    {
+      "id": "lot-100b3c281ab22145",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32872",
+      "title": "24 Baron Walk, Bolton, Lancashire BL3 1LD"
+    },
+    {
+      "id": "lot-c21a18a7fb97ccc6",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33275",
+      "title": "24 Forester Hill Avenue, Bolton, Lancashire, BL3 2DR"
+    },
+    {
+      "id": "lot-406aa2b9656759c3",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/22748",
+      "title": "25 Birkdale Court, Tarbock Road, Huyton, Liverpool, Merseyside L36 0RQ"
+    },
+    {
+      "id": "lot-31acde6709ea198d",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "3",
+      "price": 95000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154693",
+      "title": "25 Gorsebank, Livingston, West Lothian EH54 6DY"
+    },
+    {
+      "id": "lot-4ed4869965a987cb",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/21522",
+      "title": "25 Harrow Road, Bolton, Lancashire BL1 4NH"
+    },
+    {
+      "id": "lot-a9361d856ba1804c",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/29700",
+      "title": "255 Rooley Moor Road, Rochdale, Lancashire OL12 7EA"
+    },
+    {
+      "id": "lot-b6909762d07e61c7",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33288",
+      "title": "256 Upper Chorlton Road, Stretford, Manchester, Greater Manchester, M16 0BN"
+    },
+    {
+      "id": "lot-5f459cb202616028",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/732219/",
+      "title": "26, Wheeleys Lane (Apartment 17 -2FF), BIRMINGHAM, West Midlands, B15 2DX"
+    },
+    {
+      "id": "lot-0ae117eb5758beb3",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": 110000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154606",
+      "title": "260 Torogay Street, Glasgow, Glasgow City G22 7DS"
+    },
+    {
+      "id": "lot-d80452d0f04139b2",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": 27500,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154675",
+      "title": "268 - 270 Saracen Street, Glasgow, Glasgow City G22 5LF"
+    },
+    {
+      "id": "lot-8a6bc4cdcaee0f65",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14506372",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-bb50f6bb9dc02259",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "2",
+      "price": 70000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154539",
+      "title": "27 Bacup Road, Todmorden, OL14 7PN"
+    },
+    {
+      "id": "lot-142305e66e8b5c97",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": 50000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154646",
+      "title": "274 & 278 Saracen Street, Glasgow, Glasgow City G22 5LF"
+    },
+    {
+      "id": "lot-9d4568ec0db55d1a",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14504961",
+      "title": "3 Bedroom Flat"
+    },
+    {
+      "id": "lot-1f5331cb40d32a98",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "28 Alcester Road, Moseley, Birmingham, B13 8BA"
+    },
+    {
+      "id": "lot-df6fc43306065ade",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/22749",
+      "title": "28 Birkdale Court, Tarbock Road, Huyton, Liverpool, Merseyside L36 0RQ"
+    },
+    {
+      "id": "lot-a5affb344a57df34",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=374486",
+      "title": "29 Clapgate Crescent, Widnes, Cheshire, WA8 8UH"
+    },
+    {
+      "id": "lot-8afb3d0abfa71a91",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/16198",
+      "title": "292 Tyldesley Road, Atherton, Manchester, Lancashire M46 9AE"
+    },
+    {
+      "id": "lot-e03eb7c22ab86b5c",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=13876199",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-75ad85031330b46b",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/26794",
+      "title": "3 & 4 Barrington Close, Altrincham, Cheshire WA14 1JA"
+    },
+    {
+      "id": "lot-c05a0b73f76cd26f",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33364",
+      "title": "3 Carlton Close, Mickle Trafford, Chester, Cheshire, CH2 4TE"
+    },
+    {
+      "id": "lot-0f148541037a5a4c",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14478815",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-03c0a436a8c1157f",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=13883832",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-861d635b05b74b43",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/8519",
+      "title": "3 Residential Investment Properties, Liverpool, Merseyside L19 6QA"
+    },
+    {
+      "id": "lot-1cff304efd5c9907",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33412",
+      "title": "3 Temple Square, Temple Street, Liverpool, Merseyside, L2 5BA"
+    },
+    {
+      "id": "lot-be8f7e82beda2027",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731558/",
+      "title": "3, Ross Street, WIDNES, Cheshire, WA8 6JX"
+    },
+    {
+      "id": "lot-dcd0759673f0f6bd",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": 160000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154633",
+      "title": "3/2, 20 Lochburn Gate, Glasgow, Glasgow City G20 0SN"
+    },
+    {
+      "id": "lot-73dfad2caec81664",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": 10000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/153552",
+      "title": "3/3, 12 Renfield Street, Glasgow, Glasgow City G2 5AL"
+    },
+    {
+      "id": "lot-e98ddd1f6f9dc2de",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/735477/",
+      "title": "30, Haden Road, CRADLEY HEATH, West Midlands, B64 6ER"
+    },
+    {
+      "id": "lot-0f3f110b67586f40",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14493996",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-bda576fa940e0ba2",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=377315",
+      "title": "309 Princess Drive, Liverpool, Merseyside, L14 8XB"
+    },
+    {
+      "id": "lot-287ed7cbf38b4735",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=378401",
+      "title": "31 Stanley Street, Fairfield, Liverpool, Merseyside, L7 0JN"
+    },
+    {
+      "id": "lot-340cd3c347d94165",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/9953",
+      "title": "311-313 Wilmslow Road, Manchester, Greater Manchester M14 6NW"
+    },
+    {
+      "id": "lot-a0ad63f9a2386491",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14521468",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-9aae5557b1d746bb",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "32 Alcester Road, Moseley, Birmingham, B13 8BA"
+    },
+    {
+      "id": "lot-6fcaaa76443b0f54",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Cheltenham",
+      "title": "32 Portland Street, Cheltenham, Gloucestershire, GL52 2PB"
+    },
+    {
+      "id": "lot-442a51eb6b99bcc0",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/735804/",
+      "title": "32, The Victory, 165, Union Street, OLDHAM, Lancashire, OL1 1TD"
+    },
+    {
+      "id": "lot-fc0edf80dfec5e72",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/22750",
+      "title": "33 Birkdale Court, Tarbock Road, Huyton, Liverpool, Merseyside L36 0RQ"
+    },
+    {
+      "id": "lot-77bc46d8c7fc1f31",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14524239",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-e5fb272fde1e8374",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731679/",
+      "title": "33, 35, 37 and 39, California Road, BRISTOL, Avon, BS30 8AZ"
+    },
+    {
+      "id": "lot-ff30f9993cbecdf3",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14509619",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-c957f6c1187d32d2",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14509976",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-b04dd4125054ffd1",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "34 Alcester Road, Moseley, Birmingham, B13 8BA"
+    },
+    {
+      "id": "lot-bb6dc57062d5cddd",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/22751",
+      "title": "34 Birkdale Court, Tarbock Road, Huyton, Liverpool, Merseyside L36 0RQ"
+    },
+    {
+      "id": "lot-5aaf5e4a02a0baa8",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25461",
+      "title": "34 Cowley Road, Liverpool, Merseyside L4 5SZ"
+    },
+    {
+      "id": "lot-f43064ac0c4d02f3",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/202601231232sq_gm55",
+      "title": "34 Derby Street, Ince, Wigan, Lancashire WN3 4TJ"
+    },
+    {
+      "id": "lot-a4caf95ea06cf5fd",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14525769",
+      "title": "3 Bedroom Flat"
+    },
+    {
+      "id": "lot-71002c936059eb6d",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33139",
+      "title": "35 Knowsley Street, Bury, Lancashire BL9 0ST"
+    },
+    {
+      "id": "lot-e471cfd56fcbd10c",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=377225",
+      "title": "36 Cranford Road, Liverpool, Merseyside, L19 9AZ"
+    },
+    {
+      "id": "lot-410d7f8abdd3e9ac",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32934",
+      "title": "36 Scowcroft Street, Bolton, Lancashire BL2 2HD"
+    },
+    {
+      "id": "lot-ce45d88232019d90",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=377803",
+      "title": "360 Marsh Lane, Bootle, Merseyside, L20 9BX"
+    },
+    {
+      "id": "lot-7018f26a3a183ed1",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": 39999,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154709",
+      "title": "364 Braehead Road, Cumbernauld, Glasgow, North Lanarkshire G67 2BS"
+    },
+    {
+      "id": "lot-43da47b142f1e96c",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "3",
+      "price": 300000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154583",
+      "title": "37 St. Gregorys Road, Bristol, Avon BS7 0NF"
+    },
+    {
+      "id": "lot-4e678bc90ec3e6be",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32188",
+      "title": "37 Valpy Avenue, Bolton, Lancashire BL2 3AP"
+    },
+    {
+      "id": "lot-5dafc9fe11fb2d79",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "4",
+      "price": 140000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154648",
+      "title": "38 Hillwood Terrace, Ratho Station, Newbridge, City Of Edinburgh EH28 8QA"
+    },
+    {
+      "id": "lot-190d15cb368d9af3",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=376503",
+      "title": "4 Newway, Liverpool, Merseyside, L14 9LL"
+    },
+    {
+      "id": "lot-2793628d7171bdb9",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "3",
+      "price": 125000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154825",
+      "title": "4 Old Hall Mill Lane, Atherton, M46 0RG"
+    },
+    {
+      "id": "lot-91b9c27da69661d8",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731057/",
+      "title": "4, Woodholme Court (GFF), LIVERPOOL, Merseyside, L25 2BA"
+    },
+    {
+      "id": "lot-e7674783cb203c11",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "4",
+      "price": 145000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154210",
+      "title": "40 Old Road, Tintwistle, Glossop, Derbyshire, SK13 1LH"
+    },
+    {
+      "id": "lot-795742739bd0c492",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32447",
+      "title": "40 Sherbourne Road, Bolton, Lancashire BL1 5NW"
+    },
+    {
+      "id": "lot-c7cd00d723910b30",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/31138",
+      "title": "409 Church Road, Bolton, Lancashire BL1 5RR"
+    },
+    {
+      "id": "lot-ca0a120b2a14cf0e",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/22829",
+      "title": "42 Deanwater Close, Warrington, Cheshire WA3 6ER"
+    },
+    {
+      "id": "lot-74e534962f1f7d50",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/732885/",
+      "title": "422, Camp Street, SALFORD, Lancashire, M7 1ZN"
+    },
+    {
+      "id": "lot-4c8ee53893512bb5",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32220",
+      "title": "44 Pershore Road, Middleton, Manchester, Lancashire M24 6EW"
+    },
+    {
+      "id": "lot-ab02a334c13de6f8",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14510078",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-b2ae9b439b137005",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "3",
+      "price": 125000,
+      "url": "https://www.auctionhouse.co.uk/birmingham/auction/lot/154724",
+      "title": "45 George Street West, Hockley, Birmingham, West Midlands B18 7HD"
+    },
+    {
+      "id": "lot-6168916799729ba0",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32092",
+      "title": "450 Blackburn Road, Bolton, Lancashire BL1 8NL"
+    },
+    {
+      "id": "lot-9430fffd8172a18d",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Edinburgh",
+      "title": "46 Edinburgh Place Edinburgh Place, Cheltenham, Gloucestershire, GL51 7SF"
+    },
+    {
+      "id": "lot-d14825487ef5e62b",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14514447",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-c7d8b7eb8111776e",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "other",
+      "price": 240000,
+      "url": "https://www.auctionhouse.co.uk/southwest/auction/lot/154470",
+      "title": "469 Wells Road, Bristol, Avon BS14 9AG"
+    },
+    {
+      "id": "lot-a1f08056bbadaf52",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=376503",
+      "title": "47 Wapshare Road, Liverpool, Merseyside, L11 8LR"
+    },
+    {
+      "id": "lot-b9d8259d6d9ad38d",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14494234",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-60c09650a0d0d97b",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14521196",
+      "title": "Tenanted Commercial"
+    },
+    {
+      "id": "lot-de45e33fbf019f10",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=377665",
+      "title": "5 Croxteth New Cottages, Deysbrook Lane, Liverpool, Merseyside, L12 6QP"
+    },
+    {
+      "id": "lot-b9d6a25fd7c1faf4",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14514685",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-31404ccbeb8454b3",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/202606291218sq_15f0",
+      "title": "5 Hey Street, Ince, Wigan, Lancashire WN3 4UG"
+    },
+    {
+      "id": "lot-4b8f3c4b3b36965a",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/732650/",
+      "title": "5 Thorndyke Apartments, Bury New Road, MANCHESTER, Lancashire, M25 0PZ"
+    },
+    {
+      "id": "lot-7ce3ad9858e23258",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731462/",
+      "title": "5, Glebe View, CIRENCESTER, Gloucestershire, GL7 7HG"
+    },
+    {
+      "id": "lot-ddfca644ed86035e",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14523117",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-9d0d7516ae315cf6",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14507528",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-e5d9a5a9098cc68d",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14507545",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-5e90a19fd0eb93fa",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14506389",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-0991bb2fb8baa96b",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14509959",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-966ca58b1ac2cefa",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14288670",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-1c871734f3925771",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14523253",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-681e4996687d059b",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14525565",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-af75a1ad4547bc5a",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14511387",
+      "title": "3 Bedroom House"
+    },
+    {
+      "id": "lot-7397e64921dd4be9",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14514515",
+      "title": "3 Bedroom Flat"
+    },
+    {
+      "id": "lot-542ce8127f5750df",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/17837",
+      "title": "51 Peter Road, Liverpool, Merseyside L4 3RT"
+    },
+    {
+      "id": "lot-e4f1a0edcc007747",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/733288/",
+      "title": "52, Derby Road, LIVERPOOL, Merseyside, L20 8EA"
+    },
+    {
+      "id": "lot-0d17f54395f6bfc5",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33270",
+      "title": "52a & 54b Leigh Road, Leigh, Lancashire, WN7 1QR"
+    },
+    {
+      "id": "lot-4848b72bc1f532f9",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "53 Morley Road, Ward End, Birmingham, B8 2HR"
+    },
+    {
+      "id": "lot-499ec11f5a065a19",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14523797",
+      "title": "Vacant Commercial"
+    },
+    {
+      "id": "lot-802e62cfdc170408",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14520805",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-b9b581f32d82088e",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731102/",
+      "title": "55, Ravenoak Drive, MANCHESTER, Lancashire, M35 9RQ"
+    },
+    {
+      "id": "lot-ab03d0b86eea0802",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=377803",
+      "title": "58 Cockburn Street, Liverpool, Merseyside, L8 4SF"
+    },
+    {
+      "id": "lot-0fb656f2585fb190",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14506967",
+      "title": "Vacant Commercial LOT 251f"
+    },
+    {
+      "id": "lot-bd663053df363912",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "3",
+      "price": 110000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154752",
+      "title": "6 Bordale Avenue, Manchester, M9 4LQ"
+    },
+    {
+      "id": "lot-38feb7ce0666d694",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33384",
+      "title": "6 Penrith Street, Rochdale, Lancashire OL11 1PA"
+    },
+    {
+      "id": "lot-f67b902c9200d734",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Birmingham",
+      "title": "60 Kings Square, Gloucester, Gloucestershire, GL1 1LA"
+    },
+    {
+      "id": "lot-f24976fe9f05b326",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14525276",
+      "title": "3 Bedroom Flat"
+    },
+    {
+      "id": "lot-a91cd3250cfd0868",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/29416",
+      "title": "61 Great Stone Road, Firswood, Trafford, Manchester, Greater Manchester M32 8GS"
+    },
+    {
+      "id": "lot-c6fd247709a49073",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25348",
+      "title": "62 Nightingale Road, Blackrod, Bolton, Lancashire BL6 5EA"
+    },
+    {
+      "id": "lot-97c3baddd2c543f6",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "65 Redhill Road, Hay Mills, Birmingham, B25 8HQ"
+    },
+    {
+      "id": "lot-a7803fd81408ca7a",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/14476",
+      "title": "665-667 Liverpool Road, Manchester, Greater Manchester M44 5XD"
+    },
+    {
+      "id": "lot-d40b1d86b0219acf",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/26846",
+      "title": "67 Siddall Street, Oldham, Lancashire OL1 3RN"
+    },
+    {
+      "id": "lot-6ced68051314e90b",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33373",
+      "title": "67 Springfields, Mickle Trafford, Chester, Cheshire, CH2 4EG"
+    },
+    {
+      "id": "lot-f41340ea4e6f69d1",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/202601271018sq_jyu3",
+      "title": "69 Meredith Street, Crewe, Cheshire CW1 2PN"
+    },
+    {
+      "id": "lot-4bf6aac02cb1792d",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14519224",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-3babfad6fd9abbbf",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14516504",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-ed3b25fd0f65b8d9",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14514855",
+      "title": "Vacant Commercial"
+    },
+    {
+      "id": "lot-141c43af9246a839",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33251",
+      "title": "7 Tenby Avenue, Bolton, Lancashire, BL1 5LT"
+    },
+    {
+      "id": "lot-8a2f8f8349a95769",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14511302",
+      "title": "Portfolio of Properties"
+    },
+    {
+      "id": "lot-6be898ffa79cde22",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33006",
+      "title": "71 Hall Lane, Bolton, Lancashire BL4 7QE"
+    },
+    {
+      "id": "lot-9136c7598809b7c6",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25463",
+      "title": "71 Nutgrove Road, St. Helens, Merseyside WA9 5PJ"
+    },
+    {
+      "id": "lot-b2af386f4d4b7c26",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33050",
+      "title": "71 Rawson Road, Bolton, Lancashire BL1 4JQ"
+    },
+    {
+      "id": "lot-c202264b9f1b796c",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/24846",
+      "title": "71 Trinity Street, Oldham, Lancashire OL1 2DE"
+    },
+    {
+      "id": "lot-6e0ff275c37b9a9c",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33371",
+      "title": "73 Lawton Road, Waterloo, Liverpool, Merseyside, L22 9QJ"
+    },
+    {
+      "id": "lot-6a1d649d225bdb8d",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25465",
+      "title": "75 Alfred Street, St. Helens, Merseyside WA10 1LR"
+    },
+    {
+      "id": "lot-fa042901c621ad66",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33372",
+      "title": "75 Lawton Road, Waterloo, Liverpool, Merseyside, L22 9QJ"
+    },
+    {
+      "id": "lot-5803f963fd30e717",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14500320",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-e1f9d4a37e4fb2c6",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "2",
+      "price": 175000,
+      "url": "https://www.auctionhouse.co.uk/southwest/auction/lot/154584",
+      "title": "77 Pawlett Road, Bristol BS13 0DS"
+    },
+    {
+      "id": "lot-bb7c601f29612e53",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/29283",
+      "title": "7A Mora Street, Manchester, Greater Manchester M9 4NW"
+    },
+    {
+      "id": "lot-076e052a20620f8f",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "3",
+      "price": 189000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154730",
+      "title": "7B Lower Bourtree Drive, Rutherglen, Glasgow, South Lanarkshire G73 4RG"
+    },
+    {
+      "id": "lot-123f23134600b40a",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/13186",
+      "title": "8 Nelson Square, Bolton, Lancashire BL1 1JT"
+    },
+    {
+      "id": "lot-b7d8e97451dcd7ac",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14500609",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-6c3d994c25688f78",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=371514",
+      "title": "81 Quarry Street, Liverpool, Merseyside, L25 6HA"
+    },
+    {
+      "id": "lot-b04e2a909b0d17ca",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14513699",
+      "title": "2 Bedroom Flat"
+    },
+    {
+      "id": "lot-43023f5524dca026",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14522539",
+      "title": "Vacant Commercial"
+    },
+    {
+      "id": "lot-e537c530abf31dd6",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731101/",
+      "title": "82, Willows Lane, ROCHDALE, Lancashire, OL16 4BG"
+    },
+    {
+      "id": "lot-b6daaa8ed7b9b242",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "2",
+      "price": 75000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154456",
+      "title": "83 Villa Road, Oldham, Greater Manchester, OL8 1PN"
+    },
+    {
+      "id": "lot-7f0083265577058a",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14525599",
+      "title": "1 Bedroom Flat"
+    },
+    {
+      "id": "lot-94dff5f8ba58aa01",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/22828",
+      "title": "88 Longbarn Lane, Woolston, Warrington, Cheshire WA1 4QR"
+    },
+    {
+      "id": "lot-b6026de0a6d8acda",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/18635",
+      "title": "9 Heath Street, St. Helens, Merseyside WA9 5NL"
+    },
+    {
+      "id": "lot-7bb03986e60c5c0a",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/202601261627sq_5f6n",
+      "title": "9 Sole Street, Wigan, Lancashire WN1 3YE"
+    },
+    {
+      "id": "lot-1945855a1e4dfd1c",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33234",
+      "title": "975-977 Stockport Road, Manchester, Greater Manchester M19 2SY"
+    },
+    {
+      "id": "lot-837b84176e9b4f33",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "99 Slade Road, Sutton Coldfield, B75 5PB"
+    },
+    {
+      "id": "lot-3169d08aa38dead0",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Birmingham",
+      "title": "9th Floor 60 Church Street, Birmingham, West Midlands, B3 2DJ"
+    },
+    {
+      "id": "lot-015111f16602ace9",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/13306",
+      "title": "Abram FSU, 8 St. Johns Street, Wigan, Lancashire WN2 5RH"
+    },
+    {
+      "id": "lot-723775178c2c7eff",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/18250",
+      "title": "Advertising Hoardings, Stockport Road, Stockport , Cheshire SK3 0NW"
+    },
+    {
+      "id": "lot-307b704ea2789d03",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Birmingham",
+      "title": "Agricultural Land Stourbridge Road, Catshill, Bromsgrove, Worcestershire, B61 0BW"
+    },
+    {
+      "id": "lot-7608747a0ebdb14f",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": 895000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154270",
+      "title": "Albion Business Park, 28a Manchester Road, Westhoughton, Bolton, Greater Manchester BL5 ..."
+    },
+    {
+      "id": "lot-a2da019f284531ce",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=377665",
+      "title": "Apartment 12, 17 North John Street, Liverpool, Merseyside, L2 5AA"
+    },
+    {
+      "id": "lot-9f26634abf4e4d6d",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "2",
+      "price": 80000,
+      "url": "https://www.auctionhouse.co.uk/birmingham/auction/lot/154418",
+      "title": "Apartment 172, Southside, St. John's Walk, Birmingham, West Midlands B5 4TJ"
+    },
+    {
+      "id": "lot-7e91beae9f87a8f7",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/732599/",
+      "title": "Apartment 177, East Float Quay (5/6FF), Dock Road, BIRKENHEAD, Merseyside, CH41 1DP"
+    },
+    {
+      "id": "lot-4437c61c31af48f9",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "Apartment 1817 The Cube, 197 Wharfside Street, Birmingham, B1 1PP"
+    },
+    {
+      "id": "lot-47f71fecafb7f529",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731880/",
+      "title": "Apartment 2, 18, Henry Street, LIVERPOOL, Merseyside, L1 5BS"
+    },
+    {
+      "id": "lot-cfa7c3b09d1ba92f",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731292/",
+      "title": "Apartment 22 & Parking Space, 34, Ryland Street, BIRMINGHAM, West Midlands, B16 8DB"
+    },
+    {
+      "id": "lot-6f34543e3eac8a02",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=373835",
+      "title": "Apartment 274 The Reach, 39 Leeds Street, Liverpool, Merseyside, L3 2DE"
+    },
+    {
+      "id": "lot-1822b59b448661d8",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/732588/",
+      "title": "Apartment 303, 2, Townsend Way, BIRMINGHAM, West Midlands, B1 2RT"
+    },
+    {
+      "id": "lot-babe8ab7bc1351c3",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/202603161028sq_nsk2",
+      "title": "Apartment 36, Aura Court, 1 Percy Street, Manchester, Greater Manchester M15 4AB"
+    },
+    {
+      "id": "lot-0ca1268d361e1df1",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/202603161039sq_4b79",
+      "title": "Apartment 37, Aura Court, 1 Percy Street, Manchester, Greater Manchester M15 4AB"
+    },
+    {
+      "id": "lot-2f592d0383067ec5",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/202603161041sq_oaj8",
+      "title": "Apartment 42, Aura Court, 1 Percy Street, Manchester, Greater Manchester M15 4AB"
+    },
+    {
+      "id": "lot-d350e4d6e0a6e8db",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "1",
+      "price": 28000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154526",
+      "title": "Apartment 59, Provincial House, Bolton, Greater Manchester BL1 1AT"
+    },
+    {
+      "id": "lot-8e57548edd57857d",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731893/",
+      "title": "Apartment 8, 18, Henry Street, LIVERPOOL, Merseyside, L1 5BS"
+    },
+    {
+      "id": "lot-0a3aa858067e384a",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/732452/",
+      "title": "Apartment 8, Cabra Hall, 4, Well Lane, WIRRAL, Merseyside, CH63 8QL"
+    },
+    {
+      "id": "lot-94a2db935bba2c05",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=374624",
+      "title": "Apartment 80, 3 Royal Quay, Liverpool, Merseyside, L3 4EU"
+    },
+    {
+      "id": "lot-f1a245079a077c1f",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=374456",
+      "title": "Apt 502 Beetham Tower, 111 Old Hall Street, Liverpool, Liverpool, L3 9BD"
+    },
+    {
+      "id": "lot-a8c40bdbfa52b20d",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/11497",
+      "title": "Apt 702, Jefferson Place, Furness Road, Manchester, Greater Manchester M4 4EX"
+    },
+    {
+      "id": "lot-4c4a2fed7bda8a75",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/11496",
+      "title": "Apt 902, Jefferson Place, Furness Road, Manchester, Greater Manchester M4 4EX"
+    },
+    {
+      "id": "lot-5cd82e601ff0cf3c",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32937",
+      "title": "Arch 14, Queen Street, Leigh, Lancashire WN7 4NQ"
+    },
+    {
+      "id": "lot-0bac8660b7eb058d",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32938",
+      "title": "Arch 15, Queen Street, Leigh, Lancashire WN7 4NQ"
+    },
+    {
+      "id": "lot-3e10f827a73b465f",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14506644",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-7c39bfdd63c26cf5",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Cheltenham",
+      "title": "Barn Conversion Opportunity For 4 Dwellings Cuckoo Farm Southam Lane , Cheltenham, GL52 ..."
+    },
+    {
+      "id": "lot-8b80f6da20f4fe9c",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731844/",
+      "title": "Bridge House, Haw Bridge, GLOUCESTER, Gloucestershire, GL19 4HL"
+    },
+    {
+      "id": "lot-21a17271a2c59661",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Edinburgh",
+      "title": "Coronation Square 76 Edinburgh Place, Cheltenham, Gloucestershire, GL51 7SA"
+    },
+    {
+      "id": "lot-577a270f7c078e66",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14507443",
+      "title": "Vacant Commercial"
+    },
+    {
+      "id": "lot-5fc1e138f7c85d45",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Cheltenham",
+      "title": "Dean Farm House (Lot A) Evesham Road, Bishops Cleeve, Cheltenham, Gloucestershire, GL52 ..."
+    },
+    {
+      "id": "lot-163409305d64c68d",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Cheltenham",
+      "title": "Dean Farm House (Whole - Lot A And B) Evesham Road, Bishops Cleeve, Cheltenham, Gloucest..."
+    },
+    {
+      "id": "lot-2c15de21298bd167",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.hollismorgan.co.uk/property-details/34968295/bath-and-north-east-somerset/bath/3?bid=11&showstc=on&orderby=lot_no+asc&extra_2%21=501%2C502",
+      "title": "Dunkirk Road, Fishponds, BS16 3DJ"
+    },
+    {
+      "id": "lot-897d97d9b1734314",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Bristol",
+      "title": "Employment Land Spinnaker Park Spinnaker Road, Gloucester, Gloucestershire, GL2 5FR"
+    },
+    {
+      "id": "lot-3955e9c336d7300d",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "1",
+      "price": 32000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154780",
+      "title": "Flat 1/2, 377 Kilbowie Road, Clydebank, West Dunbartonshire G81 2TU"
+    },
+    {
+      "id": "lot-43af064bad2f1495",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/34236",
+      "title": "Flat 12 Rio House, Quarry Way, Huyton, Liverpool, Merseyside, L36 6FR"
+    },
+    {
+      "id": "lot-af1b54f2df6fba3e",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "1",
+      "price": 55000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154162",
+      "title": "Flat 18, 5 May Street, Liverpool, Merseyside L3 5TT"
+    },
+    {
+      "id": "lot-257dad18e98b3ac6",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/732216/",
+      "title": "Flat 2, (GFF & Parking Space), 81, Station Road, NORTHWICH, Cheshire, CW9 5LT"
+    },
+    {
+      "id": "lot-39cef8e45743be9f",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "2",
+      "price": 475000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/153622",
+      "title": "Flat 21, 5 Simpson Loan, Edinburgh, City Of Edinburgh EH3 9GX"
+    },
+    {
+      "id": "lot-991e6fe53f76865c",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "1",
+      "price": 15000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154754",
+      "title": "Flat 29, The Old School Rooms, Great Moor Street, Bolton, Greater Manchester BL1 1NR"
+    },
+    {
+      "id": "lot-64bbdc8d932e2d74",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/735475/",
+      "title": "Flat 3, Clarence Court, 272, Clarence Road, SUTTON COLDFIELD, West Midlands, B74 4LP"
+    },
+    {
+      "id": "lot-c707767e596c3122",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/733148/",
+      "title": "Flat 3, Spa Court, 4, Spa Road, GLOUCESTER, Gloucestershire, GL1 1XA"
+    },
+    {
+      "id": "lot-eba82aacc4838f36",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32694",
+      "title": "Flat 4 James House, 31 South Drive, Wavertree, Liverpool, Merseyside L15 8JJ"
+    },
+    {
+      "id": "lot-f4f80fa30fce8e05",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/34237",
+      "title": "Flat 5 Rio House, Quarry Way, Huyton, Liverpool, Merseyside, L36 6FR"
+    },
+    {
+      "id": "lot-5093e8168abbb0a8",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "2",
+      "price": 149000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154495",
+      "title": "Flat 5, 10 Riverview Place, Glasgow, Glasgow City G5 8EH"
+    },
+    {
+      "id": "lot-5fe4d1cab9d9a715",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731052/",
+      "title": "Flat 7, 35, Ivanhoe Road & Flat 8, 37 Ivanhoe Road, LIVERPOOL, Merseyside, L17 8XF"
+    },
+    {
+      "id": "lot-fc7e23eec471de85",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/731618/",
+      "title": "Flat 87, Southmoor, 23, Glebelands Road, MANCHESTER, Lancashire, M23 1HR"
+    },
+    {
+      "id": "lot-0927fee88aad5080",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=378401",
+      "title": "Flats 1-4, 12 Lister Road, Liverpool, Liverpool, L7 0HF"
+    },
+    {
+      "id": "lot-621b86d836647c9e",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/17177",
+      "title": "Former Panorama Hotel Site, Castle Road, Runcorn, Cheshire WA7 2BE"
+    },
+    {
+      "id": "lot-ee31d8479c452b73",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.hollismorgan.co.uk/property-details/34976316/bath-and-north-east-somerset/bath/34-arlington-house?bid=11&showstc=on&orderby=lot_no+asc&extra_2%21=501%2C502",
+      "title": "Frome Mill Farm, Nibley Lane, BS37 5JG"
+    },
+    {
+      "id": "lot-ad40c3cb938a136f",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=372000",
+      "title": "Garages, at Ravenglass Avenue, Liverpool, Merseyside, L31 6BZ"
+    },
+    {
+      "id": "lot-d24c901e06760b97",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "other",
+      "price": 620000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154811",
+      "title": "Garden Cottage, Auchineden, Blanefield, Glasgow, Stirling G63 9AX"
+    },
+    {
+      "id": "lot-9f7bc88a0aa9e8e4",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.hollismorgan.co.uk/property-details/34976004/gloucestershire/gloucester/green-gardens?bid=11&showstc=on&orderby=lot_no+asc&extra_2%21=501%2C502",
+      "title": "Green Gardens, Brockworth, GL3 4NJ"
+    },
+    {
+      "id": "lot-b9fbc74f1cef21ef",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "Ground Rents at, 111-121 Rookery Road, Handsworth, Birmingham, B21 9QX"
+    },
+    {
+      "id": "lot-d3c5b84f5bcbeaba",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.hollismorgan.co.uk/property-details/34961221/bristol-city/bristol/dunkirk-road?bid=11&showstc=on&orderby=lot_no+asc&extra_2%21=501%2C502",
+      "title": "Henleaze Gardens, Henleaze, BS9 4HJ"
+    },
+    {
+      "id": "lot-85a3a74e5880f07a",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Gloucester",
+      "title": "Industrial Unit Goodridge Avenue, Gloucester, Gloucestershire, GL2 5EA"
+    },
+    {
+      "id": "lot-dbe57607fc27ad09",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33357",
+      "title": "Kearsley Mount Precinct, 6-8 Manchester Road, Kearsley, Bolton, Lancashire, BL4 8PZ"
+    },
+    {
+      "id": "lot-38e5853c80badf71",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": 80000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154455",
+      "title": "Knowsley Road Pharmacy, 123-125 Knowsley Road, Bootle, Merseyside L20 4NJ"
+    },
+    {
+      "id": "lot-8f03bdc1dcbb59ca",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": 5000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154457",
+      "title": "Land Adj to 1 Tynesbank, Off Manchester Road, Worsley, Greater Manchester M28 0SF"
+    },
+    {
+      "id": "lot-d3fb365d3b8a241b",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=378424",
+      "title": "Land Adj to the Priory Medical Centre, Belmont Grove, Merseyside, L6 4EW"
+    },
+    {
+      "id": "lot-60d2d6879cf27121",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/27932",
+      "title": "Land adjacent 43 Queen Street, Heywood, Lancashire OL10 4JY"
+    },
+    {
+      "id": "lot-6221b33dccd3346c",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "Land Adjacent Old Park Walk, Aston, Birmingham, B6 5EP"
+    },
+    {
+      "id": "lot-5cad0eb6993bc55b",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Cheltenham",
+      "title": "Land Adjacent To Millham House Evesham Road, Bishops Cleeve, Cheltenham, Gloucestershire..."
+    },
+    {
+      "id": "lot-ea31beefceb98a05",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "Land Adjacent, 75 Norman Street, Ladywood, Birmingham, B18 7ER"
+    },
+    {
+      "id": "lot-01b35ebc0d45dbcd",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/14890",
+      "title": "Land Adjoining Hillside House, Stratford Road, Mickleton, Chipping Campden, Gloucestersh..."
+    },
+    {
+      "id": "lot-15200ded88a898c8",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25655",
+      "title": "Land And Buildings Adjoining Trencherfield Mill, Pottery Road, Wigan, Lancashire WN3 4BN"
+    },
+    {
+      "id": "lot-4b8bda973c243b96",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.barnardmarcusauctions.co.uk/auctions/17-november-2026/734377/",
+      "title": "Land and buildings on the, West side of Wells Road , BRISTOL, Avon, BS14 9AS"
+    },
+    {
+      "id": "lot-febe59a514b59079",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33334",
+      "title": "Land At 1 North Avenue, Stalybridge, Greater Manchester, SK15 1BZ"
+    },
+    {
+      "id": "lot-ddcd854f114305cb",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/28041",
+      "title": "Land At 5C Wood Street, Middleton, Manchester, Lancashire M24 4DH"
+    },
+    {
+      "id": "lot-31c030aa41de47af",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/31174",
+      "title": "Land At Ambleside Crescent, Warrington, Cheshire WA2 9NF"
+    },
+    {
+      "id": "lot-976b6b946d262673",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14497447",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-f6d7f1f857034dce",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14522029",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-ee40b7807df39810",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/15509",
+      "title": "Land At Belmont Road, Bolton, Lancashire BL1 7AT"
+    },
+    {
+      "id": "lot-6bb8a08e94783396",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/29424",
+      "title": "Land At Bond Street/Queen Street, Bury, Lancashire BL9 7BE"
+    },
+    {
+      "id": "lot-03397cb3bcfb704e",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32863",
+      "title": "Land At Carter Street, Farnworth, Bolton, Lancashire BL4 8AX"
+    },
+    {
+      "id": "lot-a930cd6412657620",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/29920",
+      "title": "Land At Dean Street/Normandy Crescent, Radcliffe, Manchester, Lancashire M26 3TD"
+    },
+    {
+      "id": "lot-db89398144ed5473",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/21571",
+      "title": "Land At Dunkirk Lane, Hyde, Greater Manchester SK14 4NL"
+    },
+    {
+      "id": "lot-bca12ddfdb3f53fd",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/24130",
+      "title": "Land At Enfield Road, Swinton, Manchester, Greater Manchester M27 5GF"
+    },
+    {
+      "id": "lot-4a92c6f39d22a620",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/31540",
+      "title": "Land At Fitzgerald Close, Prestwich, Manchester, Greater Manchester M25 9TB"
+    },
+    {
+      "id": "lot-d23fc5a2f36f7ee7",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": 5000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154514",
+      "title": "Land at Gorse Road, (between Chilham Road and Blantyre Avenue), Walkden, Manchester, Gre..."
+    },
+    {
+      "id": "lot-d03dfef7061e6e05",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/20743",
+      "title": "Land at Great Mersey Street, Liverpool, Merseyside L5 7TR"
+    },
+    {
+      "id": "lot-f1ed8ea8ca77c512",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": 140000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154453",
+      "title": "Land at Junction of Manchester Road, and Wardley Hall Road, Wardley, Worsley/Swinton M27..."
+    },
+    {
+      "id": "lot-1727bab69132c9f1",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": 2000,
+      "url": "https://www.auctionhouse.co.uk/northwest/auction/lot/154422",
+      "title": "Land at Mayflower Gardens, Wardle, Rochdale, Greater Manchester OL12 9DF"
+    },
+    {
+      "id": "lot-ee51ac3f7673159c",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/31539",
+      "title": "Land At Shirebrook Drive/Whittaker Street, Whitefield, Manchester, Lancashire M26 2TD"
+    },
+    {
+      "id": "lot-1ee9195b57495d44",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Cheltenham",
+      "title": "Land At Southam Ratcliff Lawns, Cheltenham, GL52 3PB"
+    },
+    {
+      "id": "lot-b1616b83865600a3",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/31541",
+      "title": "Land At Springside View, Bury, Lancashire BL8 4LN"
+    },
+    {
+      "id": "lot-83373ffac640fb58",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/20452",
+      "title": "Land At Stopes Road, Little Lever, Bolton, Lancashire BL3 1NL"
+    },
+    {
+      "id": "lot-1c098c97e4ed4dd3",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/25656",
+      "title": "Land At Swan Meadow Road, Wigan, Lancashire WN3 4EH"
+    },
+    {
+      "id": "lot-5fabe8eae0b0fc3d",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/12540",
+      "title": "Land At Tib Street, Denton, Manchester, Greater Manchester M34 6EN"
+    },
+    {
+      "id": "lot-543df281e95cb934",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.bondwolfe.com/auctions/properties/",
+      "title": "Land At, Whettybridge Road/Holywell Lane, Rubery, B45 9EJ"
+    },
+    {
+      "id": "lot-c6eddb102e940244",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Gloucester",
+      "title": "Land Off B4070, Slad, Stroud, Gloucestershire, GL6 7RD"
+    },
+    {
+      "id": "lot-796a81bcc9eaef8c",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Cheltenham",
+      "title": "Land Off Butts Lane, Woodmancote Cheltenham, Gloucestershire, GL52 9QH"
+    },
+    {
+      "id": "lot-b1a3fadf24bfb3dc",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/27222",
+      "title": "Land On The North Side Of Westinghouse Road, Trafford Park, Manchester, Greater Manchest..."
+    },
+    {
+      "id": "lot-2d04dfb7d6a8f50a",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14523559",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-1dcd7652b1ab88e1",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Bristol",
+      "title": "Land South East Of Ermine Way, Shirehampton, Bristol, South West, BS11 9RQ"
+    },
+    {
+      "id": "lot-e0d1746ecd86a5a4",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14112635",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-ad28b03d0f0601c3",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Gloucester",
+      "title": "Land To The West Of Whitminster, Gloucester, GL2 7PE"
+    },
+    {
+      "id": "lot-ce5137f35517829a",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Gloucester",
+      "title": "Lot 1 - Church Farm, Clapton-on-the-Hill, Gloucestershire, GL54 2LG"
+    },
+    {
+      "id": "lot-075995c8cc307f0e",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.hollismorgan.co.uk/search-auction/?bid=11&showstc=on&orderby=lot_no+asc&extra_2%21=501%2C502",
+      "title": "Lot 1 Green Gardens, Brockworth, GL3 4NJ"
+    },
+    {
+      "id": "lot-abd1694017fc717f",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Gloucester",
+      "title": "Lot 2 - Church Farm, Clapton-on-the-Hill, Gloucestershire, GL54 2LG"
+    },
+    {
+      "id": "lot-18495304974150d0",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Gloucester",
+      "title": "Lot 3 - Church Farm, Clapton-on-the-Hill, Gloucestershire, GL54 2LG"
+    },
+    {
+      "id": "lot-60920469064204dd",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Gloucester",
+      "title": "Lot 4 - Church Farm, Clapton-on-the-Hill, Gloucestershire, GL54 2LG"
+    },
+    {
+      "id": "lot-1117653c6eb881cb",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/28214",
+      "title": "Madison Place, Unit B, Northampton Road, Manchester, Greater Manchester M40 5AG"
+    },
+    {
+      "id": "lot-b895fb41be674a6d",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.hollismorgan.co.uk/property-details/34973000/bristol-city/bristol/henleaze-gardens?bid=11&showstc=on&orderby=lot_no+asc&extra_2%21=501%2C502",
+      "title": "Manor Road, Mile Oak, B78 3NB"
+    },
+    {
+      "id": "lot-67535ec474322f1f",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/21149",
+      "title": "Mode Cottage, Church Lane, Mobberley, Knutsford, Cheshire WA16 7RA"
+    },
+    {
+      "id": "lot-bf4b366ca2976f81",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/32844",
+      "title": "No. 2, Brunel Court, Gadbrook Park, Cheshire, CW9 7LP"
+    },
+    {
+      "id": "lot-8c78ddb5a8810c6f",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/search.php?auction_date=current&auction_location=SW&page=1",
+      "title": "ol 0151 207 6315 South West 01395 275 691 Countrywide Property Auctions HEAD OFFICE 2 Co..."
+    },
+    {
+      "id": "lot-bf16887b49eefb7f",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": 115000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154211",
+      "title": "Open Land South Of 38-48 Bradshawgate, Leigh, WN7 4LA"
+    },
+    {
+      "id": "lot-f5254e4662ca502e",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33336",
+      "title": "Pendlebury, 4 Rivington Avenue, Swinton, Manchester, Greater Manchester, M27 8TP"
+    },
+    {
+      "id": "lot-fdd5579df77c578c",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14478747",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-3546a16717914da2",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14478730",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-c5ee20332ae40e75",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "unknown",
+      "price": 50000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/153546",
+      "title": "Plot Adjacent to Harvieston Cottage, Gorebridge, Midlothian EH23 4QA"
+    },
+    {
+      "id": "lot-a6367f234e8d4f53",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14486244",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-0b2e1a028f392589",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14482079",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-c857b8c63e50babd",
+      "region": "BRS",
+      "city": "Bristol",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.hollismorgan.co.uk/search-auction/?bid=11&showstc=on&orderby=lot_no+asc&extra_2%21=501%2C502",
+      "title": "r browser to view the location of this property. Valuation Request Contact Us 9 Waterloo..."
+    },
+    {
+      "id": "lot-331a57c1f5cceb69",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/28963",
+      "title": "Room 4.5 Borden Court, 145-163 London Road, Liverpool, Merseyside L3 8JA"
+    },
+    {
+      "id": "lot-c7f11d938c134ba1",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14488165",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-ade70b89d9f89f10",
+      "region": "EDI",
+      "city": "Edinburgh",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.futurepropertyauctions.co.uk/property_details.asp?id=14514583",
+      "title": "Plot of Land"
+    },
+    {
+      "id": "lot-0a2bfc7f334b122b",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Bristol",
+      "title": "Space Business Centre Tewkesbury Road, Cheltenham, South West, GL51 9FL"
+    },
+    {
+      "id": "lot-f9c5811f21e0bbf8",
+      "region": "BIR",
+      "city": "Birmingham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Birmingham",
+      "title": "St Nicolas Place 81 The Green, Kings Norton, Birmingham, West Midlands, B38 8RU"
+    },
+    {
+      "id": "lot-b6faa94c455dff1e",
+      "region": "GLA",
+      "city": "Glasgow",
+      "beds": "unknown",
+      "price": 90000,
+      "url": "https://www.auctionhouse.co.uk/scotland/auction/lot/154649",
+      "title": "St. Peters RC Church, Howatshaws Road, Dumbarton, West Dunbartonshire G82 3DR"
+    },
+    {
+      "id": "lot-8422c820eaf78d36",
+      "region": "CHS",
+      "city": "Cheshire",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/27306",
+      "title": "Station Hotel, Station Road, Ellesmere Port, Cheshire CH65 4BW"
+    },
+    {
+      "id": "lot-df5b54f212802b88",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Cheltenham",
+      "title": "Strategic Land Up Hatherley Way , Cheltenham , Gloucestershire , GL51 5QX"
+    },
+    {
+      "id": "lot-3f1699c9ed7e4e08",
+      "region": "LIV",
+      "city": "Liverpool",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.countrywidepropertyauctions.co.uk/property_details.php?auction_date=current&auction_location=SK&id=374295",
+      "title": "The Former Gateway Hotel, 244-248 Rimrose Road, Bootle, Sefton, L20 4QT"
+    },
+    {
+      "id": "lot-cd80bbe873e2df21",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/33361",
+      "title": "The Old Grammar School, Boarshaw Road, Middleton, Manchester, Lancashire, M24 6BR"
+    },
+    {
+      "id": "lot-7ffc2d79eacf6cbe",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.pugh-auctions.com/property/19340",
+      "title": "Unit 1, Eden Works, Belgrave Mill, Honeywell Lane, Oldham, Lancashire OL8 2JP"
+    },
+    {
+      "id": "lot-da58e06aeed0dc13",
+      "region": "GM",
+      "city": "Manchester",
+      "beds": "unknown",
+      "price": 70000,
+      "url": "https://www.auctionhouse.co.uk/manchester/auction/lot/154352",
+      "title": "Unit 1A, Woodend Mills, South Hill, Springhead, OL4 5DR"
+    },
+    {
+      "id": "lot-3ab2447691bbc620",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "beds": "unknown",
+      "price": null,
+      "url": "https://www.brutonknowles.co.uk/?s=Cheltenham",
+      "title": "Wolseley House 1-4 Wolseley Terrace, Cheltenham, Gloucestershire, GL50 1TH"
+    }
+  ]
 }

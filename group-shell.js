@@ -14,7 +14,7 @@
 
   function asset(name) {
     const url = new URL(name, location.href);
-    url.searchParams.set('v', 'board-20261117h');
+    url.searchParams.set('v', 'board-20261118a');
     return url.href;
   }
   async function loadJson(name) {
@@ -321,7 +321,7 @@
     const benches = (state.evidence.benchmarks || []).filter((row) => row.regionId === area.id);
     const missing = benches.filter((row) => row.value === 'to be supplied');
     const lhaNames = BoardroomModel.LHA_NAMES[area.id] || [];
-    const lhaRows = lhaNames.map((label) => (state.lha.rates || []).find((row) => row.name === label && row.country === 'England')).filter(Boolean);
+    const lhaRows = lhaNames.map((label) => (state.lha.rates || []).find((row) => row.name === label && row.country === (area.country || 'England'))).filter(Boolean);
     const lhaBars = lhaRows.filter((row) => typeof row['2'] === 'number').map((row) => ({id: row.name, label: row.name, amount: row['2'], text: money(row['2'])}));
     const open = state.ax.open || (['lha', 'benchmarks', 'competitors'].includes(state.section) ? state.section : '');
     const fwShown = state.ax.status ? frameworks.filter((item) => (item.status_n || 'Not yet recorded') === state.ax.status) : frameworks;
@@ -332,7 +332,7 @@
     let benchLine = !benches.length ? 'No commercial benchmark is recorded for this area.' : (missing.length ? missing.map((row) => row.topic).join(' and ') + (missing.length > 1 ? ' are still to be supplied.' : ' is still to be supplied.') : 'Every recorded benchmark in this area has a cited figure.');
     if (area.id === 'BRS' && state.ons && state.ons.areas && state.ons.areas['Bristol, City of']) benchLine += ' The council rent table and the ONS September 2026 Bristol rents are different series, and the figures do not match.';
     const host = $('#analysis-body');
-    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Analysis Dashboard</p><h1>Evidence for ' + esc(area.label) + '</h1><p class="lc-purpose">Framework status, competitors and the allowance spread for this area. Lease cards stay on Mack Living. Rent gap stays on the boardroom.</p></div>'
+    host.innerHTML = '<div class="ms-hero"><p class="lc-kicker">Analysis Dashboard</p><h1>Evidence for ' + esc(area.label) + '</h1><p class="lc-purpose">Framework status, competitors and the LHA spread for this area. Lease cards stay on Mack Living. Rent gap stays on the boardroom.</p></div>'
       + '<section class="card" id="ms-analytics">' + kpiRow([
         {label: 'Framework records', value: String(frameworks.length)},
         {label: 'Competitors', value: String(comps.length)},
@@ -762,21 +762,27 @@
     const button = document.getElementById('bd-present');
     if (button) button.textContent = 'Present';
   });
+  function boardInput() {
+    return {today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions, hurdle: state.hurdle};
+  }
   async function refreshAuctions() {
     if (!window.AuctionCounts) return;
+    const today = new Date().toISOString().slice(0, 10);
     try {
-      const response = await fetch(AuctionCounts.LIVE, {cache: 'no-store'});
-      if (!response.ok) return;
-      const file = await response.json();
-      const today = new Date().toISOString().slice(0, 10);
-      state.auctions = AuctionCounts.pack(file, today, 'live');
+      const [lotsRes, gatesRes] = await Promise.all([
+        fetch(AuctionCounts.LIVE, {cache: 'no-store'}),
+        fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/data/market-entry/gates.json', {cache: 'no-store'})
+      ]);
+      if (lotsRes.ok) state.auctions = AuctionCounts.pack(await lotsRes.json(), today, 'live');
+      if (gatesRes.ok) state.hurdle = AuctionCounts.yieldOnCost(await gatesRes.json());
       if (state.mode === 'board') renderBoard();
+      if (state.mode === 'triage') renderTriage();
     } catch (error) {}
   }
   function renderBoard() {
     document.body.classList.add('bd-on');
     const host = document.getElementById('board-body');
-    const built = BoardroomModel.build({today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions});
+    const built = BoardroomModel.build(boardInput());
     BoardroomUI.render(host, built, {selected: state.boardPick, onRegion: setRegion, onPresent: togglePresent, onGo: (hash) => { if (hash === 'records/position') state.recOpen = 'position'; viewMode(hash); }, onSelect: (id) => { state.boardPick = id; renderBoard(); }});
   }
   function moneyPlain(value) {
@@ -785,10 +791,10 @@
   function renderTriage() {
     const area = regionNow();
     const today = new Date().toISOString().slice(0, 10);
-    const built = BoardroomModel.build({today, region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions});
+    const built = BoardroomModel.build(boardInput());
     const pack = MlCommercial.build({living: state.living, frameworks: {items: state.fwItems || []}, v4: state.v4, manchester: state.evidence && state.evidence.manchesterCas, today});
     const cards = MlCommercial.filterCards(pack.cards, {region: area.id === 'National' ? '' : area.id, lease:'', status:''});
-    const priceKey = {GM:'Manchester', BRS:'City Of Bristol', GLOS:'Cheltenham'}[area.id];
+    const priceKey = area.price || '';
     const priceRow = state.prices && state.prices.cities && priceKey ? state.prices.cities[priceKey] : null;
     const screen = TriageModel.build({
       today,
@@ -810,9 +816,10 @@
     host.innerHTML = '<div class="bd-top"><div><p class="bd-kicker">Triage</p><h1>' + esc(area.label) + '</h1></div></div>'
       + '<p class="foot">Laurito Capital investment triage for this area. It also shows what Mack Living has and has not supplied. Contract rates, counterparty terms, names and emails are not on this screen.</p>'
       + '<div class="kpis"><div class="kpi"><small>Unverified records</small><b class="' + (screen.unverified ? 'is-blank' : '') + '">' + screen.unverified + '</b></div><div class="kpi"><small>Confirmed records</small><b>' + screen.confirmed + '</b></div><div class="kpi"><small>Schemes</small><b>' + screen.steps.position.schemes + '</b></div><div class="kpi"><small>Verdict</small><b>' + esc(screen.verdict) + '</b></div></div>'
+      + (window.BoardroomUI && BoardroomUI.rentTable ? BoardroomUI.rentTable(built) : '')
       + '<div class="tr-steps">'
       + '<article class="tr-step"><h2>1. Mack Living position</h2><p>' + screen.steps.position.schemes + ' framework schemes. ' + screen.steps.position.withBip + ' link a BiP record. ' + screen.steps.position.operators + ' operator places. ' + screen.steps.position.past + ' firm end date' + (screen.steps.position.past === 1 ? ' is' : 's are') + ' already past.</p></article>'
-      + '<article class="tr-step"><h2>2. Market context</h2><p>' + (screen.steps.market.gapKnown ? 'The LHA gap against the ONS rent is recorded on the boardroom.' : 'Open market rent is not recorded.') + '</p><p>' + (screen.steps.market.matched == null ? 'Auction lots are not loaded.' : screen.steps.market.matched + ' current lots match 3 or 4 bed. ' + screen.steps.market.unknown + ' have no bed count.') + '</p>'
+      + '<article class="tr-step"><h2>2. Market context</h2><p>' + (screen.steps.market.gapKnown ? 'The LHA and open market matrix is above.' : 'Open market rent is not yet recorded.') + '</p><p>' + (screen.steps.market.matched == null ? 'Auction lots are not loaded.' : screen.steps.market.matched + ' current lots match 3 or 4 bed. ' + screen.steps.market.unknown + ' have no bed count.') + '</p>'
       + '<button type="button" class="btn sec" id="tr-example">' + (state.triageExample ? 'Hide the £5m example' : 'Show the £5m example') + '</button>'
       + (state.triageExample ? (screen.example ? '<p class="foot">Indicative only. £5m of equity at 60% LTV is a purchase pot of ' + moneyPlain(screen.example.pot) + '. Divided by the Land Registry median of ' + moneyPlain(screen.example.median) + ' (standard sales, October 2025 to August 2026) that is about ' + screen.example.homes + ' homes. This is not a valuation or a bid.</p>' : '<p class="is-blank">Not yet recorded. This example needs one Land Registry median for the area.</p>') : '')
       + '</article>'
@@ -1021,6 +1028,7 @@
     ]);
     state.positionFile = positionFile;
     state.auctions = auctions;
+    state.hurdle = null;
     refreshAuctions();
     state.ons = ons;
     state.prices = prices;

@@ -414,7 +414,35 @@ body.bd-present #board_view{height:auto;min-height:100vh;overflow:auto}
 .bd-tools select,.gh-region select,.bd-form input{font:inherit;font-size:14px;color:var(--ink);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:#fff;min-height:36px}
 .bd-contracts,.bd-three,.bd-bottom{min-height:0;min-width:0;display:grid;gap:8px}
 .bd-contracts{grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr)}
-.bd-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bd-three,.bd-rent,.bd-targets{grid-template-columns:1fr}
+.bd-rent,.bd-targets{min-width:0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin-top:8px;overflow:visible}
+.bd-rent table,.bd-detail table{width:100%;border-collapse:collapse;font-size:14px}
+.bd-rent th,.bd-rent td,.bd-detail th,.bd-detail td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--line)}
+.bd-rent th:first-child,.bd-rent td:first-child,.bd-detail th:first-child,.bd-detail td:first-child{text-align:left}
+.bd-rent tr[data-bed]{cursor:pointer}
+.bd-rent tr.on{outline:2px solid var(--accent,#1f4d3a)}
+.bd-gap.good{background:#e5f2ea}
+.bd-gap.mid{background:#f8efd8}
+.bd-gap.bad{background:#f8e4e4}
+.bd-gap.na,.bd-rent td.na,.bd-rent .na{background:#eef1f4;color:#8b97a3}
+.bd-legend{display:flex;flex-wrap:wrap;gap:8px;font-size:12px}
+.bd-legend span{padding:2px 8px;border-radius:4px}
+.bd-take{font-weight:650;margin:4px 0}
+.bd-beds{display:grid;gap:4px}
+.bd-bed{display:grid;grid-template-columns:92px minmax(0,1fr) 36px;gap:8px;align-items:center;width:100%;border:0;background:transparent;text-align:left;font:inherit;cursor:pointer;padding:2px 0}
+.bd-bed.on{outline:2px solid #0f1a2e;border-radius:6px}
+.bd-bed i{position:relative;display:block;height:12px;background:#eef1f5;border-radius:3px}
+.bd-bed b{position:absolute;left:0;top:2px;height:8px;border-radius:2px;background:#1f4d3a}
+.bd-modes,.bd-tiles{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bd-tiles span{min-width:120px;padding:8px 10px;border:1px solid var(--line);border-radius:8px}
+.bd-strip{display:grid;gap:8px;margin-top:8px}
+.bd-strip-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:8px;align-items:center}
+.bd-track{position:relative;height:28px;background:#f4f7f4;border-radius:4px}
+.bd-line{position:absolute;top:0;bottom:0;width:2px;background:#1f4d3a}
+.bd-dot{position:absolute;width:10px;height:10px;border-radius:50%;top:9px;transform:translateX(-50%);border:0;padding:0}
+.bd-dot.ok{background:#1f7a4d}
+.bd-dot.over{background:#a33b3b}
+.bd-detail{overflow-x:auto}
 .bd-bottom{grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr)}
 .bd article,.bd-counts,.bd-matrix,.bd-time{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0;min-height:0;overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;scrollbar-width:auto;scrollbar-color:#3d4c59 #e6ebf0}
 .bd h2{margin:0 0 4px;font-size:13px}
@@ -523,4 +551,10 @@ body.bd-present #bd-present{position:fixed;top:12px;right:12px;z-index:30}
 .tr-verdict.go{border-left-color:#1a9c5b}
 @media(max-width:1100px){.tr-steps{grid-template-columns:1fr 1fr}}
 .owner,.pc,.gh-proposed,.dlmb,.pf-context,.ms-hold,.v4card,[style*="border-left"]{padding-left:12px}
-@media(max-width:700px){.bd-split,.an-grid,.bd-three{grid-template-columns:1fr}.bd-three>:last-child,.an-grid>:last-child{grid-column:auto}.bd-counts,.kpis{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.bd-split,.an-grid,.bd-three{grid-template-columns:1fr}.bd-three>:last-child,.an-grid>:last-child{grid-column:auto}.bd-counts,.kpis{grid-template-columns:1fr 1fr}
+.bd-rent table,.bd-rent tbody,.bd-rent tr,.bd-rent th,.bd-rent td{display:block;width:auto;text-align:left}
+.bd-rent thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.bd-rent tr{border:1px solid var(--line);border-radius:8px;margin:0 0 8px;padding:6px}
+.bd-rent td,.bd-rent th{border:0;display:flex;justify-content:space-between;gap:8px}
+.bd-rent td::before,.bd-rent th::before{content:attr(data-h);color:var(--mut)}
+.bd-strip-row{grid-template-columns:72px minmax(0,1fr)}}

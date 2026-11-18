@@ -2,15 +2,25 @@
 (function (root) {
   'use strict';
   const REGIONS = Object.freeze([
-    {id: 'GM', label: 'Greater Manchester', city: 'Manchester', bip: ['UKD3', 'UKD33'], opp: 'GM', reference: 'Central Greater Manchester'},
-    {id: 'BRS', label: 'Bristol / West', city: 'City Of Bristol', bip: ['UKK11'], opp: 'BR', reference: 'Bristol'},
-    {id: 'GLOS', label: 'Gloucestershire', city: 'Cheltenham', bip: ['UKK13'], opp: 'GL', reference: 'Cheltenham'},
-    {id: 'National', label: 'National', city: '', bip: ['National', 'England and Wales'], opp: 'MJ', reference: ''}
+    {id: 'GM', label: 'Greater Manchester', city: 'Manchester', bip: ['UKD3', 'UKD33'], opp: 'GM', reference: 'Central Greater Manchester', country: 'England', price: 'Manchester'},
+    {id: 'LIV', label: 'Liverpool', city: 'Liverpool', bip: [], opp: 'LIV', reference: 'Greater Liverpool', country: 'England', price: ''},
+    {id: 'CHS', label: 'Cheshire', city: 'Cheshire', bip: [], opp: 'CHS', reference: 'West Cheshire', country: 'England', price: ''},
+    {id: 'BIR', label: 'Birmingham', city: 'Birmingham', bip: [], opp: 'BIR', reference: 'Birmingham', country: 'England', price: ''},
+    {id: 'BRS', label: 'Bristol', city: 'City Of Bristol', bip: ['UKK11'], opp: 'BR', reference: 'Bristol', country: 'England', price: 'City Of Bristol'},
+    {id: 'GLA', label: 'Glasgow', city: 'Glasgow', bip: [], opp: 'GLA', reference: 'Greater Glasgow', country: 'Scotland', price: ''},
+    {id: 'EDI', label: 'Edinburgh', city: 'Edinburgh', bip: [], opp: 'EDI', reference: 'Lothian', country: 'Scotland', price: ''},
+    {id: 'GLOS', label: 'Cheltenham', city: 'Cheltenham', bip: ['UKK13'], opp: 'GL', reference: 'Cheltenham', country: 'England', price: 'Cheltenham'},
+    {id: 'National', label: 'National', city: '', bip: ['National', 'England and Wales'], opp: 'MJ', reference: '', country: 'England', price: ''}
   ]);
   const LHA_NAMES = Object.freeze({
     GM: ['Central Greater Manchester', 'Southern Greater Manchester', 'Bolton and Bury', 'Oldham and Rochdale', 'Wigan'],
+    LIV: ['Greater Liverpool'],
+    CHS: ['East Cheshire', 'North Cheshire', 'South Cheshire', 'West Cheshire'],
+    BIR: ['Birmingham'],
     BRS: ['Bristol'],
-    GLOS: ['Cheltenham', 'Gloucester']
+    GLA: ['Greater Glasgow'],
+    EDI: ['Lothian'],
+    GLOS: ['Cheltenham']
   });
   const BEDS = Object.freeze([
     ['shared', 'SAR', 'HMO / shared', ''],
@@ -19,11 +29,29 @@
     ['3', '3', '3 bed', '3 bed'],
     ['4', '4', '4 bed', '4 or more']
   ]);
-  const ONS_AREA = Object.freeze({GM: 'Manchester', BRS: 'Bristol, City of', GLOS: 'Cheltenham'});
+  const ONS_AREA = Object.freeze({
+    GM: 'Manchester',
+    LIV: 'Liverpool',
+    CHS: 'Cheshire West and Chester',
+    BIR: 'Birmingham',
+    BRS: 'Bristol, City of',
+    GLA: 'Greater Glasgow',
+    EDI: 'Lothian',
+    GLOS: 'Cheltenham'
+  });
   const BIP_FIELDS = Object.freeze(['id', 'type', 'title', 'buyer', 'suppliers', 'lotSuppliers', 'value', 'basis', 'start', 'end', 'region', 'status', 'opps', 'url', 'checked', 'published', 'framework']);
 
   function regionById(id) {
     return REGIONS.find((row) => row.id === id) || REGIONS[0];
+  }
+  function gapBand(percent) {
+    if (percent == null || percent === '') return 'na';
+    const value = Number(percent);
+    if (!Number.isFinite(value)) return 'na';
+    const size = Math.abs(value);
+    if (size < 10) return 'good';
+    if (size <= 25) return 'mid';
+    return 'bad';
   }
   function clean(value) {
     return String(value || '').replace(/\s+/g, ' ').trim();
@@ -134,7 +162,8 @@
     });
     const file = input.lha || {rates: []};
     const names = LHA_NAMES[region.id] || [];
-    const rows = names.map((name) => (file.rates || []).find((row) => row.name === name && row.country === 'England')).filter(Boolean);
+    const country = region.country || 'England';
+    const rows = names.map((name) => (file.rates || []).find((row) => row.name === name && row.country === country)).filter(Boolean);
     const reference = rows.find((row) => row.name === region.reference) || rows[0] || null;
     const onsFile = (input.ons && input.ons.areas) || {};
     const onsName = ONS_AREA[region.id] || '';
@@ -163,7 +192,7 @@
       month: ons ? ons.month : '',
       source: (input.ons && input.ons.source) || '',
       url: (input.ons && input.ons.url) || '',
-      note: '4 or more is the ONS category. It is not a pure 4 bed rent. This series has no shared room average.'
+      note: onsNote(region)
     };
     const typeMap = {};
     for (const row of schemes) typeMap[row.type] = (typeMap[row.type] || 0) + 1;
@@ -179,8 +208,8 @@
     const lights = [
       omrKnown ? light(rates.some((bed) => bed.gap != null && bed.gap < 0) ? 'mid' : 'good', 'Rent gap', 'LHA minus the ONS rent for the named area.') : light('none', 'Rent gap', 'Not yet recorded'),
       !auction ? light('none', 'Supply of targets', 'Not yet recorded') : light(auction.matched > 0 ? 'good' : 'mid', 'Supply of targets', auction.matched + ' lots state 3 or 4 bed. ' + auction.unknown + ' have no bed count.'),
-      light(operatorPlaces > 0 ? 'good' : 'bad', 'Operator coverage', operatorPlaces ? operatorPlaces + ' places on these frameworks. ' + uniqueOperators.size + ' firms are named. A firm on two frameworks is counted twice. Market Screen counts provider accounts, which is a separate list.' : 'None recorded'),
-      past ? light('bad', 'Framework expiry', past + (past === 1 ? ' firm end date is already past' : ' firm end dates are already past')) : soon ? light('mid', 'Framework expiry', soon + (soon === 1 ? ' firm date falls inside 12 months' : ' firm dates fall inside 12 months')) : light(schemes.some((row) => row.end.firm) ? 'good' : 'mid', 'Framework expiry', schemes.some((row) => row.end.firm) ? 'No firm end inside 12 months' : 'Firm end dates are unknown'),
+      light(operatorPlaces > 0 ? 'good' : (schemes.length ? 'bad' : 'none'), 'Operator coverage', operatorPlaces ? operatorPlaces + ' places on these frameworks. ' + uniqueOperators.size + ' firms are named. A firm on two frameworks is counted twice. Market Screen counts provider accounts, which is a separate list.' : (schemes.length ? 'None recorded' : 'Not yet recorded')),
+      !schemes.length ? light('none', 'Framework expiry', 'Not yet recorded') : past ? light('bad', 'Framework expiry', past + (past === 1 ? ' firm end date is already past' : ' firm end dates are already past')) : soon ? light('mid', 'Framework expiry', soon + (soon === 1 ? ' firm date falls inside 12 months' : ' firm dates fall inside 12 months')) : light(schemes.some((row) => row.end.firm) ? 'good' : 'mid', 'Framework expiry', schemes.some((row) => row.end.firm) ? 'No firm end inside 12 months' : 'Firm end dates are unknown'),
       deals == null && held == null ? light('none', 'Deals and holdings', 'Not yet recorded') : light('good', 'Deals and holdings', 'A figure has been entered on the position sheet')
     ];
     const comparable = rates.filter((row) => row.gap != null);
@@ -208,7 +237,9 @@
       rates,
       omrKnown,
       ons: onsMeta,
-      lhaProvenance: 'DWP Universal Credit LHA 2026/27, via market-lha.json. The reference row is ' + (reference ? reference.name : 'not in the file') + '.',
+      lhaProvenance: 'DWP Universal Credit LHA 2026/27, via market-lha.json. The reference row is ' + (reference ? reference.name : 'not in the file') + '.' + lhaNote(region),
+      lots: ((input.auctions && input.auctions.lots) || []).filter((lot) => lot.region === region.id),
+      hurdle: typeof input.hurdle === 'number' && input.hurdle > 0 ? input.hurdle : null,
       auctions: auction,
       auctionsLive: (input.auctions && input.auctions.live) || 'https://pgrahamlc.github.io/ecosystem-deals/#auctions',
       auctionsFrom: (input.auctions && input.auctions.refreshedFrom) || '',
@@ -219,5 +250,19 @@
       verdict
     };
   }
-  root.BoardroomModel = Object.freeze({REGIONS, LHA_NAMES, BEDS, BIP_FIELDS, build, readDate, money, ukDate, regionById});
+  function onsNote(region) {
+    const base = '4 or more is the ONS category. It is not a pure 4 bed rent. This series has no shared room average.';
+    if (region.id === 'CHS') return 'The open market column is Cheshire West and Chester, paired with the West Cheshire BRMA. ONS also publishes Cheshire East and Warrington. Those are not blended into this figure. ' + base;
+    if (region.id === 'EDI') return 'The open market column is the ONS Lothian figure. ' + base;
+    if (region.id === 'GLA') return 'The open market column is the ONS Greater Glasgow figure. ' + base;
+    return base;
+  }
+  function lhaNote(region) {
+    if (region.id === 'CHS') return ' Cheshire lots in Ecosystem Deals sit across East, North, South and West Cheshire. This row is West Cheshire, not a blend.';
+    if (region.id === 'EDI') return ' Edinburgh uses the Lothian BRMA. West Lothian is a separate rate and is not blended in.';
+    if (region.id === 'LIV') return ' Liverpool uses the Greater Liverpool BRMA.';
+    if (region.id === 'GLA') return ' Glasgow uses the Greater Glasgow BRMA.';
+    return '';
+  }
+  root.BoardroomModel = Object.freeze({REGIONS, LHA_NAMES, BEDS, BIP_FIELDS, build, readDate, money, ukDate, regionById, gapBand});
 })(typeof window !== 'undefined' ? window : globalThis);

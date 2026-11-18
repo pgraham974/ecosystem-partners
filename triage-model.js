@@ -34,8 +34,17 @@
     if (!row) return false;
     if (!region || region.id === 'National') return true;
     if (String(row.id || '').indexOf(region.opp + '-') === 0) return true;
-    const name = {GM: 'Greater Manchester', BRS: 'Bristol', GLOS: 'Gloucestershire'}[region.id];
-    return row.region === name;
+    const names = {
+      GM: ['Greater Manchester'],
+      LIV: ['Liverpool'],
+      CHS: ['Cheshire'],
+      BIR: ['Birmingham'],
+      BRS: ['Bristol', 'Bristol / West'],
+      GLA: ['Glasgow'],
+      EDI: ['Edinburgh'],
+      GLOS: ['Cheltenham', 'Gloucestershire']
+    }[region.id] || [region.label];
+    return names.indexOf(row.region) !== -1;
   }
   function flag(unverified) {
     return unverified ? 'Unverified' : 'Confirmed';
