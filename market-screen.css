@@ -538,7 +538,7 @@ body{overflow-x:auto}
 @media(max-width:800px){.an-grid{grid-template-columns:1fr}}
 .bd-split{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.85fr);gap:8px;min-width:0;align-items:stretch}
 .bd-split>*{height:100%;min-width:0}
-.bd-counts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;align-items:stretch}
+.bd-counts{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;align-items:start}
 .kpis{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);grid-template-columns:none;gap:12px}
 .an-grid{align-items:stretch}
 .an-grid>*{height:100%;min-width:0}
@@ -561,6 +561,8 @@ body{overflow-x:auto}
 .bd-axis{position:relative;height:16px}
 .bd-axis span{position:absolute;top:0;font-size:10px;color:var(--mut);transform:translateX(-50%)}
 .bd-count{border:0;background:transparent;text-align:left;cursor:pointer;font:inherit;color:inherit;padding:0}
+.bd-count span{display:block}
+@media(max-width:1100px) and (min-width:901px){.bd-counts{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .bd-count:hover b{text-decoration:underline}
 .bd-health-btn{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;border:0;background:transparent;text-align:left;cursor:pointer;font:inherit;padding:4px 0}
 .bd-health-btn b{font-size:12px}
