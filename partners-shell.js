@@ -52,7 +52,7 @@
     const nav = $('#nav2');
     if (!nav) return;
     const items = [['who','Counterparties'],['opportunities','Opportunities'],['frameworks','Frameworks'],['workbook','Workbook']];
-    nav.innerHTML = '<div class="mainnav">' + items.map(([id, label]) => '<button type="button" class="mainb' + (active === id ? ' on' : '') + '" data-mece="' + id + '">' + label + '</button>').join('') + '<a class="mainb ms-analysis" href="https://pgraham974.github.io/ecosystem-deals/">Analysis dashboard ↗</a></div><div id="mecebar"></div>';
+    nav.innerHTML = '<div class="mainnav">' + items.map(([id, label]) => '<button type="button" class="mainb' + (active === id ? ' on' : '') + '" data-mece="' + id + '">' + label + '</button>').join('') + '<a class="mainb ms-analysis" href="https://pgrahamlc.github.io/ecosystem-deals/">Analysis dashboard ↗</a></div><div id="mecebar"></div>';
     nav.querySelectorAll('[data-mece]').forEach((button) => button.onclick = () => {
       if (button.dataset.mece === 'who') { state.oppMode = 'records'; state.top = false; viewMode('who'); }
       else if (button.dataset.mece === 'opportunities') { state.oppMode = 'records'; if (window.partnerFlow) partnerFlow.clear(); viewMode('flow'); }
