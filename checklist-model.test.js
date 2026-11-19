@@ -58,7 +58,7 @@ test('seed links point at Manchester evidence, the Market Screen and the acquisi
   assert.ok(byId('portfolio', 'gates').links.some((link) => link.hash === 'market'));
   assert.ok(byId('la-lease', 'offer').links.some((link) => link.hash === 'mack/manchester-long-term-ta'));
   assert.ok(byId('la-lease', 'engage-decision').links.some((link) => link.hash === 'market'));
-  assert.equal(byId('portfolio', 'pathways').links.find((link) => link.href).href, 'https://pgraham974.github.io/ecosystem-deals/');
+  assert.equal(byId('portfolio', 'pathways').links.find((link) => link.href).href, 'https://pgrahamlc.github.io/ecosystem-deals/');
 });
 test('checklist copy has no semicolon or dash', () => {
   assert.equal(Group.scanCopy(seedFile).length, 0);
@@ -128,7 +128,7 @@ test('import rejects a file that is not a checklist and drops an unsafe link', (
         status: 'not-started',
         links: [
           {label: 'Bad', href: 'javascript:alert(1)'},
-          {label: 'Site', href: 'https://pgraham974.github.io/ecosystem-deals/'}
+          {label: 'Site', href: 'https://pgrahamlc.github.io/ecosystem-deals/'}
         ]
       }]
     }]
@@ -136,6 +136,6 @@ test('import rejects a file that is not a checklist and drops an unsafe link', (
   assert.equal(parsed.state.workstreams[0].items[0].done, false);
   assert.equal(parsed.state.workstreams[0].items[0].status, 'not-started');
   assert.equal(parsed.state.workstreams[0].items[0].links.length, 1);
-  assert.equal(parsed.state.workstreams[0].items[0].links[0].href, 'https://pgraham974.github.io/ecosystem-deals/');
+  assert.equal(parsed.state.workstreams[0].items[0].links[0].href, 'https://pgrahamlc.github.io/ecosystem-deals/');
 });
 if (failed) process.exit(1);
