@@ -40,6 +40,9 @@
     GLOS: 'Cheltenham'
   });
   const BIP_FIELDS = Object.freeze(['id', 'type', 'title', 'buyer', 'suppliers', 'lotSuppliers', 'value', 'basis', 'start', 'end', 'region', 'status', 'opps', 'url', 'checked', 'published', 'framework']);
+  const PRIORITY_REGION = 'GM';
+  const PRIORITY_IDS = Object.freeze(['GM', 'EDI', 'BIR', 'LIV', 'CHS']);
+  const EXECUTIVE_NOTE = 'This view supports triage and pre-qualification only. The Mack Living buy box is a separate supervised review. Contracts are referenced by link, and they are not held in the dashboard.';
 
   function regionById(id) {
     return REGIONS.find((row) => row.id === id) || REGIONS[0];
@@ -128,8 +131,36 @@
     return {tone, label, detail};
   }
 
+  function isOpenStatus(status) {
+    const text = clean(status);
+    return /^open to join/i.test(text) || /^live\b/i.test(text) || /^forthcoming/i.test(text);
+  }
+  function operatorLine(places, named, schemeCount) {
+    if (!schemeCount) return 'Not yet recorded';
+    if (!places) return 'None recorded';
+    return places + ' places are businesses operating in this space. ' + named + ' businesses are named. A business on two frameworks is counted twice. This is not a list of potential partners. Market Screen keeps provider accounts as a separate list.';
+  }
+  function buildChannels(input, regionId, lots) {
+    if (root.AcquisitionChannels) {
+      const file = input && input.onMarket;
+      return root.AcquisitionChannels.build({
+        region: regionId,
+        lots,
+        auctionsLoaded: !!(input && input.auctions),
+        onMarket: file == null ? undefined : file,
+        onMarketUpdated: (file && (file.updated || file.updated_at)) || ''
+      });
+    }
+    return {
+      offMarket: {id: 'off-market', label: 'Off-market', count: 0, feed: false, loaded: false, note: 'no feed yet', items: []},
+      auction: {id: 'auction', label: 'Auction', count: input && input.auctions ? lots.length : null, feed: true, loaded: !!(input && input.auctions), note: input && input.auctions ? 'Current upcoming lots from Ecosystem Deals. Allsop is excluded.' : 'The auction lots file has not loaded yet.', items: input && input.auctions ? lots : []},
+      onMarket: {id: 'on-market', label: 'On-market', count: null, feed: true, loaded: false, note: 'The on-market file has not loaded yet.', items: []}
+    };
+  }
   function build(input) {
     const today = readDate(input && input.today).firm ? input.today : '2026-11-17';
+    const asked = input && input.priorityRegion;
+    const priorityRegion = REGIONS.some((row) => row.id === asked) ? asked : PRIORITY_REGION;
     const region = regionById(input && input.region);
     const frameworks = ((input.frameworks && input.frameworks.items) || []);
     const links = (input.v4 && input.v4.fwLinks) || [];
@@ -214,10 +245,34 @@
     const lights = [
       omrKnown ? light(rates.some((bed) => bed.gap != null && bed.gap < 0) ? 'mid' : 'good', 'Rent gap', 'LHA minus the ONS rent for the named area.') : light('none', 'Rent gap', 'Not yet recorded'),
       !auction ? light('none', 'Supply of targets', 'Not yet recorded') : light(auction.matched > 0 ? 'good' : 'mid', 'Supply of targets', auction.matched + ' lots state 3 or 4 bed. ' + auction.unknown + ' have no bed count.'),
-      light(operatorPlaces > 0 ? 'good' : (schemes.length ? 'bad' : 'none'), 'Operator coverage', operatorPlaces ? operatorPlaces + ' places on these frameworks. ' + uniqueOperators.size + ' firms are named. A firm on two frameworks is counted twice. Market Screen counts provider accounts, which is a separate list.' : (schemes.length ? 'None recorded' : 'Not yet recorded')),
+      light(operatorPlaces > 0 ? 'good' : (schemes.length ? 'bad' : 'none'), 'Operator coverage', operatorLine(operatorPlaces, uniqueOperators.size, schemes.length)),
       !schemes.length ? light('none', 'Framework expiry', 'Not yet recorded') : past ? light('bad', 'Framework expiry', past + (past === 1 ? ' firm end date is already past' : ' firm end dates are already past')) : soon ? light('mid', 'Framework expiry', soon + (soon === 1 ? ' firm date falls inside 12 months' : ' firm dates fall inside 12 months')) : light(schemes.some((row) => row.end.firm) ? 'good' : 'mid', 'Framework expiry', schemes.some((row) => row.end.firm) ? 'No firm end inside 12 months' : 'Firm end dates are unknown'),
       deals == null && held == null ? light('none', 'Deals and holdings', 'Not yet recorded') : light('good', 'Deals and holdings', 'A figure has been entered on the position sheet')
     ];
+    const openFrameworks = schemes.filter((row) => isOpenStatus(row.status)).map((row) => ({
+      id: row.id,
+      name: row.name,
+      status: row.status,
+      start: row.start,
+      end: row.end,
+      fromBip: row.bip.length > 0,
+      source: (row.sources && row.sources[0]) || null
+    }));
+    const lotsForChannels = ((input.auctions && input.auctions.lots) || []).filter((lot) => lot.region === region.id);
+    const channels = buildChannels(input, region.id, lotsForChannels);
+    const executive = {
+      note: EXECUTIVE_NOTE,
+      priorityRegion,
+      priorityIds: PRIORITY_IDS,
+      open: openFrameworks,
+      schemes: schemes.length,
+      fromBip: schemes.filter((row) => row.bip.length).length,
+      deals,
+      held,
+      operatorPlaces,
+      uniqueOperators: uniqueOperators.size,
+      operatorLine: operatorLine(operatorPlaces, uniqueOperators.size, schemes.length)
+    };
     const comparable = rates.filter((row) => row.gap != null);
     const allBelow = comparable.length > 0 && comparable.every((row) => row.gap < 0);
     const positionLine = deals == null && held == null
@@ -250,6 +305,8 @@
       auctionsLive: (input.auctions && input.auctions.live) || 'https://pgrahamlc.github.io/ecosystem-deals/#auctions',
       auctionsFrom: (input.auctions && input.auctions.refreshedFrom) || '',
       auctionsUpdated: (input.auctions && input.auctions.updated_at) || '',
+      executive,
+      channels,
       portfolio: {deals, held, operators: operatorPlaces, uniqueOperators: uniqueOperators.size, targets: auction},
       soon,
       lights,
@@ -297,5 +354,5 @@
     if (region.id === 'GLA') return ' Glasgow uses the Greater Glasgow BRMA.';
     return '';
   }
-  root.BoardroomModel = Object.freeze({REGIONS, LHA_NAMES, BEDS, BIP_FIELDS, build, readDate, money, ukDate, regionById, gapBand});
+  root.BoardroomModel = Object.freeze({REGIONS, LHA_NAMES, BEDS, BIP_FIELDS, PRIORITY_REGION, PRIORITY_IDS, EXECUTIVE_NOTE, build, readDate, money, ukDate, regionById, gapBand, isOpenStatus});
 })(typeof window !== 'undefined' ? window : globalThis);

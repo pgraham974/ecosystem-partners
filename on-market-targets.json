@@ -1,0 +1,328 @@
+{
+  "source": "https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/blocks_for_sale.json",
+  "page": "https://pgrahamlc.github.io/ecosystem-deals/blocks_for_sale.json",
+  "updated": "2026-10-22",
+  "note": "Private treaty listings only. Auction sale method rows are left out so they are not counted twice. Point in time check, not a live feed.",
+  "listings": [
+    {
+      "id": "rm152063375",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "Bindloss Avenue, Monton, Eccles M30 0DU",
+      "price": 2999950,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/152063375",
+      "homes": 12
+    },
+    {
+      "id": "rm749890196666817",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "Lees Street, Gorton, Manchester M18",
+      "price": null,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/749890196666817",
+      "homes": 7
+    },
+    {
+      "id": "rm88719105",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "Norwood Road, Stretford, M32",
+      "price": 675000,
+      "income": 55140,
+      "url": "https://www.rightmove.co.uk/properties/88719105",
+      "homes": 6
+    },
+    {
+      "id": "rm94130061",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "81 Mauldeth Road / 115 Egerton Road, Ladybarn, Manchester M14 6SP",
+      "price": 1650000,
+      "income": 104820,
+      "url": "https://www.rightmove.co.uk/properties/94130061",
+      "homes": 6
+    },
+    {
+      "id": "rm89243241",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "13 Corkland Road, Chorlton, Manchester M21 8UP",
+      "price": 1300000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/89243241",
+      "homes": 5
+    },
+    {
+      "id": "rm88866648",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "41-43 Moorland Road, Didsbury, Manchester M20 6BB",
+      "price": 1400000,
+      "income": 69120,
+      "url": "https://www.rightmove.co.uk/properties/88866648",
+      "homes": 5
+    },
+    {
+      "id": "rm94560066",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "Birch Polygon, Fallowfield, M14",
+      "price": 600000,
+      "income": 36480,
+      "url": "https://www.rightmove.co.uk/properties/94560066",
+      "homes": 4
+    },
+    {
+      "id": "rm90252408",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "Goulden Road, Didsbury, Manchester, Greater Manchester, M20",
+      "price": 950000,
+      "income": 55200,
+      "url": "https://www.rightmove.co.uk/properties/90252408",
+      "homes": 4
+    },
+    {
+      "id": "zp72735702",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "Ladysmith Road, Didsbury M20 (M20 6HL area)",
+      "price": 550000,
+      "income": null,
+      "url": "https://www.zoopla.co.uk/for-sale/details/72735702/",
+      "homes": 4
+    },
+    {
+      "id": "rm141872783",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "City Gate, 5 Blantyre Street, Manchester, Greater Manchester, M15",
+      "price": 780000,
+      "income": 43320,
+      "url": "https://www.rightmove.co.uk/properties/141872783",
+      "homes": 4
+    },
+    {
+      "id": "rm92127828",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "Old Lansdowne Road, West Didsbury, M20",
+      "price": 800000,
+      "income": 36600,
+      "url": "https://www.rightmove.co.uk/properties/92127828",
+      "homes": 3
+    },
+    {
+      "id": "rm92903883",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "Albany Road, Chorlton",
+      "price": 895000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/92903883",
+      "homes": 3
+    },
+    {
+      "id": "rm94560237",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "Norwood Road, Stretford, M32",
+      "price": 495000,
+      "income": 27780,
+      "url": "https://www.rightmove.co.uk/properties/94560237",
+      "homes": 3
+    },
+    {
+      "id": "rm89605179",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "Barlow Moor Road, Chorlton, Manchester, M21",
+      "price": 1250000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/89605179",
+      "homes": 3
+    },
+    {
+      "id": "rm93657753",
+      "region": "GM",
+      "city": "Manchester",
+      "address": "742 Oldham Road, Failsworth, Manchester",
+      "price": 450000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/93657753",
+      "homes": 3
+    },
+    {
+      "id": "rm88106670",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "Arkle House, Moorend Park Road, Cheltenham GL53 0GB",
+      "price": 2350000,
+      "income": 142500,
+      "url": "https://www.rightmove.co.uk/properties/88106670",
+      "homes": 11
+    },
+    {
+      "id": "rm93741468",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "53 London Road, Cheltenham GL52 6HF",
+      "price": 850000,
+      "income": 65640,
+      "url": "https://www.rightmove.co.uk/properties/93741468",
+      "homes": 5
+    },
+    {
+      "id": "rm166571993",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "36 London Road, Cheltenham GL52 6DX",
+      "price": 900000,
+      "income": 54000,
+      "url": "https://www.rightmove.co.uk/properties/166571993",
+      "homes": 5
+    },
+    {
+      "id": "rm173813585",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "47 Clarence Square, Cheltenham GL50 4JR",
+      "price": 1250000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/173813585",
+      "homes": 5
+    },
+    {
+      "id": "rm173804549",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "103 London Road, Cheltenham GL52 6HL",
+      "price": 800000,
+      "income": 48540,
+      "url": "https://www.rightmove.co.uk/properties/173804549",
+      "homes": 4
+    },
+    {
+      "id": "rm172937834",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "Grosvenor Street, Cheltenham, Gloucestershire, GL52",
+      "price": 1000000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/172937834",
+      "homes": 4
+    },
+    {
+      "id": "rm93989868",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "Cheltenham town centre (Regency block), GL50 1JS",
+      "price": 575000,
+      "income": 40000,
+      "url": "https://www.rightmove.co.uk/properties/93989868",
+      "homes": 4
+    },
+    {
+      "id": "rm94141704",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "Longford House, The Park, Cheltenham GL50 2RG",
+      "price": 2500000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/94141704",
+      "homes": 4
+    },
+    {
+      "id": "rm174292040",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "Tivoli, Cheltenham GL50 2SZ",
+      "price": 995000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/174292040",
+      "homes": 4
+    },
+    {
+      "id": "zp73102873",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "Hales Road, Cheltenham GL52",
+      "price": 535000,
+      "income": null,
+      "url": "https://www.zoopla.co.uk/for-sale/details/73102873/",
+      "homes": 4
+    },
+    {
+      "id": "rm90072318",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "Gloucester Road, Cheltenham",
+      "price": 365000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/90072318",
+      "homes": 2
+    },
+    {
+      "id": "zp74089316",
+      "region": "GLOS",
+      "city": "Cheltenham",
+      "address": "Portland Place, Cheltenham GL52",
+      "price": 325000,
+      "income": 29400,
+      "url": "https://www.zoopla.co.uk/for-sale/details/74089316/",
+      "homes": 2
+    },
+    {
+      "id": "rm92224713",
+      "region": "BRS",
+      "city": "City Of Bristol",
+      "address": "Estcourt Gardens, Stapleton, Bristol BS16 1EF",
+      "price": 1950000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/92224713",
+      "homes": 6
+    },
+    {
+      "id": "rm94621944",
+      "region": "BRS",
+      "city": "City Of Bristol",
+      "address": "211-213 North Street, Southville, Bristol BS3 1JH",
+      "price": 1400000,
+      "income": 98580,
+      "url": "https://www.rightmove.co.uk/properties/94621944",
+      "homes": 5
+    },
+    {
+      "id": "rm94262622",
+      "region": "BRS",
+      "city": "City Of Bristol",
+      "address": "Waverley Road, Bristol, Somerset, BS6",
+      "price": 900000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/94262622",
+      "homes": 3
+    },
+    {
+      "id": "rm164429078",
+      "region": "BRS",
+      "city": "City Of Bristol",
+      "address": "North Road, St. Andrews, Bristol, BS6",
+      "price": 770000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/164429078",
+      "homes": 3
+    },
+    {
+      "id": "rm94218000",
+      "region": "BRS",
+      "city": "City Of Bristol",
+      "address": "Gloucester Road, Horfield, Bristol",
+      "price": 695000,
+      "income": null,
+      "url": "https://www.rightmove.co.uk/properties/94218000",
+      "homes": 2
+    }
+  ]
+}

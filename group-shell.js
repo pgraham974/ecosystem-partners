@@ -6,7 +6,7 @@
   const esc = window.esc || (s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])));
   const NOTES_KEY = 'gh-monday-notes';
   const CHECKLIST_KEY = 'gh-checklist-v1';
-  const state = {mode:'board', section:'', region:'GM', boardPick:'', positionFile:null, shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, living:null, v4:null, fwItems:null, lha:null, frameworks:0, competitors:null, compRegion:'', ax:{status:'', type:'', brma:'', open:''}, recOpen:'', watchOpen:'', watchJump:false, sharePick:'', shareGroup:'', shareEntities:false, partnersView:'share', signals:null, ml:{region:'GM', lease:'', status:'', sort:'deadline', focus:'', show:false}};
+  const state = {mode:'board', section:'', region:'GM', priorityRegion:'GM', onMarket:null, boardPick:'', positionFile:null, shortlist:false, setId:'current', weights:null, message:'', monday:null, evidence:null, scores:null, routes:null, living:null, v4:null, fwItems:null, lha:null, frameworks:0, competitors:null, compRegion:'', ax:{status:'', type:'', brma:'', open:''}, recOpen:'', watchOpen:'', watchJump:false, sharePick:'', shareGroup:'', shareEntities:false, partnersView:'share', signals:null, ml:{region:'GM', lease:'', status:'', sort:'deadline', focus:'', show:false}};
   let checklistDoc = null;
   let checklistMeta = {purpose:'', storageNote:''};
   let checklistMessage = '';
@@ -14,7 +14,7 @@
 
   function asset(name) {
     const url = new URL(name, location.href);
-    url.searchParams.set('v', 'board-20261118d');
+    url.searchParams.set('v', 'board-20261125b');
     return url.href;
   }
   async function loadJson(name) {
@@ -58,6 +58,17 @@
   }
   function fold(id, title, body, open) {
     return '<details class="ms-fold an-fold" id="' + id + '"' + (open ? ' open' : '') + '><summary>' + esc(title) + '</summary>' + body + '</details>';
+  }
+  function regionOptionLabel(row) {
+    const name = BoardroomModel.PRIORITY_IDS.indexOf(row.id) >= 0 ? (row.city || row.label) : row.label;
+    return name + (row.id === state.priorityRegion ? ' (priority)' : '');
+  }
+  function regionOptions() {
+    const priority = BoardroomModel.PRIORITY_IDS || [];
+    const first = priority.map((id) => BoardroomModel.REGIONS.find((row) => row.id === id)).filter(Boolean);
+    const rest = BoardroomModel.REGIONS.filter((row) => priority.indexOf(row.id) < 0);
+    const option = (row) => '<option value="' + row.id + '"' + (row.id === state.region ? ' selected' : '') + '>' + esc(regionOptionLabel(row)) + '</option>';
+    return '<optgroup label="Priority regions">' + first.map(option).join('') + '</optgroup><optgroup label="Other areas">' + rest.map(option).join('') + '</optgroup>';
   }
   function regionNow() {
     return BoardroomModel.regionById(state.region);
@@ -177,7 +188,7 @@
     const header = document.querySelector('header');
     if (!header) return;
     const mark = asset('laurito-lockup.png');
-    header.innerHTML = '<div class="gh-brand"><a class="lc-brand" href="#board" id="gh-brand"><img src="' + esc(mark) + '" alt="Laurito Capital"></a><div class="gh-wordmark"><b>Mack Living</b></div></div><label class="gh-region">Area <select id="gh-region">' + BoardroomModel.REGIONS.map((row) => '<option value="' + row.id + '"' + (row.id === state.region ? ' selected' : '') + '>' + esc(row.label) + '</option>').join('') + '</select></label><a class="an-deals" href="https://pgrahamlc.github.io/ecosystem-deals/#entry/checklist" target="_blank" rel="noopener">Go / No-Go checklist</a><div id="status">Dated research, not credit approval</div>';
+    header.innerHTML = '<div class="gh-brand"><a class="lc-brand" href="#board" id="gh-brand"><img src="' + esc(mark) + '" alt="Laurito Capital"></a><div class="gh-wordmark"><b>Mack Living</b></div></div><label class="gh-region">Area <select id="gh-region">' + regionOptions() + '</select></label><a class="an-deals" href="https://pgrahamlc.github.io/ecosystem-deals/#entry/checklist" target="_blank" rel="noopener">Go / No-Go checklist</a><div id="status">Dated research, not credit approval</div>';
     $('#gh-brand').onclick = (event) => { event.preventDefault(); viewMode('board'); };
     $('#gh-region').onchange = () => setRegion($('#gh-region').value);
     document.title = 'Mack Living and Laurito Capital';
@@ -774,7 +785,7 @@
     if (button) button.textContent = 'Present';
   });
   function boardInput() {
-    return {today: new Date().toISOString().slice(0, 10), region: state.region, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions, hurdle: state.hurdle, signals: state.signals};
+    return {today: new Date().toISOString().slice(0, 10), region: state.region, priorityRegion: state.priorityRegion, frameworks: {items: state.fwItems || []}, v4: state.v4, lha: state.lha, position: positionData(), ons: state.ons, auctions: state.auctions, onMarket: state.onMarket, hurdle: state.hurdle, signals: state.signals};
   }
   function chartPack(built) {
     if (!window.AnalyticsModel) return null;
@@ -817,12 +828,15 @@
     if (!window.AuctionCounts) return;
     const today = new Date().toISOString().slice(0, 10);
     try {
-      const [lotsRes, gatesRes] = await Promise.all([
+      const jobs = [
         fetch(AuctionCounts.LIVE, {cache: 'no-store'}),
         fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/data/market-entry/gates.json', {cache: 'no-store'})
-      ]);
+      ];
+      if (window.AcquisitionChannels) jobs.push(fetch(AcquisitionChannels.SOURCE, {cache: 'no-store'}));
+      const [lotsRes, gatesRes, blocksRes] = await Promise.all(jobs);
       if (lotsRes.ok) state.auctions = AuctionCounts.pack(await lotsRes.json(), today, 'live');
       if (gatesRes.ok) state.hurdle = AuctionCounts.yieldOnCost(await gatesRes.json());
+      if (blocksRes && blocksRes.ok) state.onMarket = await blocksRes.json();
       if (state.mode === 'board') renderBoard();
       if (state.mode === 'triage') renderTriage();
       if (state.mode === 'analysis') renderAnalysis();
@@ -837,13 +851,6 @@
     const host = document.getElementById('board-body');
     const built = BoardroomModel.build(boardInput());
     BoardroomUI.render(host, built, {selected: state.boardPick, onRegion: setRegion, onPresent: togglePresent, onGo: (hash) => { if (hash === 'records/position') { state.recOpen = 'position'; viewMode(hash); return; } if (hash === 'triage') { state.watchJump = true; openTriage(); return; } viewMode(hash); }, onSelect: (id) => { state.boardPick = id; renderBoard(); }});
-    const counts = host.querySelector('.bd-counts');
-    if (counts && window.AnalyticsUI) {
-      const holder = document.createElement('div');
-      holder.innerHTML = AnalyticsUI.html(chartPack(built), ['heatmap', 'gaps', 'gantt', 'donut']);
-      counts.insertAdjacentElement('afterend', holder.firstElementChild);
-      AnalyticsUI.bind(host, setRegion);
-    }
   }
   function moneyPlain(value) {
     return new Intl.NumberFormat('en-GB', {style:'currency', currency:'GBP', maximumFractionDigits:0}).format(value);
@@ -1204,20 +1211,27 @@
 
   try { state.localNotes = localStorage.getItem(NOTES_KEY) || ''; } catch (error) { state.localNotes = ''; }
   const ready = (async () => {
-    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, positionFile, auctions, feed, signals, ons, prices] = await Promise.all([
+    const [scores, monday, evidence, living, lha, frameworks, competitors, v4, positionFile, auctions, feed, signals, ons, prices, priorityFile, onMarketFile] = await Promise.all([
       loadJson('scoring-weights.json'), loadJson('mack-monday.json'), loadJson('analysis-evidence.json'), loadJson('mack-living.json'), loadJson('market-lha.json'), loadJson('frameworks.json'), loadJson('competitors.json'), loadJson('v4-enrich.json'), loadJson('portfolio-position.json'), loadJson('auction-targets.json'), loadJson('mack-feed.json'), loadJson('public-signals.json'),
       fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/rents.json', {cache: 'no-store'}).then((response) => response.ok ? response.json() : null).catch(() => null),
-      fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/prices.json', {cache: 'no-store'}).then((response) => response.ok ? response.json() : null).catch(() => null)
+      fetch('https://raw.githubusercontent.com/pgrahamLC/ecosystem-deals/main/prices.json', {cache: 'no-store'}).then((response) => response.ok ? response.json() : null).catch(() => null),
+      loadJson('priority-region.json'), loadJson('on-market-targets.json')
     ]);
     state.positionFile = positionFile;
     state.auctions = auctions;
+    state.onMarket = onMarketFile;
     state.hurdle = null;
     refreshAuctions();
     state.ons = ons;
     state.prices = prices;
     state.feed = feed;
     state.signals = signals;
-    try { state.region = localStorage.getItem('gh-region') || 'GM'; } catch (error) { state.region = 'GM'; }
+    const configured = priorityFile && priorityFile.priorityRegion;
+    state.priorityRegion = BoardroomModel.REGIONS.some((row) => row.id === configured) ? configured : BoardroomModel.PRIORITY_REGION;
+    try {
+      const saved = localStorage.getItem('gh-region');
+      state.region = BoardroomModel.REGIONS.some((row) => row.id === saved) ? saved : state.priorityRegion;
+    } catch (error) { state.region = state.priorityRegion; }
     applyRegion();
     state.scores = scores;
     state.monday = monday;
