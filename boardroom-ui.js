@@ -11,6 +11,11 @@
   let regionSeen = '';
   let bedFilter = '';
   let targetMode = 'lha';
+  let channelId = '';
+  let detailOpen = false;
+  let openAll = false;
+  let showUntested = false;
+  let hurdleOverride = null;
   const AXIS_START = Date.UTC(2024, 0, 1);
   const AXIS_END = Date.UTC(2036, 0, 1);
   function money(value) {
@@ -94,6 +99,10 @@
       healthKey = '';
       bedFilter = '';
       targetMode = 'lha';
+      channelId = '';
+      detailOpen = false;
+      openAll = false;
+      showUntested = false;
     }
     const open = hooks.selected ? screen.schemes.find((row) => row.id === hooks.selected) : null;
     if (open) healthKey = '';
@@ -101,16 +110,17 @@
     const types = screen.contracts.types.map(([label, count]) => '<button type="button" class="bd-chip' + (typeFilter === label ? ' on' : '') + '" data-type="' + esc(label) + '" title="' + esc(label) + '"><b>' + count + '</b> ' + esc(label) + '</button>').join('');
     const presenting = document.body.classList.contains('bd-present');
     const health = screen.lights.find((item) => item.label === healthKey);
-    host.innerHTML = '<div class="bd' + (open || health ? ' has-drill' : '') + '">'
-      + '<div class="bd-top"><div><p class="bd-kicker">Boardroom</p><h1>' + esc(screen.region.label) + '</h1></div>'
+    host.innerHTML = '<div class="bd' + (open || health ? ' has-drill' : '') + '" id="bd-exec">'
+      + '<div class="bd-top"><div><p class="bd-kicker">Executive snapshot</p><h1>' + esc(screen.region.label) + '</h1></div>'
       + '<div class="bd-tools"><button type="button" class="btn sec" id="bd-present">' + (presenting ? 'Exit' : 'Present') + '</button></div></div>'
-      + '<ul class="an-takes">' + screen.lights.slice(0, 3).map((item) => '<li>' + esc(item.label + '. ' + item.detail) + '</li>').join('') + '</ul>'
-      + '<div class="bd-counts"><button type="button" class="bd-count" data-type="" title="Show every scheme"><b>' + screen.contracts.schemes + '</b><span>schemes</span></button><span><b>' + screen.contracts.withBip + '</b> with BiP</span><span><b>1</b> area</span>' + upcomingTile(screen) + '<button type="button" class="bd-count" data-go="records/position" title="Enter deals executed">' + figure(screen.portfolio.deals == null ? 'Not yet recorded' : screen.portfolio.deals) + '<span>deals executed</span></button><button type="button" class="bd-count" data-go="records/position" title="Enter properties held">' + figure(screen.portfolio.held == null ? 'Not yet recorded' : screen.portfolio.held) + '<span>properties held</span></button><span title="Places on framework records. A firm on two frameworks counts twice. This is not the Market Screen provider count."><b>' + screen.portfolio.operators + '</b> operator places</span></div>'
-      + '<section class="bd-split" aria-label="Timeline and health"><div class="bd-time"><h2>Timeline</h2>' + timeline(screen.timeline) + '<h2>Operator places</h2><div class="bd-bars">' + bars(screen.ranked) + '</div></div>'
-      + '<article class="bd-health"><h2>Region health</h2><ul>' + screen.lights.map((item) => { const blank = /^(not yet recorded|not stated|to confirm|not published|unknown)$/i.test(item.detail); return '<li class="bd-' + item.tone + '"><button type="button" class="bd-health-btn" data-health="' + esc(item.label) + '" title="' + esc(item.detail) + '"><b>' + esc(item.label) + '</b><span class="' + (blank ? 'is-blank' : '') + '">' + esc(item.detail) + '</span></button></li>'; }).join('') + '</ul><p class="bd-verdict">' + esc(screen.verdict) + '</p></article></section>'
-      + '<section class="bd-matrix" aria-label="Scheme matrix"><h2>What exists here</h2><div class="bd-chips"><button type="button" class="bd-chip' + (typeFilter ? '' : ' on') + '" data-type="">All <b>' + screen.schemes.length + '</b></button>' + types + '</div><p class="bd-src">' + shown.length + ' schemes shown. Select a row for dates, operators and BiP.</p>' + schemeRows(shown) + '</section>'
+      + regionPicks(screen)
+      + '<p class="bd-note">' + esc(screen.executive.note) + '</p>'
+      + execKpis(screen)
+      + '<p class="bd-links"><button type="button" class="btn sec" data-go="records/frameworks">Framework records</button><button type="button" class="btn sec" data-go="records/position">Deals and properties</button><button type="button" class="btn sec" data-go="triage">Triage watch</button><button type="button" class="btn sec" data-go="market">Market Screen</button><button type="button" class="btn sec" id="bd-detail-toggle">' + (detailOpen ? 'Hide detailed board' : 'Detailed board') + '</button></p>'
+      + '<section class="bd-matrix" aria-label="Open frameworks"><h2>Open frameworks</h2><p class="bd-src">Status and dates for frameworks that are open to join, live, and forthcoming. Closed records stay in the detailed board.</p>' + openTable(screen) + '</section>'
       + rentTable(screen, bedFilter)
-      + targetsBox(screen, bedFilter, targetMode)
+      + channelsPanel(screen)
+      + detailedBoard(shown, types)
       + (open ? drill(open) : healthDrill(health))
       + '</div>';
     const present = host.querySelector('#bd-present');
@@ -146,6 +156,24 @@
     if (back) back.onclick = () => hooks.onSelect && hooks.onSelect('');
     const healthBack = host.querySelector('#bd-health-back');
     if (healthBack) healthBack.onclick = () => { healthKey = ''; render(hostEl, screen, hooks); };
+    host.querySelectorAll('[data-region]').forEach((button) => button.onclick = () => hooks.onRegion && hooks.onRegion(button.dataset.region));
+    host.querySelectorAll('[data-channel]').forEach((button) => button.onclick = () => {
+      channelId = channelId === button.dataset.channel ? '' : button.dataset.channel;
+      render(hostEl, screen, hooks);
+    });
+    const detailToggle = host.querySelector('#bd-detail-toggle');
+    if (detailToggle) detailToggle.onclick = () => { detailOpen = !detailOpen; render(hostEl, screen, hooks); };
+    const openToggle = host.querySelector('#bd-open-all');
+    if (openToggle) openToggle.onclick = () => { openAll = !openAll; render(hostEl, screen, hooks); };
+    const untested = host.querySelector('#bd-untested');
+    if (untested) untested.onclick = () => { showUntested = !showUntested; render(hostEl, screen, hooks); };
+    const apply = host.querySelector('#bd-threshold-apply');
+    if (apply) apply.onclick = () => {
+      const field = host.querySelector('#bd-threshold');
+      const raw = field ? field.value.trim() : '';
+      hurdleOverride = raw === '' ? null : raw;
+      render(hostEl, screen, hooks);
+    };
   }
   function positionForm(host, regionId, saved, onSave) {
     const row = (saved && saved[regionId]) || {dealsExecuted: null, propertiesHeld: null};
@@ -215,8 +243,8 @@
         + '<td class="bd-gap ' + root.BoardroomModel.gapBand(bed.gapPercent) + '" data-h="Gap %" title="' + esc(gapTitle) + '">' + esc(pctText) + '</td>'
         + '</tr>';
     }).join('');
-    return '<section class="bd-rent" aria-label="LHA and open market">'
-      + '<h2>LHA and open market</h2>'
+    return '<section class="bd-rent" id="bd-rent" aria-label="Rent matrix">'
+      + '<h2>Rent matrix</h2>'
       + '<p class="bd-take">' + esc(take) + '</p>'
       + '<table><thead><tr><th>Beds</th><th>LHA 2026/27 (pcm)</th><th>Open market (pcm)</th><th>Gap £ (pcm)</th><th>Gap %</th></tr></thead><tbody>'
       + rows + '</tbody></table>'
@@ -224,7 +252,7 @@
       + '<p class="bd-src">LHA reference: ' + esc(next.region.reference || 'not yet recorded') + '. Open market: ' + esc(area) + '. ' + esc(next.lhaProvenance || '') + ' ' + esc((next.ons && next.ons.note) || '') + '</p>'
       + '</section>';
   }
-  function targetsBox(next, active, mode) {
+  function targetsBox(next, active, mode, nested) {
     const counts = root.AuctionCounts;
     const lots = next.lots || [];
     const hurdle = next.hurdle;
@@ -246,8 +274,9 @@
     const focusBelow = focus.filter((row) => row.result === 'below').length;
     const focusLabel = labels[focusKey] || 'these';
     const focusThreshold = focus.length ? focus[0].threshold : null;
+    const wideCount = wide ? (byBed[wide.key] || 0) : 0;
     const linkLine = wide
-      ? 'The widest LHA gap is ' + wide.label + '. ' + (byBed[wide.key] || 0) + ' current lots are ' + wide.label + '.'
+      ? 'The widest LHA gap is ' + wide.label + '. ' + wideCount + ' current ' + (wideCount === 1 ? 'lot is' : 'lots are') + ' ' + wide.label + '.'
       : 'The widest LHA gap is not yet recorded.';
     const take = !hurdle
       ? 'Yield hurdle not yet recorded.'
@@ -255,7 +284,7 @@
     const hurdleText = hurdle ? (Math.round(hurdle * 1000) / 10) + '%' : 'not yet recorded';
     const matched = next.auctions ? next.auctions.matched : null;
     const unknown = next.auctions ? next.auctions.unknown : (byBed.unknown || 0);
-    const headline = matched == null ? 'Current lots are not loaded.' : matched + ' current lots match a 3 or 4 bed home. ' + unknown + ' have no bed count.';
+    const headline = matched == null ? 'Current lots are not loaded.' : matched + ' current ' + (matched === 1 ? 'lot matches' : 'lots match') + ' a 3 or 4 bed home. ' + unknown + (unknown === 1 ? ' has' : ' have') + ' no bed count.';
     const groups = {};
     for (const row of shown) {
       if (!groups[row.beds]) groups[row.beds] = [];
@@ -283,9 +312,7 @@
     const source = next.auctionsFrom === 'live'
       ? 'Counted just now from the live Ecosystem Deals lots file. Allsop is excluded.'
       : 'Saved count' + (next.auctionsUpdated ? ', lots file ' + String(next.auctionsUpdated).slice(0, 10) : '') + '. The live lots file has not loaded yet.';
-    return '<section class="bd-targets" aria-label="Potential acquisition targets">'
-      + '<h2>Potential acquisition targets</h2>'
-      + '<p class="bd-take">' + esc(headline) + '</p>'
+    const inner = '<p class="bd-take">' + esc(headline) + '</p>'
       + '<div class="bd-beds">' + bars + '</div>'
       + '<p class="bd-src">' + (byBed.unknown || 0) + ' lots have no bed count, so they are not in the bars. ' + esc(linkLine) + ' <a href="' + esc(next.auctionsLive || 'https://pgrahamlc.github.io/ecosystem-deals/#auctions') + '" target="_blank" rel="noopener">Open matching lots</a></p>'
       + '<div class="bd-modes"><button type="button" class="bd-chip' + (mode === 'lha' ? ' on' : '') + '" data-mode="lha">LHA threshold</button><button type="button" class="bd-chip' + (mode === 'om' ? ' on' : '') + '" data-mode="om">Open market threshold</button><span class="foot">Gross yield hurdle ' + esc(hurdleText) + '</span></div>'
@@ -295,8 +322,121 @@
       + '<div class="bd-strip">' + plot + '</div>'
       + '<details><summary>Show detail</summary><div class="bd-detail"><table><thead><tr><th>Lot</th><th>Beds</th><th>Guide</th><th>Threshold</th><th>Headroom</th><th>Result</th></tr></thead><tbody>'
       + (detail || '<tr><td colspan="6">Not yet recorded</td></tr>') + '</tbody></table></div></details>'
-      + '<p class="bd-src">' + esc(source) + ' A lot is viable when its guide price is at or under the price that makes the monthly rent a gross yield of ' + esc(hurdleText) + '. No bed count or no guide price is not testable. Lot areas follow the Ecosystem Deals city field. Warrington lots tagged Cheshire stay in Cheshire, and Warrington lots tagged Manchester stay in Greater Manchester.</p>'
-      + '</section>';
+      + '<p class="bd-src">' + esc(source) + ' A lot is viable when its guide price is at or under the price that makes the monthly rent a gross yield of ' + esc(hurdleText) + '. No bed count or no guide price is not testable. Lot areas follow the Ecosystem Deals city field. Warrington lots tagged Cheshire stay in Cheshire, and Warrington lots tagged Manchester stay in Greater Manchester.</p>';
+    if (nested) return '<div class="bd-inline">' + inner + '</div>';
+    return '<section class="bd-targets" aria-label="Potential acquisition targets"><h2>Potential acquisition targets</h2>' + inner + '</section>';
+  }
+  function pctShown(next) {
+    if (hurdleOverride != null) return String(hurdleOverride);
+    if (!(next.hurdle > 0)) return '';
+    return String(Math.round(next.hurdle * 1000) / 10);
+  }
+  function hurdleNow(next) {
+    const raw = pctShown(next);
+    if (raw === '') return null;
+    const number = Number(raw);
+    return Number.isFinite(number) && number > 0 ? number / 100 : null;
+  }
+  function withHurdle(next) {
+    const hurdle = hurdleNow(next);
+    return Object.assign({}, next, {hurdle: hurdle == null ? null : hurdle});
+  }
+  function regionPicks(next) {
+    const executive = next.executive || {priorityIds: [], priorityRegion: ''};
+    const picks = (executive.priorityIds || []).map((id) => {
+      const region = root.BoardroomModel.regionById(id);
+      const on = next.region.id === id ? ' on' : '';
+      const tag = id === executive.priorityRegion ? ' <i>Priority</i>' : '';
+      return '<button type="button" class="bd-pick' + on + '" data-region="' + esc(id) + '">' + esc(region.city || region.label) + tag + '</button>';
+    }).join('');
+    const priority = root.BoardroomModel.regionById(executive.priorityRegion);
+    return '<div class="bd-picks" role="group" aria-label="Priority regions">' + picks + '</div><p class="bd-src">Priority regions: Manchester, Edinburgh, Birmingham, Liverpool and Cheshire. The priority setting is ' + esc(priority.city || priority.label) + ' until that choice is confirmed. Other areas stay in the area menu.</p>';
+  }
+  function kpi(value, label, hint, go) {
+    const text = value == null || value === '' ? 'Not yet recorded' : String(value);
+    const inner = figure(text) + '<span>' + esc(label) + '</span><span>' + esc(hint) + '</span>';
+    if (!go) return '<div class="bd-count">' + inner + '</div>';
+    return '<button type="button" class="bd-count" data-go="' + go + '" title="' + esc(hint) + '">' + inner + '</button>';
+  }
+  function execKpis(next) {
+    const executive = next.executive;
+    const operators = executive.operatorPlaces ? executive.operatorPlaces : (executive.schemes ? 'None recorded' : null);
+    return '<div class="bd-counts bd-exec-counts">'
+      + kpi(executive.open.length, 'Open frameworks', 'With status and dates below', '')
+      + kpi(executive.schemes, 'Available schemes', executive.fromBip + ' from BiP Tracker', 'records/frameworks')
+      + kpi(executive.deals, 'Deals executed', 'Entered on the position sheet', 'records/position')
+      + kpi(executive.held, 'Properties held', 'Entered on the position sheet', 'records/position')
+      + kpi(operators, 'Operator coverage', 'Businesses operating in this space', '')
+      + '</div><p class="bd-src">' + esc(executive.operatorLine) + '</p>';
+  }
+  function openTable(next) {
+    const rows = (next.executive && next.executive.open) || [];
+    if (!rows.length) return '<p class="bd-empty">No open framework is recorded for this area yet.</p>';
+    const shown = openAll ? rows : rows.slice(0, 6);
+    const body = shown.map((row) => {
+      const source = row.source && row.source.url
+        ? '<a href="' + esc(row.source.url) + '" target="_blank" rel="noopener">' + esc(row.source.label || 'Source') + '</a>'
+        : '<span class="is-blank">No source link</span>';
+      return '<tr><td class="l"><button type="button" class="bd-text" data-id="' + esc(row.id) + '">' + esc(row.name) + '</button></td><td class="l">' + esc(tidy(row.status)) + '</td><td>' + esc(when(row.start, '')) + '</td><td>' + esc(when(row.end, '')) + '</td><td>' + (row.fromBip ? 'Yes' : 'No') + '</td><td>' + source + '</td></tr>';
+    }).join('');
+    const more = rows.length > 6 ? '<p><button type="button" class="btn sec" id="bd-open-all">' + (openAll ? 'Show the first six' : 'Show all ' + rows.length + ' open frameworks') + '</button></p>' : '';
+    return '<div class="bd-matrix-body"><table class="bd-open"><thead><tr><th>Framework</th><th>Status</th><th>Start</th><th>End</th><th>BiP Tracker</th><th>Source</th></tr></thead><tbody>' + body + '</tbody></table></div>' + more;
+  }
+  function detailedBoard(shown, types) {
+    if (!detailOpen) return '';
+    const health = screen.lights.map((item) => {
+      const blank = /^(not yet recorded|not stated|to confirm|not published|unknown)$/i.test(item.detail);
+      return '<li class="bd-' + item.tone + '"><button type="button" class="bd-health-btn" data-health="' + esc(item.label) + '" title="' + esc(item.detail) + '"><b>' + esc(item.label) + '</b><span class="' + (blank ? 'is-blank' : '') + '">' + esc(item.detail) + '</span></button></li>';
+    }).join('');
+    return '<section class="bd-more" id="bd-more" aria-label="Detailed board"><h2>Detailed board</h2><div class="bd-counts">' + upcomingTile(screen) + '</div>'
+      + '<section class="bd-split" aria-label="Timeline and health"><div class="bd-time"><h2>Timeline</h2>' + timeline(screen.timeline) + '<h2>Operator places</h2><p class="bd-src">Each bar is a framework. The count is businesses operating in this space, and a business on two frameworks is counted twice.</p><div class="bd-bars">' + bars(screen.ranked) + '</div></div>'
+      + '<article class="bd-health"><h2>Region health</h2><ul>' + health + '</ul><p class="bd-verdict">' + esc(screen.verdict) + '</p></article></section>'
+      + '<section class="bd-matrix" aria-label="Scheme matrix"><h2>What exists here</h2><div class="bd-chips"><button type="button" class="bd-chip' + (typeFilter ? '' : ' on') + '" data-type="">All <b>' + screen.schemes.length + '</b></button>' + types + '</div><p class="bd-src">' + shown.length + ' schemes shown. Select a row for dates, operators and BiP.</p>' + schemeRows(shown) + '</section></section>';
+  }
+  function thresholdControl() {
+    return '<div class="bd-modes"><label>Gross yield threshold % <input id="bd-threshold" inputmode="decimal" value="' + esc(pctShown(screen)) + '" placeholder="Not yet recorded"></label><button type="button" class="btn sec" id="bd-threshold-apply">Apply threshold</button></div><p class="bd-src">A price at or under annual rent divided by this gross yield is below the threshold. Clear the box and apply it to use the gates file when that file has loaded.</p>';
+  }
+  function splitTiles(view, hurdle) {
+    const below = hurdle ? view.below : 'n/a';
+    const above = hurdle ? view.above : 'n/a';
+    return '<div class="bd-tiles"><span><b>' + below + '</b> below threshold</span><span><b>' + above + '</b> above threshold</span><span><b>' + view.untested + '</b> not testable</span></div>';
+  }
+  function incomeDrill(row) {
+    const hurdle = hurdleNow(screen);
+    const view = root.AcquisitionChannels.assessIncome(row.items || [], hurdle);
+    const shown = showUntested ? view.rows : view.rows.filter((item) => item.result !== 'not testable');
+    const detail = shown.map((item) => {
+      const result = item.result === 'below' ? 'Below threshold' : (item.result === 'above' ? 'Above threshold' : 'Not testable');
+      const name = item.url ? '<a href="' + esc(item.url) + '" target="_blank" rel="noopener">' + esc(item.title || item.address) + '</a>' : esc(item.address || 'Listing');
+      const room = item.headroom == null ? 'n/a' : (item.headroom >= 0 ? pounds(item.headroom) + ' headroom' : pounds(Math.abs(item.headroom)) + ' shortfall');
+      return '<tr><td>' + name + '</td><td>' + (item.price == null ? 'n/a' : esc(pounds(item.price))) + '</td><td>' + (item.income == null ? 'n/a' : esc(pounds(item.income))) + '</td><td>' + (item.threshold == null ? 'n/a' : esc(pounds(item.threshold))) + '</td><td>' + (room === 'n/a' ? '<span class="is-blank">n/a</span>' : esc(room)) + '</td><td>' + result + '</td></tr>';
+    }).join('') || '<tr><td colspan="6">No tested listing. A listing with no price or no stated income is not testable.</td></tr>';
+    const link = row.page ? '<p class="bd-src"><a href="' + esc(row.page) + '" target="_blank" rel="noopener">Open the blocks file</a></p>' : '';
+    return '<div class="bd-inline">' + thresholdControl() + '<p class="bd-src">' + esc(row.note) + ' On-market rows use the stated annual income. They are not tested against a bedroom LHA rate, because the listing does not give one rent for one bedroom size.</p>' + splitTiles(view, hurdle) + '<p><button type="button" class="btn sec" id="bd-untested">' + (showUntested ? 'Hide listings that cannot be tested' : 'Show listings that cannot be tested') + '</button></p><div class="bd-detail"><table><thead><tr><th>Listing</th><th>Asking price</th><th>Stated income</th><th>Threshold</th><th>Headroom</th><th>Result</th></tr></thead><tbody>' + detail + '</tbody></table></div>' + link + '</div>';
+  }
+  function channelHint(row) {
+    if (!row.feed) return 'no feed yet';
+    if (!row.loaded || row.count == null) return 'Not loaded';
+    if (!row.count) return row.id === 'on-market' ? 'None in the blocks file' : 'None in this area';
+    if (row.id === 'auction') return 'Current lots';
+    return 'Private treaty listings';
+  }
+  function channelDrill(row) {
+    if (!row.feed) return '<div class="bd-inline"><p>no feed yet. Off-market opportunities are not in a source file, so none are listed.</p></div>';
+    if (!row.loaded || row.count == null) return '<div class="bd-inline"><p>' + esc(row.note) + '</p></div>';
+    if (row.id === 'on-market') return incomeDrill(row);
+    if (row.id === 'auction') return '<div class="bd-inline"><p class="bd-src">' + esc(row.note) + '</p>' + thresholdControl() + targetsBox(withHurdle(screen), bedFilter, targetMode, true) + '</div>';
+    return '';
+  }
+  function channelsPanel(next) {
+    const pack = next.channels || {};
+    const order = [pack.offMarket, pack.auction, pack.onMarket].filter(Boolean);
+    const cards = order.map((row) => {
+      const count = row.count == null ? 'Not loaded' : String(row.count);
+      return '<button type="button" class="bd-channel' + (channelId === row.id ? ' on' : '') + '" data-channel="' + esc(row.id) + '"><small>' + esc(row.label) + '</small><b class="' + (row.count == null ? 'is-blank' : '') + '">' + esc(count) + '</b><span>' + esc(channelHint(row)) + '</span></button>';
+    }).join('');
+    const open = order.find((row) => row.id === channelId);
+    return '<section class="bd-targets" id="bd-targets" aria-label="Target acquisitions"><h2>Target acquisitions</h2><p class="bd-src">Off-market, auction and on-market. Select a channel for items above and below the threshold.</p><div class="bd-channels">' + cards + '</div>' + (open ? channelDrill(open) : '') + '</section>';
   }
   root.BoardroomUI = {render, positionForm, rentTable};
 })(typeof window !== 'undefined' ? window : globalThis);

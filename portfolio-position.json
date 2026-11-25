@@ -3,6 +3,10 @@
   "note": "Blank means not yet recorded. Do not put a zero here unless the holding really is zero.",
   "regions": {
     "GM": {"dealsExecuted": null, "propertiesHeld": null, "targets": null, "omr": {"shared": null, "1": null, "2": null, "3": null, "4": null, "source": "", "observedAt": ""}},
+    "EDI": {"dealsExecuted": null, "propertiesHeld": null, "targets": null, "omr": {"shared": null, "1": null, "2": null, "3": null, "4": null, "source": "", "observedAt": ""}},
+    "BIR": {"dealsExecuted": null, "propertiesHeld": null, "targets": null, "omr": {"shared": null, "1": null, "2": null, "3": null, "4": null, "source": "", "observedAt": ""}},
+    "LIV": {"dealsExecuted": null, "propertiesHeld": null, "targets": null, "omr": {"shared": null, "1": null, "2": null, "3": null, "4": null, "source": "", "observedAt": ""}},
+    "CHS": {"dealsExecuted": null, "propertiesHeld": null, "targets": null, "omr": {"shared": null, "1": null, "2": null, "3": null, "4": null, "source": "", "observedAt": ""}},
     "BRS": {"dealsExecuted": null, "propertiesHeld": null, "targets": null, "omr": {"shared": null, "1": null, "2": null, "3": null, "4": null, "source": "", "observedAt": ""}},
     "GLOS": {"dealsExecuted": null, "propertiesHeld": null, "targets": null, "omr": {"shared": null, "1": null, "2": null, "3": null, "4": null, "source": "", "observedAt": ""}},
     "National": {"dealsExecuted": null, "propertiesHeld": null, "targets": null, "omr": {"shared": null, "1": null, "2": null, "3": null, "4": null, "source": "", "observedAt": ""}}
